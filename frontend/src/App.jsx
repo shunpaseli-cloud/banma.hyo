@@ -16,10 +16,10 @@ export default function App() {
       <header className="masthead">
         <h1>ばん馬表</h1>
         <p>ばんえい競馬 出走表と予想スコア</p>
-        <p className="auto-note">表示中の開催日：<strong>{date}</strong>・3連複予想は自動生成</p>
+        <DatePicker date={date} onChange={pick} />
+        <p className="auto-note">3連複予想は自動生成</p>
       </header>
       <main>
-        <DatePicker date={date} onChange={pick} />
         {banner && <DataBanner data={banner} />}
         {day.races.length === 0
           ? <p className="end">{date} の出走表データはありません（開催なし、または未取得）。上の「データあり」から日付を選んでください。</p>
