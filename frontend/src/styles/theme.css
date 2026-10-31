@@ -52,3 +52,8 @@ body { margin: 0; background: var(--dirt); color: var(--cream);
 .warn{color:#D85A2A}
 .misswarn{border-top:1px dashed #D85A2A;margin-top:.6rem;padding-top:.4rem;font-size:.8rem}
 .misswarn h3{font-size:.85rem;color:#D85A2A;margin:.2rem 0}
+.datepick{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 12px}
+.datepick input[type=date]{background:#F3EEE4;color:#221E18;border:1px solid #D85A2A;border-radius:6px;padding:6px;font-size:16px}
+.datepick .count{width:100%}
+.chip{margin:2px;padding:3px 8px;border-radius:12px;border:1px solid #D85A2A;background:transparent;color:inherit}
+.chip.on{background:#D85A2A;color:#F3EEE4}

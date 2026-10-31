@@ -4,10 +4,10 @@ import { accuracyReport, getWeights, resetModel } from '../feedback.js'
 import { autoFetchAll } from '../scraper.js'
 import RaceCard from './RaceCard.jsx'
 const PAGE = 2
-export default function RaceList() {
-  const [races, setRaces] = useState(() => listRaces({ limit: PAGE, offset: 0 }))
+export default function RaceList({ date }) {
+  const [races, setRaces] = useState(() => listRaces({ limit: PAGE, offset: 0, date }))
   const [ver, setVer] = useState(0)
-  const more = () => { const p = listRaces({ limit: PAGE, offset: races.items.length })
+  const more = () => { const p = listRaces({ limit: PAGE, offset: races.items.length, date })
     setRaces(r => ({ ...p, items: [...r.items, ...p.items] })) }
   const [busy, setBusy] = useState(false), [msg, setMsg] = useState(''), [status, setStatus] = useState({})
   const autoFetch = async () => {
