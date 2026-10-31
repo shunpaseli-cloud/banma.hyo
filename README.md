@@ -91,3 +91,30 @@ cd frontend && npm run build
 
 ### キャッシュ
 結果ページは 5分（300秒）だけキャッシュ（`caches.default` + `Cache-Control: max-age=300, s-maxage=300`）。確定直後の古い結果を長く返さないための設定で、`CACHE_TTL` で変更できます。
+
+## GitHub 公開リポジトリと Netlify 自動デプロイ（スマホ完結）
+
+このプロジェクトは `/home/workdir/banma-hyo/` を Git 管理しています。公開名は **banma-hyo** です。
+
+### あなたがスマホでやること（最小）
+1. このチャットに出る **GitHub 接続カード** を開き、Cursor に GitHub を接続する（初回のみ）。
+2. （任意）Netlify を使う場合は [app.netlify.com](https://app.netlify.com) でサインアップし、User settings → Applications → Personal access tokens でトークンを発行して Bot に渡す。または GitHub 連携後に Netlify の「Import from Git」で `banma-hyo` を選ぶ。
+3. 公開後の `https://xxxx.netlify.app` をブックマークして開くだけ。
+
+### Bot 側の再デプロイ（dist 更新後）
+```bash
+cd /home/workdir/banma-hyo/frontend
+npm run build
+# 静的デプロイ（サイトリンク済み・NETLIFY_AUTH_TOKEN 設定時）
+npx netlify deploy --prod --dir=dist
+```
+またはリポジトリルートから:
+```bash
+cd /home/workdir/banma-hyo
+npx netlify deploy --prod --dir=frontend/dist
+```
+Git 連携サイトなら `git push` だけで Netlify がビルドします（`netlify.toml` の `base=frontend` / `command=npm run build` / `publish=dist`）。
+
+### トークンの作り方（スマホブラウザ）
+- **GitHub**: Cursor の接続カードから OAuth するだけで十分です。CLI 用に必要なら GitHub → Settings → Developer settings → Personal access tokens で `repo` 権限のトークンを作成。
+- **Netlify**: [User settings → Applications → Personal access tokens](https://app.netlify.com/user/applications#personal-access-tokens) → New access token。発行した文字列を Bot に渡すと `NETLIFY_AUTH_TOKEN` として使います。
