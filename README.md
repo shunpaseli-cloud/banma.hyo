@@ -118,3 +118,20 @@ Git 連携サイトなら `git push` だけで Netlify がビルドします（`
 ### トークンの作り方（スマホブラウザ）
 - **GitHub**: Cursor の接続カードから OAuth するだけで十分です。CLI 用に必要なら GitHub → Settings → Developer settings → Personal access tokens で `repo` 権限のトークンを作成。
 - **Netlify**: [User settings → Applications → Personal access tokens](https://app.netlify.com/user/applications#personal-access-tokens) → New access token。発行した文字列を Bot に渡すと `NETLIFY_AUTH_TOKEN` として使います。
+
+## 公開 URL
+- 本番: https://banma-hyo.netlify.app
+- GitHub: https://github.com/shunpaseli-cloud/banma.hyo
+- Netlify 管理画面: https://app.netlify.com/projects/banma-hyo
+
+### 空ページだったときの原因と直し方
+1. GitHub リポジトリが空のまま Netlify 連携されていた → `main` にソースと `frontend/dist` を push
+2. Netlify の Visitor access がチームログイン（SSO）になっていた → API で `sso_login=false` にし公開
+3. 設定: `netlify.toml` は `base=frontend` / `command=npm run build` / `publish=dist`
+
+### 再デプロイ（Bot または手元）
+```bash
+cd /home/workdir/banma-hyo/frontend && npm run build
+cd .. && npx netlify deploy --prod --dir=frontend/dist
+```
+
