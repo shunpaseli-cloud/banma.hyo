@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
 import { trioPredictions } from '../trio.js'
+import RaceDetail from './RaceDetail.jsx'
 import { analyzeMisses, missWarnings } from '../missAnalysis.js'
 export default function RaceCard({ race, onLearn, fetchStatus }) {
   const preds = useMemo(() => predict(race), [race])
@@ -10,6 +11,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const [fin, setFin] = useState({})
   const [msg, setMsg] = useState('')
   const [trioOpen, setTrioOpen] = useState(false)
+  const [detail, setDetail] = useState(false)
   const trio = useMemo(() => trioPredictions(preds), [preds])
   const warns = useMemo(() => missWarnings(race), [race])
   const [misses, setMisses] = useState([])
@@ -46,11 +48,13 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>
           : <button className="link" onClick={() => setOpen(true)}>着順を入力して学習</button>}
         <button className="more small" onClick={() => setTrioOpen(!trioOpen)}>{trioOpen ? '上位10通りを閉じる' : '3連複 上位10通り'}</button>
+        <button className="more small" onClick={() => setDetail(!detail)}>{detail ? '詳細を閉じる' : '詳細'}</button>
         {msg && <span className="msg">{msg}</span>}
         {fetchStatus && <span className="msg">{fetchStatus.ok
           ? `結果取得OK（${fetchStatus.source === 'pdf' ? '公式PDF' : 'HTML'}・${fetchStatus.updated}頭）`
           : '⚠ 結果を取得できませんでした'}</span>}
       </div>
+      {detail && <RaceDetail race={race} preds={preds} />}
       {trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
         <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>
