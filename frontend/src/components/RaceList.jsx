@@ -9,7 +9,7 @@ export default function RaceList() {
   const [ver, setVer] = useState(0)
   const more = () => { const p = listRaces({ limit: PAGE, offset: races.items.length })
     setRaces(r => ({ ...p, items: [...r.items, ...p.items] })) }
-  const [busy, setBusy] = useState(false), [msg, setMsg] = useState('')
+  const [busy, setBusy] = useState(false), [msg, setMsg] = useState(''), [status, setStatus] = useState({})
   const autoFetch = async () => {
     if (busy) return
     setBusy(true); setMsg('結果を取得中…')
@@ -17,6 +17,7 @@ export default function RaceList() {
       const r = await autoFetchAll(races.items)
       if (r.skipped) setMsg(`前回の取得から60秒以内です（あと${r.wait}秒）`)
       else { const ok = r.results.filter(x => x.ok)
+        setStatus(Object.fromEntries(r.results.map(x => [x.race_id, x])))
         setMsg(`取得成功 ${ok.length} / ${r.results.length} レース・学習 ${ok.reduce((s, x) => s + x.updated, 0)} 件`)
         setVer(v => v + 1) }
     } catch (e) { console.error('[autoFetch]', e); setMsg('取得に失敗しました') }
@@ -31,7 +32,7 @@ export default function RaceList() {
         <button className="more" disabled={busy} onClick={autoFetch}>結果を自動取得</button>
         {msg && <div className="count">{msg}</div>}
         <button className="link" onClick={() => { resetModel(); setVer(v => v + 1) }}>学習をリセット</button></div>
-      {races.items.map(r => <RaceCard key={r.race_id + ver} race={r} onLearn={() => setVer(v => v + 1)} />)}
+      {races.items.map(r => <RaceCard key={r.race_id + ver} race={r} fetchStatus={status[r.race_id]} onLearn={() => setVer(v => v + 1)} />)}
       {races.has_more
         ? <button className="more" onClick={more}>もっと見る</button>
         : <p className="end">全レースを表示しました</p>}

@@ -1,0 +1,2147 @@
+{
+ "meta": {
+  "source": "pdf",
+  "fetched_at": "2026-10-31T23:40:10+09:00",
+  "url": [
+   "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001772/res1.pdf",
+   "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001772/res2.pdf",
+   "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001771/res1.pdf",
+   "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001771/res2.pdf",
+   "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001770/res1.pdf",
+   "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001770/res2.pdf"
+  ],
+  "races": 36
+ },
+ "races": {
+  "20261031-R01": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 10,
+    "name": "サッコノオトウト"
+   },
+   {
+    "finish": 2,
+    "gate": 2,
+    "umaban": 2,
+    "name": "コトミチャン"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ガオノチカラ"
+   },
+   {
+    "finish": 4,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ブラックチャーム"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "プリンセスニコ"
+   },
+   {
+    "finish": 6,
+    "gate": 5,
+    "umaban": 5,
+    "name": "エムトップ"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ヴィクトワールラン"
+   },
+   {
+    "finish": 8,
+    "gate": 8,
+    "umaban": 9,
+    "name": "イワキロマン"
+   },
+   {
+    "finish": 9,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ストロングモモ"
+   },
+   {
+    "finish": 10,
+    "gate": 7,
+    "umaban": 7,
+    "name": "マルホンカオン"
+   }
+  ],
+  "20261031-R02": [
+   {
+    "finish": 1,
+    "gate": 5,
+    "umaban": 5,
+    "name": "フクマルペガサス"
+   },
+   {
+    "finish": 2,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ホクセイキンボシ"
+   },
+   {
+    "finish": 3,
+    "gate": 1,
+    "umaban": 1,
+    "name": "レオン"
+   },
+   {
+    "finish": 4,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ディーエフアレス"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 8,
+    "name": "フカガワハナビ"
+   },
+   {
+    "finish": 6,
+    "gate": 8,
+    "umaban": 9,
+    "name": "オレノゴウリキ"
+   },
+   {
+    "finish": 7,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ワシノオ"
+   },
+   {
+    "finish": 8,
+    "gate": 7,
+    "umaban": 7,
+    "name": "キタノショウヘイ"
+   },
+   {
+    "finish": 9,
+    "gate": 6,
+    "umaban": 6,
+    "name": "アアモンドグール"
+   }
+  ],
+  "20261031-R03": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ホクセイキリシマ"
+   },
+   {
+    "finish": 2,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ジェットクイーン"
+   },
+   {
+    "finish": 3,
+    "gate": 8,
+    "umaban": 8,
+    "name": "ジェイインター"
+   },
+   {
+    "finish": 4,
+    "gate": 3,
+    "umaban": 3,
+    "name": "キョウエイギンガ"
+   },
+   {
+    "finish": 5,
+    "gate": 2,
+    "umaban": 2,
+    "name": "トップラン"
+   },
+   {
+    "finish": 6,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ストロングポイント"
+   },
+   {
+    "finish": 7,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ニシキライデン"
+   },
+   {
+    "finish": 8,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ゴーゴーソウタ"
+   },
+   {
+    "finish": 9,
+    "gate": 5,
+    "umaban": 5,
+    "name": "エイコウクイン"
+   }
+  ],
+  "20261031-R04": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ジェイキングダム"
+   },
+   {
+    "finish": 2,
+    "gate": 8,
+    "umaban": 10,
+    "name": "マリンガール"
+   },
+   {
+    "finish": 3,
+    "gate": 6,
+    "umaban": 6,
+    "name": "シレトコセンプー"
+   },
+   {
+    "finish": 4,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ツナノタチヤマ"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "マスタークィン"
+   },
+   {
+    "finish": 6,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ビエイニトドケ"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ハゴロモグレース"
+   },
+   {
+    "finish": 8,
+    "gate": 1,
+    "umaban": 1,
+    "name": "パワーウンカイ"
+   },
+   {
+    "finish": 9,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ミサキビクトリー"
+   },
+   {
+    "finish": 10,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ムツアラシ"
+   }
+  ],
+  "20261031-R05": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ヨシノフクヒメ"
+   },
+   {
+    "finish": 2,
+    "gate": 3,
+    "umaban": 3,
+    "name": "センショウロック"
+   },
+   {
+    "finish": 3,
+    "gate": 7,
+    "umaban": 7,
+    "name": "リアスコトブキ"
+   },
+   {
+    "finish": 4,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ソウゾウノツバサ"
+   },
+   {
+    "finish": 5,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ホクセイアサノヤマ"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "アサヒファイヤー"
+   },
+   {
+    "finish": 7,
+    "gate": 4,
+    "umaban": 4,
+    "name": "リキ"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ホクセイソウダネー"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 10,
+    "name": "コーチャンファスト"
+   },
+   {
+    "finish": 10,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ホクセイタケコ"
+   }
+  ],
+  "20261031-R06": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ヒノクニキングオー"
+   },
+   {
+    "finish": 2,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ロキノクラン"
+   },
+   {
+    "finish": 3,
+    "gate": 7,
+    "umaban": 7,
+    "name": "シンザンミハル"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ガッツデー"
+   },
+   {
+    "finish": 5,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ホクショウシャルル"
+   },
+   {
+    "finish": 6,
+    "gate": 3,
+    "umaban": 3,
+    "name": "スピードシンデレラ"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ヴルールノヴァー"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ヒメトラハピネス"
+   },
+   {
+    "finish": 9,
+    "gate": 4,
+    "umaban": 4,
+    "name": "グローリア"
+   },
+   {
+    "finish": 10,
+    "gate": 1,
+    "umaban": 1,
+    "name": "キョウエイブラック"
+   }
+  ],
+  "20261031-R07": [
+   {
+    "finish": 1,
+    "gate": 7,
+    "umaban": 8,
+    "name": "トモコ"
+   },
+   {
+    "finish": 2,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ジェイドラゴン"
+   },
+   {
+    "finish": 3,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ジェイマーサ"
+   },
+   {
+    "finish": 4,
+    "gate": 4,
+    "umaban": 4,
+    "name": "アアモンドラヴリー"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ツガルタカラフジ"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ホクセイダイジン"
+   },
+   {
+    "finish": 7,
+    "gate": 5,
+    "umaban": 5,
+    "name": "クリスタルスノー"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "アソノウンカイ"
+   },
+   {
+    "finish": 9,
+    "gate": 7,
+    "umaban": 7,
+    "name": "サカノウンカイ"
+   },
+   {
+    "finish": 10,
+    "gate": 3,
+    "umaban": 3,
+    "name": "キョウエイプラチナ"
+   }
+  ],
+  "20261031-R08": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ショウライトマユ"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 7,
+    "name": "イワキボナール"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "クリスタルオリオン"
+   },
+   {
+    "finish": 4,
+    "gate": 1,
+    "umaban": 1,
+    "name": "バニラ"
+   },
+   {
+    "finish": 5,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ハイトップエース"
+   },
+   {
+    "finish": 6,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ツガルユリ"
+   },
+   {
+    "finish": 7,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ドウナンテンセイ"
+   },
+   {
+    "finish": 8,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ファーストココロノ"
+   },
+   {
+    "finish": 9,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ゼウススピード"
+   },
+   {
+    "finish": 10,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ハオリブル"
+   }
+  ],
+  "20261031-R09": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 10,
+    "name": "サトノプリンス"
+   },
+   {
+    "finish": 2,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ホクセイマリン"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "トマランサーヨウコ"
+   },
+   {
+    "finish": 4,
+    "gate": 5,
+    "umaban": 5,
+    "name": "エーデルシュタイン"
+   },
+   {
+    "finish": 5,
+    "gate": 7,
+    "umaban": 8,
+    "name": "キョウエイハンター"
+   },
+   {
+    "finish": 6,
+    "gate": 3,
+    "umaban": 3,
+    "name": "リアンドノール"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 9,
+    "name": "クレインテイオウ"
+   },
+   {
+    "finish": 8,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ハゴロモグルービー"
+   },
+   {
+    "finish": 9,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ドラゴンボーイ"
+   }
+  ],
+  "20261031-R10": [
+   {
+    "finish": 1,
+    "gate": 2,
+    "umaban": 2,
+    "name": "アソマルゼン"
+   },
+   {
+    "finish": 2,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ジェイセリーヌ"
+   },
+   {
+    "finish": 3,
+    "gate": 7,
+    "umaban": 7,
+    "name": "アカオビ"
+   },
+   {
+    "finish": 4,
+    "gate": 6,
+    "umaban": 6,
+    "name": "サクラジェームス"
+   },
+   {
+    "finish": 5,
+    "gate": 4,
+    "umaban": 4,
+    "name": "コウイッテン"
+   },
+   {
+    "finish": 6,
+    "gate": 3,
+    "umaban": 3,
+    "name": "クリスタルスペリオ"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ペガサスホース"
+   },
+   {
+    "finish": 8,
+    "gate": 8,
+    "umaban": 10,
+    "name": "フクノハレルヤ"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ヤマノトップ"
+   },
+   {
+    "finish": 10,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ツルイミツサクラ"
+   }
+  ],
+  "20261031-R11": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 10,
+    "name": "マルホントーマス"
+   },
+   {
+    "finish": 2,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ウルトラコタロウ"
+   },
+   {
+    "finish": 3,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ヤマノキング"
+   },
+   {
+    "finish": 4,
+    "gate": 7,
+    "umaban": 8,
+    "name": "クリスタルイプセ"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 9,
+    "name": "カイセドクター"
+   },
+   {
+    "finish": 6,
+    "gate": 4,
+    "umaban": 4,
+    "name": "レイリーキング"
+   },
+   {
+    "finish": 7,
+    "gate": 3,
+    "umaban": 3,
+    "name": "コウシュハメジャー"
+   },
+   {
+    "finish": 8,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ダイリンファイター"
+   },
+   {
+    "finish": 9,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ギンジ"
+   },
+   {
+    "finish": 10,
+    "gate": 1,
+    "umaban": 1,
+    "name": "シルバーアロイ"
+   }
+  ],
+  "20261031-R12": [
+   {
+    "finish": 1,
+    "gate": 7,
+    "umaban": 7,
+    "name": "クリスタルホーク"
+   },
+   {
+    "finish": 2,
+    "gate": 4,
+    "umaban": 4,
+    "name": "タカシオ"
+   },
+   {
+    "finish": 3,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ホクトヒーロー"
+   },
+   {
+    "finish": 4,
+    "gate": 2,
+    "umaban": 2,
+    "name": "キタサカエカイザー"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 8,
+    "name": "サカノハマナカ"
+   },
+   {
+    "finish": 6,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ジェイマーシー"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ジェイライアン"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "マオノダイマオー"
+   },
+   {
+    "finish": 9,
+    "gate": 3,
+    "umaban": 3,
+    "name": "シンエイハリアー"
+   }
+  ],
+  "20261026-R01": [
+   {
+    "finish": 1,
+    "gate": 7,
+    "umaban": 8,
+    "name": "トヨミヒラリ"
+   },
+   {
+    "finish": 2,
+    "gate": 1,
+    "umaban": 1,
+    "name": "マルホンミレイ"
+   },
+   {
+    "finish": 3,
+    "gate": 3,
+    "umaban": 3,
+    "name": "サクセスドリーム"
+   },
+   {
+    "finish": 4,
+    "gate": 7,
+    "umaban": 7,
+    "name": "モカ"
+   },
+   {
+    "finish": 5,
+    "gate": 6,
+    "umaban": 6,
+    "name": "アルバノチエチャン"
+   },
+   {
+    "finish": 6,
+    "gate": 5,
+    "umaban": 5,
+    "name": "キンノロナ"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 10,
+    "name": "レディームキムキ"
+   },
+   {
+    "finish": 8,
+    "gate": 4,
+    "umaban": 4,
+    "name": "キンスピード"
+   },
+   {
+    "finish": 9,
+    "gate": 2,
+    "umaban": 2,
+    "name": "アンペラール"
+   },
+   {
+    "finish": 10,
+    "gate": 8,
+    "umaban": 9,
+    "name": "サクセストップ"
+   }
+  ],
+  "20261026-R02": [
+   {
+    "finish": 1,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ヴィクトリアマサミ"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ネムロカラキマシタ"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "シロイキバ"
+   },
+   {
+    "finish": 4,
+    "gate": 1,
+    "umaban": 1,
+    "name": "アアモンドワク"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "クリスタルグレン"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "トウヤカムニャック"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 7,
+    "name": "プリンセスルナ"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "トウヤノマピュース"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ワイルドユリア"
+   },
+   {
+    "finish": 10,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ホクセイヤマビコ"
+   }
+  ],
+  "20261026-R03": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ファミリーノチカラ"
+   },
+   {
+    "finish": 2,
+    "gate": 8,
+    "umaban": 9,
+    "name": "アーススノーパール"
+   },
+   {
+    "finish": 3,
+    "gate": 7,
+    "umaban": 8,
+    "name": "オータムクイーン"
+   },
+   {
+    "finish": 4,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ファンタジスタ"
+   },
+   {
+    "finish": 5,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ヨシノグレンザ"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ミントココロノ"
+   },
+   {
+    "finish": 7,
+    "gate": 4,
+    "umaban": 4,
+    "name": "オレニホレルナ"
+   },
+   {
+    "finish": 8,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ナカゼンミハル"
+   },
+   {
+    "finish": 9,
+    "gate": 5,
+    "umaban": 5,
+    "name": "スーパーメジャー"
+   },
+   {
+    "finish": 10,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ファーストヒロイン"
+   }
+  ],
+  "20261026-R04": [
+   {
+    "finish": 1,
+    "gate": 2,
+    "umaban": 2,
+    "name": "アリチャン"
+   },
+   {
+    "finish": 2,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ポプコ"
+   },
+   {
+    "finish": 3,
+    "gate": 8,
+    "umaban": 8,
+    "name": "キョウドノホシ"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 9,
+    "name": "スーパーハクリュウ"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "キタノキボウ"
+   },
+   {
+    "finish": 6,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ユメニシキ"
+   },
+   {
+    "finish": 7,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ヒノクニファラオ"
+   },
+   {
+    "finish": 8,
+    "gate": 5,
+    "umaban": 5,
+    "name": "オオサト"
+   },
+   {
+    "finish": 9,
+    "gate": 4,
+    "umaban": 4,
+    "name": "イワキニセイ"
+   }
+  ],
+  "20261026-R05": [
+   {
+    "finish": 1,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ハートキング"
+   },
+   {
+    "finish": 2,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ホクセイハスゴイ"
+   },
+   {
+    "finish": 3,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ディオネダイヤ"
+   },
+   {
+    "finish": 4,
+    "gate": 5,
+    "umaban": 5,
+    "name": "スターメジャー"
+   },
+   {
+    "finish": 5,
+    "gate": 7,
+    "umaban": 7,
+    "name": "カナデ"
+   },
+   {
+    "finish": 6,
+    "gate": 6,
+    "umaban": 6,
+    "name": "シンエイパーク"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 10,
+    "name": "タマシゲ"
+   },
+   {
+    "finish": 8,
+    "gate": 4,
+    "umaban": 4,
+    "name": "フォルゴーレ"
+   },
+   {
+    "finish": 9,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ジェイアンナ"
+   },
+   {
+    "finish": 10,
+    "gate": 1,
+    "umaban": 1,
+    "name": "アサヒパレス"
+   }
+  ],
+  "20261026-R06": [
+   {
+    "finish": 1,
+    "gate": 4,
+    "umaban": 4,
+    "name": "フェアリーマックス"
+   },
+   {
+    "finish": 2,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ハゴロモミニョン"
+   },
+   {
+    "finish": 3,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ラストユウセン"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 9,
+    "name": "サカノヒカルアオ"
+   },
+   {
+    "finish": 5,
+    "gate": 2,
+    "umaban": 2,
+    "name": "トウメイクイン"
+   },
+   {
+    "finish": 6,
+    "gate": 3,
+    "umaban": 3,
+    "name": "クシロキングマン"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ホクセイスズタロウ"
+   },
+   {
+    "finish": 8,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ゴールドタカラ"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 8,
+    "name": "トマランサーレンカ"
+   }
+  ],
+  "20261026-R07": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ミスベンティ"
+   },
+   {
+    "finish": 2,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ホクセイミドリコ"
+   },
+   {
+    "finish": 3,
+    "gate": 3,
+    "umaban": 3,
+    "name": "レオナウイン"
+   },
+   {
+    "finish": 4,
+    "gate": 2,
+    "umaban": 2,
+    "name": "スズノチカラ"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ヤマノシテンノウ"
+   },
+   {
+    "finish": 6,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ブレイブハート"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "スーパーサンセイ"
+   },
+   {
+    "finish": 8,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ヒゴサクラ"
+   },
+   {
+    "finish": 9,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ジェイノヒメ"
+   },
+   {
+    "finish": 10,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ホクセイタカボー"
+   }
+  ],
+  "20261026-R08": [
+   {
+    "finish": 1,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ツカサタロウ"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 8,
+    "name": "トム"
+   },
+   {
+    "finish": 3,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ホクセイタケタカラ"
+   },
+   {
+    "finish": 4,
+    "gate": 3,
+    "umaban": 3,
+    "name": "シンエイファイト"
+   },
+   {
+    "finish": 5,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ショウリノホシ"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ツガルフジ"
+   },
+   {
+    "finish": 7,
+    "gate": 1,
+    "umaban": 1,
+    "name": "サカノテンリュウ"
+   },
+   {
+    "finish": 8,
+    "gate": 8,
+    "umaban": 10,
+    "name": "タイガ"
+   },
+   {
+    "finish": 9,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ウチュウジン"
+   },
+   {
+    "finish": 10,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ハリケーン"
+   }
+  ],
+  "20261026-R09": [
+   {
+    "finish": 1,
+    "gate": 6,
+    "umaban": 6,
+    "name": "タイトルボス"
+   },
+   {
+    "finish": 2,
+    "gate": 5,
+    "umaban": 5,
+    "name": "トカチヒロ"
+   },
+   {
+    "finish": 3,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ビックボス"
+   },
+   {
+    "finish": 4,
+    "gate": 3,
+    "umaban": 3,
+    "name": "サダノショウリキ"
+   },
+   {
+    "finish": 5,
+    "gate": 4,
+    "umaban": 4,
+    "name": "キタノバンリュウ"
+   },
+   {
+    "finish": 6,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ユウマサイコー"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ホウエイチャン"
+   },
+   {
+    "finish": 8,
+    "gate": 8,
+    "umaban": 9,
+    "name": "カワノデッカー"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 8,
+    "name": "ヨシノヒメ"
+   }
+  ],
+  "20261026-R10": [
+   {
+    "finish": 1,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ハヤブサリュウ"
+   },
+   {
+    "finish": 2,
+    "gate": 4,
+    "umaban": 4,
+    "name": "イワキボブ"
+   },
+   {
+    "finish": 3,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ヤマノドラゴン"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 10,
+    "name": "パワーハンター"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 9,
+    "name": "サカノカイリキ"
+   },
+   {
+    "finish": 6,
+    "gate": 1,
+    "umaban": 1,
+    "name": "バンクフェーブル"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "クニキヨタイショウ"
+   },
+   {
+    "finish": 8,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ショコラペガサス"
+   },
+   {
+    "finish": 9,
+    "gate": 7,
+    "umaban": 7,
+    "name": "マルホンジュセ"
+   },
+   {
+    "finish": 10,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ハゴロモファルコン"
+   }
+  ],
+  "20261026-R11": [
+   {
+    "finish": 1,
+    "gate": 3,
+    "umaban": 3,
+    "name": "フレイムファースト"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ホクセイウンカイ"
+   },
+   {
+    "finish": 3,
+    "gate": 2,
+    "umaban": 2,
+    "name": "アアモンドキーマン"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 9,
+    "name": "トウケイレーヴ"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 10,
+    "name": "クリスタルゴースト"
+   },
+   {
+    "finish": 6,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ジェイホース"
+   },
+   {
+    "finish": 7,
+    "gate": 5,
+    "umaban": 5,
+    "name": "スカーレット"
+   },
+   {
+    "finish": 8,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ジェイヒーロー"
+   },
+   {
+    "finish": 9,
+    "gate": 6,
+    "umaban": 6,
+    "name": "サクラヤマト"
+   },
+   {
+    "finish": 10,
+    "gate": 1,
+    "umaban": 1,
+    "name": "アオノソルテ"
+   }
+  ],
+  "20261026-R12": [
+   {
+    "finish": 1,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ホクセイボーイ"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 7,
+    "name": "マツサンブラック"
+   },
+   {
+    "finish": 3,
+    "gate": 8,
+    "umaban": 10,
+    "name": "プリンセスミミ"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 9,
+    "name": "イチマツ"
+   },
+   {
+    "finish": 5,
+    "gate": 7,
+    "umaban": 8,
+    "name": "スズカゼ"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "アグライア"
+   },
+   {
+    "finish": 7,
+    "gate": 1,
+    "umaban": 1,
+    "name": "クリスタルアッシュ"
+   },
+   {
+    "finish": 8,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ミオリブロッサム"
+   },
+   {
+    "finish": 9,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ミストレンタ"
+   },
+   {
+    "finish": 10,
+    "gate": 6,
+    "umaban": 6,
+    "name": "クリスタルケルビム"
+   }
+  ],
+  "20261025-R01": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ジェイミスター"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 7,
+    "name": "パワークレオパトラ"
+   },
+   {
+    "finish": 3,
+    "gate": 7,
+    "umaban": 8,
+    "name": "アアモンドアノン"
+   },
+   {
+    "finish": 4,
+    "gate": 1,
+    "umaban": 1,
+    "name": "カワノチャタロウ"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "フジベンケイ"
+   },
+   {
+    "finish": 6,
+    "gate": 4,
+    "umaban": 4,
+    "name": "タカラムサシ"
+   },
+   {
+    "finish": 7,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ガシンショウタン"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ビックストーン"
+   },
+   {
+    "finish": 9,
+    "gate": 5,
+    "umaban": 5,
+    "name": "イワキゴールドマン"
+   },
+   {
+    "finish": 10,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ツガルキンフジ"
+   }
+  ],
+  "20261025-R02": [
+   {
+    "finish": 1,
+    "gate": 2,
+    "umaban": 2,
+    "name": "コウバイヒメ"
+   },
+   {
+    "finish": 2,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ヨシノヤマト"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "カワノネネチャン"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 8,
+    "name": "サンルックコンノ"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ヨシノブチコ"
+   },
+   {
+    "finish": 6,
+    "gate": 6,
+    "umaban": 6,
+    "name": "プリンセスステラ"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 9,
+    "name": "レーヌブルー"
+   },
+   {
+    "finish": 8,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ヨシノフジ"
+   },
+   {
+    "finish": 9,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ストラヴィン"
+   }
+  ],
+  "20261025-R03": [
+   {
+    "finish": 1,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ジュエリー"
+   },
+   {
+    "finish": 2,
+    "gate": 6,
+    "umaban": 6,
+    "name": "スーパータケル"
+   },
+   {
+    "finish": 3,
+    "gate": 2,
+    "umaban": 2,
+    "name": "モンスター"
+   },
+   {
+    "finish": 4,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ジェイマット"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 8,
+    "name": "フクシゲ"
+   },
+   {
+    "finish": 6,
+    "gate": 5,
+    "umaban": 5,
+    "name": "シャインクィーン"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 7,
+    "name": "アアモンドカイト"
+   },
+   {
+    "finish": 8,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ヒノクニプリンセス"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 9,
+    "name": "グランプリスラム"
+   }
+  ],
+  "20261025-R04": [
+   {
+    "finish": 1,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ホクセイコウヘイ"
+   },
+   {
+    "finish": 2,
+    "gate": 8,
+    "umaban": 10,
+    "name": "シャインサクラ"
+   },
+   {
+    "finish": 3,
+    "gate": 6,
+    "umaban": 6,
+    "name": "サカノオオオク"
+   },
+   {
+    "finish": 4,
+    "gate": 2,
+    "umaban": 2,
+    "name": "キンノキセキ"
+   },
+   {
+    "finish": 5,
+    "gate": 5,
+    "umaban": 5,
+    "name": "マキシゴールド"
+   },
+   {
+    "finish": 6,
+    "gate": 7,
+    "umaban": 7,
+    "name": "イワキハルヒメ"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 9,
+    "name": "チェルシーヴォラ"
+   },
+   {
+    "finish": 8,
+    "gate": 3,
+    "umaban": 3,
+    "name": "モトイチヒメ"
+   },
+   {
+    "finish": 9,
+    "gate": 1,
+    "umaban": 1,
+    "name": "フェアリーブラック"
+   },
+   {
+    "finish": 10,
+    "gate": 7,
+    "umaban": 8,
+    "name": "アアモンドサン"
+   }
+  ],
+  "20261025-R05": [
+   {
+    "finish": 1,
+    "gate": 1,
+    "umaban": 1,
+    "name": "メイコウブラック"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ミスキャップ"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ホクセイモモコ"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 10,
+    "name": "イワキマッシグラ"
+   },
+   {
+    "finish": 5,
+    "gate": 2,
+    "umaban": 2,
+    "name": "キタノレンザン"
+   },
+   {
+    "finish": 6,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ワフラーム"
+   },
+   {
+    "finish": 7,
+    "gate": 6,
+    "umaban": 6,
+    "name": "クリスタルヒリュウ"
+   },
+   {
+    "finish": 8,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ウル"
+   },
+   {
+    "finish": 9,
+    "gate": 3,
+    "umaban": 3,
+    "name": "マオノウンカイ"
+   }
+  ],
+  "20261025-R06": [
+   {
+    "finish": 1,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ホクセイスピカ"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 7,
+    "name": "クリスタルパール"
+   },
+   {
+    "finish": 3,
+    "gate": 4,
+    "umaban": 4,
+    "name": "ヒロインミコ"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 10,
+    "name": "マオノクラージュ"
+   },
+   {
+    "finish": 5,
+    "gate": 5,
+    "umaban": 5,
+    "name": "シンゲキノハルキ"
+   },
+   {
+    "finish": 6,
+    "gate": 2,
+    "umaban": 2,
+    "name": "フブキライデン"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ヨーコ"
+   },
+   {
+    "finish": 8,
+    "gate": 8,
+    "umaban": 9,
+    "name": "マナザシ"
+   },
+   {
+    "finish": 9,
+    "gate": 1,
+    "umaban": 1,
+    "name": "トト"
+   },
+   {
+    "finish": 10,
+    "gate": 6,
+    "umaban": 6,
+    "name": "プリンセスエア"
+   }
+  ],
+  "20261025-R07": [
+   {
+    "finish": 1,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ハオ"
+   },
+   {
+    "finish": 2,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ヤマトリュウ"
+   },
+   {
+    "finish": 3,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ジェイノダイジン"
+   },
+   {
+    "finish": 4,
+    "gate": 7,
+    "umaban": 8,
+    "name": "マルホンカヒア"
+   },
+   {
+    "finish": 5,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ハゴロモトレジャー"
+   },
+   {
+    "finish": 6,
+    "gate": 1,
+    "umaban": 1,
+    "name": "サカノダンスクイン"
+   },
+   {
+    "finish": 7,
+    "gate": 5,
+    "umaban": 5,
+    "name": "クラウンワン"
+   },
+   {
+    "finish": 8,
+    "gate": 4,
+    "umaban": 4,
+    "name": "テンノキズナ"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 10,
+    "name": "ルミナス"
+   },
+   {
+    "finish": 10,
+    "gate": 3,
+    "umaban": 3,
+    "name": "マンノチカラ"
+   }
+  ],
+  "20261025-R08": [
+   {
+    "finish": 1,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ワールドジパング"
+   },
+   {
+    "finish": 2,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ビエイキャノン"
+   },
+   {
+    "finish": 3,
+    "gate": 8,
+    "umaban": 10,
+    "name": "アオニシキ"
+   },
+   {
+    "finish": 4,
+    "gate": 8,
+    "umaban": 9,
+    "name": "モンスターオウキ"
+   },
+   {
+    "finish": 5,
+    "gate": 3,
+    "umaban": 3,
+    "name": "クリスタルソリッド"
+   },
+   {
+    "finish": 6,
+    "gate": 5,
+    "umaban": 5,
+    "name": "ハマカムイ"
+   },
+   {
+    "finish": 7,
+    "gate": 4,
+    "umaban": 4,
+    "name": "マオノエトワール"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "アンズティエルナ"
+   },
+   {
+    "finish": 9,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ハゴロモゴールド"
+   },
+   {
+    "finish": 10,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ニシオギオリジン"
+   }
+  ],
+  "20261025-R09": [
+   {
+    "finish": 1,
+    "gate": 2,
+    "umaban": 2,
+    "name": "トップトレジャー"
+   },
+   {
+    "finish": 2,
+    "gate": 3,
+    "umaban": 3,
+    "name": "リュウセイ"
+   },
+   {
+    "finish": 3,
+    "gate": 5,
+    "umaban": 5,
+    "name": "イッポンマツ"
+   },
+   {
+    "finish": 4,
+    "gate": 7,
+    "umaban": 7,
+    "name": "テンボシヴィーナス"
+   },
+   {
+    "finish": 5,
+    "gate": 1,
+    "umaban": 1,
+    "name": "オーシャンヒーロー"
+   },
+   {
+    "finish": 6,
+    "gate": 4,
+    "umaban": 4,
+    "name": "トップギヤ"
+   },
+   {
+    "finish": 7,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ジェイメジャー"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "イワキダイフク"
+   },
+   {
+    "finish": 9,
+    "gate": 7,
+    "umaban": 8,
+    "name": "ニジイロアオゾラ"
+   },
+   {
+    "finish": 10,
+    "gate": 8,
+    "umaban": 10,
+    "name": "フクフクライデン"
+   }
+  ],
+  "20261025-R10": [
+   {
+    "finish": 1,
+    "gate": 8,
+    "umaban": 9,
+    "name": "オレニマカセロ"
+   },
+   {
+    "finish": 2,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ヤマツネライン"
+   },
+   {
+    "finish": 3,
+    "gate": 2,
+    "umaban": 2,
+    "name": "ツガルケッパレフジ"
+   },
+   {
+    "finish": 4,
+    "gate": 1,
+    "umaban": 1,
+    "name": "タカシマフクマツ"
+   },
+   {
+    "finish": 5,
+    "gate": 5,
+    "umaban": 5,
+    "name": "サカノトウカイ"
+   },
+   {
+    "finish": 6,
+    "gate": 8,
+    "umaban": 8,
+    "name": "スターフェニックス"
+   },
+   {
+    "finish": 7,
+    "gate": 7,
+    "umaban": 7,
+    "name": "ツガルノセンショウ"
+   },
+   {
+    "finish": 8,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ジェイノコマ"
+   }
+  ],
+  "20261025-R11": [
+   {
+    "finish": 1,
+    "gate": 5,
+    "umaban": 5,
+    "name": "メムロボブサップ"
+   },
+   {
+    "finish": 2,
+    "gate": 2,
+    "umaban": 2,
+    "name": "クリスタルコルド"
+   },
+   {
+    "finish": 3,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ローランド"
+   },
+   {
+    "finish": 4,
+    "gate": 4,
+    "umaban": 4,
+    "name": "マルホンリョウユウ"
+   },
+   {
+    "finish": 5,
+    "gate": 1,
+    "umaban": 1,
+    "name": "タカラキングダム"
+   },
+   {
+    "finish": 6,
+    "gate": 3,
+    "umaban": 3,
+    "name": "ネオキングダム"
+   }
+  ],
+  "20261025-R12": [
+   {
+    "finish": 1,
+    "gate": 5,
+    "umaban": 5,
+    "name": "パワフルクィーン"
+   },
+   {
+    "finish": 2,
+    "gate": 8,
+    "umaban": 9,
+    "name": "ホクショウムサシ"
+   },
+   {
+    "finish": 3,
+    "gate": 1,
+    "umaban": 1,
+    "name": "ホクショウレディー"
+   },
+   {
+    "finish": 4,
+    "gate": 4,
+    "umaban": 4,
+    "name": "レジェンドボス"
+   },
+   {
+    "finish": 5,
+    "gate": 7,
+    "umaban": 8,
+    "name": "コーワレックス"
+   },
+   {
+    "finish": 6,
+    "gate": 3,
+    "umaban": 3,
+    "name": "グリフィス"
+   },
+   {
+    "finish": 7,
+    "gate": 6,
+    "umaban": 6,
+    "name": "ユウマダイマジン"
+   },
+   {
+    "finish": 8,
+    "gate": 7,
+    "umaban": 7,
+    "name": "キタノボブサップ"
+   },
+   {
+    "finish": 9,
+    "gate": 8,
+    "umaban": 10,
+    "name": "コマサンリキ"
+   }
+  ]
+ }
+}

@@ -165,3 +165,13 @@ npm run build && npx netlify deploy --prod --dir=dist
 - 1点目: 積が最大の3頭ボックス（＝スコア上位3頭）
 - 期待値倍率 = その組の積 ÷ 全組の平均積（1.00が平均）、確率シェア = 積 ÷ 全組の積の合計
 - 上位10通りを一覧表示。オッズは未使用のため金額ベースの期待値ではありません。
+
+## 結果の自動取得（PDF優先 → HTML フォールバック）
+「結果を自動取得」ボタン（60秒ガード付き）で表示中レースの着順を取得し `updateWithResult` で重みを更新します。
+1. **公式成績表PDF**（banei-keiba.or.jp の `res1.pdf`/`res2.pdf`）: `cd frontend && .venv/bin/python scripts/fetch_pdf_results.py` で
+   `src/data/results_from_pdf.json` と `public/results.json` を生成。アプリはまず同一オリジンの `/results.json` を読み（CORS不要）、失敗時は同梱版を使います。
+2. **HTML**（keiba.go.jp RaceMarkTable, 帯広 babaCode=3）: 列は `td.a`=着順, `td.b`=枠, `td.c`=馬番, `td.d`=馬名, `td.h`=騎手。
+   CORS 経路: direct → Cloudflare Workers (`VITE_PROXY_URL`) → allorigins.win → corsproxy.io。
+3. 両方失敗したレースはカードに「⚠ 結果を取得できませんでした」と表示し、console.error に記録（アプリは継続）。
+※ 出走表データ自体がPDF由来でない場合は上部に「データ未検証」バナー。
+更新手順: 結果PDFを取り直す → `npm run build` → `netlify deploy --prod --dir=frontend/dist`。

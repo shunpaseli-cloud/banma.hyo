@@ -3,20 +3,21 @@
 // 結果ページは帯広競馬場の公式レース情報と同じ地方競馬全国協会(keiba.go.jp)の
 // 「レース成績表」(RaceMarkTable, 帯広 babaCode=3) を使う。
 import races from './data/races.json'
-import { updateWithResult } from './feedback.js'
+import { predict, updateWithResult } from './feedback.js'
+import BUNDLED_PDF_RESULTS from './data/results_from_pdf.json'
 
 export const BABA_CODE = 3 // 帯広
 const RESULT_BASE = 'https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable'
 // Cloudflare Workers プロキシURL。frontend/.env に
 //   VITE_PROXY_URL=https://your-worker.workers.dev
-// と書いて再ビルド。未設定なら corsproxy.io → allorigins.win を順に試す。
+// と書いて再ビルド。順序: direct → Workers → allorigins.win → corsproxy.io。
 export const WORKER_PROXY_URL = (import.meta.env.VITE_PROXY_URL || '').replace(/\/+$/, '')
 const enc = encodeURIComponent
 const FETCH_CHAIN = [
   ['direct', (u) => u],
   ...(WORKER_PROXY_URL ? [['worker', (u) => `${WORKER_PROXY_URL}/?url=${enc(u)}`]] : []),
-  ['corsproxy.io', (u) => `https://corsproxy.io/?url=${enc(u)}`],
   ['allorigins', (u) => `https://api.allorigins.win/raw?url=${enc(u)}`],
+  ['corsproxy.io', (u) => `https://corsproxy.io/?url=${enc(u)}`], // 任意の最終手段
 ]
 export const MIN_INTERVAL_MS = 60_000
 const LAST_KEY = 'banma.lastAutoFetch'
@@ -52,24 +53,52 @@ async function fetchHtml(url) {
 
 export const normalizeName = (s) => (s || '').normalize('NFKC').replace(/[\s\u3000]+/g, '').trim()
 
-// 成績表パーサー: section.gradeTable の各 tr → td.a=着順, td.horseName=馬名
+// 成績表(HTML)パーサー: keiba.go.jp RaceMarkTable の section.gradeTable
+// 列: td.a=着順, td.b=枠, td.c=馬番, td.d=馬名(horseName), td.h=騎手 （枠≠馬番、調教師≠騎手に注意）
 export function parseResults(html) {
   const doc = new DOMParser().parseFromString(html, 'text/html')
-  const rows = doc.querySelectorAll('section.gradeTable table tr')
   const out = []
-  rows.forEach(tr => {
-    const fin = parseInt(tr.querySelector('td.a')?.textContent.trim(), 10)
-    const name = normalizeName(tr.querySelector('td.horseName')?.textContent)
-    if (name && fin > 0) out.push({ name, finish: fin }) // 取消・除外(数字以外)は除く
+  doc.querySelectorAll('section.gradeTable table tr').forEach(tr => {
+    const t = (sel) => tr.querySelector(sel)?.textContent.normalize('NFKC').trim() ?? ''
+    const fin = parseInt(t('td.a'), 10)
+    const name = normalizeName(tr.querySelector('td.d, td.horseName')?.textContent)
+    const umaban = parseInt(t('td.c'), 10)
+    const gate = parseInt(t('td.b'), 10)
+    if (name && fin > 0) out.push({ name, finish: fin, umaban: umaban || null, gate: gate || null, jockey: normalizeName(t('td.h')) })
   })
   return out
 }
 
+// ① PDF成績表（scripts/fetch_pdf_results.py が生成）: まず同一オリジンの /results.json を最新取得、
+//    だめなら同梱版。② HTML (keiba.go.jp) をプロキシ連鎖で取得。
+let pdfCache = null
+async function loadPdfResults() {
+  if (pdfCache) return pdfCache
+  try {
+    const r = await fetch(`${import.meta.env.BASE_URL}results.json`, { cache: 'no-store' })
+    if (r.ok) { pdfCache = await r.json(); return pdfCache }
+  } catch (e) { console.warn('[scraper] results.json 取得失敗 → 同梱版', e.message) }
+  pdfCache = BUNDLED_PDF_RESULTS
+  return pdfCache
+}
+export async function getPdfResults(raceId) {
+  const rows = (await loadPdfResults())?.races?.[raceId]
+  return rows?.length ? rows.map(r => ({ ...r, name: normalizeName(r.name) })) : null
+}
+
 export async function getResults(raceId) {
-  const html = await fetchHtml(buildResultUrl(raceId))
-  const rows = parseResults(html)
-  if (!rows.length) throw new Error('着順が見つかりません（未確定 or HTML構造変更）')
-  return rows
+  const errs = []
+  try {
+    const pdf = await getPdfResults(raceId)
+    if (pdf) return { source: 'pdf', rows: pdf }
+    errs.push('PDF: 該当レースなし')
+  } catch (e) { errs.push(`PDF: ${e.message}`) }
+  try {
+    const rows = parseResults(await fetchHtml(buildResultUrl(raceId)))
+    if (rows.length) return { source: 'html', rows }
+    errs.push('HTML: 着順なし（未確定 or 構造変更）')
+  } catch (e) { errs.push(`HTML: ${e.message}`) }
+  throw new Error(errs.join(' / '))
 }
 
 // 馬名→horse_id のあいまい照合（完全一致→部分一致）
@@ -77,6 +106,7 @@ function matchToEntries(race, rows) {
   const results = {}, unmatched = []
   for (const row of rows) {
     const e = race.entries.find(x => normalizeName(x.name) === row.name)
+      || (row.umaban != null && race.entries.find(x => x.umaban === row.umaban && !x.name))
       || race.entries.find(x => { const n = normalizeName(x.name); return n.includes(row.name) || row.name.includes(n) })
     if (e) results[e.horse_id] = row.finish; else unmatched.push(row.name)
   }
@@ -86,10 +116,11 @@ function matchToEntries(race, rows) {
 
 export async function fetchAndUpdate(race) {
   try {
-    const rows = await getResults(race.race_id)
+    const { source, rows } = await getResults(race.race_id)
     const results = matchToEntries(race, rows)
     if (!Object.keys(results).length) throw new Error('出走馬と一致する馬名なし')
-    return { ok: true, ...updateWithResult(race, results) }
+    predict(race, true) // 予想を保存してから結果で学習
+    return { ok: true, source, ...updateWithResult(race, results) }
   } catch (e) {
     console.error(`[scraper] ${race.race_id} 取得失敗:`, e)
     return { ok: false, race_id: race.race_id, error: e.message }

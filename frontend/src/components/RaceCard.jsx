@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
 import { trioPredictions } from '../trio.js'
-export default function RaceCard({ race, onLearn }) {
+export default function RaceCard({ race, onLearn, fetchStatus }) {
   const preds = useMemo(() => predict(race), [race])
   const P = Object.fromEntries(preds.map(p => [p.horse_id, p]))
   const max = preds[0]?.score || 1
@@ -43,6 +43,9 @@ export default function RaceCard({ race, onLearn }) {
           : <button className="link" onClick={() => setOpen(true)}>着順を入力して学習</button>}
         <button className="more small" onClick={() => setTrioOpen(!trioOpen)}>{trioOpen ? '3連複を閉じる' : '3連複予想'}</button>
         {msg && <span className="msg">{msg}</span>}
+        {fetchStatus && <span className="msg">{fetchStatus.ok
+          ? `結果取得OK（${fetchStatus.source === 'pdf' ? '公式PDF' : 'HTML'}・${fetchStatus.updated}頭）`
+          : '⚠ 結果を取得できませんでした'}</span>}
       </div>
       {trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
