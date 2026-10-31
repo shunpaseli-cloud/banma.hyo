@@ -179,3 +179,14 @@ npm run build && npx netlify deploy --prod --dir=dist
 ## 直近レース自動表示・外れ分析
 - 起動時に `src/upcoming.js` が同梱データ（公式出走表PDF由来 `races_from_pdf.json`）から今日以降で最も近い開催日を選び、そのレースを先頭に表示。各カードに3連複ボックス（1位＋次点3通り）を自動表示、ボタンで上位10通り。
 - 結果学習／自動取得後、予想と着順が3着以上ずれた馬を `src/missAnalysis.js` で分析し `localStorage['banma.miss_log']` に保存（予想/実着、特徴量偏差、理由文）。次回、同条件（年齢・ソリ重量・枠・騎手）の馬に「この条件の馬は過去に外しやすい」警告を表示。
+
+## 過去レースの自動学習（入力不要）
+```bash
+cd frontend
+python3 scripts/fetch_pdf_results.py                       # 公式結果PDF → src/data/results_from_pdf.json
+python3 scripts/fetch_pdf_races.py --path 000000/17/0000001772 --out src/data/past/races_1772.json  # 過去出走表
+node scripts/learn_past.mjs                                # 全レースで学習 → src/data/learned_weights.json
+npm run build && netlify deploy --prod --dir dist
+```
+- 学習は結果のある全レースで実施。アプリは localStorage が空なら `learned_weights.json` を初期重みとして使用。
+- localStorage の予想・結果・外れログは直近2レース分だけ保持（重みは保持）。

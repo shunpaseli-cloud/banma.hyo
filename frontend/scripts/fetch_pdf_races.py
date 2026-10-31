@@ -64,6 +64,7 @@ def main():
     ids = re.findall(r"data/shpdf/(\d+/\d+/(\d+))/run1\.pdf", html)
     if "--date-id" in sys.argv:
         want = sys.argv[sys.argv.index("--date-id") + 1]; ids = [x for x in ids if x[1] == want]
+    if "--path" in sys.argv: ids = [(sys.argv[sys.argv.index("--path") + 1], "")]
     if not ids: raise SystemExit("PDFリンクが見つかりません")
     path = ids[0][0]
     urls = [f"{BASE}data/shpdf/{path}/run{n}.pdf" for n in (1, 2)]
@@ -93,6 +94,9 @@ def main():
         out.append({"race_id": rid, "race_date": date, "race_no": r["race_no"],
                     "name": f"帯広{r['race_no']}R {r['name']}".strip(), "track_moisture": None, "entries": es})
     if not out: raise SystemExit("PDF解析結果が0件")
+    if "--out" in sys.argv:  # 過去開催（学習用）: meta.json は触らない
+        pathlib.Path(sys.argv[sys.argv.index("--out") + 1]).write_text(json.dumps(out, ensure_ascii=False, indent=1))
+        print(f"OK {len(out)} races ({date})"); return
     (OUT / "races_from_pdf.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
     (OUT / "meta.json").write_text(json.dumps({"source": "pdf", "fetched_at": datetime.datetime.now().astimezone().isoformat(timespec="seconds"),
         "race_date": date, "url": urls, "races": len(out)}, ensure_ascii=False, indent=1))

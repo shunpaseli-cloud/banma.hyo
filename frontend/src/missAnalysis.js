@@ -24,8 +24,10 @@ export function analyzeMisses(race, preds, results) {
     out.push({ race_id: race.race_id, horse_id: p.horse_id, name: h.name, pred_rank: p.pred_rank, actual: fin,
       direction: over ? 'over' : 'under', culprit, deltas, buckets: b, moisture: race.track_moisture ?? null, reason, at: new Date().toISOString() })
   }
-  const log = loadMissLog().filter(x => x.race_id !== race.race_id).concat(out).slice(-500)
-  localStorage.setItem(KEY, JSON.stringify(log)); return out
+  const log = loadMissLog().filter(x => x.race_id !== race.race_id).concat(out)
+  const keep = new Set([...new Set(log.map(x => x.race_id))].sort().slice(-2))
+  const trimmed = log.filter(x => keep.has(x.race_id))
+  localStorage.setItem(KEY, JSON.stringify(trimmed)); return out
 }
 // 過去に同条件で2回以上外した馬へ警告
 export function missWarnings(race, log = loadMissLog()) {

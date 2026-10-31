@@ -2,6 +2,8 @@
 export const FEATURES = ['weight_pull', 'recent_form', 'gate', 'jockey']
 export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form: 0.35, gate: 0.05, jockey: 0.2 }
 export const LEARNING_RATE = 0.05
+import LEARNED from './data/learned_weights.json' with { type: 'json' }
+export const KEEP_RACES = 2
 const K = { w: 'banma.weights', p: 'banma.predictions', r: 'banma.results', f: 'banma.feedback' }
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }
 const store = (k, v) => localStorage.setItem(k, JSON.stringify(v))
@@ -9,7 +11,7 @@ const now = () => new Date().toISOString()
 
 export function getWeights() {
   const w = load(K.w, null)
-  if (!w) { store(K.w, DEFAULT_WEIGHTS); return { ...DEFAULT_WEIGHTS } }
+  if (!w) { const init = { ...DEFAULT_WEIGHTS, ...(LEARNED?.weights || {}) }; store(K.w, init); return init }
   return w
 }
 export function resetModel() { Object.values(K).forEach(k => localStorage.removeItem(k)) }
@@ -66,7 +68,7 @@ export function updateWithResult(race, results) {
       error: err, hit_win: +(p.pred_rank === 1 && finish === 1), hit_place: +(p.pred_rank <= 3 && finish <= 3), created_at: now() })
     p.status = 'done'; details.push({ prediction_id: p.id, error: +err.toFixed(4), finish })
   }
-  store(K.w, w); store(K.p, ps); store(K.f, fb)
+  store(K.w, w); store(K.p, ps); store(K.f, fb); pruneHistory()
   return { race_id: race.race_id, updated: details.length, details, weights: w }
 }
 export function accuracyReport() {
@@ -75,4 +77,13 @@ export function accuracyReport() {
   return { n, mae: n ? +(fb.reduce((s, x) => s + Math.abs(x.error), 0) / n).toFixed(4) : 0,
     win_rate: top ? +(fb.reduce((s, x) => s + x.hit_win, 0) / top).toFixed(3) : null,
     place_rate: top3 ? +(fb.reduce((s, x) => s + x.hit_place, 0) / top3).toFixed(3) : null }
+}
+// 学習後に予想/結果/フィードバック履歴を直近 KEEP_RACES レース分だけ残す（重みは保持）
+const lastIds = ids => [...new Set(ids)].sort().slice(-KEEP_RACES)
+export function pruneHistory(keep = KEEP_RACES) {
+  const ps = load(K.p, []), keepIds = new Set([...new Set(ps.map(p => p.race_id))].sort().slice(-keep))
+  store(K.p, ps.filter(p => keepIds.has(p.race_id)))
+  store(K.f, load(K.f, []).filter(x => keepIds.has(x.race_id)))
+  const res = load(K.r, {}), rk = new Set(lastIds(Object.keys(res).map(k => k.split('|')[0])))
+  store(K.r, Object.fromEntries(Object.entries(res).filter(([k]) => rk.has(k.split('|')[0]))))
 }
