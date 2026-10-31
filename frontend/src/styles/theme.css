@@ -42,3 +42,9 @@ body { margin: 0; background: var(--dirt); color: var(--cream);
   border: 2px solid var(--cream); border-radius: 4px; padding: 12px 14px; margin-bottom: 16px; font-size: .9rem; }
 .warn-banner strong { font-size: 1.1rem; letter-spacing: .1em; }
 .src-ok { font-size: .8rem; opacity: .7; margin-bottom: 10px; border-left: 3px solid var(--rust); padding-left: 8px; }
+.trio{margin-top:12px;background:#221E18;color:#F3EEE4;border-left:4px solid #D85A2A;padding:10px 12px;border-radius:4px}
+.trio h3{margin:6px 0;font-size:.95rem;color:#D85A2A}
+.trio-main{font-size:1.15rem;font-weight:bold;margin:4px 0}
+.trio-list{margin:0;padding-left:1.4em;font-size:.85rem}
+.trio-list li{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;padding:2px 0;border-bottom:1px solid #16130F}
+.trio-list b{margin-left:auto;color:#D85A2A}

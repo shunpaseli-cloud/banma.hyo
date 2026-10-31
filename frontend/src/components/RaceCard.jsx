@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
+import { trioPredictions } from '../trio.js'
 export default function RaceCard({ race, onLearn }) {
   const preds = useMemo(() => predict(race), [race])
   const P = Object.fromEntries(preds.map(p => [p.horse_id, p]))
@@ -7,6 +8,10 @@ export default function RaceCard({ race, onLearn }) {
   const [open, setOpen] = useState(false)
   const [fin, setFin] = useState({})
   const [msg, setMsg] = useState('')
+  const [trioOpen, setTrioOpen] = useState(false)
+  const trio = useMemo(() => trioOpen ? trioPredictions(preds) : null, [trioOpen, preds])
+  const H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
+  const lbl = p => { const h = H[p.horse_id] || {}; return `${h.umaban ?? h.gate ?? '?'} ${h.name ?? ''}` }
   const learn = () => {
     predict(race, true)
     const r = updateWithResult(race, fin)
@@ -36,8 +41,19 @@ export default function RaceCard({ race, onLearn }) {
         {open ? <><button className="more small" onClick={learn}>結果を学習</button>
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>
           : <button className="link" onClick={() => setOpen(true)}>着順を入力して学習</button>}
+        <button className="more small" onClick={() => setTrioOpen(!trioOpen)}>{trioOpen ? '3連複を閉じる' : '3連複予想'}</button>
         {msg && <span className="msg">{msg}</span>}
       </div>
+      {trio && trio.count > 0 && <div className="trio">
+        <h3>3連複ボックス（1点）</h3>
+        <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>
+        <p className="meta">期待値倍率 {trio.combos[0].evRatio.toFixed(2)}（平均=1.00）・確率シェア {(trio.combos[0].share * 100).toFixed(1)}%・全{trio.count}通り中1位</p>
+        <h3>上位10通り</h3>
+        <ol className="trio-list">{trio.combos.slice(0, 10).map((c, i) =>
+          <li key={i}><span>{c.horses.map(h => H[h.horse_id]?.umaban ?? H[h.horse_id]?.gate).join('-')}</span>
+            <small>{c.horses.map(h => H[h.horse_id]?.name).join('・')}</small>
+            <b>×{c.evRatio.toFixed(2)} / {(c.share * 100).toFixed(1)}%</b></li>)}</ol>
+      </div>}
     </article>
   )
 }
