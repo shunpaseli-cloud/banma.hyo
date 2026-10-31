@@ -2,4 +2,4 @@ banma.db
 __pycache__/
 .venv/
 node_modules/
-frontend/dist/
+frontend/node_modules/
