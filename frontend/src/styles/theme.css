@@ -38,3 +38,7 @@ body { margin: 0; background: var(--dirt); color: var(--cream);
 .fin{width:3em;padding:.2rem;border:1px solid #221E18;background:#F3EEE4;color:#221E18}
 .more.small{width:auto;padding:.4rem 1rem;margin:0}
 .msg{font-size:.8rem;color:#D85A2A}
+.warn-banner { display: flex; flex-direction: column; gap: 4px; background: var(--rust); color: var(--cream);
+  border: 2px solid var(--cream); border-radius: 4px; padding: 12px 14px; margin-bottom: 16px; font-size: .9rem; }
+.warn-banner strong { font-size: 1.1rem; letter-spacing: .1em; }
+.src-ok { font-size: .8rem; opacity: .7; margin-bottom: 10px; border-left: 3px solid var(--rust); padding-left: 8px; }

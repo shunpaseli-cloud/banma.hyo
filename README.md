@@ -135,3 +135,27 @@ cd /home/workdir/banma-hyo/frontend && npm run build
 cd .. && npx netlify deploy --prod --dir=frontend/dist
 ```
 
+
+## 出走表データの取得元（PDF優先 / HTMLフォールバック）
+
+| 優先 | 取得元 | 画面表示 |
+|---|---|---|
+| 1 | ばんえい競馬公式 出走表PDF（https://banei-keiba.or.jp/race_starting_pdf.php → `data/shpdf/.../run1.pdf`, `run2.pdf`） | 警告なし（出典表示のみ） |
+| 2 | HTMLスクレイパー由来 / 同梱 `src/data/races.json` | 赤い「⚠ データ未検証」バナー |
+
+※ obikan.net は現在到達不可のため、出走表は banei-keiba.or.jp の PDF を使います。
+
+### PDF データの更新（ビルド前に実行）
+```bash
+cd frontend
+python3 -m venv .venv && .venv/bin/pip install pdfplumber   # 初回のみ
+.venv/bin/python scripts/fetch_pdf_races.py                  # 最新開催日の run1/run2.pdf を解析
+npm run build && npx netlify deploy --prod --dir=dist
+```
+- 成功: `src/data/races_from_pdf.json`（枠・馬番・馬名・ばんえい重量・騎手・性・年齢）と `src/data/meta.json`（`{"source":"pdf", fetched_at, url, ...}`）を書き出し。
+- 失敗: `meta.json` を `{"source":"html", "error": ...}` にする → アプリは `races.json` を表示し「データ未検証」を出す。
+- 特定開催日: `--date-id 0000001774`。
+- 判定ロジックは `src/dataSource.js`（`resolveDataSource`）。PDF レイアウトは4列で、列境界は見出し「枠」の x 座標から決定、枠番は頭数から算出（9頭以上は外枠から2頭ずつ）。
+
+### HTMLスクレイパー（結果の自動取得用に継続使用）
+成績表 HTML の列: `td.a`=着順, `td.b`=枠, `td.c`=馬番, `td.d`=馬名, `td.g`=積載重量, `td.h`=騎手（`td.i` は調教師なので騎手に使わない）。

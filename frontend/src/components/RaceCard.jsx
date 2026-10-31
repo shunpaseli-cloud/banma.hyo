@@ -17,14 +17,14 @@ export default function RaceCard({ race, onLearn }) {
       <header className="card-head">
         <span className="rno">{race.race_no}R</span>
         <div><h2>{race.name}</h2>
-          <p className="meta">{race.race_date}・馬場水分 {race.track_moisture}%・{race.entries.length}頭</p></div>
+          <p className="meta">{race.race_date}{race.track_moisture != null && `・馬場水分 ${race.track_moisture}%`}・{race.entries.length}頭</p></div>
       </header>
       <table className="horses">
-        <thead><tr><th>枠</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>予想スコア</th><th>印</th>{open && <th>着</th>}</tr></thead>
+        <thead><tr><th>枠</th><th>馬番</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>予想スコア</th><th>印</th>{open && <th>着</th>}</tr></thead>
         <tbody>
           {race.entries.map(h => { const p = P[h.horse_id]; return (
             <tr key={h.horse_id} className={p.pred_rank === 1 ? 'top' : ''}>
-              <td className="gate">{h.gate}</td><td>{h.name}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
+              <td className="gate">{h.gate}</td><td>{h.umaban ?? '—'}</td><td>{h.name}{h.sex && <small> {h.sex}{h.age}</small>}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
               <td><div className="bar"><span style={{ width: `${(p.score / max) * 100}%` }} /></div>{p.score.toFixed(3)}</td>
               <td className="mark">{['◎', '○', '▲'][p.pred_rank - 1] || ''}</td>
               {open && <td><input className="fin" type="number" min="1" max={race.entries.length} inputMode="numeric"

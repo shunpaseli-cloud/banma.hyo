@@ -1,8 +1,8 @@
-banma.db
-__pycache__/
-.venv/
-node_modules/
-frontend/node_modules/
 
 # Local Netlify folder
 .netlify
+.venv/
+__pycache__/
+banma.db
+frontend/node_modules/
+node_modules/
