@@ -1,10 +1,10 @@
 {
  "source": "pdf",
- "fetched_at": "2026-10-31T23:33:26+09:00",
- "race_date": "2026-11-02",
+ "fetched_at": "2026-11-01T06:42:06+09:00",
+ "race_date": "2026-11-01",
  "url": [
-  "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001774/run1.pdf",
-  "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001774/run2.pdf"
+  "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001773/run1.pdf",
+  "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001773/run2.pdf"
  ],
  "races": 12
 }
