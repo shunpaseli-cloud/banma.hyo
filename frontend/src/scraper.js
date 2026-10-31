@@ -4,6 +4,7 @@
 // 「レース成績表」(RaceMarkTable, 帯広 babaCode=3) を使う。
 import races from './data/races.json'
 import { predict, updateWithResult } from './feedback.js'
+import { analyzeMisses } from './missAnalysis.js'
 import BUNDLED_PDF_RESULTS from './data/results_from_pdf.json'
 
 export const BABA_CODE = 3 // 帯広
@@ -120,7 +121,8 @@ export async function fetchAndUpdate(race) {
     const results = matchToEntries(race, rows)
     if (!Object.keys(results).length) throw new Error('出走馬と一致する馬名なし')
     predict(race, true) // 予想を保存してから結果で学習
-    return { ok: true, source, ...updateWithResult(race, results) }
+    const _pr = predict(race); const _u = updateWithResult(race, results)
+    return { ok: true, source, ..._u, misses: analyzeMisses(race, _pr, results) }
   } catch (e) {
     console.error(`[scraper] ${race.race_id} 取得失敗:`, e)
     return { ok: false, race_id: race.race_id, error: e.message }

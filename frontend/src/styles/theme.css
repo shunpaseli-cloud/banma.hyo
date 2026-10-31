@@ -48,3 +48,7 @@ body { margin: 0; background: var(--dirt); color: var(--cream);
 .trio-list{margin:0;padding-left:1.4em;font-size:.85rem}
 .trio-list li{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;padding:2px 0;border-bottom:1px solid #16130F}
 .trio-list b{margin-left:auto;color:#D85A2A}
+.auto-note{font-size:.8rem;color:#D85A2A;margin:.2rem 0 0}
+.warn{color:#D85A2A}
+.misswarn{border-top:1px dashed #D85A2A;margin-top:.6rem;padding-top:.4rem;font-size:.8rem}
+.misswarn h3{font-size:.85rem;color:#D85A2A;margin:.2rem 0}
