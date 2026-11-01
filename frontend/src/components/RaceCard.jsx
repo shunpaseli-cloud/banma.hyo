@@ -1,3 +1,4 @@
+import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
 import { trioPredictions } from '../trio.js'
@@ -55,6 +56,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
           : '⚠ 結果を取得できませんでした'}</span>}
       </div>
       {detail && <RaceDetail race={race} preds={preds} />}
+      <TrioPayout race={race} preds={preds} />
       {trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
         <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>

@@ -1,3 +1,4 @@
+import { TrioPayout } from '../trioPayout.jsx'
 import { prevFinish } from '../prevFinish.js'
 import { FEATURES, getWeights } from '../feedback.js'
 import { useEffect, useState } from 'react'
@@ -31,6 +32,7 @@ export default function RaceDetail({ race, preds }) {
       <div style={{ overflowX: 'auto' }}><table className="horses"><thead><tr><th>着</th><th>馬番</th><th>馬名</th><th>騎手</th><th>予想順</th><th>差</th></tr></thead>
         <tbody>{[...res].sort((a, b) => (a.finish ?? 99) - (b.finish ?? 99)).map((r, i) => { const e = findE(r); const pr = predOf(e)
           return <tr key={i}><td>{r.finish ?? '—'}</td><td>{r.umaban ?? e?.umaban ?? '—'}</td><td>{e?.name || r.name}</td><td>{e?.jockey || r.jockey || '—'}</td><td>{pr ?? '—'}</td><td>{pr && r.finish ? (pr === r.finish ? '◎' : (r.finish - pr > 0 ? '+' : '') + (r.finish - pr)) : ''}</td></tr> })}</tbody></table></div>
+      <TrioPayout race={race} preds={preds} />
       <h3>予想順 vs 実着順</h3>
       <div style={{ overflowX: 'auto' }}><table className="horses"><thead><tr><th>予想</th><th>馬</th><th>騎手</th><th>実着順</th></tr></thead>
         <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; const f = finOf[p.horse_id]
