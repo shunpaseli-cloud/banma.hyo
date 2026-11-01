@@ -1,6 +1,6 @@
 // 予想と実着順のズレを分析し localStorage(banma.miss_log) に保存。次回予想時に警告として使う。
 const KEY = 'banma.miss_log'
-const LABEL = { weight_pull: '牽引力(ソリ重量比)', recent_form: '近走成績', gate: '枠/馬番', jockey: '騎手' }
+const LABEL = { weight_pull: '牽引力(ソリ重量比)', recent_form_3: '近走3走', recent_form_5: '近走5走', gate: '枠/馬番', jockey: '騎手' }
 export const loadMissLog = () => { try { return JSON.parse(localStorage.getItem(KEY)) || [] } catch { return [] } }
 const bucket = h => ({
   age: h.age != null ? (h.age <= 3 ? '若駒(≤3)' : h.age >= 7 ? '高齢(≥7)' : '中堅') : null,

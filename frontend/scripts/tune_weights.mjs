@@ -7,7 +7,7 @@ const { trioPredictions } = await import('../src/trio.js')
 const LW = JSON.parse(fs.readFileSync(new URL('learned_weights.json', D)))
 const R = JSON.parse(fs.readFileSync(new URL('results_from_pdf.json', D)))
 const cards = Object.fromEntries(fs.readdirSync(new URL('past/', D)).flatMap(f => JSON.parse(fs.readFileSync(new URL('past/' + f, D)))).map(r => [r.race_id, r]))
-// 出走表が無いレースは結果から本番と同じ情報量のカードを復元（当日馬体重・騎手なし、recent_form=0.3固定）
+// 出走表が無いレースは結果から本番と同じ情報量のカードを復元（当日馬体重・騎手なし、旧recent_form=0.3はスコアに不使用。近走3/5走は過去結果から算出）
 const races = []
 for (const [rid, rows] of Object.entries(R.races)) {
   if (!rows?.length || rows.length < 4) continue
@@ -30,7 +30,7 @@ function evalW(w, set) {
   return { races: n, hit_rate: +(hit / n).toFixed(4), payout_races: pn, payout_hits: phit, roi: pn ? +(ret / (pn * 300)).toFixed(3) : null }
 }
 const cut = Math.floor(races.length * 0.7), train = races.slice(0, cut), test = races.slice(cut)
-const before = { ...DEFAULT_WEIGHTS, ...(LW.weights || {}) }
+const before = Object.fromEntries(FEATURES.map(f => [f, LW.weights?.[f] ?? DEFAULT_WEIGHTS[f]]))
 // 寄与分析: 各特徴量単独での的中率
 const single = Object.fromEntries(FEATURES.map(f => [f, evalW(Object.fromEntries(FEATURES.map(g => [g, g === f ? 1 : 0])), train).hit_rate]))
 // ランダム探索 + 座標微調整（trainで最適化、testで検証）

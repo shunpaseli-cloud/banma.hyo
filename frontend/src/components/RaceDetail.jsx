@@ -5,7 +5,7 @@ import { markOf, MARK_LEGEND } from '../marks.js'
 import { useEffect, useState } from 'react'
 import { getPdfResults } from '../scraper.js'
 const norm = s => (s || '').replace(/[\s\u3000]/g, '')
-const JP = { weight_pull: '牽引力（馬体重/ソリ重量）', recent_form: '近走成績', gate: '枠順', jockey: '騎手勝率', time_index: 'タイム指数（前走）', sled_light: 'ソリ軽さ（相対）', age_prime: '年齢（充実度）', body_mass: '馬体重（前走・相対）', apprentice: '減量騎手' }
+const JP = { weight_pull: '牽引力（馬体重/ソリ重量）', recent_form_3: '近走3走', recent_form_5: '近走5走', gate: '枠順', jockey: '騎手勝率', time_index: 'タイム指数（前走）', sled_light: 'ソリ軽さ（相対）', age_prime: '年齢（充実度）', body_mass: '馬体重（前走・相対）', apprentice: '減量騎手', prev_field_strength: '前走頭数（相手の多さ）', prev_opp_quality: '前走対戦馬の強さ（タイム指数）', peer_form_3: '同条件成績（ソリ±50kg・3走）' }
 export default function RaceDetail({ race, preds }) {
   const w = getWeights(), H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
   const n = preds.length

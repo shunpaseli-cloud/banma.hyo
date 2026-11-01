@@ -28,7 +28,7 @@ export default function RaceList({ date }) {
     <section>
       <div className="count">{races.items.length} / {races.total} レース表示中</div>
       <div className="stats">学習件数 {acc.n}・単勝的中率 {acc.win_rate ?? '—'}・複勝的中率 {acc.place_rate ?? '—'}
-        <br />重み: 牽引力 {w.weight_pull.toFixed(3)} / 近走 {w.recent_form.toFixed(3)} / 枠 {w.gate.toFixed(3)} / 騎手 {w.jockey.toFixed(3)}
+        <br />重み: 牽引力 {w.weight_pull.toFixed(3)} / 近走3走 {(w.recent_form_3 ?? 0).toFixed(3)} / 近走5走 {(w.recent_form_5 ?? 0).toFixed(3)} / 枠 {w.gate.toFixed(3)} / 騎手 {w.jockey.toFixed(3)}
         <button className="more" disabled={busy} onClick={autoFetch}>結果を自動取得</button>
         {msg && <div className="count">{msg}</div>}
         <button className="link" onClick={() => { resetModel(); setVer(v => v + 1) }}>学習をリセット</button></div>

@@ -1,9 +1,9 @@
 // ban_ei_feedback.py の JS 移植。永続化は localStorage。
-export const FEATURES = ['weight_pull', 'recent_form', 'gate', 'jockey', 'time_index', 'sled_light', 'age_prime', 'body_mass', 'apprentice']
-export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form: 0.35, gate: 0.05, jockey: 0.2, time_index: 0.1, sled_light: 0.08, age_prime: 0.05, body_mass: 0.06, apprentice: 0.03 }
+export const FEATURES = ['weight_pull', 'recent_form_3', 'recent_form_5', 'gate', 'jockey', 'time_index', 'sled_light', 'age_prime', 'body_mass', 'apprentice', 'prev_field_strength', 'prev_opp_quality', 'peer_form_3']
+export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form_3: 0.22, recent_form_5: 0.13, gate: 0.05, jockey: 0.2, time_index: 0.1, sled_light: 0.08, age_prime: 0.05, body_mass: 0.06, apprentice: 0.03, prev_field_strength: 0.03, prev_opp_quality: 0.05, peer_form_3: 0.05 }
 export const LEARNING_RATE = 0.05
 import LEARNED from './data/learned_weights.json' with { type: 'json' }
-import { prevFinish } from './prevFinish.js'
+import { prevFinish, recentForm, prevRaceContext, peerForm } from './prevFinish.js'
 export const KEEP_RACES = 2
 const K = { w: 'banma.weights', p: 'banma.predictions', r: 'banma.results', f: 'banma.feedback' }
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }
@@ -13,7 +13,7 @@ const now = () => new Date().toISOString()
 export function getWeights() {
   const w = load(K.w, null)
   if (!w) { const init = { ...DEFAULT_WEIGHTS, ...(LEARNED?.weights || {}) }; store(K.w, init); return init }
-  if (FEATURES.some(f => w[f] == null)) { for (const f of FEATURES) w[f] ??= DEFAULT_WEIGHTS[f]; store(K.w, w) }
+  if (FEATURES.some(f => w[f] == null) || 'recent_form' in w) { for (const f of FEATURES) w[f] ??= (LEARNED?.weights?.[f] ?? DEFAULT_WEIGHTS[f]); delete w.recent_form; store(K.w, w) }
   return w
 }
 export function resetModel() { Object.values(K).forEach(k => localStorage.removeItem(k)) }
@@ -34,7 +34,8 @@ export function extractFeatures(race) {
     const pull = (e.body_weight || 1000) / Math.max(e.sled_weight || 600, 1)
     out[e.horse_id] = {
       weight_pull: Math.min(pull / 2, 1),
-      recent_form: e.recent_form ?? 0.5,
+      recent_form_3: recentForm(e.name, race.race_id, 3), // 直近3走の正規化着順平均（過去走なし=0.5）
+      recent_form_5: recentForm(e.name, race.race_id, 5), // 直近5走の正規化着順平均（過去走なし=0.5）
       gate: 1 - (e.gate - 1) / n,
       jockey: jockeyRate(e.jockey),
       // 前走タイム指数(レース内偏差値)。取れない馬は null → スコア計算でスキップ
@@ -43,6 +44,8 @@ export function extractFeatures(race) {
       age_prime: ageScore(e.age ?? q?.age ?? null), // 4〜6歳が充実期
       body_mass: q?.body_weight && bws.length > 1 && bMax > bMin ? (q.body_weight - bMin) / (bMax - bMin) : null, // 前走馬体重（重い=牽引有利）
       apprentice: e.weight_reduction ? 1 : 0, // 減量騎手(☆等)
+      ...(c => ({ prev_field_strength: c?.fieldStrength ?? 0.5, prev_opp_quality: c?.oppQuality ?? 0.5 }))(prevRaceContext(e.name, race.race_id)), // 前走なし/time_index無し=0.5
+      peer_form_3: peerForm(e.name, race.race_id, e.sled_weight), // 同条件(ソリ重量±50kg)直近3走
     }
   }
   return out
