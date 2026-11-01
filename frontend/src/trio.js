@@ -36,3 +36,12 @@ export function axis3(preds, r = rules) {
   const [X, a, b, c] = s
   return [[X, a, b], [X, a, c], [X, b, c]]
 }
+// 三連複5点: 軸3点 + 穴1点(軸-2位-モデル5〜6位) + 大穴1点(軸-2位-モデル7位以下)。オッズ不使用
+export function trio5(preds, r = rules) {
+  const s = [...preds].sort((a, b) => b.score - a.score)
+  const base = axis3(preds, r); if (!base.length) return []
+  const [X, a] = s, out = base.map(t => ({ kind: '軸', t }))
+  const hole = s[4] ?? s[5]; if (hole) out.push({ kind: '穴', t: [X, a, hole] })
+  const ls = s.slice((r.trio5?.longshotRankGe ?? 7) - 1)[0]; if (ls) out.push({ kind: '大穴', t: [X, a, ls] })
+  return out
+}

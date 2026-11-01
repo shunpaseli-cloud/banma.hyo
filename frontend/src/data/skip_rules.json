@@ -8,5 +8,25 @@
  "_comment": "pastFormThreshold=0.700: 全データ1,652R(OLS雨切替)で0.5〜0.8を0.025刻みスイープし、警告なし群が3頭BOX等の的中・回収4指標すべてで警告あり群を上回った唯一の閾値(BOX回収差+30pt)。出典 /tmp/pastform_threshold_sweep.json。旧値0.625=前半458R中央値。隣接0.725で差が逆転するため過学習の可能性あり。過去正規化着順平均(1=全勝)。表示警告のみ、買い目は隠さない。",
  "pastFormFilterEnabled": true,
  "pastFormFilterMode": "skip",
- "_filterComment": "pastFormFilterEnabled: 軸(着順スコア1位)の過去正規化着順平均<閾値なら3連複の買い目を空にして見送り(SKIP)。次点軸への繰り上げはしない(分割検証と同条件)。閾値はpastFormThreshold(0.700, /tmp/pastform_threshold_sweep.json)。"
+ "_filterComment": "pastFormFilterEnabled: 軸(着順スコア1位)の過去正規化着順平均<閾値なら3連複の買い目を空にして見送り(SKIP)。次点軸への繰り上げはしない(分割検証と同条件)。閾値はpastFormThreshold(0.700, /tmp/pastform_threshold_sweep.json)。",
+ "field9WarnEnabled": true,
+ "field9PastFormLt": 0.7,
+ "rainMoistureGe": 1.8,
+ "_field9Comment": "9頭警告: 出走9頭 かつ 非雨(水分<1.8%) かつ 軸past_form<0.7。出典 /tmp/field9_cross.json(非雨・<0.7 298R BOX回収39.0%)。表示のみ。",
+ "trio5": {
+  "enabled": true,
+  "holeRanks": [
+   4,
+   6
+  ],
+  "longshotRankGe": 7,
+  "_comment": "三連複5点 = 軸3点(1-2-3/1-2-4/1-3-4) + 穴1点(軸-2位-モデル5〜6位の最上位) + 大穴1点(軸-2位-モデル7位以下の最上位)。オッズ条件なし。"
+ },
+ "paperRun": {
+  "enabled": true,
+  "days": 3,
+  "roiGatePct": 120,
+  "status": "未開始(120%未到達)",
+  "_comment": "120%ループで確認期間回収120%超え→次の3日間 紙運用で実測回収を記録→3日実測≥120%なら本番反映、未満なら条件見直し。"
+ }
 }
