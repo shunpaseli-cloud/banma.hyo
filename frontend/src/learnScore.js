@@ -5,7 +5,7 @@
 import MODEL from './data/learned_model.json' with { type: 'json' }
 import RAIN from './data/learned_model_rain.json' with { type: 'json' }
 import { estimateMoisture } from './moisture.js'
-import { featureVec, applyModel, dateOf, finScore } from './learnCore.js'
+import { featureVec, applyModel, dateOf, finScore, histEntry } from './learnCore.js'
 import { prevFinish, priorFinishes } from './prevFinish.js'
 const cards = Object.values(import.meta.glob ? import.meta.glob('./data/past/*.json', { eager: true, import: 'default' }) : {}).flatMap(d => d.races || d)
 export { MODEL, RAIN }
@@ -19,15 +19,16 @@ export function modelFor(date, moist) {
   if (date > MODEL.last_result_date) return { m: MODEL.final, asOf: MODEL.last_result_date, kind: 'final', model: 'normal', moist: mo }
   return null
 }
+const JK = {}; for (const r of cards) for (const e of r.entries || []) JK[`${e.race_id || r.race_id}|${e.name}`] = e.jockey
 const jockeyCount = (jk, rid) => jk ? cards.reduce((s, r) => s + (r.race_id < rid ? (r.entries || []).filter(e => e.jockey === jk).length : 0), 0) : 0
 // 各馬 { horse_id: { finish_score, pred_time_sec } }。モデルが無い日は null
 export function learnedPredict(race) {
   const date = race.race_date || dateOf(race.race_id), mm = modelFor(date, race.track_moisture != null ? +race.track_moisture : undefined); if (!mm) return null
   const n = race.entries.length, out = {}
   for (const e of race.entries) {
-    const hist = priorFinishes(e.name, race.race_id, 1e9).map(x => finScore(x.finish, x.field)).reverse()
+    const hist = priorFinishes(e.name, race.race_id, 1e9).map(x => histEntry(finScore(x.finish, x.field), JK[`${x.rid}|${e.name}`], x.rid, x.sled_weight)).reverse()
     const ee = { ...e, body_weight: e.body_weight ?? prevFinish(e.name, race.race_id)?.body_weight } // 出走表に馬体重が無い時は前走値
-    const x = featureVec(ee, race.race_id, n, { jockeyCount: jockeyCount(e.jockey, race.race_id), hist })
+    const x = featureVec(ee, race.race_id, n, { jockeyCount: jockeyCount(e.jockey, race.race_id), jockey: e.jockey, hist })
     out[e.horse_id] = { finish_score: applyModel(mm.m.finish, x), pred_time_sec: applyModel(mm.m.time, x), past_form: hist.length ? x[12] : null }
   }
   return { byHorse: out, asOf: mm.asOf, kind: mm.kind, model: mm.model, moist: mm.moist }

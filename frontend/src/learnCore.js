@@ -2,7 +2,12 @@
 // 純粋関数のみ(JSON読込なし)。オフライン scripts/train_learned_model.mjs とブラウザ learnScore.js で共用
 import { estimateMoisture } from './moisture.js'
 export const LAMBDA = 0.92
-export const FEATURE_NAMES = ['est_moist', 'sled_weight', 'body_weight', 'age', 'sex_male', 'sex_gelding', 'field', 'race_no', 'gate', 'umaban', 'jockey_count', 'horse_starts', 'horse_prev_fin_mean', 'moist_x_body', 'moist_x_sled', 'body_x_sled']
+export const FEATURE_NAMES = ['est_moist', 'sled_weight', 'body_weight', 'age', 'sex_male', 'sex_gelding', 'field', 'race_no', 'gate', 'umaban', 'jockey_count', 'horse_starts', 'horse_prev_fin_mean', 'moist_x_body', 'moist_x_sled', 'body_x_sled',
+  'last5_fin_std', 'last5_fin_mean', 'same_jockey_n', 'same_jockey_fin_mean', 'same_moist_bucket_n', 'same_moist_bucket_fin_mean', 'sled_change_prev', 'sled_change_vs_last3mean']
+// 水分帯 <1.5 / 1.5-3 / >=3 (%)
+export const moistBucket = m => m < 1.5 ? 0 : m < 3 ? 1 : 2
+// 過去走エントリ: { y: 着順スコア, jk: 騎手, mb: 水分帯, sl: ソリ重量 }（古い順）
+export const histEntry = (y, jk, rid, sl) => ({ y, jk: jk || null, mb: moistBucket(estimateMoisture(dateOf(rid)) ?? 1.6), sl: sl == null || sl === '' ? null : +sl })
 // 交互作用項(末尾に追加・各列は wfit で独立に標準化)。片方NaNならNaN→列平均で補完
 export const dateOf = rid => `${rid.slice(0, 4)}-${rid.slice(4, 6)}-${rid.slice(6, 8)}`
 export const raceNoOf = rid => +rid.split('-R')[1]
@@ -10,11 +15,17 @@ export const tsec = (t, s) => { if (s != null) return s; const a = (t || '').spl
 export const finScore = (f, n) => 1 - (f - 1) / Math.max(n - 1, 1)
 // 特徴ベクトル。ctx = { jockeyCount, hist(着順スコア配列: その日より前のみ) }
 export function featureVec(e, rid, field, ctx) {
-  const N = v => (v == null || v === '' ? NaN : +v), h = ctx.hist || []
+  const N = v => (v == null || v === '' ? NaN : +v), h = (ctx.hist || []).map(q => typeof q === 'number' ? { y: q } : q)
   const mo = estimateMoisture(dateOf(rid)) ?? 1.6, sl = N(e.sled_weight), bw = N(e.body_weight)
+  const mean = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : NaN, ys = h.map(q => q.y)
+  const l5 = ys.slice(-5), m5 = mean(l5), jk = ctx.jockey || e.jockey
+  const sj = jk ? h.filter(q => q.jk === jk).map(q => q.y) : [], mbk = moistBucket(mo), sm = h.filter(q => q.mb === mbk).map(q => q.y)
+  const sls = h.slice(-3).map(q => q.sl).filter(v => v), has = !Number.isNaN(sl) && sl && sls.length
   return [mo, sl, bw, N(e.age), e.sex === '牡' ? 1 : 0, e.sex === 'セ' ? 1 : 0,
-    field, raceNoOf(rid), N(e.gate), N(e.umaban), ctx.jockeyCount || 0, h.length, h.length ? h.reduce((a, b) => a + b, 0) / h.length : 0.5,
-    mo * bw, mo * sl, bw * sl]
+    field, raceNoOf(rid), N(e.gate), N(e.umaban), ctx.jockeyCount || 0, h.length, h.length ? mean(ys) : 0.5,
+    mo * bw, mo * sl, bw * sl,
+    l5.length >= 2 ? Math.sqrt(mean(l5.map(v => (v - m5) ** 2))) : NaN, l5.length ? m5 : NaN, sj.length, sj.length ? mean(sj) : NaN,
+    sm.length, sm.length ? mean(sm) : NaN, has ? sl - sls.at(-1) : NaN, has ? sl - mean(sls) : NaN]
 }
 function solve(A, b) { const n = b.length, M = A.map((r, i) => [...r, b[i]])
   for (let c = 0; c < n; c++) { let p = c; for (let r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[p][c])) p = r
@@ -46,9 +57,9 @@ export function trainChronological(results, pastCards = [], lambda = LAMBDA, war
     const rows = []
     for (const [rid, ent] of byDay[d].sort()) { const n = ent.length
       for (const e of ent) { if (!Number.isInteger(e.finish)) continue; const jk = JK[`${rid}|${e.name}`]
-        rows.push({ e, jk, k: !keep || keep(rid), x: featureVec(e, rid, n, { jockeyCount: jk ? cnt[jk] || 0 : 0, hist: hist[e.name] }), yf: finScore(e.finish, n), yt: tsec(e.time, e.time_sec) }) } }
+        rows.push({ e, jk, rid, k: !keep || keep(rid), x: featureVec(e, rid, n, { jockeyCount: jk ? cnt[jk] || 0 : 0, jockey: jk, hist: hist[e.name] }), yf: finScore(e.finish, n), yt: tsec(e.time, e.time_sec) }) } }
     for (const r of rows) { if (!r.k) continue; KD.add(d); X.push(r.x); YF.push(r.yf); YT.push(r.yt); DN.push(i) }
-    for (const r of rows) { if (r.jk) cnt[r.jk] = (cnt[r.jk] || 0) + 1; (hist[r.e.name] ||= []).push(r.yf) }
+    for (const r of rows) { if (r.jk) cnt[r.jk] = (cnt[r.jk] || 0) + 1; (hist[r.e.name] ||= []).push(histEntry(r.yf, r.jk, r.rid, r.e.sled_weight)) }
   })
   return { days, snapshots, final: fitAt(days.length), n_rows: X.length }
 }

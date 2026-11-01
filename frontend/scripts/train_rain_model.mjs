@@ -1,7 +1,7 @@
 // 雨用OLS: 推定/実測水分 >= RAIN_THRESHOLD の開催日だけを学習行に使う(履歴特徴は全レースで更新)
 // node scripts/train_rain_model.mjs [threshold] → src/data/learned_model_rain.json + 通常モデルとの比較
 import fs from 'node:fs'
-import { trainChronological, FEATURE_NAMES, LAMBDA, applyModel, featureVec, finScore, tsec, dateOf } from '../src/learnCore.js'
+import { trainChronological, FEATURE_NAMES, LAMBDA, applyModel, featureVec, histEntry, finScore, tsec, dateOf } from '../src/learnCore.js'
 import { estimateMoisture } from '../src/moisture.js'
 const TH = +(process.argv[2] || 1.8)
 const R = JSON.parse(fs.readFileSync(new URL('../src/data/results_from_pdf.json', import.meta.url))).races
@@ -16,12 +16,12 @@ const add = (s, ps, key) => { s.races++; if (ps.reduce((a, b) => b[key].f > a[ke
   for (const p of ps) { const y = tsec(p.e.time, p.e.time_sec); if (y != null) { s.ae += Math.abs(p[key].t - y); s.n++ } } }
 for (const dk of Object.keys(byDay).sort()) { const d = dateOf(dk), sn = norm.snapshots[d], sr = rain.snapshots[d], upd = []
   for (const rid of byDay[dk]) { const ent = R[rid].filter(e => Number.isInteger(e.finish)), nn = R[rid].length
-    const ps = ent.map(e => { const jk = JK[`${rid}|${e.name}`], x = featureVec(e, rid, nn, { jockeyCount: jk ? cnt[jk] || 0 : 0, hist: hist[e.name] }); upd.push([e, jk, finScore(e.finish, nn)])
+    const ps = ent.map(e => { const jk = JK[`${rid}|${e.name}`], x = featureVec(e, rid, nn, { jockeyCount: jk ? cnt[jk] || 0 : 0, jockey: jk, hist: hist[e.name] }); upd.push([e, jk, finScore(e.finish, nn), rid])
       return { e, N: sn && { f: applyModel(sn.finish, x), t: applyModel(sn.time, x) }, W: sr && { f: applyModel(sr.finish, x), t: applyModel(sr.time, x) } } })
     if (!sn || !sr || !ps.length) continue // 両モデルが揃う日だけ比較
     if (wet(rid)) { add(S.normal_wet, ps, 'N'); add(S.rain_wet, ps, 'W'); add(S.switch_all, ps, 'W') } else { add(S.normal_dry, ps, 'N'); add(S.switch_all, ps, 'N') }
     add(S.normal_all, ps, 'N') }
-  for (const [e, jk, y] of upd) { if (jk) cnt[jk] = (cnt[jk] || 0) + 1; (hist[e.name] ||= []).push(y) } }
+  for (const [e, jk, y, rid] of upd) { if (jk) cnt[jk] = (cnt[jk] || 0) + 1; (hist[e.name] ||= []).push(histEntry(y, jk, rid, e.sled_weight)) } }
 const fmt = s => ({ eval_races: s.races, winner_top1_rate: +(s.win / s.races).toFixed(4), time_mae_sec: +(s.ae / s.n).toFixed(2) })
 const cmp = Object.fromEntries(Object.entries(S).map(([k, v]) => [k, fmt(v)]))
 const r4 = m => ({ mu: m.mu.map(v => +v.toFixed(5)), sd: m.sd.map(v => +v.toFixed(5)), b: m.b.map(v => +v.toFixed(6)) })
