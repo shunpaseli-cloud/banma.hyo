@@ -37,7 +37,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
     <article className="card">
       <header className="card-head">
         <span className="rno">{race.race_no}R</span>
-        <div><h2>{race.name}</h2>
+        <div>
           <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭</p></div>
       </header>
       {skipW.map(w => <div key={w} className="skipwarn" style={{border:'2px solid #D85A2A',color:'#D85A2A',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0',fontWeight:700}}>⚠ {w}<small style={{color:'#221E18',fontWeight:400}}>（参考表示）</small></div>)}
@@ -68,32 +68,6 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       {detail && <RaceDetail race={race} preds={preds} />}
       <TrioPayout race={race} preds={preds} />
       {gate.skip && <div className="skipwarn" style={{border:'2px solid #D85A2A',color:'#221E18',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0'}}>⚠ {gate.reason}</div>}
-      {ax3.length === 3 && <div className="trio"><h3>3連複 軸1頭＋相手3頭（3点）</h3><ol className="trio-list">{ax3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('−')}</b></li>)}</ol></div>}
-      {box.top.length >= 3 && <div className="trio">
-        <h3>3連複 上位5頭ボックス（{box.combos.length}点）</h3>
-        <p className="trio-main">{box.top.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('・')}</p>
-        <p className="meta">{box.top.map(lbl).join(' / ')}</p>
-      </div>}
-      {tri3.length === 2 && <div className="trio">
-        <h3>三連単 2点（軸1頭＋相手2頭）</h3>
-        <ol className="trio-list">{tri3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join(' → ')}</b> <small>{t.map(lbl).join(' → ')}</small></li>)}</ol>
-        <p className="meta">軸=着順スコア1位、相手A=2位・B=3位。軸→A→B／軸→B→A</p>
-      </div>}
-      {trio && trio.count > 0 && <div className="trio">
-        <h3>3連複ボックス（1点）</h3>
-        <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>
-        <p className="meta">期待値倍率 {trio.combos[0].evRatio.toFixed(2)}（平均=1.00）・確率シェア {(trio.combos[0].share * 100).toFixed(1)}%・全{trio.count}通り中1位</p>
-        {!trioOpen && <ol className="trio-list">{trio.combos.slice(1, 4).map((c, i) =>
-          <li key={i}><span>{c.horses.map(h => H[h.horse_id]?.umaban ?? H[h.horse_id]?.gate).join('-')}</span><b>×{c.evRatio.toFixed(2)}</b></li>)}</ol>}
-        {trioOpen && <><h3>上位10通り</h3>
-        <ol className="trio-list">{trio.combos.slice(0, 10).map((c, i) =>
-          <li key={i}><span>{c.horses.map(h => H[h.horse_id]?.umaban ?? H[h.horse_id]?.gate).join('-')}</span>
-            <small>{c.horses.map(h => H[h.horse_id]?.umaban).join('-')}</small>
-            <b>×{c.evRatio.toFixed(2)} / {(c.share * 100).toFixed(1)}%</b></li>)}</ol></>}
-      </div>}
-      {Object.keys(warns).length > 0 && <div className="misswarn"><h3>⚠ 過去の外れ傾向</h3><ul>{Object.entries(warns).map(([id, m]) =>
-        <li key={id}>{H[id]?.umaban}: {m}</li>)}</ul></div>}
-      {(misses.length ? misses : fetchStatus?.misses || []).length > 0 && <div className="misswarn"><h3>外れ分析</h3><ul>{(misses.length ? misses : fetchStatus.misses).map(m => <li key={m.horse_id}>{m.reason}</li>)}</ul></div>}
-    </article>
+          </article>
   )
 }
