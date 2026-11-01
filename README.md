@@ -190,3 +190,19 @@ npm run build && netlify deploy --prod --dir dist
 ```
 - 学習は結果のある全レースで実施。アプリは localStorage が空なら `learned_weights.json` を初期重みとして使用。
 - localStorage の予想・結果・外れログは直近2レース分だけ保持（重みは保持）。
+
+## Cloudflare Workers プロキシ（スマホで最小手順）
+1. dash.cloudflare.com にログイン →「Workers & Pages」→「作成」→「Worker を作成」→ 名前 `banma-proxy` →「デプロイ」
+2. 「コードを編集」→ 中身を全消しし `proxy/worker.js` を貼り付け →「デプロイ」
+3. 表示URL（例 `https://banma-proxy.xxx.workers.dev`）で `/?url=https://www.keiba.go.jp/` が返るか確認
+許可ホスト: keiba.go.jp / banei-keiba.or.jp / obikan.net（サブドメイン含む）。キャッシュ5分。
+
+### VITE_PROXY_URL の設定と再デプロイ（GitHub Pages）
+```
+cd frontend
+echo "VITE_PROXY_URL=https://banma-proxy.xxx.workers.dev" > .env.production.local
+npm run build -- --base=/banma.hyo/
+rm -rf ../docs && cp -r dist ../docs && touch ../docs/.nojekyll && cp ../docs/index.html ../docs/404.html
+# main に docs/ をコミット・push、gh-pages にも dist を反映
+```
+未設定時は direct → corsproxy.io → allorigins の順でフォールバック（`frontend/.env.example` 参照）。

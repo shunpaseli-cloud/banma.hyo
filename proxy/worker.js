@@ -1,7 +1,7 @@
 // ばん馬表 CORS プロキシ (Cloudflare Workers)
 // GET /?url=<encoded URL> → サーバー側で fetch して本文を返す。CORS: *
 const CACHE_TTL = 300 // 5分（古いレース結果を長く保持しない）
-const ALLOWED_HOSTS = ['obikan.net', 'www.obikan.net', 'keiba.go.jp', 'www.keiba.go.jp']
+const ALLOWED_HOSTS = ['keiba.go.jp', 'banei-keiba.or.jp', 'obikan.net']  // サブドメイン(www.)も許可
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, OPTIONS',
@@ -33,7 +33,7 @@ export default {
     let upstream
     try {
       upstream = await fetch(target.toString(), {
-        headers: { 'User-Agent': 'Mozilla/5.0 (banma-hyo proxy)', 'Accept': 'text/html,*/*' },
+        headers: { 'User-Agent': 'Mozilla/5.0 (banma-hyo proxy)', 'Accept': 'text/html,application/pdf,*/*' },
         cf: { cacheTtl: CACHE_TTL, cacheEverything: true },
       })
     } catch (e) { return err(502, `upstream fetch 失敗: ${e.message}`) }
