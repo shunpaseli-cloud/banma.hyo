@@ -1,9 +1,14 @@
 {
  "weights": {
-  "weight_pull": 0.4424,
-  "recent_form": 0.413,
-  "gate": 0.0187,
-  "jockey": 0.1259
+  "weight_pull": 0.198,
+  "recent_form": 0.1576,
+  "gate": 0.0762,
+  "jockey": 0.1124,
+  "time_index": 0.2953,
+  "sled_light": 0.052,
+  "age_prime": 0.0171,
+  "body_mass": 0.0857,
+  "apprentice": 0.0057
  },
  "delta": {
   "weight_pull": 0.0424,
@@ -64,5 +69,87 @@
   "20261102-R11",
   "20261102-R12"
  ],
- "learned_at": "2026-10-31T14:47:32.078Z"
+ "learned_at": "2026-10-31T14:47:32.078Z",
+ "previous_weights": {
+  "weight_pull": 0.4424,
+  "recent_form": 0.413,
+  "gate": 0.0187,
+  "jockey": 0.1259,
+  "time_index": 0.1,
+  "sled_light": 0.08,
+  "age_prime": 0.05,
+  "body_mass": 0.06,
+  "apprentice": 0.03
+ },
+ "tuning": {
+  "before": {
+   "weights": {
+    "weight_pull": 0.4424,
+    "recent_form": 0.413,
+    "gate": 0.0187,
+    "jockey": 0.1259,
+    "time_index": 0.1,
+    "sled_light": 0.08,
+    "age_prime": 0.05,
+    "body_mass": 0.06,
+    "apprentice": 0.03
+   },
+   "all": {
+    "races": 1036,
+    "hit_rate": 0.0705,
+    "payout_races": 32,
+    "payout_hits": 1,
+    "roi": 0.119
+   },
+   "train": {
+    "races": 725,
+    "hit_rate": 0.0676,
+    "payout_races": 0,
+    "payout_hits": 0,
+    "roi": null
+   },
+   "test": {
+    "races": 311,
+    "hit_rate": 0.0772,
+    "payout_races": 32,
+    "payout_hits": 1,
+    "roi": 0.119
+   }
+  },
+  "after": {
+   "weights": {
+    "weight_pull": 0.198,
+    "recent_form": 0.1576,
+    "gate": 0.0762,
+    "jockey": 0.1124,
+    "time_index": 0.2953,
+    "sled_light": 0.052,
+    "age_prime": 0.0171,
+    "body_mass": 0.0857,
+    "apprentice": 0.0057
+   },
+   "all": {
+    "races": 1036,
+    "hit_rate": 0.0985,
+    "payout_races": 32,
+    "payout_hits": 2,
+    "roi": 0.602
+   },
+   "train": {
+    "races": 725,
+    "hit_rate": 0.0979,
+    "payout_races": 0,
+    "payout_hits": 0,
+    "roi": null
+   },
+   "test": {
+    "races": 311,
+    "hit_rate": 0.0997,
+    "payout_races": 32,
+    "payout_hits": 2,
+    "roi": 0.602
+   }
+  }
+ },
+ "tuned_at": "2026-11-01T01:09:09.226Z"
 }
