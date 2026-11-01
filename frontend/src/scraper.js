@@ -14,12 +14,15 @@ const RESULT_BASE = 'https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTabl
 // と書いて再ビルド。順序: direct → Workers → allorigins.win → corsproxy.io。
 export const WORKER_PROXY_URL = (import.meta.env.VITE_PROXY_URL || '').replace(/\/+$/, '')
 const enc = encodeURIComponent
-const FETCH_CHAIN = [
-  ['direct', (u) => u],
-  ...(WORKER_PROXY_URL ? [['worker', (u) => `${WORKER_PROXY_URL}/?url=${enc(u)}`]] : []),
-  ['allorigins', (u) => `https://api.allorigins.win/raw?url=${enc(u)}`],
-  ['corsproxy.io', (u) => `https://corsproxy.io/?url=${enc(u)}`], // 任意の最終手段
-]
+// Workers URL があれば direct/公開プロキシは使わない（ブラウザ direct は CORS で必ず失敗するため）
+const FETCH_CHAIN = WORKER_PROXY_URL
+  ? [['worker', (u) => `${WORKER_PROXY_URL}/?url=${enc(u)}`, 8000]]
+  : [
+      ['allorigins', (u) => `https://api.allorigins.win/raw?url=${enc(u)}`, 25000],
+      ['corsproxy.io', (u) => `https://corsproxy.io/?url=${enc(u)}`, 6000],
+    ]
+const FETCH_CONCURRENCY = 4
+let preferred = 0 // 最後に成功した経路から試す
 export const MIN_INTERVAL_MS = 60_000
 const LAST_KEY = 'banma.lastAutoFetch'
 
@@ -35,18 +38,26 @@ export function buildResultUrl(raceOrId) {
   return `${RESULT_BASE}?k_raceDate=${encodeURIComponent(date)}&k_raceNo=${+m[4]}&k_babaCode=${BABA_CODE}`
 }
 
+async function fetchWithTimeout(url, ms) {
+  const ac = new AbortController(); const t = setTimeout(() => ac.abort(), ms)
+  try { return await fetch(url, { signal: ac.signal }) } finally { clearTimeout(t) }
+}
 async function fetchHtml(url) {
   const errors = []
-  for (const [name, wrap] of FETCH_CHAIN) {
+  const order = FETCH_CHAIN.map((_, i) => (i + preferred) % FETCH_CHAIN.length)
+  for (const i of order) {
+    const [name, wrap, ms] = FETCH_CHAIN[i]
     try {
-      const r = await fetch(wrap(url), name === 'direct' ? { mode: 'cors' } : undefined)
+      const r = await fetchWithTimeout(wrap(url), ms)
       if (!r.ok) throw new Error(`HTTP ${r.status}`)
       const text = await r.text()
       if (!text) throw new Error('空のレスポンス')
+      preferred = i
       return text
     } catch (e) {
-      console.warn(`[scraper] ${name} で取得失敗 → 次へ`, e.message)
-      errors.push(`${name}: ${e.message}`)
+      const m = e.name === 'AbortError' ? `timeout ${ms}ms` : e.message
+      console.warn(`[scraper] ${name} で取得失敗 → 次へ`, m)
+      errors.push(`${name}: ${m}`)
     }
   }
   throw new Error(`全経路で取得失敗 (${errors.join(' / ')})`)
@@ -72,22 +83,26 @@ export function parseResults(html) {
 
 // ① PDF成績表（scripts/fetch_pdf_results.py が生成）: まず同一オリジンの /results.json を最新取得、
 //    だめなら同梱版。② HTML (keiba.go.jp) をプロキシ連鎖で取得。
-let pdfCache = null
-async function loadPdfResults() {
-  if (pdfCache) return pdfCache
+// 同梱版を即使用（1.5MB の results.json を毎回 no-store で再取得しない）。
+// 同梱版に無いレースのときだけ /results.json を1回だけ取得（通常キャッシュ）。
+let pdfCache = BUNDLED_PDF_RESULTS, remoteTried = false
+async function loadPdfResults(raceId) {
+  if (pdfCache?.races?.[raceId]?.length || remoteTried) return pdfCache
+  remoteTried = true
   try {
-    const r = await fetch(`${import.meta.env.BASE_URL}results.json`, { cache: 'no-store' })
-    if (r.ok) { pdfCache = await r.json(); return pdfCache }
+    const r = await fetchWithTimeout(`${import.meta.env.BASE_URL}results.json`, 8000)
+    if (r.ok) pdfCache = await r.json()
   } catch (e) { console.warn('[scraper] results.json 取得失敗 → 同梱版', e.message) }
-  pdfCache = BUNDLED_PDF_RESULTS
   return pdfCache
 }
 export async function getPdfResults(raceId) {
-  const rows = (await loadPdfResults())?.races?.[raceId]
+  const rows = (await loadPdfResults(raceId))?.races?.[raceId]
   return rows?.length ? rows.map(r => ({ ...r, name: normalizeName(r.name) })) : null
 }
 
+const htmlCache = new Map() // 取得済み結果はセッション中再取得しない
 export async function getResults(raceId) {
+  if (htmlCache.has(raceId)) return htmlCache.get(raceId)
   const errs = []
   try {
     const pdf = await getPdfResults(raceId)
@@ -96,7 +111,7 @@ export async function getResults(raceId) {
   } catch (e) { errs.push(`PDF: ${e.message}`) }
   try {
     const rows = parseResults(await fetchHtml(buildResultUrl(raceId)))
-    if (rows.length) return { source: 'html', rows }
+    if (rows.length) { const v = { source: 'html', rows }; htmlCache.set(raceId, v); return v }
     errs.push('HTML: 着順なし（未確定 or 構造変更）')
   } catch (e) { errs.push(`HTML: ${e.message}`) }
   throw new Error(errs.join(' / '))
@@ -115,9 +130,10 @@ function matchToEntries(race, rows) {
   return results
 }
 
-export async function fetchAndUpdate(race) {
+function applyResult(race, got) {
   try {
-    const { source, rows } = await getResults(race.race_id)
+    if (got instanceof Error) throw got
+    const { source, rows } = got
     const results = matchToEntries(race, rows)
     if (!Object.keys(results).length) throw new Error('出走馬と一致する馬名なし')
     predict(race, true) // 予想を保存してから結果で学習
@@ -127,6 +143,9 @@ export async function fetchAndUpdate(race) {
     console.error(`[scraper] ${race.race_id} 取得失敗:`, e)
     return { ok: false, race_id: race.race_id, error: e.message }
   }
+}
+export async function fetchAndUpdate(race) {
+  return applyResult(race, await getResults(race.race_id).catch(e => e))
 }
 
 // 60秒ガード付き一括更新
@@ -138,7 +157,11 @@ export async function autoFetchAll(raceList) {
   const wait = secondsUntilNextFetch()
   if (wait > 0) return { skipped: true, wait }
   localStorage.setItem(LAST_KEY, String(Date.now()))
-  const res = []
-  for (const r of raceList) res.push(await fetchAndUpdate(r))
+  // 取得（ネットワーク）は並列・同時数制限、学習更新は元の順序で直列に適用
+  const fetched = new Array(raceList.length); let next = 0
+  const worker = async () => { while (next < raceList.length) { const i = next++
+    fetched[i] = await getResults(raceList[i].race_id).catch(e => e) } }
+  await Promise.all(Array.from({ length: Math.min(FETCH_CONCURRENCY, raceList.length) }, worker))
+  const res = raceList.map((r, i) => applyResult(r, fetched[i]))
   return { skipped: false, results: res }
 }
