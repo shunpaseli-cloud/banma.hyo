@@ -2,7 +2,8 @@
 // 純粋関数のみ(JSON読込なし)。オフライン scripts/train_learned_model.mjs とブラウザ learnScore.js で共用
 import { estimateMoisture } from './moisture.js'
 export const LAMBDA = 0.92
-export const FEATURE_NAMES = ['est_moist', 'sled_weight', 'body_weight', 'age', 'sex_male', 'sex_gelding', 'field', 'race_no', 'gate', 'umaban', 'jockey_count', 'horse_starts', 'horse_prev_fin_mean']
+export const FEATURE_NAMES = ['est_moist', 'sled_weight', 'body_weight', 'age', 'sex_male', 'sex_gelding', 'field', 'race_no', 'gate', 'umaban', 'jockey_count', 'horse_starts', 'horse_prev_fin_mean', 'moist_x_body', 'moist_x_sled', 'body_x_sled']
+// 交互作用項(末尾に追加・各列は wfit で独立に標準化)。片方NaNならNaN→列平均で補完
 export const dateOf = rid => `${rid.slice(0, 4)}-${rid.slice(4, 6)}-${rid.slice(6, 8)}`
 export const raceNoOf = rid => +rid.split('-R')[1]
 export const tsec = (t, s) => { if (s != null) return s; const a = (t || '').split('.'); return a.length === 3 ? +a[0] * 60 + +a[1] + +a[2] / 10 : null }
@@ -10,8 +11,10 @@ export const finScore = (f, n) => 1 - (f - 1) / Math.max(n - 1, 1)
 // 特徴ベクトル。ctx = { jockeyCount, hist(着順スコア配列: その日より前のみ) }
 export function featureVec(e, rid, field, ctx) {
   const N = v => (v == null || v === '' ? NaN : +v), h = ctx.hist || []
-  return [estimateMoisture(dateOf(rid)) ?? 1.6, N(e.sled_weight), N(e.body_weight), N(e.age), e.sex === '牡' ? 1 : 0, e.sex === 'セ' ? 1 : 0,
-    field, raceNoOf(rid), N(e.gate), N(e.umaban), ctx.jockeyCount || 0, h.length, h.length ? h.reduce((a, b) => a + b, 0) / h.length : 0.5]
+  const mo = estimateMoisture(dateOf(rid)) ?? 1.6, sl = N(e.sled_weight), bw = N(e.body_weight)
+  return [mo, sl, bw, N(e.age), e.sex === '牡' ? 1 : 0, e.sex === 'セ' ? 1 : 0,
+    field, raceNoOf(rid), N(e.gate), N(e.umaban), ctx.jockeyCount || 0, h.length, h.length ? h.reduce((a, b) => a + b, 0) / h.length : 0.5,
+    mo * bw, mo * sl, bw * sl]
 }
 function solve(A, b) { const n = b.length, M = A.map((r, i) => [...r, b[i]])
   for (let c = 0; c < n; c++) { let p = c; for (let r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[p][c])) p = r
