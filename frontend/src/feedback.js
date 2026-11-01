@@ -6,10 +6,11 @@ export const LEARNING_RATE = 0.05
 import LEARNED from './data/learned_weights.json' with { type: 'json' }
 import { prevFinish, recentForm, prevRaceContext, peerForm, moistureForm } from './prevFinish.js'
 import { resolveMoisture, normMoisture } from './moisture.js'
-export const KEEP_RACES = 2
+export const KEEP_RACES = Infinity // 全レース保持（容量安全弁は storageGuard.js）
+import { guardList, safeSet } from './storageGuard.js'
 const K = { w: 'banma.weights', p: 'banma.predictions', r: 'banma.results', f: 'banma.feedback' }
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }
-const store = (k, v) => localStorage.setItem(k, JSON.stringify(v))
+const store = (k, v) => safeSet(k, v)
 const now = () => new Date().toISOString()
 
 export function getWeights() {
@@ -110,12 +111,11 @@ export function accuracyReport() {
     win_rate: top ? +(fb.reduce((s, x) => s + x.hit_win, 0) / top).toFixed(3) : null,
     place_rate: top3 ? +(fb.reduce((s, x) => s + x.hit_place, 0) / top3).toFixed(3) : null }
 }
-// 学習後に予想/結果/フィードバック履歴を直近 KEEP_RACES レース分だけ残す（重みは保持）
-const lastIds = ids => [...new Set(ids)].sort().slice(-KEEP_RACES)
-export function pruneHistory(keep = KEEP_RACES) {
-  const ps = load(K.p, []), keepIds = new Set([...new Set(ps.map(p => p.race_id))].sort().slice(-keep))
-  store(K.p, ps.filter(p => keepIds.has(p.race_id)))
-  store(K.f, load(K.f, []).filter(x => keepIds.has(x.race_id)))
-  const res = load(K.r, {}), rk = new Set(lastIds(Object.keys(res).map(k => k.split('|')[0])))
-  store(K.r, Object.fromEntries(Object.entries(res).filter(([k]) => rk.has(k.split('|')[0]))))
+// 全レース保持。容量(~4.5MB)/件数(5000R)超過時のみ最古レースから間引く（重みは保持）
+const bytes = k => (localStorage.getItem(k) || '').length * 2
+export function pruneHistory() {
+  store(K.p, guardList(load(K.p, []), x => x.race_id, bytes(K.p)))
+  store(K.f, guardList(load(K.f, []), x => x.race_id, bytes(K.f)))
+  const res = Object.entries(load(K.r, {})), kept = guardList(res, ([k]) => k.split('|')[0], bytes(K.r))
+  store(K.r, Object.fromEntries(kept))
 }

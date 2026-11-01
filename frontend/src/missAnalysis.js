@@ -1,4 +1,5 @@
 // 予想と実着順のズレを分析し localStorage(banma.miss_log) に保存。次回予想時に警告として使う。
+import { guardList, safeSet } from './storageGuard.js'
 const KEY = 'banma.miss_log'
 const LABEL = { weight_pull: '牽引力(ソリ重量比)', recent_form_3: '近走3走', recent_form_5: '近走5走', gate: '枠/馬番', jockey: '騎手' }
 export const loadMissLog = () => { try { return JSON.parse(localStorage.getItem(KEY)) || [] } catch { return [] } }
@@ -25,9 +26,8 @@ export function analyzeMisses(race, preds, results) {
       direction: over ? 'over' : 'under', culprit, deltas, buckets: b, moisture: race.track_moisture ?? null, reason, at: new Date().toISOString() })
   }
   const log = loadMissLog().filter(x => x.race_id !== race.race_id).concat(out)
-  const keep = new Set([...new Set(log.map(x => x.race_id))].sort().slice(-2))
-  const trimmed = log.filter(x => keep.has(x.race_id))
-  localStorage.setItem(KEY, JSON.stringify(trimmed)); return out
+  const trimmed = guardList(log, x => x.race_id, (localStorage.getItem(KEY) || '').length * 2) // 全レース保持＋容量安全弁
+  safeSet(KEY, trimmed); return out
 }
 // 過去に同条件で2回以上外した馬へ警告
 export function missWarnings(race, log = loadMissLog()) {
