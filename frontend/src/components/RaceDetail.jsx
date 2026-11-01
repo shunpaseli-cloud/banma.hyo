@@ -1,9 +1,17 @@
 import { prevFinish } from '../prevFinish.js'
 import { FEATURES, getWeights } from '../feedback.js'
+import { useEffect, useState } from 'react'
+import { getPdfResults } from '../scraper.js'
+const norm = s => (s || '').replace(/[\s\u3000]/g, '')
 const JP = { weight_pull: '牽引力（馬体重/ソリ重量）', recent_form: '近走成績', gate: '枠順', jockey: '騎手勝率' }
 export default function RaceDetail({ race, preds }) {
   const w = getWeights(), H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
   const n = preds.length
+  const [res, setRes] = useState(undefined)
+  useEffect(() => { let on = true; getPdfResults(race.race_id).then(r => on && setRes(r || null)).catch(() => on && setRes(null)); return () => { on = false } }, [race.race_id])
+  const findE = r => race.entries.find(e => r.umaban != null && e.umaban === r.umaban && (!r.name || !e.name || norm(e.name) === norm(r.name) || norm(e.name).includes(norm(r.name)) || norm(r.name).includes(norm(e.name)))) || race.entries.find(e => norm(e.name) === norm(r.name))
+  const predOf = e => e && preds.find(p => p.horse_id === e.horse_id)?.pred_rank
+  const finOf = {}; (res || []).forEach(r => { const e = findE(r); if (e) finOf[e.horse_id] = r.finish })
   const avg = Object.fromEntries(FEATURES.map(f => [f, preds.reduce((s, p) => s + w[f] * (p.features[f] || 0), 0) / n]))
   const reason = p => {
     const d = FEATURES.map(f => [f, w[f] * (p.features[f] || 0) - avg[f]]).sort((a, b) => b[1] - a[1])
@@ -18,6 +26,16 @@ export default function RaceDetail({ race, preds }) {
       <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; return <tr key={p.horse_id}><td>{p.pred_rank}</td><td>{h.umaban ?? h.gate} {h.name}</td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q ? <span>{q.finish != null ? `${q.finish}着` : '—'}<small> ({q.date.slice(5).replace('-','/')} {q.raceNo}R/{q.field}頭)</small></span> : '—' })()}</td>
         {FEATURES.map(f => <td key={f}>{(w[f] * (p.features[f] || 0)).toFixed(3)}<small> ({(p.features[f] || 0).toFixed(2)})</small></td>)}<td><b>{p.score.toFixed(3)}</b></td></tr> })}</tbody></table></div>
     <p className="meta">各欄: 寄与（重み×値）、括弧内は特徴量の値(0〜1)。前走は公式結果PDF（同梱分）から馬名で照合、不明は「—」</p>
+    <h3>レース結果（実際の着順）</h3>
+    {res === undefined ? <p className="meta">結果を確認中…</p> : !res ? <p className="meta"><b>結果未公開</b></p> : <>
+      <div style={{ overflowX: 'auto' }}><table className="horses"><thead><tr><th>着</th><th>馬番</th><th>馬名</th><th>騎手</th><th>予想順</th><th>差</th></tr></thead>
+        <tbody>{[...res].sort((a, b) => (a.finish ?? 99) - (b.finish ?? 99)).map((r, i) => { const e = findE(r); const pr = predOf(e)
+          return <tr key={i}><td>{r.finish ?? '—'}</td><td>{r.umaban ?? e?.umaban ?? '—'}</td><td>{e?.name || r.name}</td><td>{e?.jockey || r.jockey || '—'}</td><td>{pr ?? '—'}</td><td>{pr && r.finish ? (pr === r.finish ? '◎' : (r.finish - pr > 0 ? '+' : '') + (r.finish - pr)) : ''}</td></tr> })}</tbody></table></div>
+      <h3>予想順 vs 実着順</h3>
+      <div style={{ overflowX: 'auto' }}><table className="horses"><thead><tr><th>予想</th><th>馬</th><th>騎手</th><th>実着順</th></tr></thead>
+        <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; const f = finOf[p.horse_id]
+          return <tr key={p.horse_id}><td>{p.pred_rank}</td><td>{h.umaban ?? h.gate} {h.name}</td><td>{h.jockey || '—'}</td><td>{f != null ? <b>{f}着</b> : '—'}</td></tr> })}</tbody></table></div>
+      <p className="meta">出典: 公式成績PDF（results.json）。差 = 実着順 − 予想順（◎は一致）</p></>}
     <h3>順位の理由</h3>
     <ol>{preds.map((p, i) => { const h = H[p.horse_id] || {}; const gap = i > 0 ? `（上位との差 ${(preds[i - 1].score - p.score).toFixed(3)}）` : ''
       return <li key={p.horse_id}><b>{h.umaban ?? h.gate} {h.name}</b>{gap}: {reason(p)}</li> })}</ol>
