@@ -11,3 +11,10 @@ export function trioPredictions(preds) {
   combos.sort((a, b) => b.product - a.product)
   return { combos, count: combos.length }
 }
+// 上位5頭ボックス(10点): 着順スコア上位5頭の全 C(5,3) 組み合わせ（積の大きい順）
+export function topBox(preds, k = 5) {
+  const top = [...preds].sort((a, b) => b.score - a.score).slice(0, k), combos = []
+  for (let i = 0; i < top.length; i++) for (let j = i + 1; j < top.length; j++) for (let l = j + 1; l < top.length; l++)
+    combos.push({ horses: [top[i], top[j], top[l]], product: top[i].score * top[j].score * top[l].score })
+  return { top, combos: combos.sort((a, b) => b.product - a.product) }
+}

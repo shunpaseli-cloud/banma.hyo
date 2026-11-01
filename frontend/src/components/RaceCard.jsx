@@ -1,7 +1,8 @@
 import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
-import { trioPredictions } from '../trio.js'
+import { trioPredictions, topBox } from '../trio.js'
+import { fmtTime } from '../learnScore.js'
 import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
 import { analyzeMisses, missWarnings } from '../missAnalysis.js'
@@ -15,6 +16,8 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const [trioOpen, setTrioOpen] = useState(false)
   const [detail, setDetail] = useState(false)
   const trio = useMemo(() => trioPredictions(preds), [preds])
+  const box = useMemo(() => topBox(preds), [preds])
+  const learned = preds[0]?.finish_score != null
   const warns = useMemo(() => missWarnings(race), [race])
   const [misses, setMisses] = useState([])
   const H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
@@ -33,18 +36,18 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
           <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭</p></div>
       </header>
       <table className="horses">
-        <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>予想スコア</th>{open && <th>着</th>}</tr></thead>
+        <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>{learned ? '着順スコア' : '予想スコア'}</th>{learned && <th>予想タイム</th>}{open && <th>着</th>}</tr></thead>
         <tbody>
           {race.entries.map(h => { const p = P[h.horse_id]; return (
             <tr key={h.horse_id} className={p.pred_rank === 1 ? 'top' : ''}>
               <td className="gate">{h.gate}</td><td className="nowrap">{h.umaban ?? '—'}<span className="mark-in">{markOf(p.pred_rank)}</span></td><td>{h.name}{warns[h.horse_id] && <span className="warn" title={warns[h.horse_id]}> ⚠</span>}{h.sex && <small> {h.sex}{h.age}</small>}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
-              <td><div className="bar"><span style={{ width: `${(p.score / max) * 100}%` }} /></div>{p.score.toFixed(3)}</td>
+              <td><div className="bar"><span style={{ width: `${(p.score / max) * 100}%` }} /></div>{p.score.toFixed(3)}</td>{learned && <td className="nowrap">{fmtTime(p.pred_time_sec)}</td>}
               {open && <td><input className="fin" type="number" min="1" max={race.entries.length} inputMode="numeric"
                 value={fin[h.horse_id] || ''} onChange={e => setFin({ ...fin, [h.horse_id]: e.target.value })} /></td>}
             </tr>) })}
         </tbody>
       </table>
-      <p className="meta legend">{MARK_LEGEND}</p>
+      <p className="meta legend">{MARK_LEGEND}{learned && `・着順スコア/予想タイム = 時系列学習モデル（λ=0.92、${preds[0].model.asOf}${preds[0].model.kind === 'snapshot' ? ' より前の結果' : ' までの結果'}で学習）`}</p>
       <div className="fb">
         {open ? <><button className="more small" onClick={learn}>結果を学習</button>
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>
@@ -58,6 +61,11 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       </div>
       {detail && <RaceDetail race={race} preds={preds} />}
       <TrioPayout race={race} preds={preds} />
+      {box.top.length >= 3 && <div className="trio">
+        <h3>3連複 上位5頭ボックス（{box.combos.length}点）</h3>
+        <p className="trio-main">{box.top.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('・')}</p>
+        <p className="meta">{box.top.map(lbl).join(' / ')}</p>
+      </div>}
       {trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
         <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>
