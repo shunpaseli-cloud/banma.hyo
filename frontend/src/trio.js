@@ -22,11 +22,10 @@ export function topBox(preds, k = 5) {
 
 // 三連単 3点: 軸=着順スコア1位, 相手A=2位, 相手B=3位 → 軸-A-B / 軸-B-A / A-軸-B
 export function trifecta3(preds, r = rules) {
-  if (axisGate(preds, r).skip) return []
   const s = [...preds].sort((a, b) => b.score - a.score)
   if (s.length < 3) return []
   const [X, A, B] = s
-  return [[X, A, B], [X, B, A], [A, X, B]]
+  return [[X, A, B], [X, B, A]]
 }
 
 // 軸の過去着順平均フィルタ（予測側）。SKIP方式: 閾値未満なら買い目を出さない（次点軸に繰り上げない＝検証と一致）
@@ -35,12 +34,11 @@ export function axisGate(preds, r = rules) {
   const ax = [...preds].sort((a, b) => b.score - a.score)[0]
   const pf = ax?.past_form ?? 0.5
   return pf < r.pastFormThreshold
-    ? { skip: true, reason: `軸の過去着順平均 ${pf.toFixed(3)} < ${r.pastFormThreshold}（3連複・三連単は見送り）` }
+    ? { skip: true, reason: `軸の過去着順平均 ${pf.toFixed(3)} < ${r.pastFormThreshold}（参考：買い目は表示）` }
     : { skip: false }
 }
 // 3連複 軸1頭＋相手2〜4位（3点）
 export function axis3(preds, r = rules) {
-  if (axisGate(preds, r).skip) return []
   const s = [...preds].sort((a, b) => b.score - a.score)
   if (s.length < 4) return []
   const [X, a, b, c] = s

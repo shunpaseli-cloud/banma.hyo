@@ -67,19 +67,19 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       </div>
       {detail && <RaceDetail race={race} preds={preds} />}
       <TrioPayout race={race} preds={preds} />
-      {gate.skip && <div className="skipwarn" style={{border:'2px solid #D85A2A',color:'#221E18',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0'}}>買い目見送り: {gate.reason}</div>}
-      {!gate.skip && ax3.length === 3 && <div className="trio"><h3>3連複 軸1頭＋相手3頭（3点）</h3><ol className="trio-list">{ax3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('−')}</b></li>)}</ol></div>}
-      {!gate.skip && box.top.length >= 3 && <div className="trio">
+      {gate.skip && <div className="skipwarn" style={{border:'2px solid #D85A2A',color:'#221E18',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0'}}>⚠ {gate.reason}</div>}
+      {ax3.length === 3 && <div className="trio"><h3>3連複 軸1頭＋相手3頭（3点）</h3><ol className="trio-list">{ax3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('−')}</b></li>)}</ol></div>}
+      {box.top.length >= 3 && <div className="trio">
         <h3>3連複 上位5頭ボックス（{box.combos.length}点）</h3>
         <p className="trio-main">{box.top.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('・')}</p>
         <p className="meta">{box.top.map(lbl).join(' / ')}</p>
       </div>}
-      {tri3.length === 3 && <div className="trio">
-        <h3>三連単 3点（軸1頭＋相手2頭）</h3>
+      {tri3.length === 2 && <div className="trio">
+        <h3>三連単 2点（軸1頭＋相手2頭）</h3>
         <ol className="trio-list">{tri3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join(' → ')}</b> <small>{t.map(lbl).join(' → ')}</small></li>)}</ol>
-        <p className="meta">軸=着順スコア1位、相手A=2位・B=3位。軸→A→B／軸→B→A／A→軸→B</p>
+        <p className="meta">軸=着順スコア1位、相手A=2位・B=3位。軸→A→B／軸→B→A</p>
       </div>}
-      {!gate.skip && trio && trio.count > 0 && <div className="trio">
+      {trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
         <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>
         <p className="meta">期待値倍率 {trio.combos[0].evRatio.toFixed(2)}（平均=1.00）・確率シェア {(trio.combos[0].share * 100).toFixed(1)}%・全{trio.count}通り中1位</p>
