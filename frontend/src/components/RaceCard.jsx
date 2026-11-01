@@ -58,7 +58,6 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
         {open ? <><button className="more small" onClick={learn}>結果を学習</button>
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>
           : <button className="link" onClick={() => setOpen(true)}>着順を入力して学習</button>}
-        <button className="more small" onClick={() => setTrioOpen(!trioOpen)}>{trioOpen ? '上位10通りを閉じる' : '3連複 上位10通り'}</button>
         <button className="more small" onClick={() => setDetail(!detail)}>{detail ? '詳細を閉じる' : '詳細'}</button>
         {msg && <span className="msg">{msg}</span>}
         {fetchStatus && <span className="msg">{fetchStatus.ok
