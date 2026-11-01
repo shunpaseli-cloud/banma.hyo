@@ -1,7 +1,7 @@
 import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
-import { trioPredictions, topBox, trifecta3, axisGate, axis3 } from '../trio.js'
+import { trioPredictions, topBox, axisGate, axis3 } from '../trio.js'
 import { fmtTime } from '../learnScore.js'
 import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
@@ -18,7 +18,6 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const [detail, setDetail] = useState(false)
   const trio = useMemo(() => trioPredictions(preds), [preds])
   const box = useMemo(() => topBox(preds), [preds])
-  const tri3 = useMemo(() => trifecta3(preds), [preds])
   const gate = useMemo(() => axisGate(preds), [preds])
   const ax3 = useMemo(() => axis3(preds), [preds])
   const learned = preds[0]?.finish_score != null

@@ -20,14 +20,6 @@ export function topBox(preds, k = 5) {
   return { top, combos: combos.sort((a, b) => b.product - a.product) }
 }
 
-// 三連単 3点: 軸=着順スコア1位, 相手A=2位, 相手B=3位 → 軸-A-B / 軸-B-A / A-軸-B
-export function trifecta3(preds, r = rules) {
-  const s = [...preds].sort((a, b) => b.score - a.score)
-  if (s.length < 3) return []
-  const [X, A, B] = s
-  return [[X, A, B], [X, B, A]]
-}
-
 // 軸の過去着順平均フィルタ（予測側）。SKIP方式: 閾値未満なら買い目を出さない（次点軸に繰り上げない＝検証と一致）
 export function axisGate(preds, r = rules) {
   if (!r.pastFormFilterEnabled || !preds?.length) return { skip: false }

@@ -5,8 +5,8 @@
  "scoreSpreadWarnEnabled": false,
  "pastFormWarnEnabled": true,
  "pastFormThreshold": 0.7,
- "_comment": "pastFormThreshold=0.700: 全データ1,652R(OLS雨切替)で0.5〜0.8を0.025刻みスイープし、警告なし群が3頭BOX/三連単2点の的中・回収4指標すべてで警告あり群を上回った唯一の閾値(BOX回収差+30pt)。出典 /tmp/pastform_threshold_sweep.json。旧値0.625=前半458R中央値。隣接0.725で差が逆転するため過学習の可能性あり。過去正規化着順平均(1=全勝)。表示警告のみ、買い目は隠さない。",
+ "_comment": "pastFormThreshold=0.700: 全データ1,652R(OLS雨切替)で0.5〜0.8を0.025刻みスイープし、警告なし群が3頭BOX等の的中・回収4指標すべてで警告あり群を上回った唯一の閾値(BOX回収差+30pt)。出典 /tmp/pastform_threshold_sweep.json。旧値0.625=前半458R中央値。隣接0.725で差が逆転するため過学習の可能性あり。過去正規化着順平均(1=全勝)。表示警告のみ、買い目は隠さない。",
  "pastFormFilterEnabled": true,
  "pastFormFilterMode": "skip",
- "_filterComment": "pastFormFilterEnabled: 軸(着順スコア1位)の過去正規化着順平均<閾値なら3連複/三連単の買い目を空にして見送り(SKIP)。次点軸への繰り上げはしない(分割検証と同条件)。閾値はpastFormThreshold(0.700, /tmp/pastform_threshold_sweep.json)。"
+ "_filterComment": "pastFormFilterEnabled: 軸(着順スコア1位)の過去正規化着順平均<閾値なら3連複の買い目を空にして見送り(SKIP)。次点軸への繰り上げはしない(分割検証と同条件)。閾値はpastFormThreshold(0.700, /tmp/pastform_threshold_sweep.json)。"
 }
