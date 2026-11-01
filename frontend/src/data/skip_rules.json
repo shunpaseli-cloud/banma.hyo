@@ -1,3 +1,12 @@
-{ "warnFieldGe": 10, "warnEnabled": true, "warnScoreSpread": 0.05, "scoreSpreadWarnEnabled": false,
-  "pastFormWarnEnabled": true, "pastFormThreshold": 0.625,
-  "_comment": "pastFormThreshold=0.625: λ=0.92評価の前半458R(〜2026-08-02 9R)における軸(着順スコア1位)の過去正規化着順平均(horse_prev_fin_mean, 1=全勝)の中央値。出典 /tmp/axis_quality_split.json thresholds.pastform_median。後半検証: 購入258R/的中13.95%。表示警告のみ、買い目は隠さない。" }
+{
+ "warnFieldGe": 10,
+ "warnEnabled": true,
+ "warnScoreSpread": 0.05,
+ "scoreSpreadWarnEnabled": false,
+ "pastFormWarnEnabled": true,
+ "pastFormThreshold": 0.625,
+ "_comment": "pastFormThreshold=0.625: λ=0.92評価の前半458R(〜2026-08-02 9R)における軸(着順スコア1位)の過去正規化着順平均(horse_prev_fin_mean, 1=全勝)の中央値。出典 /tmp/axis_quality_split.json thresholds.pastform_median。後半検証: 購入258R/的中13.95%。表示警告のみ、買い目は隠さない。",
+ "pastFormFilterEnabled": true,
+ "pastFormFilterMode": "skip",
+ "_filterComment": "pastFormFilterEnabled: 軸(着順スコア1位)の過去正規化着順平均<閾値なら3連複/三連単の買い目を空にして見送り(SKIP)。次点軸への繰り上げはしない(分割検証と同条件)。閾値0.625=/tmp/axis_quality_split.json thresholds.pastform_median(前半458R,〜2026-08-02 R09)。"
+}

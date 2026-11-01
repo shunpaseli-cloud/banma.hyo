@@ -1,7 +1,7 @@
 import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
-import { trioPredictions, topBox, trifecta3 } from '../trio.js'
+import { trioPredictions, topBox, trifecta3, axisGate, axis3 } from '../trio.js'
 import { fmtTime } from '../learnScore.js'
 import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
@@ -19,6 +19,8 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const trio = useMemo(() => trioPredictions(preds), [preds])
   const box = useMemo(() => topBox(preds), [preds])
   const tri3 = useMemo(() => trifecta3(preds), [preds])
+  const gate = useMemo(() => axisGate(preds), [preds])
+  const ax3 = useMemo(() => axis3(preds), [preds])
   const learned = preds[0]?.finish_score != null
   const skipW = useMemo(() => skipWarnings(race, preds), [race, preds])
   const warns = useMemo(() => missWarnings(race), [race])
@@ -38,7 +40,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
         <div><h2>{race.name}</h2>
           <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭</p></div>
       </header>
-      {skipW.map(w => <div key={w} className="skipwarn" style={{border:'2px solid #D85A2A',color:'#D85A2A',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0',fontWeight:700}}>⚠ {w}<small style={{color:'#221E18',fontWeight:400}}>（参考表示・買い目はそのまま）</small></div>)}
+      {skipW.map(w => <div key={w} className="skipwarn" style={{border:'2px solid #D85A2A',color:'#D85A2A',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0',fontWeight:700}}>⚠ {w}<small style={{color:'#221E18',fontWeight:400}}>（参考表示）</small></div>)}
       <table className="horses">
         <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>{learned ? '着順スコア' : '予想スコア'}</th>{learned && <th>予想タイム</th>}{open && <th>着</th>}</tr></thead>
         <tbody>
@@ -65,7 +67,9 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       </div>
       {detail && <RaceDetail race={race} preds={preds} />}
       <TrioPayout race={race} preds={preds} />
-      {box.top.length >= 3 && <div className="trio">
+      {gate.skip && <div className="skipwarn" style={{border:'2px solid #D85A2A',color:'#221E18',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0'}}>買い目見送り: {gate.reason}</div>}
+      {!gate.skip && ax3.length === 3 && <div className="trio"><h3>3連複 軸1頭＋相手3頭（3点）</h3><ol className="trio-list">{ax3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('−')}</b></li>)}</ol></div>}
+      {!gate.skip && box.top.length >= 3 && <div className="trio">
         <h3>3連複 上位5頭ボックス（{box.combos.length}点）</h3>
         <p className="trio-main">{box.top.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('・')}</p>
         <p className="meta">{box.top.map(lbl).join(' / ')}</p>
@@ -75,7 +79,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
         <ol className="trio-list">{tri3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join(' → ')}</b> <small>{t.map(lbl).join(' → ')}</small></li>)}</ol>
         <p className="meta">軸=着順スコア1位、相手A=2位・B=3位。軸→A→B／軸→B→A／A→軸→B</p>
       </div>}
-      {trio && trio.count > 0 && <div className="trio">
+      {!gate.skip && trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
         <p className="trio-main">{trio.combos[0].horses.map(lbl).join(' − ')}</p>
         <p className="meta">期待値倍率 {trio.combos[0].evRatio.toFixed(2)}（平均=1.00）・確率シェア {(trio.combos[0].share * 100).toFixed(1)}%・全{trio.count}通り中1位</p>
