@@ -46,3 +46,12 @@ export function peerForm(name, raceId, sled, n = 3) {
   if (!p.length) return 0.5
   return p.reduce((s, x) => s + Math.max(0, 1 - (x.finish - 1) / Math.max(x.field - 1, 1)), 0) / p.length
 }
+// 水分適性: 今回の馬場水分(正規化)と ±0.15 以内の推定/実測水分だった過去走の直近最大3走の正規化着順平均。
+// 過去走の水分は気象推定(estimateMoisture)。該当なし/今回水分不明 → 0.5
+import { estimateMoisture, normMoisture } from './moisture.js'
+export function moistureForm(name, raceId, mNorm, n = 3) {
+  if (mNorm == null) return 0.5
+  const p = priorFinishes(name, raceId, 1e9).filter(x => { const m = normMoisture(estimateMoisture(x.date)); return m != null && Math.abs(m - mNorm) <= 0.15 }).slice(0, n)
+  if (!p.length) return 0.5
+  return p.reduce((s, x) => s + Math.max(0, 1 - (x.finish - 1) / Math.max(x.field - 1, 1)), 0) / p.length
+}

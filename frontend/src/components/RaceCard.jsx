@@ -30,7 +30,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       <header className="card-head">
         <span className="rno">{race.race_no}R</span>
         <div><h2>{race.name}</h2>
-          <p className="meta">{race.race_date}{race.track_moisture != null && `・馬場水分 ${race.track_moisture}%`}・{race.entries.length}頭</p></div>
+          <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭</p></div>
       </header>
       <table className="horses">
         <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>予想スコア</th>{open && <th>着</th>}</tr></thead>

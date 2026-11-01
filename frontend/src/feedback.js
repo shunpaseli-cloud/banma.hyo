@@ -1,9 +1,10 @@
 // ban_ei_feedback.py の JS 移植。永続化は localStorage。
-export const FEATURES = ['weight_pull', 'recent_form_3', 'recent_form_5', 'gate', 'jockey', 'time_index', 'sled_light', 'age_prime', 'body_mass', 'apprentice', 'prev_field_strength', 'prev_opp_quality', 'peer_form_3']
-export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form_3: 0.22, recent_form_5: 0.13, gate: 0.05, jockey: 0.2, time_index: 0.1, sled_light: 0.08, age_prime: 0.05, body_mass: 0.06, apprentice: 0.03, prev_field_strength: 0.03, prev_opp_quality: 0.05, peer_form_3: 0.05 }
+export const FEATURES = ['weight_pull', 'recent_form_3', 'recent_form_5', 'gate', 'jockey', 'time_index', 'sled_light', 'age_prime', 'body_mass', 'apprentice', 'prev_field_strength', 'prev_opp_quality', 'peer_form_3', 'track_moisture', 'moisture_form']
+export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form_3: 0.22, recent_form_5: 0.13, gate: 0.05, jockey: 0.2, time_index: 0.1, sled_light: 0.08, age_prime: 0.05, body_mass: 0.06, apprentice: 0.03, prev_field_strength: 0.03, prev_opp_quality: 0.05, peer_form_3: 0.05, track_moisture: 0.02, moisture_form: 0.05 }
 export const LEARNING_RATE = 0.05
 import LEARNED from './data/learned_weights.json' with { type: 'json' }
-import { prevFinish, recentForm, prevRaceContext, peerForm } from './prevFinish.js'
+import { prevFinish, recentForm, prevRaceContext, peerForm, moistureForm } from './prevFinish.js'
+import { resolveMoisture, normMoisture } from './moisture.js'
 export const KEEP_RACES = 2
 const K = { w: 'banma.weights', p: 'banma.predictions', r: 'banma.results', f: 'banma.feedback' }
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }
@@ -29,6 +30,7 @@ export function extractFeatures(race) {
   const prev = Object.fromEntries(race.entries.map(e => [e.horse_id, prevFinish(e.name, race.race_id)]))
   const bws = Object.values(prev).map(q => q?.body_weight).filter(Boolean), bMin = Math.min(...bws), bMax = Math.max(...bws)
   const ageScore = a => a == null ? null : a <= 2 ? 0.3 : a === 3 ? 0.6 : a <= 6 ? 1 : Math.max(0.2, 1 - (a - 6) * 0.15)
+  const mo = resolveMoisture(race), mN = normMoisture(mo.pct)
   for (const e of race.entries) {
     const q = prev[e.horse_id]
     const pull = (e.body_weight || 1000) / Math.max(e.sled_weight || 600, 1)
@@ -46,6 +48,8 @@ export function extractFeatures(race) {
       apprentice: e.weight_reduction ? 1 : 0, // 減量騎手(☆等)
       ...(c => ({ prev_field_strength: c?.fieldStrength ?? 0.5, prev_opp_quality: c?.oppQuality ?? 0.5 }))(prevRaceContext(e.name, race.race_id)), // 前走なし/time_index無し=0.5
       peer_form_3: peerForm(e.name, race.race_id, e.sled_weight), // 同条件(ソリ重量±50kg)直近3走
+      track_moisture: mN ?? 0.5, // 馬場水分 実測>気象推定>0.5。レース内全馬同値のため順位には影響しない
+      moisture_form: moistureForm(e.name, race.race_id, mN), // 似た水分の過去走成績
     }
   }
   return out

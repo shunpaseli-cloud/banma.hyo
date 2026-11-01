@@ -5,7 +5,7 @@ import { markOf, MARK_LEGEND } from '../marks.js'
 import { useEffect, useState } from 'react'
 import { getPdfResults } from '../scraper.js'
 const norm = s => (s || '').replace(/[\s\u3000]/g, '')
-const JP = { weight_pull: '牽引力（馬体重/ソリ重量）', recent_form_3: '近走3走', recent_form_5: '近走5走', gate: '枠順', jockey: '騎手勝率', time_index: 'タイム指数（前走）', sled_light: 'ソリ軽さ（相対）', age_prime: '年齢（充実度）', body_mass: '馬体重（前走・相対）', apprentice: '減量騎手', prev_field_strength: '前走頭数（相手の多さ）', prev_opp_quality: '前走対戦馬の強さ（タイム指数）', peer_form_3: '同条件成績（ソリ±50kg・3走）' }
+const JP = { weight_pull: '牽引力（馬体重/ソリ重量）', recent_form_3: '近走3走', recent_form_5: '近走5走', gate: '枠順', jockey: '騎手勝率', time_index: 'タイム指数（前走）', sled_light: 'ソリ軽さ（相対）', age_prime: '年齢（充実度）', body_mass: '馬体重（前走・相対）', apprentice: '減量騎手', prev_field_strength: '前走頭数（相手の多さ）', prev_opp_quality: '前走対戦馬の強さ（タイム指数）', peer_form_3: '同条件成績（ソリ±50kg・3走）', track_moisture: '馬場水分', moisture_form: '水分適性（似た馬場水分の過去3走）' }
 export default function RaceDetail({ race, preds }) {
   const w = getWeights(), H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
   const n = preds.length
@@ -23,6 +23,7 @@ export default function RaceDetail({ race, preds }) {
   }
   return <div className="detail trio">
     <h3>採点の詳細</h3>
+    <p className="meta">馬場水分: {race.track_moisture != null ? `${race.track_moisture}%（実測）` : race.track_moisture_est != null ? `約${race.track_moisture_est}%（天気からの推定・実測ではありません）` : '不明（中間値0.5で採点）'}</p>
     <p className="meta">スコア = Σ 重み × 特徴量。現在の重み: {FEATURES.map(f => `${JP[f].split('（')[0]} ${w[f].toFixed(3)}`).join('・')}</p>
     <div style={{ overflowX: 'auto' }}><table className="horses"><thead><tr><th>順</th><th>馬</th><th>前走</th><th>前走タイム</th>{FEATURES.map(f => <th key={f}>{JP[f].split('（')[0]}</th>)}<th>合計</th></tr></thead>
       <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; return <tr key={p.horse_id}><td>{p.pred_rank}</td><td className="nowrap">{h.umaban ?? h.gate}<span className="mark-in">{markOf(p.pred_rank)}</span> {h.name}</td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q ? <span>{q.finish != null ? `${q.finish}着` : '—'}<small> ({q.date.slice(5).replace('-','/')} {q.raceNo}R/{q.field}頭)</small></span> : '—' })()}</td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q?.time ? <span>{q.time}<small> (指数{q.time_index ?? '—'})</small></span> : '—' })()}</td>
