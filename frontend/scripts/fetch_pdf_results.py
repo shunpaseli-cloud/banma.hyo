@@ -23,7 +23,11 @@ def parse_column(text):
         if cur is not None and (m := ROW.match(l)):
             f, g, u = int(m.group(1)), int(m.group(2)), int(m.group(3))
             if 1 <= u <= 10 and f <= 10:
-                out[cur].append({"finish": f, "gate": g, "umaban": u, "name": m.group(4)})
+                tm = re.search(r"(\d)\.(\d{2})\.(\d)(?:\s|$)", l[m.end():])
+                row = {"finish": f, "gate": g, "umaban": u, "name": m.group(4), "sex": m.group(5)[0], "age": int(m.group(6))}
+                if bw := re.match(r"\s*(\d{3,4})\s+(\d{3})", l[m.end():]): row["body_weight"], row["sled_weight"] = int(bw.group(1)), int(bw.group(2))
+                if tm: row["time"] = f"{tm.group(1)}.{tm.group(2)}.{tm.group(3)}"; row["time_sec"] = int(tm.group(1))*60+int(tm.group(2))+int(tm.group(3))/10
+                out[cur].append(row)
     return out
 
 def parse_pdf(data):
@@ -59,7 +63,13 @@ def main():
             except Exception as e: print("skip", u, e); continue
             urls.append(u)
             for no, rows in races.items():
-                if date and rows: allr[f"{date}-R{no:02d}"] = sorted(rows, key=lambda r: r["finish"])
+                if date and rows:
+                    ts = [r["time_sec"] for r in rows if "time_sec" in r]
+                    if len(ts) >= 3:  # タイム指数: レース内偏差値 (速いほど高い)
+                        mu = sum(ts)/len(ts); sd = (sum((t-mu)**2 for t in ts)/len(ts))**.5 or 1
+                        for r in rows:
+                            if "time_sec" in r: r["time_index"] = round(50 + 10*(mu - r["time_sec"])/sd, 1)
+                    allr[f"{date}-R{no:02d}"] = sorted(rows, key=lambda r: r["finish"])
     doc = {"meta": {"source": "pdf", "fetched_at": datetime.datetime.now().astimezone().isoformat(timespec="seconds"),
                     "url": urls, "races": len(allr)}, "races": allr}
     s = json.dumps(doc, ensure_ascii=False, indent=1)

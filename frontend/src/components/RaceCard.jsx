@@ -2,6 +2,7 @@ import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
 import { trioPredictions } from '../trio.js'
+import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
 import { analyzeMisses, missWarnings } from '../missAnalysis.js'
 export default function RaceCard({ race, onLearn, fetchStatus }) {
@@ -32,18 +33,18 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
           <p className="meta">{race.race_date}{race.track_moisture != null && `・馬場水分 ${race.track_moisture}%`}・{race.entries.length}頭</p></div>
       </header>
       <table className="horses">
-        <thead><tr><th>枠</th><th>馬番</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>予想スコア</th><th>印</th>{open && <th>着</th>}</tr></thead>
+        <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>予想スコア</th>{open && <th>着</th>}</tr></thead>
         <tbody>
           {race.entries.map(h => { const p = P[h.horse_id]; return (
             <tr key={h.horse_id} className={p.pred_rank === 1 ? 'top' : ''}>
-              <td className="gate">{h.gate}</td><td>{h.umaban ?? '—'}</td><td>{h.name}{warns[h.horse_id] && <span className="warn" title={warns[h.horse_id]}> ⚠</span>}{h.sex && <small> {h.sex}{h.age}</small>}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
+              <td className="gate">{h.gate}</td><td className="nowrap">{h.umaban ?? '—'}<span className="mark-in">{markOf(p.pred_rank)}</span></td><td>{h.name}{warns[h.horse_id] && <span className="warn" title={warns[h.horse_id]}> ⚠</span>}{h.sex && <small> {h.sex}{h.age}</small>}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
               <td><div className="bar"><span style={{ width: `${(p.score / max) * 100}%` }} /></div>{p.score.toFixed(3)}</td>
-              <td className="mark">{['◎', '○', '▲'][p.pred_rank - 1] || ''}</td>
               {open && <td><input className="fin" type="number" min="1" max={race.entries.length} inputMode="numeric"
                 value={fin[h.horse_id] || ''} onChange={e => setFin({ ...fin, [h.horse_id]: e.target.value })} /></td>}
             </tr>) })}
         </tbody>
       </table>
+      <p className="meta legend">{MARK_LEGEND}</p>
       <div className="fb">
         {open ? <><button className="more small" onClick={learn}>結果を学習</button>
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>

@@ -1,8 +1,9 @@
 // ban_ei_feedback.py の JS 移植。永続化は localStorage。
-export const FEATURES = ['weight_pull', 'recent_form', 'gate', 'jockey']
-export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form: 0.35, gate: 0.05, jockey: 0.2 }
+export const FEATURES = ['weight_pull', 'recent_form', 'gate', 'jockey', 'time_index', 'sled_light', 'age_prime', 'body_mass', 'apprentice']
+export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form: 0.35, gate: 0.05, jockey: 0.2, time_index: 0.1, sled_light: 0.08, age_prime: 0.05, body_mass: 0.06, apprentice: 0.03 }
 export const LEARNING_RATE = 0.05
 import LEARNED from './data/learned_weights.json' with { type: 'json' }
+import { prevFinish } from './prevFinish.js'
 export const KEEP_RACES = 2
 const K = { w: 'banma.weights', p: 'banma.predictions', r: 'banma.results', f: 'banma.feedback' }
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }
@@ -12,6 +13,7 @@ const now = () => new Date().toISOString()
 export function getWeights() {
   const w = load(K.w, null)
   if (!w) { const init = { ...DEFAULT_WEIGHTS, ...(LEARNED?.weights || {}) }; store(K.w, init); return init }
+  if (FEATURES.some(f => w[f] == null)) { for (const f of FEATURES) w[f] ??= DEFAULT_WEIGHTS[f]; store(K.w, w) }
   return w
 }
 export function resetModel() { Object.values(K).forEach(k => localStorage.removeItem(k)) }
@@ -23,19 +25,33 @@ function jockeyRate(jockey) {
 }
 export function extractFeatures(race) {
   const n = Math.max(race.entries.length, 1), out = {}
+  const sl = race.entries.map(e => e.sled_weight).filter(Boolean), sMin = Math.min(...sl), sMax = Math.max(...sl)
+  const prev = Object.fromEntries(race.entries.map(e => [e.horse_id, prevFinish(e.name, race.race_id)]))
+  const bws = Object.values(prev).map(q => q?.body_weight).filter(Boolean), bMin = Math.min(...bws), bMax = Math.max(...bws)
+  const ageScore = a => a == null ? null : a <= 2 ? 0.3 : a === 3 ? 0.6 : a <= 6 ? 1 : Math.max(0.2, 1 - (a - 6) * 0.15)
   for (const e of race.entries) {
+    const q = prev[e.horse_id]
     const pull = (e.body_weight || 1000) / Math.max(e.sled_weight || 600, 1)
     out[e.horse_id] = {
       weight_pull: Math.min(pull / 2, 1),
       recent_form: e.recent_form ?? 0.5,
       gate: 1 - (e.gate - 1) / n,
       jockey: jockeyRate(e.jockey),
+      // 前走タイム指数(レース内偏差値)。取れない馬は null → スコア計算でスキップ
+      time_index: (q => q?.time_index != null ? Math.max(0, Math.min(1, (q.time_index - 30) / 40)) : null)(q),
+      sled_light: e.sled_weight && sMax > sMin ? (sMax - e.sled_weight) / (sMax - sMin) : null, // 相対的に軽いソリほど高い
+      age_prime: ageScore(e.age ?? q?.age ?? null), // 4〜6歳が充実期
+      body_mass: q?.body_weight && bws.length > 1 && bMax > bMin ? (q.body_weight - bMin) / (bMax - bMin) : null, // 前走馬体重（重い=牽引有利）
+      apprentice: e.weight_reduction ? 1 : 0, // 減量騎手(☆等)
     }
   }
   return out
 }
+// 欠損(null)の特徴量は除外し、残りの重みで総重み分に再スケール
 export function horseScore(features, weights = getWeights()) {
-  return FEATURES.reduce((s, f) => s + weights[f] * (features[f] || 0), 0)
+  let s = 0, used = 0, all = 0
+  for (const f of FEATURES) { all += weights[f] || 0; if (features[f] == null) continue; s += weights[f] * features[f]; used += weights[f] || 0 }
+  return used ? s * all / used : 0
 }
 export function savePrediction(raceId, horseId, score, predRank, features = {}) {
   const ps = load(K.p, []); const id = (ps.at(-1)?.id || 0) + 1
@@ -61,7 +77,7 @@ export function updateWithResult(race, results) {
     const finish = +results[p.horse_id]; if (!finish) continue
     const d = Math.max(field - 1, 1)
     const err = (1 - (finish - 1) / d) - (1 - (p.pred_rank - 1) / d)
-    for (const f of FEATURES) w[f] = Math.max(0, w[f] + LEARNING_RATE * err * (p.features[f] || 0))
+    for (const f of FEATURES) if (p.features[f] == null) continue; w[f] = Math.max(0, (w[f] ?? DEFAULT_WEIGHTS[f]) + LEARNING_RATE * err * (p.features[f] || 0))
     const tot = FEATURES.reduce((s, f) => s + w[f], 0) || 1
     for (const f of FEATURES) w[f] /= tot
     fb.push({ prediction_id: p.id, race_id: p.race_id, horse_id: p.horse_id, pred_rank: p.pred_rank, actual_finish: finish,

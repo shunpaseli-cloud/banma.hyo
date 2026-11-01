@@ -3,7 +3,7 @@
 import json, re, subprocess, urllib.request, tempfile, os
 C = '①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯'
 P = re.compile(r'三連複\s*([%s])－([%s])－([%s])\s*([\d,]+)円' % (C, C, C))
-for path in ['src/data/results_from_pdf.json', 'public/results.json']:
+for path in ['src/data/results_from_pdf.json']:
     d = json.load(open(path)); found = []
     for u in d['meta']['url']:
         f = tempfile.mktemp('.pdf'); urllib.request.urlretrieve(u, f)
