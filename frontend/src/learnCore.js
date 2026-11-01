@@ -35,18 +35,19 @@ export function wfit(X, y, w, lam = 1) {
 }
 export function applyModel(m, x) { let s = m.b[0]; x.forEach((v, j) => { s += m.b[j + 1] * ((Number.isNaN(v) ? m.mu[j] : v) - m.mu[j]) / m.sd[j] }); return s }
 // 結果JSON + 過去カード(騎手) から日付順の学習行を作り、各開催日 D について「D より前の日だけ」で当てたモデルを返す
-export function trainChronological(results, pastCards = [], lambda = LAMBDA, warm = 10) {
+export function trainChronological(results, pastCards = [], lambda = LAMBDA, warm = 10, keep = null) {
+  // keep(rid): 学習行に入れるレースの条件(例: 雨用=水分>=閾値)。馬/騎手の履歴は全レースで更新
   const JK = {}; for (const r of pastCards) for (const e of r.entries || []) JK[`${e.race_id}|${e.name}`] = e.jockey
   const byDay = {}; for (const [rid, ent] of Object.entries(results)) (byDay[dateOf(rid)] ||= []).push([rid, ent])
-  const days = Object.keys(byDay).sort(), X = [], YF = [], YT = [], DN = [], cnt = {}, hist = {}, snapshots = {}
+  const days = Object.keys(byDay).sort(), X = [], KD = new Set(), YF = [], YT = [], DN = [], cnt = {}, hist = {}, snapshots = {}
   const fitAt = i => { const w = DN.map(dn => lambda ** (i - 1 - dn)); return { finish: wfit(X, YF, w), time: wfit(X, YT, w) } }
   days.forEach((d, i) => {
-    if (i >= warm) snapshots[d] = fitAt(i) // 当日の結果を入れる前 = 過去日のみ
+    if ((keep ? KD.size : i) >= warm) snapshots[d] = fitAt(i) // 当日の結果を入れる前 = 過去日のみ
     const rows = []
     for (const [rid, ent] of byDay[d].sort()) { const n = ent.length
       for (const e of ent) { if (!Number.isInteger(e.finish)) continue; const jk = JK[`${rid}|${e.name}`]
-        rows.push({ e, jk, x: featureVec(e, rid, n, { jockeyCount: jk ? cnt[jk] || 0 : 0, hist: hist[e.name] }), yf: finScore(e.finish, n), yt: tsec(e.time, e.time_sec) }) } }
-    for (const r of rows) { X.push(r.x); YF.push(r.yf); YT.push(r.yt); DN.push(i) }
+        rows.push({ e, jk, k: !keep || keep(rid), x: featureVec(e, rid, n, { jockeyCount: jk ? cnt[jk] || 0 : 0, hist: hist[e.name] }), yf: finScore(e.finish, n), yt: tsec(e.time, e.time_sec) }) } }
+    for (const r of rows) { if (!r.k) continue; KD.add(d); X.push(r.x); YF.push(r.yf); YT.push(r.yt); DN.push(i) }
     for (const r of rows) { if (r.jk) cnt[r.jk] = (cnt[r.jk] || 0) + 1; (hist[r.e.name] ||= []).push(r.yf) }
   })
   return { days, snapshots, final: fitAt(days.length), n_rows: X.length }

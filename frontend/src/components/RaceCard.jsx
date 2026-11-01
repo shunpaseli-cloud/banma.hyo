@@ -53,7 +53,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
             </tr>) })}
         </tbody>
       </table>
-      <p className="meta legend">{MARK_LEGEND}{learned && `・着順スコア/予想タイム = 時系列学習モデル（λ=0.92、${preds[0].model.asOf}${preds[0].model.kind === 'snapshot' ? ' より前の結果' : ' までの結果'}で学習）`}</p>
+      <p className="meta legend">{MARK_LEGEND}{learned && `・着順スコア/予想タイム = 時系列学習モデル（${preds[0].model.which === 'rain' ? '☔雨用' : '通常'}・λ=0.92、${preds[0].model.asOf}${preds[0].model.kind === 'snapshot' ? ' より前の結果' : ' までの結果'}で学習）`}</p>
       <div className="fb">
         {open ? <><button className="more small" onClick={learn}>結果を学習</button>
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>
