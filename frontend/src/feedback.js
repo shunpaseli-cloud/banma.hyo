@@ -74,7 +74,7 @@ export function predict(race, save = false) {
       return { hid, f, legacy, lp, s: lp ? Math.max(lp.finish_score, 0.001) : legacy } })
     .sort((a, b) => b.s - a.s)
     .map(({ hid, f, s, legacy, lp }, i) => ({ horse_id: hid, score: +s.toFixed(4), pred_rank: i + 1, features: f,
-      legacy_score: +legacy.toFixed(4), finish_score: lp ? +lp.finish_score.toFixed(4) : null, pred_time_sec: lp ? +lp.pred_time_sec.toFixed(1) : null,
+      legacy_score: +legacy.toFixed(4), finish_score: lp ? +lp.finish_score.toFixed(4) : null, pred_time_sec: lp ? +lp.pred_time_sec.toFixed(1) : null, past_form: lp?.past_form ?? null,
       model: L ? { asOf: L.asOf, kind: L.kind } : null,
       prediction_id: save ? savePrediction(race.race_id, hid, s, i + 1, f) : null }))
 }

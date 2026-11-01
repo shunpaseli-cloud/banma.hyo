@@ -21,7 +21,7 @@ export function learnedPredict(race) {
     const hist = priorFinishes(e.name, race.race_id, 1e9).map(x => finScore(x.finish, x.field)).reverse()
     const ee = { ...e, body_weight: e.body_weight ?? prevFinish(e.name, race.race_id)?.body_weight } // 出走表に馬体重が無い時は前走値
     const x = featureVec(ee, race.race_id, n, { jockeyCount: jockeyCount(e.jockey, race.race_id), hist })
-    out[e.horse_id] = { finish_score: applyModel(mm.m.finish, x), pred_time_sec: applyModel(mm.m.time, x) }
+    out[e.horse_id] = { finish_score: applyModel(mm.m.finish, x), pred_time_sec: applyModel(mm.m.time, x), past_form: hist.length ? x[12] : null }
   }
   return { byHorse: out, asOf: mm.asOf, kind: mm.kind }
 }
