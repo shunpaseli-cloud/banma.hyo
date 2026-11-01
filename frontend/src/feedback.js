@@ -80,7 +80,10 @@ export function updateWithResult(race, results) {
     const finish = +results[p.horse_id]; if (!finish) continue
     const d = Math.max(field - 1, 1)
     const err = (1 - (finish - 1) / d) - (1 - (p.pred_rank - 1) / d)
-    for (const f of FEATURES) if (p.features[f] == null) continue; w[f] = Math.max(0, (w[f] ?? DEFAULT_WEIGHTS[f]) + LEARNING_RATE * err * (p.features[f] || 0))
+    for (const f of FEATURES) {
+      if (p.features[f] == null) continue
+      w[f] = Math.max(0, (w[f] ?? DEFAULT_WEIGHTS[f]) + LEARNING_RATE * err * (p.features[f] || 0))
+    }
     const tot = FEATURES.reduce((s, f) => s + w[f], 0) || 1
     for (const f of FEATURES) w[f] /= tot
     fb.push({ prediction_id: p.id, race_id: p.race_id, horse_id: p.horse_id, pred_rank: p.pred_rank, actual_finish: finish,
