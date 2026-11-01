@@ -24,6 +24,6 @@ export function TrioPayout({ race, preds }) {
     <h3>{race.race_date} {race.race_no}R</h3>
     <p className="meta payout"><b>3連複5点</b>（軸3点＋穴1点＋大穴1点） 予想: {fuku.map((c, i) => <span key={i} className="nowrap">[{kinds[i]}]{c.join('−')}{fHit(c) && '◎'}　</span>)}<br />
       配当: {fp ? <><span className="nowrap">{fp.combo.join('−')}</span> <b>{fp.payout.toLocaleString()}円</b>{fuku.some(fHit) ? ' 的中' : ''}</> : '未確定'}</p>
-    {rules.paperRun?.enabled && <p className="meta"><small>紙運用ゲート: 確認期間回収{rules.paperRun.roiGatePct}%超え→次の{rules.paperRun.days}日間 紙運用で実測記録→3日実測≥{rules.paperRun.roiGatePct}%で本番反映（現状: {rules.paperRun.status}）</small></p>}
+    {rules.paperRun?.enabled && <p className="meta"><small>紙運用ゲート: 確認期間回収{rules.paperRun.roiGatePct}%超え→次の{rules.paperRun.days}日間 紙運用で実測記録→{rules.paperRun.days}日実測≥{rules.paperRun.roiGatePct}%で本番反映（現状: {rules.paperRun.status}）</small></p>}
   </div>
 }
