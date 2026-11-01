@@ -26,7 +26,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const warns = useMemo(() => missWarnings(race), [race])
   const [misses, setMisses] = useState([])
   const H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
-  const lbl = p => { const h = H[p.horse_id] || {}; return `${h.umaban ?? h.gate ?? '?'} ${h.name ?? ''}` }
+  const lbl = p => { const h = H[p.horse_id] || {}; return `${h.umaban ?? h.gate ?? '?'}` }
   const learn = () => {
     predict(race, true)
     const r = updateWithResult(race, fin)
@@ -42,11 +42,11 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       </header>
       {skipW.map(w => <div key={w} className="skipwarn" style={{border:'2px solid #D85A2A',color:'#D85A2A',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0',fontWeight:700}}>⚠ {w}<small style={{color:'#221E18',fontWeight:400}}>（参考表示）</small></div>)}
       <table className="horses">
-        <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>{learned ? '着順スコア' : '予想スコア'}</th>{learned && <th>予想タイム</th>}{open && <th>着</th>}</tr></thead>
+        <thead><tr><th>枠</th><th>馬番 印</th><th>騎手</th><th>ソリ</th><th>{learned ? '着順スコア' : '予想スコア'}</th>{learned && <th>予想タイム</th>}{open && <th>着</th>}</tr></thead>
         <tbody>
           {race.entries.map(h => { const p = P[h.horse_id]; return (
             <tr key={h.horse_id} className={p.pred_rank === 1 ? 'top' : ''}>
-              <td className="gate">{h.gate}</td><td className="nowrap">{h.umaban ?? '—'}<span className="mark-in">{markOf(p.pred_rank)}</span></td><td>{h.name}{warns[h.horse_id] && <span className="warn" title={warns[h.horse_id]}> ⚠</span>}{h.sex && <small> {h.sex}{h.age}</small>}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
+              <td className="gate">{h.gate}</td><td className="nowrap">{h.umaban ?? '—'}<span className="mark-in">{markOf(p.pred_rank)}</span>{warns[h.horse_id] && <span className="warn" title={warns[h.horse_id]}> ⚠</span>}</td><td>{h.jockey}</td><td>{h.sled_weight}kg</td>
               <td><div className="bar"><span style={{ width: `${(p.score / max) * 100}%` }} /></div>{p.score.toFixed(3)}</td>{learned && <td className="nowrap">{fmtTime(p.pred_time_sec)}</td>}
               {open && <td><input className="fin" type="number" min="1" max={race.entries.length} inputMode="numeric"
                 value={fin[h.horse_id] || ''} onChange={e => setFin({ ...fin, [h.horse_id]: e.target.value })} /></td>}
@@ -88,11 +88,11 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
         {trioOpen && <><h3>上位10通り</h3>
         <ol className="trio-list">{trio.combos.slice(0, 10).map((c, i) =>
           <li key={i}><span>{c.horses.map(h => H[h.horse_id]?.umaban ?? H[h.horse_id]?.gate).join('-')}</span>
-            <small>{c.horses.map(h => H[h.horse_id]?.name).join('・')}</small>
+            <small>{c.horses.map(h => H[h.horse_id]?.umaban).join('-')}</small>
             <b>×{c.evRatio.toFixed(2)} / {(c.share * 100).toFixed(1)}%</b></li>)}</ol></>}
       </div>}
       {Object.keys(warns).length > 0 && <div className="misswarn"><h3>⚠ 過去の外れ傾向</h3><ul>{Object.entries(warns).map(([id, m]) =>
-        <li key={id}>{H[id]?.umaban} {H[id]?.name}: {m}</li>)}</ul></div>}
+        <li key={id}>{H[id]?.umaban}: {m}</li>)}</ul></div>}
       {(misses.length ? misses : fetchStatus?.misses || []).length > 0 && <div className="misswarn"><h3>外れ分析</h3><ul>{(misses.length ? misses : fetchStatus.misses).map(m => <li key={m.horse_id}>{m.reason}</li>)}</ul></div>}
     </article>
   )

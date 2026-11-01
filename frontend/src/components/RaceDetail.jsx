@@ -28,22 +28,22 @@ export default function RaceDetail({ race, preds }) {
     <p className="meta">{preds[0]?.finish_score != null ? `順位は時系列学習モデル（指数重みOLS λ=0.92・13特徴）の着順スコア順（${preds[0].model.asOf}${preds[0].model.kind === 'snapshot' ? ' より前' : ' まで'}の結果で学習）。下表「合計」は従来の重み付きスコア。` : '学習モデルの対象外の日のため従来スコアで順位付け。'}</p>
     <p className="meta">従来スコア = Σ 重み × 特徴量。現在の重み: {FEATURES.map(f => `${JP[f].split('（')[0]} ${w[f].toFixed(3)}`).join('・')}</p>
     <div style={{ overflowX: 'auto' }}><table className="horses"><thead><tr><th>順</th><th>馬</th><th>前走</th><th>前走タイム</th>{FEATURES.map(f => <th key={f}>{JP[f].split('（')[0]}</th>)}<th>合計</th><th>着順スコア</th><th>予想タイム</th></tr></thead>
-      <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; return <tr key={p.horse_id}><td>{p.pred_rank}</td><td className="nowrap">{h.umaban ?? h.gate}<span className="mark-in">{markOf(p.pred_rank)}</span> {h.name}</td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q ? <span>{q.finish != null ? `${q.finish}着` : '—'}<small> ({q.date.slice(5).replace('-','/')} {q.raceNo}R/{q.field}頭)</small></span> : '—' })()}</td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q?.time ? <span>{q.time}<small> (指数{q.time_index ?? '—'})</small></span> : '—' })()}</td>
+      <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; return <tr key={p.horse_id}><td>{p.pred_rank}</td><td className="nowrap">{h.umaban ?? h.gate}<span className="mark-in">{markOf(p.pred_rank)}</span></td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q ? <span>{q.finish != null ? `${q.finish}着` : '—'}<small> ({q.date.slice(5).replace('-','/')} {q.raceNo}R/{q.field}頭)</small></span> : '—' })()}</td><td>{(() => { const q = prevFinish(h.name, race.race_id); return q?.time ? <span>{q.time}<small> (指数{q.time_index ?? '—'})</small></span> : '—' })()}</td>
         {FEATURES.map(f => <td key={f}>{p.features[f] == null ? <small>— (スキップ)</small> : <>{(w[f] * p.features[f]).toFixed(3)}<small> ({p.features[f].toFixed(2)})</small></>}</td>)}<td><b>{(p.legacy_score ?? p.score).toFixed(3)}</b></td><td>{p.finish_score != null ? p.finish_score.toFixed(3) : '—'}</td><td>{fmtTime(p.pred_time_sec)}</td></tr> })}</tbody></table></div>
     <p className="meta">各欄: 寄与（重み×値）、括弧内は特徴量の値(0〜1)。前走は公式結果PDF（同梱分）から馬名で照合、不明は「—」。タイム指数=前走のレース内偏差値（速いほど高い）。取れない馬はタイムを除いた特徴量だけで採点。{MARK_LEGEND}</p>
     <h3>レース結果（実際の着順）</h3>
     {res === undefined ? <p className="meta">結果を確認中…</p> : !res ? <p className="meta"><b>結果未公開</b></p> : <>
-      <div style={{ overflowX: 'auto' }}><table className="horses results-big"><thead><tr><th>着</th><th>馬番</th><th>馬名</th><th>騎手</th><th>タイム</th><th>予想順</th><th>差</th></tr></thead>
+      <div style={{ overflowX: 'auto' }}><table className="horses results-big"><thead><tr><th>着</th><th>馬番</th><th>騎手</th><th>タイム</th><th>予想順</th><th>差</th></tr></thead>
         <tbody>{[...res].sort((a, b) => (a.finish ?? 99) - (b.finish ?? 99)).map((r, i) => { const e = findE(r); const pr = predOf(e)
-          return <tr key={i}><td>{r.finish ?? '—'}</td><td>{r.umaban ?? e?.umaban ?? '—'}</td><td>{e?.name || r.name}</td><td>{e?.jockey || r.jockey || '—'}</td><td>{r.time ?? '—'}</td><td>{pr ?? '—'}</td><td>{pr && r.finish ? (pr === r.finish ? '◎' : (r.finish - pr > 0 ? '+' : '') + (r.finish - pr)) : ''}</td></tr> })}</tbody></table></div>
+          return <tr key={i}><td>{r.finish ?? '—'}</td><td>{r.umaban ?? e?.umaban ?? '—'}</td><td>{e?.jockey || r.jockey || '—'}</td><td>{r.time ?? '—'}</td><td>{pr ?? '—'}</td><td>{pr && r.finish ? (pr === r.finish ? '◎' : (r.finish - pr > 0 ? '+' : '') + (r.finish - pr)) : ''}</td></tr> })}</tbody></table></div>
       <TrioPayout race={race} preds={preds} />
       <h3>予想順 vs 実着順</h3>
       <div style={{ overflowX: 'auto' }}><table className="horses results-big"><thead><tr><th>予想</th><th>馬</th><th>騎手</th><th>実着順</th></tr></thead>
         <tbody>{preds.map(p => { const h = H[p.horse_id] || {}; const f = finOf[p.horse_id]
-          return <tr key={p.horse_id}><td>{p.pred_rank}</td><td className="nowrap">{h.umaban ?? h.gate}<span className="mark-in">{markOf(p.pred_rank)}</span> {h.name}</td><td>{h.jockey || '—'}</td><td>{f != null ? <b>{f}着</b> : '—'}</td></tr> })}</tbody></table></div>
+          return <tr key={p.horse_id}><td>{p.pred_rank}</td><td className="nowrap">{h.umaban ?? h.gate}<span className="mark-in">{markOf(p.pred_rank)}</span></td><td>{h.jockey || '—'}</td><td>{f != null ? <b>{f}着</b> : '—'}</td></tr> })}</tbody></table></div>
       <p className="meta">出典: 公式成績PDF（results.json）。差 = 実着順 − 予想順（◎は一致）</p></>}
     <h3>順位の理由</h3>
     <ol>{preds.map((p, i) => { const h = H[p.horse_id] || {}; const gap = i > 0 ? `（上位との差 ${(preds[i - 1].score - p.score).toFixed(3)}）` : ''
-      return <li key={p.horse_id}><b>{h.umaban ?? h.gate} {h.name}</b>{gap}: {reason(p)}</li> })}</ol>
+      return <li key={p.horse_id}><b>{h.umaban ?? h.gate}</b>{gap}: {reason(p)}</li> })}</ol>
   </div>
 }
