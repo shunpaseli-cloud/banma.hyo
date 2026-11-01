@@ -18,3 +18,11 @@ export function topBox(preds, k = 5) {
     combos.push({ horses: [top[i], top[j], top[l]], product: top[i].score * top[j].score * top[l].score })
   return { top, combos: combos.sort((a, b) => b.product - a.product) }
 }
+
+// 三連単 3点: 軸=着順スコア1位, 相手A=2位, 相手B=3位 → 軸-A-B / 軸-B-A / A-軸-B
+export function trifecta3(preds) {
+  const s = [...preds].sort((a, b) => b.score - a.score)
+  if (s.length < 3) return []
+  const [X, A, B] = s
+  return [[X, A, B], [X, B, A], [A, X, B]]
+}

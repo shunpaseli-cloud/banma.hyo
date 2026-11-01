@@ -1,7 +1,7 @@
 import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
-import { trioPredictions, topBox } from '../trio.js'
+import { trioPredictions, topBox, trifecta3 } from '../trio.js'
 import { fmtTime } from '../learnScore.js'
 import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
@@ -17,6 +17,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const [detail, setDetail] = useState(false)
   const trio = useMemo(() => trioPredictions(preds), [preds])
   const box = useMemo(() => topBox(preds), [preds])
+  const tri3 = useMemo(() => trifecta3(preds), [preds])
   const learned = preds[0]?.finish_score != null
   const warns = useMemo(() => missWarnings(race), [race])
   const [misses, setMisses] = useState([])
@@ -65,6 +66,11 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
         <h3>3連複 上位5頭ボックス（{box.combos.length}点）</h3>
         <p className="trio-main">{box.top.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join('・')}</p>
         <p className="meta">{box.top.map(lbl).join(' / ')}</p>
+      </div>}
+      {tri3.length === 3 && <div className="trio">
+        <h3>三連単 3点（軸1頭＋相手2頭）</h3>
+        <ol className="trio-list">{tri3.map((t, i) => <li key={i}><b>{t.map(p => H[p.horse_id]?.umaban ?? H[p.horse_id]?.gate).join(' → ')}</b> <small>{t.map(lbl).join(' → ')}</small></li>)}</ol>
+        <p className="meta">軸=着順スコア1位、相手A=2位・B=3位。軸→A→B／軸→B→A／A→軸→B</p>
       </div>}
       {trio && trio.count > 0 && <div className="trio">
         <h3>3連複ボックス（1点）</h3>
