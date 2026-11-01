@@ -5,6 +5,7 @@ import { trioPredictions, topBox, trifecta3 } from '../trio.js'
 import { fmtTime } from '../learnScore.js'
 import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
+import { skipWarnings } from '../skipWarn.js'
 import { analyzeMisses, missWarnings } from '../missAnalysis.js'
 export default function RaceCard({ race, onLearn, fetchStatus }) {
   const preds = useMemo(() => predict(race), [race])
@@ -19,6 +20,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const box = useMemo(() => topBox(preds), [preds])
   const tri3 = useMemo(() => trifecta3(preds), [preds])
   const learned = preds[0]?.finish_score != null
+  const skipW = useMemo(() => skipWarnings(race, preds), [race, preds])
   const warns = useMemo(() => missWarnings(race), [race])
   const [misses, setMisses] = useState([])
   const H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
@@ -36,6 +38,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
         <div><h2>{race.name}</h2>
           <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭</p></div>
       </header>
+      {skipW.map(w => <div key={w} className="skipwarn" style={{border:'2px solid #D85A2A',color:'#D85A2A',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0',fontWeight:700}}>⚠ {w}<small style={{color:'#221E18',fontWeight:400}}>（参考表示・買い目はそのまま）</small></div>)}
       <table className="horses">
         <thead><tr><th>枠</th><th>馬番 印</th><th>馬名</th><th>騎手</th><th>ソリ</th><th>{learned ? '着順スコア' : '予想スコア'}</th>{learned && <th>予想タイム</th>}{open && <th>着</th>}</tr></thead>
         <tbody>
