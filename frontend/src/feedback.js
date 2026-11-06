@@ -1,4 +1,6 @@
 import { learnedPredict } from './learnScore.js'
+import rules from './data/skip_rules.json' with { type: 'json' }
+import { adjustedScore, forceAxisOrder, isMemrobo } from './memrobo.js'
 // ban_ei_feedback.py の JS 移植。永続化は localStorage。
 export const FEATURES = ['weight_pull', 'recent_form_3', 'recent_form_5', 'gate', 'jockey', 'time_index', 'sled_light', 'age_prime', 'body_mass', 'apprentice', 'prev_field_strength', 'prev_opp_quality', 'peer_form_3', 'track_moisture', 'moisture_form']
 export const DEFAULT_WEIGHTS = { weight_pull: 0.4, recent_form_3: 0.22, recent_form_5: 0.13, gate: 0.05, jockey: 0.2, time_index: 0.1, sled_light: 0.08, age_prime: 0.05, body_mass: 0.06, apprentice: 0.03, prev_field_strength: 0.03, prev_opp_quality: 0.05, peer_form_3: 0.05, track_moisture: 0.02, moisture_form: 0.05 }
@@ -71,13 +73,35 @@ export function savePrediction(raceId, horseId, score, predRank, features = {}) 
 //   legacy_score は従来式の値(結果入力時の重み更新は従来どおり features と pred_rank を使用)
 export function predict(race, save = false) {
   const w = getWeights(), feats = extractFeatures(race), L = learnedPredict(race)
-  return Object.entries(feats).map(([hid, f]) => { const lp = L?.byHorse[hid], legacy = horseScore(f, w)
-      return { hid, f, legacy, lp, s: lp ? Math.max(lp.finish_score, 0.001) : legacy } })
-    .sort((a, b) => b.s - a.s)
-    .map(({ hid, f, s, legacy, lp }, i) => ({ horse_id: hid, score: +s.toFixed(4), pred_rank: i + 1, features: f,
-      legacy_score: +legacy.toFixed(4), finish_score: lp ? +lp.finish_score.toFixed(4) : null, pred_time_sec: lp ? +lp.pred_time_sec.toFixed(1) : null, past_form: lp?.past_form ?? null,
-      model: L ? { asOf: L.asOf, kind: L.kind, which: L.model, moist: L.moist } : null,
-      prediction_id: save ? savePrediction(race.race_id, hid, s, i + 1, f) : null }))
+  const names = Object.fromEntries((race.entries || []).map(e => [e.horse_id, e.name]))
+  const k = rules.streakPenaltyK ?? 0, pw = rules.pastFormBonusW ?? 0
+  const raw = Object.entries(feats).map(([hid, f]) => {
+    const lp = L?.byHorse[hid], legacy = horseScore(f, w)
+    const base = lp ? Math.max(lp.finish_score, 0.001) : legacy
+    const hs = lp?.horse_streak ?? 0
+    const pf = lp?.past_form ?? 0.5
+    const row = { horse_id: hid, name: names[hid] ?? null, score: base, horse_streak: hs, past_form: pf }
+    const adj = adjustedScore(row, { k, w: pw, scoreKey: 'score' })
+    return { hid, f, legacy, lp, base, adj, hs, pf, name: names[hid] ?? null }
+  })
+  // 調整スコア降順。メムロがいれば軸固定
+  const ordered = forceAxisOrder(raw.map(q => ({ ...q, score: q.adj, horse_id: q.hid, name: q.name, horse_streak: q.hs, past_form: q.pf })), 'score')
+  return ordered.map((q, i) => {
+    const { hid, f, legacy, lp, base, adj, hs, pf, name } = raw.find(r => r.hid === q.hid)
+    const score = +adj.toFixed(4)
+    return {
+      horse_id: hid, name, score, pred_rank: i + 1, features: f,
+      legacy_score: +legacy.toFixed(4),
+      finish_score: lp ? +lp.finish_score.toFixed(4) : null,
+      raw_finish_score: lp ? +lp.finish_score.toFixed(4) : null,
+      pred_time_sec: lp ? +lp.pred_time_sec.toFixed(1) : null,
+      past_form: pf ?? null,
+      horse_streak: hs,
+      jockey_streak: lp?.jockey_streak ?? null,
+      model: L ? { asOf: L.asOf, kind: L.kind, which: L.model, moist: L.moist, plus_hjz: !!rules.features?.plus_hjz, k, w: pw } : null,
+      prediction_id: save ? savePrediction(race.race_id, hid, score, i + 1, f) : null,
+    }
+  })
 }
 // results: {horse_id: finish}
 export function updateWithResult(race, results) {

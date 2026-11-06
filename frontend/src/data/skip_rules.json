@@ -4,11 +4,11 @@
  "warnScoreSpread": 0.05,
  "scoreSpreadWarnEnabled": false,
  "pastFormWarnEnabled": true,
- "pastFormThreshold": 0.7,
- "_comment": "pastFormThreshold=0.700: 全データ1,652R(OLS雨切替)で0.5〜0.8を0.025刻みスイープし、警告なし群が3頭BOX等の的中・回収4指標すべてで警告あり群を上回った唯一の閾値(BOX回収差+30pt)。出典 /tmp/pastform_threshold_sweep.json。旧値0.625=前半458R中央値。隣接0.725で差が逆転するため過学習の可能性あり。過去正規化着順平均(1=全勝)。表示警告のみ、買い目は隠さない。",
+ "pastFormThreshold": 0.65,
+ "_comment": "pastFormThreshold=0.65: ラムダBOX寄せ選定#2近傍検証(/tmp/lambda_box_validate.md) plus_hjz/BOX123/k=0.05 が選定170.7%/ホールド204.4%・hold前後半とも≥120。旧0.700はpastform_threshold_sweep由来。",
  "pastFormFilterEnabled": true,
  "pastFormFilterMode": "skip",
- "_filterComment": "pastFormFilterEnabled: 軸(着順スコア1位)の過去正規化着順平均<閾値なら3連複の買い目を空にして見送り(SKIP)。次点軸への繰り上げはしない(分割検証と同条件)。閾値はpastFormThreshold(0.700, /tmp/pastform_threshold_sweep.json)。",
+ "_filterComment": "軸 past_form < 0.65 なら見送り推奨（メムロ出走時はゲートしない）。買い目は参考表示。",
  "field9WarnEnabled": true,
  "field9PastFormLt": 0.7,
  "rainMoistureGe": 1.8,
@@ -26,12 +26,31 @@
   "enabled": true,
   "days": 14,
   "roiGatePct": 120,
-  "status": "紙運用中(購入絞り込み・3開催日)",
-  "_comment": "120%ループで確認期間回収120%超え→次の14日間(2週間) 紙運用で実測回収を記録→14日実測≥120%なら本番反映、未満ならループに戻る。"
+  "status": "本番反映済(BOX123・pf≥0.65・k=0.05・plus_hjz)",
+  "_comment": "選定#2近傍検証GO→本番移行(2026-11-06)。ホールドROI 204.4%。"
  },
  "oddsPopularity": {
   "enabled": false,
   "removed": true,
   "_comment": "オッズ・人気・順位相関(ρ vs market)はデータ・特徴量から削除済み(2026-11-06)。予測・絞り込みは past_form / 頭数警告 / モデルスコアのみ。"
- }
+ },
+ "streakPenaltyK": 0.05,
+ "pastFormBonusW": 0,
+ "_streakComment": "score = finish_score - k*min(horse_streak,3)[+w*past_form]; メムロはペナルティ免除。k=0.05 は選定#2。",
+ "ticket": {
+  "mode": "trifectaBox3",
+  "boxIdx": [
+   0,
+   1,
+   2
+  ],
+  "stakeYen": 600,
+  "label": "三連単三頭ボックス6点",
+  "_comment": "plus_hjz / BOX123 / pf≥0.65 / k=0.05 / partner=none。オッズ・人気不使用。"
+ },
+ "features": {
+  "plus_hjz": true,
+  "_comment": "OLSに horse_win_streak/rate10, jockey_win_streak/rate100, is_grade を追加（29特徴）。"
+ },
+ "partnerFilter": "none"
 }
