@@ -7,7 +7,7 @@ const R = JSON.parse(fs.readFileSync(new URL('../src/data/results_from_pdf.json'
 const dir = new URL('../src/data/past/', import.meta.url), cards = []
 for (const f of fs.readdirSync(dir)) { const d = JSON.parse(fs.readFileSync(new URL(f, dir))); cards.push(...(d.races || d)) }
 const t = trainChronological(R, cards, LAMBDA, 10, null, GRADE)
-const r4 = m => ({ mu: m.mu.map(v => +v.toFixed(5)), sd: m.sd.map(v => +v.toFixed(5)), b: m.b.map(v => +v.toFixed(6)) })
+const r4 = m => ({ mu: m.mu.map(v => +v.toFixed(5)), sd: m.sd.map(v => Math.max(+v.toFixed(5), 1e-9)), b: m.b.map(v => +v.toFixed(6)) })
 const pack = s => ({ finish: r4(s.finish), time: r4(s.time) })
 const out = { version: 1, method: `exp-weighted ridge OLS lambda=${LAMBDA}, ridge=1, standardized`, lambda: LAMBDA, features: FEATURE_NAMES,
   trained_at: new Date().toISOString(), train_days: t.days.length, train_rows: t.n_rows, last_result_date: t.days.at(-1),

@@ -27,7 +27,7 @@ for (const dk of Object.keys(byDay).sort()) { const d = dateOf(dk), sn = norm.sn
   for (const [e, jk, y, rid] of upd) { if (jk) { cnt[jk] = (cnt[jk] || 0) + 1; (jWins[jk] ||= []).push(e.finish === 1 ? 1 : 0) }; (hist[e.name] ||= []).push(histEntry(y, jk, rid, e.sled_weight)) } }
 const fmt = s => ({ eval_races: s.races, winner_top1_rate: +(s.win / s.races).toFixed(4), time_mae_sec: +(s.ae / s.n).toFixed(2) })
 const cmp = Object.fromEntries(Object.entries(S).map(([k, v]) => [k, fmt(v)]))
-const r4 = m => ({ mu: m.mu.map(v => +v.toFixed(5)), sd: m.sd.map(v => +v.toFixed(5)), b: m.b.map(v => +v.toFixed(6)) })
+const r4 = m => ({ mu: m.mu.map(v => +v.toFixed(5)), sd: m.sd.map(v => Math.max(+v.toFixed(5), 1e-9)), b: m.b.map(v => +v.toFixed(6)) })
 const pack = s => ({ finish: r4(s.finish), time: r4(s.time) })
 const wetDays = norm.days.filter(d => (estimateMoisture(d) ?? 1.6) >= TH)
 const out = { version: 1, kind: 'rain', moisture_threshold: TH, method: `rain-only exp-weighted ridge OLS lambda=${LAMBDA}; rows from days with moisture>=${TH}`,

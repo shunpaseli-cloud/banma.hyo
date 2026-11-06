@@ -1,6 +1,7 @@
 import R from './data/results_from_pdf.json'
 import rules from './data/skip_rules.json'
 import { trio5, trioPredictions, axis3, trifectaBox3, axisGate } from './trio.js'
+import { buildRaceRecommendation } from './selectionReason.js'
 export function topTrio(race, preds, n = 3) {
   const t = preds && trioPredictions(preds); if (!t?.combos) return []
   const U = Object.fromEntries(race.entries.map(e => [e.horse_id, e.umaban ?? e.gate]))
@@ -35,14 +36,24 @@ export function TrioPayout({ race, preds }) {
     && [...new Set(tp.combo.map(Number))].every(n => box.horses.includes(n))
   const label = rules.ticket?.label || '三連単三頭ボックス6点'
   const stake = rules.ticket?.stakeYen || 600
-  return <div className="trio result-row">
-    <h3>{race.race_date} {race.race_no}R</h3>
+  const rec = buildRaceRecommendation(race, preds || [])
+  const confPct = Math.round((rec.confidence ?? 0) * 100)
+  return <div className="trio result-row" data-recommended={rec.recommended ? '1' : '0'} data-confidence={rec.confidence}>
+    <h3>{race.race_date} {race.race_no}R{rec.recommended ? ' · 推奨' : ' · 見送り'}
+      <span style={{ marginLeft: 8, fontWeight: 600, color: rec.recommended ? '#2A6B3C' : '#8A6A3A' }}>
+        自信度 {confPct}%（{rec.selection_meta?.confidence_label || '—'}）
+      </span>
+    </h3>
     <p className="meta payout"><b>{label}</b>（¥{stake}・BOX{ (rules.ticket?.boxIdx||[0,1,2]).map(i=>i+1).join('') }・pf≥{rules.pastFormThreshold}・k={rules.streakPenaltyK}）
       {' '}予想: {box.horses.length ? <span className="nowrap">{box.horses.join('−')}{boxHit && ' ◎'}</span> : '—'}
       {gate.skip && <span style={{color:'#D85A2A'}}>　⚠見送り推奨</span>}
       <br />
       三連単配当: {tp ? <><span className="nowrap">{tp.combo.join('−')}</span> <b>{(tp.payout ?? tp.yen)?.toLocaleString?.() ?? tp.payout}円</b>{boxHit ? ' 的中' : ''}</> : '未確定'}
     </p>
+    <div className="selection-comment" style={{ border: rec.recommended ? '2px solid #2A6B3C' : '1px solid #C9B8A0', background: rec.recommended ? '#E8F3EA' : '#F3EEE4', padding: '8px 10px', margin: '6px 0', borderRadius: 4 }}>
+      <p className="meta" style={{ margin: 0 }}><b>選定理由</b>（confidence={rec.confidence.toFixed(2)}）</p>
+      <p className="meta" style={{ margin: '4px 0 0', whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{rec.selection_comment}</p>
+    </div>
     <p className="meta payout"><small>参考・3連複5点: {fuku.map((c, i) => <span key={i} className="nowrap">[{kinds[i]}]{c.join('−')}{fHit(c) && '◎'}　</span>)}
       配当: {fp ? <><span className="nowrap">{fp.combo.join('−')}</span> <b>{fp.payout.toLocaleString()}円</b>{fuku.some(fHit) ? ' 的中' : ''}</> : '未確定'}</small></p>
     {rules.paperRun?.enabled && <p className="meta"><small>紙運用/本番: {rules.paperRun.status}</small></p>}

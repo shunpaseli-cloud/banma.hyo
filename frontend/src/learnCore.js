@@ -66,7 +66,19 @@ export function wfit(X, y, w, lam = 1) {
   for (let a = 1; a <= d; a++) A[a][a] += lam
   return { mu, sd, b: solve(A, B) }
 }
-export function applyModel(m, x) { let s = m.b[0]; x.forEach((v, j) => { s += m.b[j + 1] * ((Number.isNaN(v) ? m.mu[j] : v) - m.mu[j]) / m.sd[j] }); return s }
+export function applyModel(m, x) { let s = m.b[0]; x.forEach((v, j) => { const sd = Math.max(m.sd[j] || 0, 1e-9); s += m.b[j + 1] * ((Number.isNaN(v) ? m.mu[j] : v) - m.mu[j]) / sd }); return s }
+/** 標準化特徴 × 係数の寄与。寄与の絶対値降順。 */
+export function featureContribs(m, x, names = FEATURE_NAMES) {
+  const out = []
+  for (let j = 0; j < names.length; j++) {
+    const v = Number.isNaN(x[j]) ? m.mu[j] : x[j]
+    const sd = Math.max(m.sd[j] || 0, 1e-9)
+    const c = m.b[j + 1] * (v - m.mu[j]) / sd
+    out.push({ name: names[j], value: v, contrib: Number.isFinite(c) ? c : 0 })
+  }
+  out.sort((a, b) => Math.abs(b.contrib) - Math.abs(a.contrib))
+  return out
+}
 
 /** grade lookup: dates Set of YYYYMMDD or YYYY-MM-DD; keywords string[] */
 export function isGradeRace(rid, raceName, grade) {

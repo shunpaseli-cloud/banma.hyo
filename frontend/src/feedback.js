@@ -98,6 +98,10 @@ export function predict(race, save = false) {
       past_form: pf ?? null,
       horse_streak: hs,
       jockey_streak: lp?.jockey_streak ?? null,
+      horse_win_rate_10: lp?.horse_win_rate_10 ?? null,
+      jockey_win_rate_100: lp?.jockey_win_rate_100 ?? null,
+      is_grade: lp?.is_grade ?? L?.is_grade ?? null,
+      top_contribs: lp?.top_contribs ?? null,
       model: L ? { asOf: L.asOf, kind: L.kind, which: L.model, moist: L.moist, plus_hjz: !!rules.features?.plus_hjz, k, w: pw } : null,
       prediction_id: save ? savePrediction(race.race_id, hid, score, i + 1, f) : null,
     }

@@ -6,6 +6,7 @@ import { fmtTime } from '../learnScore.js'
 import { markOf, MARK_LEGEND } from '../marks.js'
 import RaceDetail from './RaceDetail.jsx'
 import { skipWarnings } from '../skipWarn.js'
+import { buildRaceRecommendation } from '../selectionReason.js'
 import { analyzeMisses, missWarnings } from '../missAnalysis.js'
 export default function RaceCard({ race, onLearn, fetchStatus }) {
   const preds = useMemo(() => predict(race), [race])
@@ -22,6 +23,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const ax3 = useMemo(() => axis3(preds), [preds])
   const learned = preds[0]?.finish_score != null
   const skipW = useMemo(() => skipWarnings(race, preds), [race, preds])
+  const rec = useMemo(() => buildRaceRecommendation(race, preds), [race, preds])
   const warns = useMemo(() => missWarnings(race), [race])
   const [misses, setMisses] = useState([])
   const H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
@@ -37,7 +39,11 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       <header className="card-head">
         <span className="rno">{race.race_no}R</span>
         <div>
-          <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭</p></div>
+          <p className="meta">{race.race_date}{race.track_moisture != null ? `・馬場水分 ${race.track_moisture}%` : race.track_moisture_est != null ? `・馬場水分 推定約${race.track_moisture_est}%（天気予報から）` : ''}・{race.entries.length}頭
+            {rec.recommended
+              ? <span style={{marginLeft:8,color:'#2A6B3C',fontWeight:700}}>推奨・自信度{(rec.confidence*100).toFixed(0)}%</span>
+              : <span style={{marginLeft:8,color:'#8A6A3A'}}>見送り</span>}
+          </p></div>
       </header>
       {skipW.map(w => <div key={w} className="skipwarn" style={{border:'2px solid #D85A2A',color:'#D85A2A',background:'#F3EEE4',padding:'4px 8px',margin:'6px 0',fontWeight:700}}>⚠ {w}<small style={{color:'#221E18',fontWeight:400}}>（参考表示）</small></div>)}
       <table className="horses">
