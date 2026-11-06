@@ -76,3 +76,8 @@ td.mark { color: #D85A2A; font-weight: 700; text-align: center; }
 .nav { display: flex; gap: .5em; margin: .5em 0; }
 .nav button { background: transparent; color: #F3EEE4; border: 1px solid #D85A2A; padding: .4em .9em; border-radius: 4px; font-size: 1rem; }
 .nav button.on { background: #D85A2A; color: #16130F; font-weight: 700; }
+
+/* 自信度順タブ */
+.confidence-rank .conf-card { border-left-color: #2A6B3C; }
+.confidence-rank .ticket-box .trio-list li { border-bottom-color: #2A1E18; }
+.nav { flex-wrap: wrap; }
