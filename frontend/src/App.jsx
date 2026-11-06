@@ -38,7 +38,7 @@ export default function App() {
           <button className={view === 'summary' ? 'on' : ''} onClick={() => go('summary')}>日別まとめ</button>
           <button className={view === 'confidence' ? 'on' : ''} onClick={() => go('confidence')}>自信度順</button>
         </nav>
-        <p className="auto-note">3連複予想は自動生成 · 自信度順は本番BOX推奨（confidence≥0.8）</p>
+        <p className="auto-note">3連複予想は自動生成 · 自信度順は本番BOX推奨（0.8以上 / 0.7以上の2帯）</p>
       </header>
       <main>
         {view === 'confidence' ? (
