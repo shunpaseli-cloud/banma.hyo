@@ -1,3 +1,4 @@
+import { resultForRace, learningInput } from '../raceResults.js'
 import { TrioPayout } from '../trioPayout.jsx'
 import { useMemo, useState } from 'react'
 import { predict, updateWithResult } from '../feedback.js'
@@ -28,6 +29,7 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
   const [misses, setMisses] = useState([])
   const H = Object.fromEntries(race.entries.map(h => [h.horse_id, h]))
   const lbl = p => { const h = H[p.horse_id] || {}; return `${h.umaban ?? h.gate ?? '?'}` }
+  const importedInput = learningInput(race, resultForRace(race))
   const learn = () => {
     predict(race, true)
     const r = updateWithResult(race, fin)
@@ -60,6 +62,10 @@ export default function RaceCard({ race, onLearn, fetchStatus }) {
       </table>
       <p className="meta legend">{MARK_LEGEND}{learned && `・着順スコア/予想タイム = 時系列学習モデル（${preds[0].model.which === 'rain' ? '☔雨用' : '通常'}・λ=0.92、${preds[0].model.asOf}${preds[0].model.kind === 'snapshot' ? ' より前の結果' : ' までの結果'}で学習）`}</p>
       <div className="fb">
+        {importedInput && <button className="link" onClick={() => {
+          setFin(importedInput.results); setOpen(true)
+          setMsg('同梱の確定着順を入力しました。学習・重み更新はまだ実行していません。')
+        }}>同梱結果を入力欄へ（学習は未実行）</button>}
         {open ? <><button className="more small" onClick={learn}>結果を学習</button>
           <button className="link" onClick={() => setOpen(false)}>閉じる</button></>
           : <button className="link" onClick={() => setOpen(true)}>着順を入力して学習</button>}

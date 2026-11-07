@@ -1,3 +1,4 @@
+import RaceResult from './RaceResult.jsx'
 import { useMemo } from 'react'
 import rules from '../data/skip_rules.json' with { type: 'json' }
 import { dayInfo } from '../lib/paginate.js'
@@ -82,6 +83,7 @@ function RaceConfCard({ race, rec, axis, partners, tickets, horses, label, rank 
           </p>
         </div>
       </div>
+      <RaceResult race={race} />
     </article>
   )
 }

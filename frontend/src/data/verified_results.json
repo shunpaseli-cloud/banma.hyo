@@ -1,0 +1,2405 @@
+{
+  "schema_version": 1,
+  "meta": {
+    "retrieved_at_asia_tokyo": "2026-11-07T11:48:39+09:00",
+    "source": "NAR公式（単一出典）",
+    "payout_unit_yen": 100,
+    "note": "表示・照合専用。予測入力や自動学習には使用しない。オッズ・人気は除外。"
+  },
+  "dates": {
+    "2026-11-06": {
+      "status": "final",
+      "note": "全12R確定結果公開"
+    },
+    "2026-11-07": {
+      "status": "provisional",
+      "note": "1R発走14:40、取得時刻時点で未発走"
+    }
+  },
+  "races": {
+    "20261106-R01": {
+      "race_date": "2026-11-06",
+      "race_no": 1,
+      "status": "final",
+      "note": null,
+      "race_name": "エゾノー杯Ｃ２－５",
+      "start_time_jst": "14:20",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 3,
+          "name": "フジベンケイ",
+          "status": "finished",
+          "time": "2:03.2",
+          "time_sec": 123.2
+        },
+        {
+          "finish": 2,
+          "umaban": 4,
+          "name": "カワノチャタロウ",
+          "status": "finished",
+          "time": "2:05.1",
+          "time_sec": 125.1
+        },
+        {
+          "finish": 3,
+          "umaban": 8,
+          "name": "ヒメトラダイア",
+          "status": "finished",
+          "time": "2:06.3",
+          "time_sec": 126.3
+        },
+        {
+          "finish": 4,
+          "umaban": 10,
+          "name": "アルバノチエチャン",
+          "status": "finished",
+          "time": "2:08.3",
+          "time_sec": 128.3
+        },
+        {
+          "finish": 5,
+          "umaban": 6,
+          "name": "アンペラール",
+          "status": "finished",
+          "time": "2:08.6",
+          "time_sec": 128.6
+        },
+        {
+          "finish": 6,
+          "umaban": 7,
+          "name": "ガシンショウタン",
+          "status": "finished",
+          "time": "2:12.0",
+          "time_sec": 132.0
+        },
+        {
+          "finish": 7,
+          "umaban": 1,
+          "name": "ジェイノウンカイ",
+          "status": "finished",
+          "time": "2:15.5",
+          "time_sec": 135.5
+        },
+        {
+          "finish": 8,
+          "umaban": 9,
+          "name": "キンノロナ",
+          "status": "finished",
+          "time": "2:19.1",
+          "time_sec": 139.1
+        },
+        {
+          "finish": 9,
+          "umaban": 2,
+          "name": "レディームキムキ",
+          "status": "finished",
+          "time": "2:22.9",
+          "time_sec": 142.9
+        },
+        {
+          "finish": 10,
+          "umaban": 5,
+          "name": "サクセストップ",
+          "status": "finished",
+          "time": "2:34.0",
+          "time_sec": 154.0
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              3,
+              4,
+              8
+            ],
+            "yen": 2270
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              3,
+              4,
+              8
+            ],
+            "yen": 25840
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "3",
+            "yen": 1250
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "3",
+            "yen": 300
+          },
+          {
+            "combo": "4",
+            "yen": 140
+          },
+          {
+            "combo": "8",
+            "yen": 150
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "3-4",
+            "yen": 3180
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "3-4",
+            "yen": 3060
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "3-4",
+            "yen": 11670
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "3-4",
+            "yen": 850
+          },
+          {
+            "combo": "3-8",
+            "yen": 680
+          },
+          {
+            "combo": "4-8",
+            "yen": 280
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "3-4-8",
+            "yen": 2270
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "3-4-8",
+            "yen": 25840
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R02": {
+      "race_date": "2026-11-06",
+      "race_no": 2,
+      "status": "final",
+      "note": null,
+      "race_name": "豚丼賞２歳Ｄ－１",
+      "start_time_jst": "14:50",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "ユメニシキ",
+          "status": "finished",
+          "time": "1:46.5",
+          "time_sec": 106.5
+        },
+        {
+          "finish": 2,
+          "umaban": 2,
+          "name": "レオン",
+          "status": "finished",
+          "time": "1:49.6",
+          "time_sec": 109.6
+        },
+        {
+          "finish": 3,
+          "umaban": 5,
+          "name": "ニューシノツワン",
+          "status": "finished",
+          "time": "1:49.8",
+          "time_sec": 109.8
+        },
+        {
+          "finish": 4,
+          "umaban": 3,
+          "name": "ディーエフアレス",
+          "status": "finished",
+          "time": "1:51.0",
+          "time_sec": 111.0
+        },
+        {
+          "finish": 5,
+          "umaban": 9,
+          "name": "ヒノクニファラオ",
+          "status": "finished",
+          "time": "2:00.9",
+          "time_sec": 120.9
+        },
+        {
+          "finish": 6,
+          "umaban": 1,
+          "name": "キタデタイショウ",
+          "status": "finished",
+          "time": "2:03.7",
+          "time_sec": 123.7
+        },
+        {
+          "finish": 7,
+          "umaban": 4,
+          "name": "コウバイヒメ",
+          "status": "finished",
+          "time": "2:07.0",
+          "time_sec": 127.0
+        },
+        {
+          "finish": 8,
+          "umaban": 8,
+          "name": "ライデンファンタジ",
+          "status": "finished",
+          "time": "2:09.0",
+          "time_sec": 129.0
+        },
+        {
+          "finish": 9,
+          "umaban": 7,
+          "name": "フジコノコ",
+          "status": "finished",
+          "time": "2:17.4",
+          "time_sec": 137.4
+        },
+        {
+          "finish": 10,
+          "umaban": 6,
+          "name": "オオサト",
+          "status": "finished",
+          "time": "2:44.2",
+          "time_sec": 164.2
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              2,
+              5,
+              10
+            ],
+            "yen": 2670
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              2,
+              5
+            ],
+            "yen": 15930
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "10",
+            "yen": 640
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "10",
+            "yen": 260
+          },
+          {
+            "combo": "2",
+            "yen": 180
+          },
+          {
+            "combo": "5",
+            "yen": 150
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "2-8",
+            "yen": 1910
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "2-10",
+            "yen": 1950
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "10-2",
+            "yen": 3170
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "2-10",
+            "yen": 560
+          },
+          {
+            "combo": "5-10",
+            "yen": 540
+          },
+          {
+            "combo": "2-5",
+            "yen": 420
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "2-5-10",
+            "yen": 2670
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "10-2-5",
+            "yen": 15930
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R03": {
+      "race_date": "2026-11-06",
+      "race_no": 3,
+      "status": "final",
+      "note": null,
+      "race_name": "石窯ピザ記念２歳Ｃ－６",
+      "start_time_jst": "15:25",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 7,
+          "name": "メオトテンザン",
+          "status": "finished",
+          "time": "1:53.8",
+          "time_sec": 113.8
+        },
+        {
+          "finish": 2,
+          "umaban": 5,
+          "name": "ホクセイキンボシ",
+          "status": "finished",
+          "time": "1:58.8",
+          "time_sec": 118.8
+        },
+        {
+          "finish": 3,
+          "umaban": 3,
+          "name": "サンシルク",
+          "status": "finished",
+          "time": "2:00.5",
+          "time_sec": 120.5
+        },
+        {
+          "finish": 4,
+          "umaban": 6,
+          "name": "クリスタルカイオー",
+          "status": "finished",
+          "time": "2:08.4",
+          "time_sec": 128.4
+        },
+        {
+          "finish": 5,
+          "umaban": 2,
+          "name": "キョウドノホシ",
+          "status": "finished",
+          "time": "2:09.9",
+          "time_sec": 129.9
+        },
+        {
+          "finish": 6,
+          "umaban": 4,
+          "name": "ハゴロモジョイア",
+          "status": "finished",
+          "time": "2:11.7",
+          "time_sec": 131.7
+        },
+        {
+          "finish": 7,
+          "umaban": 10,
+          "name": "ヒノクニゴールド",
+          "status": "finished",
+          "time": "2:15.4",
+          "time_sec": 135.4
+        },
+        {
+          "finish": 8,
+          "umaban": 9,
+          "name": "ホクセイアバレンボ",
+          "status": "finished",
+          "time": "2:17.9",
+          "time_sec": 137.9
+        },
+        {
+          "finish": 9,
+          "umaban": 1,
+          "name": "シュガーベリー",
+          "status": "finished",
+          "time": "2:22.8",
+          "time_sec": 142.8
+        },
+        {
+          "finish": 10,
+          "umaban": 8,
+          "name": "キングレイ",
+          "status": "finished",
+          "time": "3:29.2",
+          "time_sec": 209.2
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              3,
+              5,
+              7
+            ],
+            "yen": 1970
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              7,
+              5,
+              3
+            ],
+            "yen": 12140
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "7",
+            "yen": 350
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "7",
+            "yen": 170
+          },
+          {
+            "combo": "5",
+            "yen": 160
+          },
+          {
+            "combo": "3",
+            "yen": 170
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "5-7",
+            "yen": 1520
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "5-7",
+            "yen": 1560
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "7-5",
+            "yen": 2470
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "5-7",
+            "yen": 710
+          },
+          {
+            "combo": "3-7",
+            "yen": 350
+          },
+          {
+            "combo": "3-5",
+            "yen": 580
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "3-5-7",
+            "yen": 1970
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "7-5-3",
+            "yen": 12140
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R04": {
+      "race_date": "2026-11-06",
+      "race_no": 4,
+      "status": "final",
+      "note": null,
+      "race_name": "副ぶちょー賞２歳Ｃ－２",
+      "start_time_jst": "16:00",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 6,
+          "name": "マルホンエルフ",
+          "status": "finished",
+          "time": "1:40.3",
+          "time_sec": 100.3
+        },
+        {
+          "finish": 2,
+          "umaban": 5,
+          "name": "ジェットクイーン",
+          "status": "finished",
+          "time": "1:42.0",
+          "time_sec": 102.0
+        },
+        {
+          "finish": 3,
+          "umaban": 3,
+          "name": "ジェイマット",
+          "status": "finished",
+          "time": "1:45.6",
+          "time_sec": 105.6
+        },
+        {
+          "finish": 4,
+          "umaban": 8,
+          "name": "ツカサブルージェイ",
+          "status": "finished",
+          "time": "1:46.1",
+          "time_sec": 106.1
+        },
+        {
+          "finish": 5,
+          "umaban": 9,
+          "name": "ロイヤルノチカラ",
+          "status": "finished",
+          "time": "1:51.6",
+          "time_sec": 111.6
+        },
+        {
+          "finish": 6,
+          "umaban": 4,
+          "name": "モンスター",
+          "status": "finished",
+          "time": "1:52.5",
+          "time_sec": 112.5
+        },
+        {
+          "finish": 7,
+          "umaban": 2,
+          "name": "スピードシンデレラ",
+          "status": "finished",
+          "time": "1:58.9",
+          "time_sec": 118.9
+        },
+        {
+          "finish": 8,
+          "umaban": 10,
+          "name": "ヴルールノヴァー",
+          "status": "finished",
+          "time": "2:04.7",
+          "time_sec": 124.7
+        },
+        {
+          "finish": 9,
+          "umaban": 7,
+          "name": "ケンハヤチ",
+          "status": "finished",
+          "time": "2:12.6",
+          "time_sec": 132.6
+        },
+        {
+          "finish": 10,
+          "umaban": 1,
+          "name": "ホクショウジェイク",
+          "status": "finished",
+          "time": "2:17.2",
+          "time_sec": 137.2
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              3,
+              5,
+              6
+            ],
+            "yen": 2010
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              6,
+              5,
+              3
+            ],
+            "yen": 11280
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "6",
+            "yen": 440
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "6",
+            "yen": 170
+          },
+          {
+            "combo": "5",
+            "yen": 200
+          },
+          {
+            "combo": "3",
+            "yen": 180
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "5-6",
+            "yen": 1050
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "5-6",
+            "yen": 1460
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "6-5",
+            "yen": 2390
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "5-6",
+            "yen": 480
+          },
+          {
+            "combo": "3-6",
+            "yen": 450
+          },
+          {
+            "combo": "3-5",
+            "yen": 530
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "3-5-6",
+            "yen": 2010
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "6-5-3",
+            "yen": 11280
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R05": {
+      "race_date": "2026-11-06",
+      "race_no": 5,
+      "status": "final",
+      "note": null,
+      "race_name": "ミカゲホマレ賞Ｃ１－６",
+      "start_time_jst": "16:35",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 3,
+          "name": "イノスケ",
+          "status": "finished",
+          "time": "1:46.0",
+          "time_sec": 106.0
+        },
+        {
+          "finish": 2,
+          "umaban": 9,
+          "name": "ヤマノシテンノウ",
+          "status": "finished",
+          "time": "1:51.9",
+          "time_sec": 111.9
+        },
+        {
+          "finish": 3,
+          "umaban": 6,
+          "name": "コトブキクィーン",
+          "status": "finished",
+          "time": "1:52.9",
+          "time_sec": 112.9
+        },
+        {
+          "finish": 4,
+          "umaban": 5,
+          "name": "レオナウイン",
+          "status": "finished",
+          "time": "1:54.7",
+          "time_sec": 114.7
+        },
+        {
+          "finish": 5,
+          "umaban": 7,
+          "name": "ヒゴサクラ",
+          "status": "finished",
+          "time": "1:59.4",
+          "time_sec": 119.4
+        },
+        {
+          "finish": 6,
+          "umaban": 10,
+          "name": "ジェイノヒメ",
+          "status": "finished",
+          "time": "2:01.2",
+          "time_sec": 121.2
+        },
+        {
+          "finish": 7,
+          "umaban": 2,
+          "name": "ヒメトラマリア",
+          "status": "finished",
+          "time": "2:03.9",
+          "time_sec": 123.9
+        },
+        {
+          "finish": 8,
+          "umaban": 8,
+          "name": "スーパーサンセイ",
+          "status": "finished",
+          "time": "2:08.9",
+          "time_sec": 128.9
+        },
+        {
+          "finish": 9,
+          "umaban": 1,
+          "name": "ブレイブハート",
+          "status": "finished",
+          "time": "2:09.9",
+          "time_sec": 129.9
+        },
+        {
+          "finish": 10,
+          "umaban": 4,
+          "name": "ホクセイタカボー",
+          "status": "finished",
+          "time": "3:13.3",
+          "time_sec": 193.3
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              3,
+              6,
+              9
+            ],
+            "yen": 1850
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              3,
+              9,
+              6
+            ],
+            "yen": 11430
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "3",
+            "yen": 350
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "3",
+            "yen": 240
+          },
+          {
+            "combo": "9",
+            "yen": 300
+          },
+          {
+            "combo": "6",
+            "yen": 270
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "3-8",
+            "yen": 830
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "3-9",
+            "yen": 1500
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "3-9",
+            "yen": 2600
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "3-9",
+            "yen": 460
+          },
+          {
+            "combo": "3-6",
+            "yen": 410
+          },
+          {
+            "combo": "6-9",
+            "yen": 440
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "3-6-9",
+            "yen": 1850
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "3-9-6",
+            "yen": 11430
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R06": {
+      "race_date": "2026-11-06",
+      "race_no": 6,
+      "status": "final",
+      "note": null,
+      "race_name": "荒川弘記念２歳Ｂ－１",
+      "start_time_jst": "17:10",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "ハゴロモミニョン",
+          "status": "finished",
+          "time": "1:37.4",
+          "time_sec": 97.4
+        },
+        {
+          "finish": 2,
+          "umaban": 6,
+          "name": "ツガルユリ",
+          "status": "finished",
+          "time": "1:39.1",
+          "time_sec": 99.1
+        },
+        {
+          "finish": 3,
+          "umaban": 3,
+          "name": "ラストユウセン",
+          "status": "finished",
+          "time": "1:40.5",
+          "time_sec": 100.5
+        },
+        {
+          "finish": 4,
+          "umaban": 2,
+          "name": "ホクセイスピカ",
+          "status": "finished",
+          "time": "1:43.5",
+          "time_sec": 103.5
+        },
+        {
+          "finish": 5,
+          "umaban": 4,
+          "name": "ドウナンテンセイ",
+          "status": "finished",
+          "time": "1:45.9",
+          "time_sec": 105.9
+        },
+        {
+          "finish": 6,
+          "umaban": 1,
+          "name": "サカノヒカルアオ",
+          "status": "finished",
+          "time": "1:46.6",
+          "time_sec": 106.6
+        },
+        {
+          "finish": 7,
+          "umaban": 8,
+          "name": "ゼウススピード",
+          "status": "finished",
+          "time": "1:47.1",
+          "time_sec": 107.1
+        },
+        {
+          "finish": 8,
+          "umaban": 5,
+          "name": "ハイトップエース",
+          "status": "finished",
+          "time": "1:50.9",
+          "time_sec": 110.9
+        },
+        {
+          "finish": 9,
+          "umaban": 9,
+          "name": "ホクセイヤマト",
+          "status": "finished",
+          "time": "1:55.1",
+          "time_sec": 115.1
+        },
+        {
+          "finish": 10,
+          "umaban": 7,
+          "name": "ハオリブル",
+          "status": "finished",
+          "time": "1:56.6",
+          "time_sec": 116.6
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              3,
+              6,
+              10
+            ],
+            "yen": 1760
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              6,
+              3
+            ],
+            "yen": 14900
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "10",
+            "yen": 440
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "10",
+            "yen": 170
+          },
+          {
+            "combo": "6",
+            "yen": 190
+          },
+          {
+            "combo": "3",
+            "yen": 160
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "6-8",
+            "yen": 1160
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "6-10",
+            "yen": 1370
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "10-6",
+            "yen": 2310
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "6-10",
+            "yen": 530
+          },
+          {
+            "combo": "3-10",
+            "yen": 450
+          },
+          {
+            "combo": "3-6",
+            "yen": 440
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "3-6-10",
+            "yen": 1760
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "10-6-3",
+            "yen": 14900
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R07": {
+      "race_date": "2026-11-06",
+      "race_no": 7,
+      "status": "final",
+      "note": null,
+      "race_name": "マロン号賞Ｃ１－２",
+      "start_time_jst": "17:45",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "キタノレンザン",
+          "status": "finished",
+          "time": "1:42.0",
+          "time_sec": 102.0
+        },
+        {
+          "finish": 2,
+          "umaban": 9,
+          "name": "ミスキャップ",
+          "status": "finished",
+          "time": "1:43.8",
+          "time_sec": 103.8
+        },
+        {
+          "finish": 3,
+          "umaban": 6,
+          "name": "ヒロインリズ",
+          "status": "finished",
+          "time": "1:48.9",
+          "time_sec": 108.9
+        },
+        {
+          "finish": 4,
+          "umaban": 3,
+          "name": "ミライニツヅケ",
+          "status": "finished",
+          "time": "1:51.2",
+          "time_sec": 111.2
+        },
+        {
+          "finish": 5,
+          "umaban": 7,
+          "name": "ヨシノフクヒメ",
+          "status": "finished",
+          "time": "1:52.2",
+          "time_sec": 112.2
+        },
+        {
+          "finish": 6,
+          "umaban": 8,
+          "name": "マオノウンカイ",
+          "status": "finished",
+          "time": "1:55.1",
+          "time_sec": 115.1
+        },
+        {
+          "finish": 7,
+          "umaban": 1,
+          "name": "クリスタルヒリュウ",
+          "status": "finished",
+          "time": "1:55.8",
+          "time_sec": 115.8
+        },
+        {
+          "finish": 8,
+          "umaban": 4,
+          "name": "ワフラーム",
+          "status": "finished",
+          "time": "1:58.6",
+          "time_sec": 118.6
+        },
+        {
+          "finish": 9,
+          "umaban": 2,
+          "name": "イワキマッシグラ",
+          "status": "finished",
+          "time": "2:00.5",
+          "time_sec": 120.5
+        },
+        {
+          "finish": 10,
+          "umaban": 5,
+          "name": "ウル",
+          "status": "finished",
+          "time": "2:04.2",
+          "time_sec": 124.2
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              6,
+              9,
+              10
+            ],
+            "yen": 5860
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              9,
+              6
+            ],
+            "yen": 86800
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "10",
+            "yen": 4970
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "10",
+            "yen": 900
+          },
+          {
+            "combo": "9",
+            "yen": 180
+          },
+          {
+            "combo": "6",
+            "yen": 200
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "8-8",
+            "yen": 4880
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "9-10",
+            "yen": 6670
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "10-9",
+            "yen": 13410
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "9-10",
+            "yen": 1200
+          },
+          {
+            "combo": "6-10",
+            "yen": 1690
+          },
+          {
+            "combo": "6-9",
+            "yen": 290
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "6-9-10",
+            "yen": 5860
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "10-9-6",
+            "yen": 86800
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R08": {
+      "race_date": "2026-11-06",
+      "race_no": 8,
+      "status": "final",
+      "note": null,
+      "race_name": "御影カップＢ４－５",
+      "start_time_jst": "18:20",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "イワキオーカン",
+          "status": "finished",
+          "time": "1:57.6",
+          "time_sec": 117.6
+        },
+        {
+          "finish": 2,
+          "umaban": 9,
+          "name": "テンボシヴィーナス",
+          "status": "finished",
+          "time": "1:58.0",
+          "time_sec": 118.0
+        },
+        {
+          "finish": 3,
+          "umaban": 4,
+          "name": "サカノキンザン",
+          "status": "finished",
+          "time": "1:59.6",
+          "time_sec": 119.6
+        },
+        {
+          "finish": 4,
+          "umaban": 6,
+          "name": "イワキダイフク",
+          "status": "finished",
+          "time": "1:59.7",
+          "time_sec": 119.7
+        },
+        {
+          "finish": 5,
+          "umaban": 8,
+          "name": "ゴールドチップ",
+          "status": "finished",
+          "time": "2:01.3",
+          "time_sec": 121.3
+        },
+        {
+          "finish": 6,
+          "umaban": 1,
+          "name": "トップギヤ",
+          "status": "finished",
+          "time": "2:02.4",
+          "time_sec": 122.4
+        },
+        {
+          "finish": 7,
+          "umaban": 3,
+          "name": "オーシャンヒーロー",
+          "status": "finished",
+          "time": "2:03.0",
+          "time_sec": 123.0
+        },
+        {
+          "finish": 8,
+          "umaban": 7,
+          "name": "フクフクライデン",
+          "status": "finished",
+          "time": "2:05.8",
+          "time_sec": 125.8
+        },
+        {
+          "finish": 9,
+          "umaban": 2,
+          "name": "サカノキヨマル",
+          "status": "finished",
+          "time": "2:05.9",
+          "time_sec": 125.9
+        },
+        {
+          "finish": 10,
+          "umaban": 5,
+          "name": "ハクホウエイ",
+          "status": "finished",
+          "time": "2:16.2",
+          "time_sec": 136.2
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              4,
+              9,
+              10
+            ],
+            "yen": 2090
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              9,
+              4
+            ],
+            "yen": 12530
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "10",
+            "yen": 380
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "10",
+            "yen": 160
+          },
+          {
+            "combo": "9",
+            "yen": 140
+          },
+          {
+            "combo": "4",
+            "yen": 160
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "8-8",
+            "yen": 1620
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "9-10",
+            "yen": 1300
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "10-9",
+            "yen": 2370
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "9-10",
+            "yen": 490
+          },
+          {
+            "combo": "4-10",
+            "yen": 440
+          },
+          {
+            "combo": "4-9",
+            "yen": 590
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "4-9-10",
+            "yen": 2090
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "10-9-4",
+            "yen": 12530
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R09": {
+      "race_date": "2026-11-06",
+      "race_no": 9,
+      "status": "final",
+      "note": null,
+      "race_name": "八軒カップＢ３－５",
+      "start_time_jst": "18:55",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 3,
+          "name": "タアボモリウチ",
+          "status": "finished",
+          "time": "1:53.3",
+          "time_sec": 113.3
+        },
+        {
+          "finish": 2,
+          "umaban": 2,
+          "name": "オレノトウコン",
+          "status": "finished",
+          "time": "1:54.5",
+          "time_sec": 114.5
+        },
+        {
+          "finish": 3,
+          "umaban": 1,
+          "name": "ホクセイシーマ",
+          "status": "finished",
+          "time": "1:55.1",
+          "time_sec": 115.1
+        },
+        {
+          "finish": 4,
+          "umaban": 9,
+          "name": "ビール",
+          "status": "finished",
+          "time": "1:55.1",
+          "time_sec": 115.1
+        },
+        {
+          "finish": 5,
+          "umaban": 4,
+          "name": "イワキボブ",
+          "status": "finished",
+          "time": "1:58.8",
+          "time_sec": 118.8
+        },
+        {
+          "finish": 6,
+          "umaban": 7,
+          "name": "オーディン",
+          "status": "finished",
+          "time": "1:59.6",
+          "time_sec": 119.6
+        },
+        {
+          "finish": 7,
+          "umaban": 6,
+          "name": "カミホロナデシコ",
+          "status": "finished",
+          "time": "2:02.1",
+          "time_sec": 122.1
+        },
+        {
+          "finish": 8,
+          "umaban": 8,
+          "name": "ミントエース",
+          "status": "finished",
+          "time": "2:02.1",
+          "time_sec": 122.1
+        },
+        {
+          "finish": 9,
+          "umaban": 10,
+          "name": "マサノスパークル",
+          "status": "finished",
+          "time": "2:03.6",
+          "time_sec": 123.6
+        },
+        {
+          "finish": null,
+          "umaban": 5,
+          "name": "アソノリキ",
+          "status": "dnf",
+          "time": null,
+          "time_sec": null
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              1,
+              2,
+              3
+            ],
+            "yen": 13710
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              3,
+              2,
+              1
+            ],
+            "yen": 164570
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "3",
+            "yen": 4490
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "3",
+            "yen": 1010
+          },
+          {
+            "combo": "2",
+            "yen": 160
+          },
+          {
+            "combo": "1",
+            "yen": 190
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "2-3",
+            "yen": 7900
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "2-3",
+            "yen": 10890
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "3-2",
+            "yen": 27010
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "2-3",
+            "yen": 2760
+          },
+          {
+            "combo": "1-3",
+            "yen": 3760
+          },
+          {
+            "combo": "1-2",
+            "yen": 540
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "1-2-3",
+            "yen": 13710
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "3-2-1",
+            "yen": 164570
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R10": {
+      "race_date": "2026-11-06",
+      "race_no": 10,
+      "status": "final",
+      "note": null,
+      "race_name": "株式会社ＧＩＮＳＡＪＩ記念Ｂ２－３",
+      "start_time_jst": "19:30",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 2,
+          "name": "ホクトヒーロー",
+          "status": "finished",
+          "time": "1:41.4",
+          "time_sec": 101.4
+        },
+        {
+          "finish": 2,
+          "umaban": 8,
+          "name": "ダイヤセンプー",
+          "status": "finished",
+          "time": "1:42.6",
+          "time_sec": 102.6
+        },
+        {
+          "finish": 3,
+          "umaban": 1,
+          "name": "ジェイスカイ",
+          "status": "finished",
+          "time": "1:46.7",
+          "time_sec": 106.7
+        },
+        {
+          "finish": 4,
+          "umaban": 5,
+          "name": "サカノハマナカ",
+          "status": "finished",
+          "time": "1:49.4",
+          "time_sec": 109.4
+        },
+        {
+          "finish": 5,
+          "umaban": 9,
+          "name": "ハゴロモビクトリー",
+          "status": "finished",
+          "time": "1:53.9",
+          "time_sec": 113.9
+        },
+        {
+          "finish": 6,
+          "umaban": 4,
+          "name": "マルゼンイチバン",
+          "status": "finished",
+          "time": "1:57.3",
+          "time_sec": 117.3
+        },
+        {
+          "finish": 7,
+          "umaban": 6,
+          "name": "ジェイヒッター",
+          "status": "finished",
+          "time": "1:58.9",
+          "time_sec": 118.9
+        },
+        {
+          "finish": 8,
+          "umaban": 7,
+          "name": "アルジャンノオー",
+          "status": "finished",
+          "time": "1:59.4",
+          "time_sec": 119.4
+        },
+        {
+          "finish": 9,
+          "umaban": 3,
+          "name": "シンエイハリアー",
+          "status": "finished",
+          "time": "2:09.2",
+          "time_sec": 129.2
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              1,
+              2,
+              8
+            ],
+            "yen": 1490
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              2,
+              8,
+              1
+            ],
+            "yen": 7320
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "2",
+            "yen": 310
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "2",
+            "yen": 120
+          },
+          {
+            "combo": "8",
+            "yen": 140
+          },
+          {
+            "combo": "1",
+            "yen": 160
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "2-8",
+            "yen": 530
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "2-8",
+            "yen": 700
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "2-8",
+            "yen": 1560
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "2-8",
+            "yen": 290
+          },
+          {
+            "combo": "1-2",
+            "yen": 350
+          },
+          {
+            "combo": "1-8",
+            "yen": 670
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "1-2-8",
+            "yen": 1490
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "2-8-1",
+            "yen": 7320
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R11": {
+      "race_date": "2026-11-06",
+      "race_no": 11,
+      "status": "final",
+      "note": null,
+      "race_name": "『銀の匙』１５周年記念杯Ａ１－２",
+      "start_time_jst": "20:00",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 6,
+          "name": "ジェイホースワン",
+          "status": "finished",
+          "time": "1:51.5",
+          "time_sec": 111.5
+        },
+        {
+          "finish": 2,
+          "umaban": 8,
+          "name": "ジェイホース",
+          "status": "finished",
+          "time": "1:52.4",
+          "time_sec": 112.4
+        },
+        {
+          "finish": 3,
+          "umaban": 9,
+          "name": "ウルトラコタロウ",
+          "status": "finished",
+          "time": "1:52.6",
+          "time_sec": 112.6
+        },
+        {
+          "finish": 4,
+          "umaban": 2,
+          "name": "ギンジ",
+          "status": "finished",
+          "time": "1:56.4",
+          "time_sec": 116.4
+        },
+        {
+          "finish": 5,
+          "umaban": 1,
+          "name": "ホクセイウンカイ",
+          "status": "finished",
+          "time": "1:56.4",
+          "time_sec": 116.4
+        },
+        {
+          "finish": 6,
+          "umaban": 10,
+          "name": "サクラヤマト",
+          "status": "finished",
+          "time": "1:57.0",
+          "time_sec": 117.0
+        },
+        {
+          "finish": 7,
+          "umaban": 7,
+          "name": "アオノソルテ",
+          "status": "finished",
+          "time": "2:04.4",
+          "time_sec": 124.4
+        },
+        {
+          "finish": 8,
+          "umaban": 4,
+          "name": "ジェイヒーロー",
+          "status": "finished",
+          "time": "2:04.5",
+          "time_sec": 124.5
+        },
+        {
+          "finish": 9,
+          "umaban": 5,
+          "name": "ダイリンファイター",
+          "status": "finished",
+          "time": "2:18.8",
+          "time_sec": 138.8
+        },
+        {
+          "finish": null,
+          "umaban": 3,
+          "name": "クリスタルゴースト",
+          "status": "dnf",
+          "time": null,
+          "time_sec": null
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              6,
+              8,
+              9
+            ],
+            "yen": 6940
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              6,
+              8,
+              9
+            ],
+            "yen": 34350
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "6",
+            "yen": 740
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "6",
+            "yen": 240
+          },
+          {
+            "combo": "8",
+            "yen": 250
+          },
+          {
+            "combo": "9",
+            "yen": 260
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "6-7",
+            "yen": 1420
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "6-8",
+            "yen": 2660
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "6-8",
+            "yen": 5390
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "6-8",
+            "yen": 780
+          },
+          {
+            "combo": "6-9",
+            "yen": 900
+          },
+          {
+            "combo": "8-9",
+            "yen": 970
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "6-8-9",
+            "yen": 6940
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "6-8-9",
+            "yen": 34350
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261106-R12": {
+      "race_date": "2026-11-06",
+      "race_no": 12,
+      "status": "final",
+      "note": null,
+      "race_name": "小学館 少年サンデー杯Ｂ１－２",
+      "start_time_jst": "20:40",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 9,
+          "name": "キタノミネ",
+          "status": "finished",
+          "time": "1:42.6",
+          "time_sec": 102.6
+        },
+        {
+          "finish": 2,
+          "umaban": 8,
+          "name": "ツガルフジ",
+          "status": "finished",
+          "time": "1:42.9",
+          "time_sec": 102.9
+        },
+        {
+          "finish": 3,
+          "umaban": 6,
+          "name": "シンエイファイト",
+          "status": "finished",
+          "time": "1:45.3",
+          "time_sec": 105.3
+        },
+        {
+          "finish": 4,
+          "umaban": 7,
+          "name": "サカノテンリュウ",
+          "status": "finished",
+          "time": "1:51.5",
+          "time_sec": 111.5
+        },
+        {
+          "finish": 5,
+          "umaban": 3,
+          "name": "ホクショウムサシ",
+          "status": "finished",
+          "time": "1:55.6",
+          "time_sec": 115.6
+        },
+        {
+          "finish": 6,
+          "umaban": 4,
+          "name": "マサタカラ",
+          "status": "finished",
+          "time": "1:56.0",
+          "time_sec": 116.0
+        },
+        {
+          "finish": 7,
+          "umaban": 2,
+          "name": "ウチュウジン",
+          "status": "finished",
+          "time": "1:56.5",
+          "time_sec": 116.5
+        },
+        {
+          "finish": 8,
+          "umaban": 1,
+          "name": "ショウリノホシ",
+          "status": "finished",
+          "time": "1:57.6",
+          "time_sec": 117.6
+        },
+        {
+          "finish": 9,
+          "umaban": 5,
+          "name": "クリスタルホーク",
+          "status": "finished",
+          "time": "2:03.0",
+          "time_sec": 123.0
+        }
+      ],
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              6,
+              8,
+              9
+            ],
+            "yen": 1410
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              9,
+              8,
+              6
+            ],
+            "yen": 7870
+          }
+        ]
+      },
+      "all_payouts": {
+        "単勝": [
+          {
+            "combo": "9",
+            "yen": 470
+          }
+        ],
+        "複勝": [
+          {
+            "combo": "9",
+            "yen": 140
+          },
+          {
+            "combo": "8",
+            "yen": 150
+          },
+          {
+            "combo": "6",
+            "yen": 160
+          }
+        ],
+        "枠連複": [
+          {
+            "combo": "8-8",
+            "yen": 1180
+          }
+        ],
+        "馬連複": [
+          {
+            "combo": "8-9",
+            "yen": 1030
+          }
+        ],
+        "馬連単": [
+          {
+            "combo": "9-8",
+            "yen": 2500
+          }
+        ],
+        "ワイド": [
+          {
+            "combo": "8-9",
+            "yen": 440
+          },
+          {
+            "combo": "6-9",
+            "yen": 330
+          },
+          {
+            "combo": "6-8",
+            "yen": 380
+          }
+        ],
+        "三連複": [
+          {
+            "combo": "6-8-9",
+            "yen": 1410
+          }
+        ],
+        "三連単": [
+          {
+            "combo": "9-8-6",
+            "yen": 7870
+          }
+        ]
+      },
+      "refunds": []
+    },
+    "20261107-R01": {
+      "race_date": "2026-11-07",
+      "race_no": 1,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=1&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R02": {
+      "race_date": "2026-11-07",
+      "race_no": 2,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=2&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R03": {
+      "race_date": "2026-11-07",
+      "race_no": 3,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=3&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R04": {
+      "race_date": "2026-11-07",
+      "race_no": 4,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=4&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R05": {
+      "race_date": "2026-11-07",
+      "race_no": 5,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=5&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R06": {
+      "race_date": "2026-11-07",
+      "race_no": 6,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=6&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R07": {
+      "race_date": "2026-11-07",
+      "race_no": 7,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=7&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R08": {
+      "race_date": "2026-11-07",
+      "race_no": 8,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=8&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R09": {
+      "race_date": "2026-11-07",
+      "race_no": 9,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=9&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R10": {
+      "race_date": "2026-11-07",
+      "race_no": 10,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=10&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R11": {
+      "race_date": "2026-11-07",
+      "race_no": 11,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=11&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    },
+    "20261107-R12": {
+      "race_date": "2026-11-07",
+      "race_no": 12,
+      "status": "provisional",
+      "note": "取得時点でNAR成績ページが『ご指定のレース成績の情報がありません』（開催予定日・未発走）",
+      "race_name": null,
+      "start_time_jst": null,
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_raceNo=12&k_babaCode=3"
+      ],
+      "finishes": [],
+      "payouts": {
+        "trio": null,
+        "trifecta": null
+      },
+      "all_payouts": {},
+      "refunds": []
+    }
+  }
+}
