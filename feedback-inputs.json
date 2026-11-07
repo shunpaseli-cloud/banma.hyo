@@ -296,6 +296,297 @@
         "excluded": [],
         "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
       }
+    },
+    {
+      "race_id": "20261107-R01",
+      "results": {
+        "20261107-R01-01": 1,
+        "20261107-R01-07": 2,
+        "20261107-R01-02": 3,
+        "20261107-R01-10": 4,
+        "20261107-R01-03": 5,
+        "20261107-R01-08": 6,
+        "20261107-R01-04": 7,
+        "20261107-R01-09": 8,
+        "20261107-R01-05": 9,
+        "20261107-R01-06": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R02",
+      "results": {
+        "20261107-R02-01": 1,
+        "20261107-R02-02": 2,
+        "20261107-R02-08": 3,
+        "20261107-R02-04": 4,
+        "20261107-R02-05": 5,
+        "20261107-R02-07": 6,
+        "20261107-R02-06": 7,
+        "20261107-R02-03": 8,
+        "20261107-R02-09": 9
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R03",
+      "results": {
+        "20261107-R03-09": 1,
+        "20261107-R03-07": 2,
+        "20261107-R03-01": 3,
+        "20261107-R03-08": 4,
+        "20261107-R03-02": 5,
+        "20261107-R03-06": 6,
+        "20261107-R03-05": 7,
+        "20261107-R03-03": 8,
+        "20261107-R03-04": 9
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R04",
+      "results": {
+        "20261107-R04-02": 1,
+        "20261107-R04-04": 2,
+        "20261107-R04-10": 3,
+        "20261107-R04-06": 4,
+        "20261107-R04-01": 5,
+        "20261107-R04-08": 6,
+        "20261107-R04-07": 7,
+        "20261107-R04-09": 8
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4"
+        ],
+        "partial": true,
+        "excluded": [
+          {
+            "umaban": 3,
+            "status": "dnf"
+          },
+          {
+            "umaban": 5,
+            "status": "dnf"
+          }
+        ],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R05",
+      "results": {
+        "20261107-R05-07": 1,
+        "20261107-R05-01": 2,
+        "20261107-R05-06": 3,
+        "20261107-R05-05": 4,
+        "20261107-R05-08": 5,
+        "20261107-R05-03": 6,
+        "20261107-R05-02": 7,
+        "20261107-R05-09": 8,
+        "20261107-R05-04": 9
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R06",
+      "results": {
+        "20261107-R06-06": 1,
+        "20261107-R06-02": 2,
+        "20261107-R06-09": 3,
+        "20261107-R06-08": 4,
+        "20261107-R06-05": 5,
+        "20261107-R06-03": 6,
+        "20261107-R06-04": 7,
+        "20261107-R06-07": 8,
+        "20261107-R06-01": 9
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R07",
+      "results": {
+        "20261107-R07-04": 1,
+        "20261107-R07-02": 2,
+        "20261107-R07-07": 3,
+        "20261107-R07-06": 4,
+        "20261107-R07-08": 5,
+        "20261107-R07-05": 6,
+        "20261107-R07-10": 7,
+        "20261107-R07-09": 8,
+        "20261107-R07-01": 9,
+        "20261107-R07-03": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R08",
+      "results": {
+        "20261107-R08-01": 1,
+        "20261107-R08-06": 2,
+        "20261107-R08-04": 3,
+        "20261107-R08-03": 4,
+        "20261107-R08-10": 5,
+        "20261107-R08-08": 6,
+        "20261107-R08-05": 7,
+        "20261107-R08-02": 8,
+        "20261107-R08-09": 9,
+        "20261107-R08-07": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R09",
+      "results": {
+        "20261107-R09-03": 1,
+        "20261107-R09-02": 2,
+        "20261107-R09-05": 3,
+        "20261107-R09-07": 4,
+        "20261107-R09-08": 5,
+        "20261107-R09-01": 6,
+        "20261107-R09-09": 7,
+        "20261107-R09-04": 8,
+        "20261107-R09-10": 9,
+        "20261107-R09-06": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R10",
+      "results": {
+        "20261107-R10-07": 1,
+        "20261107-R10-03": 2,
+        "20261107-R10-05": 3,
+        "20261107-R10-02": 4,
+        "20261107-R10-10": 5,
+        "20261107-R10-08": 6,
+        "20261107-R10-04": 7,
+        "20261107-R10-09": 8,
+        "20261107-R10-01": 9,
+        "20261107-R10-06": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R11",
+      "results": {
+        "20261107-R11-04": 1,
+        "20261107-R11-06": 2,
+        "20261107-R11-01": 3,
+        "20261107-R11-07": 4,
+        "20261107-R11-05": 5,
+        "20261107-R11-09": 6,
+        "20261107-R11-08": 7,
+        "20261107-R11-03": 8,
+        "20261107-R11-10": 9,
+        "20261107-R11-02": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261107-R12",
+      "results": {
+        "20261107-R12-07": 1,
+        "20261107-R12-09": 2,
+        "20261107-R12-08": 3,
+        "20261107-R12-03": 4,
+        "20261107-R12-10": 5,
+        "20261107-R12-05": 6,
+        "20261107-R12-02": 7,
+        "20261107-R12-01": 8,
+        "20261107-R12-04": 9,
+        "20261107-R12-06": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
     }
   ]
 }
