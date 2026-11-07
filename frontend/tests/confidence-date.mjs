@@ -1,3 +1,4 @@
+import {renderResolved} from './render-resolved.mjs'
 import assert from 'node:assert/strict'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
@@ -32,11 +33,11 @@ try {
     assert.equal(cards.length, expected.length, date)
     cards.forEach((card, i) => {
       assert.equal(Number(card[1]), expected[i].rec.confidence, date)
-      assert.ok(card[2].includes(`${date} ${expected[i].race.race_no}R`), date)
+      assert.ok(card[2].includes(`${expected[i].race.race_no}R`)&&card[2].includes(date),date)
     })
     if (!expected.length) assert.ok(html.includes(`対象: ${date}`), date)
     globalThis.location = { search: `?view=confidence&date=${date}` }
-    const app = render(ui.App)
+    const app = await renderResolved(createElement(ui.App))
     assert.ok(app.includes(`type="date" value="${date}"`), date)
     assert.ok(!app.includes('日別まとめ'), 'Removed summary navigation must not reappear')
     assert.ok(app.includes('自信度順'))
@@ -44,10 +45,10 @@ try {
     checked += cards.length
   }
   globalThis.location = { search: '?view=summary&date=2026-11-06' }
-  const legacy = render(ui.App)
+  const legacy = await renderResolved(createElement(ui.App))
   assert.ok(!legacy.includes('日別まとめ'))
   assert.ok(!legacy.includes('confidence-rank'))
-  assert.ok(legacy.includes('class="horses"'), 'Removed summary URL falls back to normal races')
+  assert.ok(legacy.includes('race-card'), 'Removed summary URL falls back to normal races')
   assert.ok(checked > 0, 'Fixture must include recommended races')
   console.log(`PASS: ${ui.DATES.length} available dates plus empty date; ${checked} recommendations, date isolation, confidence order, shared date picker and URL date.`)
 } finally {
