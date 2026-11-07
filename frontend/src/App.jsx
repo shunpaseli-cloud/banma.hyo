@@ -42,7 +42,7 @@ export default function App() {
       </header>
       <main>
         {view === 'confidence' ? (
-          <ConfidenceRank />
+          <ConfidenceRank date={date} />
         ) : day.races.length === 0 ? (
           <p className="end">{date} の出走表データはありません（開催なし、または未取得）。上の「データあり」から日付を選んでください。</p>
         ) : (
