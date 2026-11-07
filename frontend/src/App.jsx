@@ -5,8 +5,9 @@ import { DEFAULT_DATE, dayInfo } from './lib/paginate.js'
 import { DATA } from './dataSource.js'
 import RaceList from './components/RaceList.jsx'
 import ConfidenceRank from './components/ConfidenceRank.jsx'
+import ConfidenceResults from './components/ConfidenceResults.jsx'
 
-const VIEWS = new Set(['races', 'confidence'])
+const VIEWS = new Set(['races', 'confidence', 'confidence-results'])
 
 export default function App() {
   const [date, setDate] = useState(() => new URLSearchParams(location.search).get('date') || DEFAULT_DATE)
@@ -35,11 +36,14 @@ export default function App() {
         <nav className="nav">
           <button className={view === 'races' ? 'on' : ''} onClick={() => go('races')}>出走表・予想</button>
           <button className={view === 'confidence' ? 'on' : ''} onClick={() => go('confidence')}>自信度順</button>
+          <button className={view === 'confidence-results' ? 'on' : ''} onClick={() => go('confidence-results')}>confidence-results</button>
         </nav>
         <p className="auto-note">3連複予想は自動生成 · 自信度順は本番BOX推奨（0.8以上 / 0.7以上の2帯）</p>
       </header>
       <main>
-        {view === 'confidence' ? (
+        {view === 'confidence-results' ? (
+          <ConfidenceResults date={date} />
+        ) : view === 'confidence' ? (
           <ConfidenceRank date={date} />
         ) : day.races.length === 0 ? (
           <p className="end">{date} の出走表データはありません（開催なし、または未取得）。上の「データあり」から日付を選んでください。</p>

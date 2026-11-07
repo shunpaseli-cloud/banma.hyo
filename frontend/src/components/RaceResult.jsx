@@ -1,9 +1,9 @@
 import { resultForRace, savedBox, reconcileBox, learningInput, STATUS_LABELS } from '../raceResults.js'
 const finishStatus = { dnf: '競走中止', withdrawn: '競走取消', excluded: '競走除外', unknown: '着順なし・要確認' }
 const yen = value => `¥${value.toLocaleString('ja-JP')}`
-export default function RaceResult({ race }) {
-  const result = resultForRace(race)
-  const prediction = savedBox(race.race_id)
+export default function RaceResult({ race, resultOverride, predictionOverride }) {
+  const result = resultOverride ?? resultForRace(race)
+  const prediction = predictionOverride ?? savedBox(race.race_id)
   const settlement = reconcileBox(result, prediction)
   const afterStart = prediction?.savedAt && result.start_time_jst && new Date(prediction.savedAt) >= new Date(`${race.race_date}T${result.start_time_jst}:00+09:00`)
   const input = learningInput(race, result)
@@ -17,6 +17,7 @@ export default function RaceResult({ race }) {
     <h3>実結果・保存予想との照合</h3>
     <p className="meta">結果: {STATUS_LABELS[result.status] || '未取得'}（未取得・未確定は外れや0円ではありません）</p>
     {result.note && <p className="meta">{result.note}</p>}
+    {result.result_retrieved_at && <p className="meta">公式結果取得（JST）: {result.result_retrieved_at} ／ 公式確定発表時刻: {result.official_finalized_at || '公表時刻不明（取得時点で確定、取得時刻とは別）'}</p>}
     {!!result.finishes?.length && <p className="meta">実着順: {[...result.finishes].sort((a,b) => (a.finish ?? 999) - (b.finish ?? 999)).map(f => `${f.finish ? `${f.finish}着` : finishStatus[f.status] || f.status || '着順なし'} ${f.umaban}番${f.name || ''}`).join(' ／ ')}</p>}
     {['trio','trifecta'].map(kind => <p className="meta" key={kind}>{kind === 'trio' ? '三連複' : '三連単'}払戻（100円当たり）: {result.payouts?.[kind]?.length ? result.payouts[kind].map(p => `${p.combo.join('−')} ${yen(p.yen)}`).join(' ／ ') : '未取得・未確定'}</p>)}
     {prediction && <p className="meta">当時の保存BOX6点: {prediction.horses.join('−')}（保存日時 {prediction.savedAt || '不明'}）・{prediction.recommended ? '推奨' : '見送り'}。購入記録ではなく100円×6点の想定照合。</p>}
