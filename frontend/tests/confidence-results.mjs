@@ -22,6 +22,8 @@ try {
     assert.equal(row.tickets.length,6);assert.equal(new Set(row.tickets.map(t=>t.join('-'))).size,6)
     const horses=row.selection_meta.top3.map(h=>h.umaban).sort((a,b)=>a-b)
     for(const t of row.tickets)assert.deepEqual([...t].sort((a,b)=>a-b),horses)
+    if(row.snapshot_timing==='poststart')assert.equal(row.hit,null)
+    if(row.result.status!=='final')assert.equal(row.hit,null)
     assert.equal(row.ticket_yen,100);assert.equal(row.stake_yen,600)
   }
   const {default:View,summarizeRows,predictionOf}=await server.ssrLoadModule('/src/components/ConfidenceResults.jsx')
@@ -40,6 +42,7 @@ try {
       assert.equal(summary.pending,7);assert.equal(summary.settled,0)
       for(const row of rows)assert.equal(reconcileBox(row.result,predictionOf(row)).returnYen,null)
       assert.ok(!html.includes('収支'))
+      assert.ok(!html.includes('払戻 ¥0'), 'all-pending dates must not display zero returns')
     }else{
       assert.equal(summary.settled,rows.length);assert.equal(summary.pending,0)
       assert.ok(html.includes('公式確定発表時刻'))
@@ -53,7 +56,7 @@ try {
   assert.equal(JSON.stringify([...memory]),before,'new view must not predict, train or alter storage')
   const final=data.races.filter(r=>r.race_date<='2026-11-07')
   const totals=summarizeRows(final)
-  assert.deepEqual(totals,{recommended:8,settled:8,pending:0,hit:0,prestart:7,reference:1,returnYen:0,stakeYen:4800})
+  assert.deepEqual(totals,{recommended:8,settled:8,pending:0,hit:0,prestart:7,reference:1,returnYen:0,stakeYen:4800,prestartReturnYen:0,prestartStakeYen:4200,referenceHit:0})
   console.log('PASS confidence-results: frozen 15 recommendations, exact score/comment/meta, six tickets each, date sorting, separate pending/reference, original confidence tab retained, no prediction/storage writes.')
   console.log('Nov 6–7 counts:',JSON.stringify(totals))
 }finally{await server.close()}

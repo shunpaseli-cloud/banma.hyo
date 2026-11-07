@@ -17,6 +17,7 @@
 python3 /workspace/banma_scripts/fetch_banei_results.py 2026-11-07 /tmp/banma_results_2026-11-07.json
 cd frontend
 python3 scripts/merge_live_results.py /tmp/banma_results_2026-11-07.json
+python3 scripts/apply_result_source_audit.py /tmp/banma_results_2026-11-06_07_reconciled.json /tmp/banma_results_source_audit_2026-11-06_07.json
 python3 scripts/materialize_confidence_results.py
 node scripts/export_result_inputs.mjs
 npm test
@@ -26,3 +27,5 @@ npm run build -- --base=/banma.hyo/
 `results_from_pdf.json`等の予測用履歴には結果を混ぜない。表示専用verified_resultsだけを更新する。学習入力JSONは24R/230頭、4頭の競走中止を除外。入力を出力するだけで学習は実行しない。
 
 水分ログの別依頼: 11/7 8〜12Rは11/7 18:18 JSTに保存済みの5予測を維持。11/8全12Rを05:24:59 JSTに各1.9%で発走前保存済み。公式日程と05:27 JSTに全R照合、時刻不一致なし。11/7全12Rの実測欄を追記済み、比較可能5RのMAE=0.28 pp、RMSE≈0.28284 pp。定期実行の設定は親routine側の残作業であり保証しない。正本・コマンドはmoisture-prestart-ledger.md参照。
+
+05:28 JSTの別担当canonical/auditと24Rすべての上位3・三連複・三連単・保存confidence/BOXを数値照合。umanity・スポーツナビ・netkeibaの取得成功結果との一致および出典URLを表示専用JSONに追記。Xには結果投稿がなく照合根拠には使わない。reference_onlyのhitはnull、事前成績は7Rのみとして表示する。

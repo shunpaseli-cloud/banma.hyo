@@ -15,10 +15,16 @@ def materialize(snapshot, schedules, results, source_hash):
         assert len(set(horses))==3 and meta['box_idx']==[0,1,2]
         start=f"{race['race_date']}T{race['post_time']}:00+09:00"
         saved=snapshot['meta']['generated_at_asia_tokyo']
+        result=results['races'].get(rec['race_id'],{'status':'missing','finishes':[]})
+        prestart=datetime.fromisoformat(saved)<datetime.fromisoformat(start)
+        confirmed=result['status']=='final' and bool(result.get('payouts',{}).get('trifecta'))
+        hit=any(sorted(p['combo'])==sorted(horses) for p in result.get('payouts',{}).get('trifecta') or []) if confirmed else None
         rows.append({**rec,'tickets':[list(t) for t in itertools.permutations(horses)],'ticket_yen':100,'stake_yen':600,
             'snapshot_saved_at':saved,'scheduled_start_at':start,
-            'snapshot_timing':'prestart' if datetime.fromisoformat(saved)<datetime.fromisoformat(start) else 'poststart',
-            'result':results['races'].get(rec['race_id'],{'status':'missing','finishes':[]})})
+            'snapshot_timing':'prestart' if prestart else 'poststart',
+            'evaluation_status':'reference_only' if not prestart else 'evaluated' if confirmed else 'pending',
+            'hit':hit if prestart and confirmed else None,
+            'reference_box_hit':hit if not prestart else None, 'result':result})
     rows.sort(key=lambda r:(-r['confidence'],r['race_date'],r['race_no']))
     return {'schema_version':1,'meta':{'materialized_at':datetime.now(timezone(timedelta(hours=9))).isoformat(),
         'snapshot_saved_at':snapshot['meta']['generated_at_asia_tokyo'],'source':'src/data/recommendations.json',

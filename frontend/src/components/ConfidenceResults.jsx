@@ -7,12 +7,15 @@ export function predictionOf(row) {
     recommended: true, savedAt: row.snapshot_saved_at, confidence: row.confidence, stakeYen: row.stake_yen }
 }
 export function summarizeRows(rows) {
-  const summary = { recommended: rows.length, settled: 0, pending: 0, hit: 0, prestart: 0, reference: 0, returnYen: 0, stakeYen: 0 }
+  const summary = { recommended: rows.length, settled: 0, pending: 0, hit: 0, prestart: 0, reference: 0, returnYen: 0, stakeYen: 0, prestartReturnYen: 0, prestartStakeYen: 0, referenceHit: 0 }
   for (const row of rows) {
     const settlement = reconcileBox(row.result, predictionOf(row))
     if (settlement.returnYen == null) { summary.pending++; continue }
-    summary.settled++; if (settlement.status === 'hit') summary.hit++
-    if (row.snapshot_timing === 'prestart') summary.prestart++; else summary.reference++
+    summary.settled++
+    if (row.snapshot_timing === 'prestart') {
+      summary.prestart++; if (settlement.status === 'hit') summary.hit++
+      summary.prestartReturnYen += settlement.returnYen; summary.prestartStakeYen += row.stake_yen
+    } else { summary.reference++; if (settlement.status === 'hit') summary.referenceHit++ }
     summary.returnYen += settlement.returnYen; summary.stakeYen += row.stake_yen
   }
   return summary
@@ -25,8 +28,8 @@ export default function ConfidenceResults({ date }) {
   return <div className="confidence-results">
     <h2>confidence-results · {date}</h2>
     <p className="meta">λモデル由来の保存済み本番BOX推奨のみ・自信度降順。保存済みscore/commentを使用し、結果から予想を再生成しません。</p>
-    <p className="count">推奨 {counts.recommended}R ／ 照合 {counts.settled}R（的中 {counts.hit}R）／ 未確定・照合保留 {counts.pending}R</p>
-    <p className="meta">照合の内訳: 発走前保存 {counts.prestart}R ／ 発走後保存の参考 {counts.reference}R。実購入記録ではありません。後者を事前成績に含めません。</p>
+    <p className="count">推奨 {counts.recommended}R ／ 照合 {counts.settled}R／ 未確定・照合保留 {counts.pending}R</p>
+    <p className="meta">事前保存の照合 {counts.prestart}R・的中 {counts.hit}R{counts.prestart > 0 ? `（想定投資 ¥${counts.prestartStakeYen.toLocaleString()}／払戻 ¥${counts.prestartReturnYen.toLocaleString()}）` : '（金額集計対象なし・未確定を0円にしません）'} ／ 発走後保存の参考 {counts.reference}R・参考的中 {counts.referenceHit}R。実購入記録ではありません。後者を事前成績に含めません。</p>
     <p className="meta">元データ: {saved.meta.source} ／ 保存日時 {saved.meta.snapshot_saved_at} ／ <a href="./confidence-results.json">別管理JSON</a></p>
     {!rows.length && <p className="end">この日の保存済み推奨はありません。推奨外候補は掲載しません。</p>}
     {rows.map((row,i) => {

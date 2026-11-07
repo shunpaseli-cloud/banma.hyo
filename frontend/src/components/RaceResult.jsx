@@ -22,9 +22,10 @@ export default function RaceResult({ race, resultOverride, predictionOverride })
     {['trio','trifecta'].map(kind => <p className="meta" key={kind}>{kind === 'trio' ? '三連複' : '三連単'}払戻（100円当たり）: {result.payouts?.[kind]?.length ? result.payouts[kind].map(p => `${p.combo.join('−')} ${yen(p.yen)}`).join(' ／ ') : '未取得・未確定'}</p>)}
     {prediction && <p className="meta">当時の保存BOX6点: {prediction.horses.join('−')}（保存日時 {prediction.savedAt || '不明'}）・{prediction.recommended ? '推奨' : '見送り'}。購入記録ではなく100円×6点の想定照合。</p>}
     {afterStart && <p className="meta">注意: この保存日時は発走以後です。事前予想の成績・実購入の成績としては扱えません（保存済み内容の参考照合）。</p>}
-    <p className="meta"><b>{settlement.status === 'hit' ? '的中' : settlement.status === 'miss' ? '外れ' : `照合保留: ${settlement.reason}`}</b>{settlement.returnYen != null && ` ／ 想定投資 ${yen(prediction.stakeYen)}・払戻 ${yen(settlement.returnYen)}・収支 ${yen(settlement.profitYen)}`}</p>
+    <p className="meta"><b>{settlement.status === 'hit' ? (afterStart ? '参考照合: 的中（事前成績外）' : '的中') : settlement.status === 'miss' ? (afterStart ? '参考照合: 不的中（事前成績外）' : '不的中') : `照合保留: ${settlement.reason}`}</b>{settlement.returnYen != null && ` ／ 想定投資 ${yen(prediction.stakeYen)}・払戻 ${yen(settlement.returnYen)}・収支 ${yen(settlement.profitYen)}`}</p>
     {!!result.refunds?.length && <p className="meta">返還等: {JSON.stringify(result.refunds)}</p>}
     {result.source_urls?.filter(u => /^https?:\/\//.test(u)).map(u => <p className="meta" key={u}><a href={u} target="_blank" rel="noreferrer">結果出典</a></p>)}
+    {!!result.crosscheck_sources?.length && <p className="meta">複数出典照合（{result.crosschecked_at} JST）: {result.crosscheck_sources.map(source => <a key={source.name} href={source.url} target="_blank" rel="noreferrer" style={{marginRight:10}}>{source.name}</a>)}{result.source_disagreements?.length ? '差異あり・要確認' : '一致'}</p>}
     {input && <button className="link" onClick={exportInput}>学習用結果JSONを保存（学習は未実行）</button>}
   </section>
 }
