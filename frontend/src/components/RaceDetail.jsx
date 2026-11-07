@@ -1,3 +1,5 @@
+import OfficialFinishes from './OfficialFinishes.jsx'
+import { resultForRace } from '../raceResults.js'
 import { TrioPayout } from '../trioPayout.jsx'
 import { prevFinish } from '../prevFinish.js'
 import { FEATURES, getWeights } from '../feedback.js'
@@ -23,6 +25,7 @@ export default function RaceDetail({ race, preds }) {
     return [plus.length ? `強み: ${plus.join('、')}` : '突出した強みなし', minus.length ? `弱み: ${minus.join('')}` : ''].filter(Boolean).join(' ／ ')
   }
   return <div className="detail trio">
+    <OfficialFinishes finishes={resultForRace(race).finishes} />
     <h3>採点の詳細</h3>
     <p className="meta">馬場水分: {race.track_moisture != null ? `${race.track_moisture}%（実測）` : race.track_moisture_est != null ? `約${race.track_moisture_est}%（天気からの推定・実測ではありません）` : '不明（中間値0.5で採点）'}</p>
     <p className="meta">{preds[0]?.finish_score != null ? `順位は時系列学習モデル（指数重みOLS λ=0.92・29特徴(plus_hjz)・${preds[0].model.which === 'rain' ? '雨用モデル' : '通常モデル'}／水分${preds[0].model.moist?.toFixed(1)}%）の着順スコア順（${preds[0].model.asOf}${preds[0].model.kind === 'snapshot' ? ' より前' : ' まで'}の結果で学習）。下表「合計」は従来の重み付きスコア。` : '学習モデルの対象外の日のため従来スコアで順位付け。'}</p>
