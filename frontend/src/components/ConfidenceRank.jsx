@@ -1,13 +1,13 @@
+import RaceResult from './RaceResult.jsx'
 import { useMemo } from 'react'
 import rules from '../data/skip_rules.json' with { type: 'json' }
-import { DATES, dayInfo } from '../lib/paginate.js'
+import { dayInfo } from '../lib/paginate.js'
 import { predict } from '../feedback.js'
 import { buildRaceRecommendation } from '../selectionReason.js'
 import { boxPicks } from '../trioPayout.jsx'
 
 const BAND_HIGH = 0.8
 const BAND_MID = 0.7
-const TARGET_DATES = ['2026-11-06', '2026-11-07', '2026-11-08']
 
 function sortRows(rows) {
   return [...rows].sort((a, b) => {
@@ -83,6 +83,7 @@ function RaceConfCard({ race, rec, axis, partners, tickets, horses, label, rank 
           </p>
         </div>
       </div>
+      <RaceResult race={race} />
     </article>
   )
 }
@@ -112,44 +113,40 @@ function BandSection({ title, hint, rows, label, emptyText }) {
 }
 
 /**
- * 自信度順タブ: 本番構成の推奨レースを
+ * 自信度順タブ: 選択日の本番構成の推奨レースを
  * 0.8以上 / 0.7以上（0.8未満）の2帯に分け、各帯内は confidence 降順。
  * 三連単三頭ボックス6点の券番号・軸・相手・選定理由を表示。
  * learned_model.json は参照のみ（変更しない）。
  */
-export default function ConfidenceRank({ dates = TARGET_DATES }) {
+export default function ConfidenceRank({ date }) {
   const { high, mid } = useMemo(() => {
-    const want = new Set(dates?.length ? dates : TARGET_DATES)
     const out = []
-    for (const d of DATES) {
-      if (!want.has(d)) continue
-      for (const race of dayInfo(d).races) {
-        const preds = predict(race)
-        const rec = buildRaceRecommendation(race, preds)
-        if (!rec.recommended) continue
-        const conf = rec.confidence ?? 0
-        if (conf < BAND_MID) continue
-        const box = boxPicks(race, preds)
-        const meta = rec.selection_meta || {}
-        const axis = meta.axis
-        const partners = (meta.top3 || []).filter(t => String(t.umaban) !== String(axis?.umaban))
-        const tickets = (box.tickets || []).map(nums => ({
-          order: nums.join('-'),
-          detail: nums.map(n => {
-            const e = (race.entries || []).find(x => Number(x.umaban ?? x.gate) === Number(n))
-            return `${n}番${e?.name || '?'}`
-          }).join(' → '),
-        }))
-        out.push({
-          race,
-          rec,
-          box,
-          axis,
-          partners,
-          tickets,
-          horses: box.horses || [],
-        })
-      }
+    for (const race of dayInfo(date).races) {
+      const preds = predict(race)
+      const rec = buildRaceRecommendation(race, preds)
+      if (!rec.recommended) continue
+      const conf = rec.confidence ?? 0
+      if (conf < BAND_MID) continue
+      const box = boxPicks(race, preds)
+      const meta = rec.selection_meta || {}
+      const axis = meta.axis
+      const partners = (meta.top3 || []).filter(t => String(t.umaban) !== String(axis?.umaban))
+      const tickets = (box.tickets || []).map(nums => ({
+        order: nums.join('-'),
+        detail: nums.map(n => {
+          const e = (race.entries || []).find(x => Number(x.umaban ?? x.gate) === Number(n))
+          return `${n}番${e?.name || '?'}`
+        }).join(' → '),
+      }))
+      out.push({
+        race,
+        rec,
+        box,
+        axis,
+        partners,
+        tickets,
+        horses: box.horses || [],
+      })
     }
     const sorted = sortRows(out)
     return {
@@ -159,7 +156,7 @@ export default function ConfidenceRank({ dates = TARGET_DATES }) {
         return c >= BAND_MID && c < BAND_HIGH
       }),
     }
-  }, [dates])
+  }, [date])
 
   const label = rules.ticket?.label || '三連単三頭ボックス6点'
   const stake = rules.ticket?.stakeYen || 600
@@ -170,7 +167,7 @@ export default function ConfidenceRank({ dates = TARGET_DATES }) {
   if (!total) {
     return (
       <div className="confidence-rank">
-        <p className="end">自信度 {BAND_MID} 以上の推奨レースはありません（対象: {dates.join('・')}）。</p>
+        <p className="end">自信度 {BAND_MID} 以上の推奨レースはありません（対象: {date}）。</p>
         <p className="meta">構成: {cfg}</p>
       </div>
     )
@@ -179,7 +176,7 @@ export default function ConfidenceRank({ dates = TARGET_DATES }) {
   return (
     <div className="confidence-rank">
       <p className="count">
-        自信度順 · 0.8以上 / 0.7以上（0.8未満） · 合計 {total}レース
+        {date} 自信度順 · 0.8以上 / 0.7以上（0.8未満） · 合計 {total}レース
         <span style={{ marginLeft: 8, opacity: 0.75 }}>（{cfg} · {label} ¥{stake}）</span>
       </p>
 
