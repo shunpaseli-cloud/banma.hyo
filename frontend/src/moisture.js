@@ -31,7 +31,13 @@ export async function loadForecast() {
   try {
     const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=2&forecast_days=3&timezone=Asia%2FTokyo')
     const d = (await r.json()).daily
-    d.time.forEach((t, i) => { live[t] = { precip: d.precipitation_sum[i], rh: d.relative_humidity_2m_mean[i], et0: d.et0_fao_evapotranspiration[i] } })
+    setForecastDaily(d)
     return true
   } catch { return false }
+}
+
+// Explicit ingestion of one captured forecast response; the formula is unchanged.
+export function setForecastDaily(d) {
+  if(!Array.isArray(d?.time))throw new Error('Forecast daily.time required')
+  d.time.forEach((t,i)=>{live[t]={precip:d.precipitation_sum?.[i],rh:d.relative_humidity_2m_mean?.[i],et0:d.et0_fao_evapotranspiration?.[i]}})
 }

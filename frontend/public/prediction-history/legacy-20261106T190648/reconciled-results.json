@@ -1,0 +1,1988 @@
+{
+ "meta": {
+  "generated_at_jst": "2026-11-08T05:28:38+09:00",
+  "venue": "帯広ばんえい",
+  "dates": [
+   "2026-11-06",
+   "2026-11-07"
+  ],
+  "source_priority_requested": [
+   "umanity",
+   "スポーツナビ",
+   "netkeiba",
+   "X ばんえーあい"
+  ],
+  "canonical_result_basis": "NAR公式(一次)。指定順の各出典は全Rで取得・照合（auditファイル参照）",
+  "learned_model_sha256": "877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5",
+  "predictions_snapshot_saved_at_jst": "2026-11-06T19:06:48+09:00",
+  "note": "払戻は100円あたり。予想は保存済み本番推奨を読み取りのみ。hitは推奨かつ発走前保存の場合のみ。推奨外/発走後保存は参考計算。",
+  "prior_state_note": "/tmp/banma_results_2026-11-07.json は18:16時点で1-7R確定。11/08 05:24:58 JSTに別実行で12R確定へ更新済み（本タスクは上書きせず、ライブ再取得は /tmp/banma_07_live.json）",
+  "prior_files_unchanged": [
+   "/workspace/banma_results_2026-11-06_07.json",
+   "/tmp/banma_results_2026-11-07.json"
+  ],
+  "summary": {
+   "2026-11-06": {
+    "races": 12,
+    "確定": 12,
+    "prediction_status_counts": {
+     "reference_only": 9,
+     "not_recommended": 2,
+     "evaluated": 1
+    },
+    "evaluated_N": 1,
+    "hit": 0,
+    "miss": 1,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "reference_hits": []
+   },
+   "2026-11-07": {
+    "races": 12,
+    "確定": 12,
+    "prediction_status_counts": {
+     "not_recommended": 6,
+     "evaluated": 6
+    },
+    "evaluated_N": 6,
+    "hit": 0,
+    "miss": 6,
+    "stake_yen": 3600,
+    "return_yen": 0,
+    "reference_hits": []
+   }
+  }
+ },
+ "races": [
+  {
+   "race_id": "20261106-R01",
+   "date": "2026-11-06",
+   "race_no": 1,
+   "status": "確定",
+   "発走時刻": "14:20",
+   "馬場水分%": 2.8,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 3,
+     "馬名": "フジベンケイ"
+    },
+    {
+     "着順": 2,
+     "馬番": 4,
+     "馬名": "カワノチャタロウ"
+    },
+    {
+     "着順": 3,
+     "馬番": 8,
+     "馬名": "ヒメトラダイア"
+    }
+   ],
+   "三連複": {
+    "組合せ": "3-4-8",
+    "払戻円": 2270
+   },
+   "三連単": {
+    "組合せ": "3-4-8",
+    "払戻円": 25840
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "8番ヒメトラダイア",
+     "2番レディームキムキ",
+     "10番アルバノチエチャン"
+    ],
+    "box_umaban": [
+     8,
+     2,
+     10
+    ],
+    "tickets": [
+     "8-2-10",
+     "8-10-2",
+     "2-8-10",
+     "2-10-8",
+     "10-8-2",
+     "10-2-8"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "14:20",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R02",
+   "date": "2026-11-06",
+   "race_no": 2,
+   "status": "確定",
+   "発走時刻": "14:50",
+   "馬場水分%": 2.8,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 10,
+     "馬名": "ユメニシキ"
+    },
+    {
+     "着順": 2,
+     "馬番": 2,
+     "馬名": "レオン"
+    },
+    {
+     "着順": 3,
+     "馬番": 5,
+     "馬名": "ニューシノツワン"
+    }
+   ],
+   "三連複": {
+    "組合せ": "2-5-10",
+    "払戻円": 2670
+   },
+   "三連単": {
+    "組合せ": "10-2-5",
+    "払戻円": 15930
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "8番ライデンファンタジ",
+     "5番ニューシノツワン",
+     "10番ユメニシキ"
+    ],
+    "box_umaban": [
+     8,
+     5,
+     10
+    ],
+    "tickets": [
+     "8-5-10",
+     "8-10-5",
+     "5-8-10",
+     "5-10-8",
+     "10-8-5",
+     "10-5-8"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "14:50",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R03",
+   "date": "2026-11-06",
+   "race_no": 3,
+   "status": "確定",
+   "発走時刻": "15:25",
+   "馬場水分%": 2.7,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 7,
+     "馬名": "メオトテンザン"
+    },
+    {
+     "着順": 2,
+     "馬番": 5,
+     "馬名": "ホクセイキンボシ"
+    },
+    {
+     "着順": 3,
+     "馬番": 3,
+     "馬名": "サンシルク"
+    }
+   ],
+   "三連複": {
+    "組合せ": "3-5-7",
+    "払戻円": 1970
+   },
+   "三連単": {
+    "組合せ": "7-5-3",
+    "払戻円": 12140
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "2番キョウドノホシ",
+     "10番ヒノクニゴールド",
+     "7番メオトテンザン"
+    ],
+    "box_umaban": [
+     2,
+     10,
+     7
+    ],
+    "tickets": [
+     "2-10-7",
+     "2-7-10",
+     "10-2-7",
+     "10-7-2",
+     "7-2-10",
+     "7-10-2"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "15:25",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R04",
+   "date": "2026-11-06",
+   "race_no": 4,
+   "status": "確定",
+   "発走時刻": "16:00",
+   "馬場水分%": 2.7,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 6,
+     "馬名": "マルホンエルフ"
+    },
+    {
+     "着順": 2,
+     "馬番": 5,
+     "馬名": "ジェットクイーン"
+    },
+    {
+     "着順": 3,
+     "馬番": 3,
+     "馬名": "ジェイマット"
+    }
+   ],
+   "三連複": {
+    "組合せ": "3-5-6",
+    "払戻円": 2010
+   },
+   "三連単": {
+    "組合せ": "6-5-3",
+    "払戻円": 11280
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.744,
+    "box_horses": [
+     "3番ジェイマット",
+     "4番モンスター",
+     "6番マルホンエルフ"
+    ],
+    "box_umaban": [
+     3,
+     4,
+     6
+    ],
+    "tickets": [
+     "3-4-6",
+     "3-6-4",
+     "4-3-6",
+     "4-6-3",
+     "6-3-4",
+     "6-4-3"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "16:00",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R05",
+   "date": "2026-11-06",
+   "race_no": 5,
+   "status": "確定",
+   "発走時刻": "16:35",
+   "馬場水分%": 2.6,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 3,
+     "馬名": "イノスケ"
+    },
+    {
+     "着順": 2,
+     "馬番": 9,
+     "馬名": "ヤマノシテンノウ"
+    },
+    {
+     "着順": 3,
+     "馬番": 6,
+     "馬名": "コトブキクィーン"
+    }
+   ],
+   "三連複": {
+    "組合せ": "3-6-9",
+    "払戻円": 1850
+   },
+   "三連単": {
+    "組合せ": "3-9-6",
+    "払戻円": 11430
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "9番ヤマノシテンノウ",
+     "5番レオナウイン",
+     "8番スーパーサンセイ"
+    ],
+    "box_umaban": [
+     9,
+     5,
+     8
+    ],
+    "tickets": [
+     "9-5-8",
+     "9-8-5",
+     "5-9-8",
+     "5-8-9",
+     "8-9-5",
+     "8-5-9"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "16:35",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R06",
+   "date": "2026-11-06",
+   "race_no": 6,
+   "status": "確定",
+   "発走時刻": "17:10",
+   "馬場水分%": 2.6,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 10,
+     "馬名": "ハゴロモミニョン"
+    },
+    {
+     "着順": 2,
+     "馬番": 6,
+     "馬名": "ツガルユリ"
+    },
+    {
+     "着順": 3,
+     "馬番": 3,
+     "馬名": "ラストユウセン"
+    }
+   ],
+   "三連複": {
+    "組合せ": "3-6-10",
+    "払戻円": 1760
+   },
+   "三連単": {
+    "組合せ": "10-6-3",
+    "払戻円": 14900
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "10番ハゴロモミニョン",
+     "1番サカノヒカルアオ",
+     "3番ラストユウセン"
+    ],
+    "box_umaban": [
+     10,
+     1,
+     3
+    ],
+    "tickets": [
+     "10-1-3",
+     "10-3-1",
+     "1-10-3",
+     "1-3-10",
+     "3-10-1",
+     "3-1-10"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "17:10",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R07",
+   "date": "2026-11-06",
+   "race_no": 7,
+   "status": "確定",
+   "発走時刻": "17:45",
+   "馬場水分%": 2.6,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 10,
+     "馬名": "キタノレンザン"
+    },
+    {
+     "着順": 2,
+     "馬番": 9,
+     "馬名": "ミスキャップ"
+    },
+    {
+     "着順": 3,
+     "馬番": 6,
+     "馬名": "ヒロインリズ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "6-9-10",
+    "払戻円": 5860
+   },
+   "三連単": {
+    "組合せ": "10-9-6",
+    "払戻円": 86800
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "10番キタノレンザン",
+     "2番イワキマッシグラ",
+     "7番ヨシノフクヒメ"
+    ],
+    "box_umaban": [
+     10,
+     2,
+     7
+    ],
+    "tickets": [
+     "10-2-7",
+     "10-7-2",
+     "2-10-7",
+     "2-7-10",
+     "7-10-2",
+     "7-2-10"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "17:45",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R08",
+   "date": "2026-11-06",
+   "race_no": 8,
+   "status": "確定",
+   "発走時刻": "18:20",
+   "馬場水分%": 2.6,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 10,
+     "馬名": "イワキオーカン"
+    },
+    {
+     "着順": 2,
+     "馬番": 9,
+     "馬名": "テンボシヴィーナス"
+    },
+    {
+     "着順": 3,
+     "馬番": 4,
+     "馬名": "サカノキンザン"
+    }
+   ],
+   "三連複": {
+    "組合せ": "4-9-10",
+    "払戻円": 2090
+   },
+   "三連単": {
+    "組合せ": "10-9-4",
+    "払戻円": 12530
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "10番イワキオーカン",
+     "9番テンボシヴィーナス",
+     "7番フクフクライデン"
+    ],
+    "box_umaban": [
+     10,
+     9,
+     7
+    ],
+    "tickets": [
+     "10-9-7",
+     "10-7-9",
+     "9-10-7",
+     "9-7-10",
+     "7-10-9",
+     "7-9-10"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "18:20",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R09",
+   "date": "2026-11-06",
+   "race_no": 9,
+   "status": "確定",
+   "発走時刻": "18:55",
+   "馬場水分%": 2.5,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 3,
+     "馬名": "タアボモリウチ"
+    },
+    {
+     "着順": 2,
+     "馬番": 2,
+     "馬名": "オレノトウコン"
+    },
+    {
+     "着順": 3,
+     "馬番": 1,
+     "馬名": "ホクセイシーマ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-2-3",
+    "払戻円": 13710
+   },
+   "三連単": {
+    "組合せ": "3-2-1",
+    "払戻円": 164570
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "7番オーディン",
+     "10番マサノスパークル",
+     "9番ビール"
+    ],
+    "box_umaban": [
+     7,
+     10,
+     9
+    ],
+    "tickets": [
+     "7-10-9",
+     "7-9-10",
+     "10-7-9",
+     "10-9-7",
+     "9-7-10",
+     "9-10-7"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "18:55",
+    "timing": "postrace_reference_only",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "reference_only",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R10",
+   "date": "2026-11-06",
+   "race_no": 10,
+   "status": "確定",
+   "発走時刻": "19:30",
+   "馬場水分%": 2.5,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 2,
+     "馬名": "ホクトヒーロー"
+    },
+    {
+     "着順": 2,
+     "馬番": 8,
+     "馬名": "ダイヤセンプー"
+    },
+    {
+     "着順": 3,
+     "馬番": 1,
+     "馬名": "ジェイスカイ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-2-8",
+    "払戻円": 1490
+   },
+   "三連単": {
+    "組合せ": "2-8-1",
+    "払戻円": 7320
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "9番ハゴロモビクトリー",
+     "8番ダイヤセンプー",
+     "1番ジェイスカイ"
+    ],
+    "box_umaban": [
+     9,
+     8,
+     1
+    ],
+    "tickets": [
+     "9-8-1",
+     "9-1-8",
+     "8-9-1",
+     "8-1-9",
+     "1-9-8",
+     "1-8-9"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "19:30",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R11",
+   "date": "2026-11-06",
+   "race_no": 11,
+   "status": "確定",
+   "発走時刻": "20:00",
+   "馬場水分%": 2.5,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 6,
+     "馬名": "ジェイホースワン"
+    },
+    {
+     "着順": 2,
+     "馬番": 8,
+     "馬名": "ジェイホース"
+    },
+    {
+     "着順": 3,
+     "馬番": 9,
+     "馬名": "ウルトラコタロウ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "6-8-9",
+    "払戻円": 6940
+   },
+   "三連単": {
+    "組合せ": "6-8-9",
+    "払戻円": 34350
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "8番ジェイホース",
+     "3番クリスタルゴースト",
+     "4番ジェイヒーロー"
+    ],
+    "box_umaban": [
+     8,
+     3,
+     4
+    ],
+    "tickets": [
+     "8-3-4",
+     "8-4-3",
+     "3-8-4",
+     "3-4-8",
+     "4-8-3",
+     "4-3-8"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "20:00",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261106-R12",
+   "date": "2026-11-06",
+   "race_no": 12,
+   "status": "確定",
+   "発走時刻": "20:40",
+   "馬場水分%": 2.5,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 9,
+     "馬名": "キタノミネ"
+    },
+    {
+     "着順": 2,
+     "馬番": 8,
+     "馬名": "ツガルフジ"
+    },
+    {
+     "着順": 3,
+     "馬番": 6,
+     "馬名": "シンエイファイト"
+    }
+   ],
+   "三連複": {
+    "組合せ": "6-8-9",
+    "払戻円": 1410
+   },
+   "三連単": {
+    "組合せ": "9-8-6",
+    "払戻円": 7870
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3",
+   "result_fetched_at_jst": "2026-11-07T11:48:39+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.763,
+    "box_horses": [
+     "9番キタノミネ",
+     "8番ツガルフジ",
+     "4番マサタカラ"
+    ],
+    "box_umaban": [
+     9,
+     8,
+     4
+    ],
+    "tickets": [
+     "9-8-4",
+     "9-4-8",
+     "8-9-4",
+     "8-4-9",
+     "4-9-8",
+     "4-8-9"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "20:40",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  },
+  {
+   "race_id": "20261107-R01",
+   "date": "2026-11-07",
+   "race_no": 1,
+   "status": "確定",
+   "発走時刻": "14:40",
+   "馬場水分%": 2.4,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 1,
+     "馬名": "キンノキセキ"
+    },
+    {
+     "着順": 2,
+     "馬番": 7,
+     "馬名": "サカノオオオク"
+    },
+    {
+     "着順": 3,
+     "馬番": 2,
+     "馬名": "テツオ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-2-7",
+    "払戻円": 4350
+   },
+   "三連単": {
+    "組合せ": "1-7-2",
+    "払戻円": 21330
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1",
+   "result_fetched_at_jst": "2026-11-08T05:26:04+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "7番サカノオオオク",
+     "10番クリスタルクロリス",
+     "4番ディースピード"
+    ],
+    "box_umaban": [
+     7,
+     10,
+     4
+    ],
+    "tickets": [
+     "7-10-4",
+     "7-4-10",
+     "10-7-4",
+     "10-4-7",
+     "4-7-10",
+     "4-10-7"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "14:40",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261107-R02",
+   "date": "2026-11-07",
+   "race_no": 2,
+   "status": "確定",
+   "発走時刻": "15:15",
+   "馬場水分%": 2.4,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 1,
+     "馬名": "デンテツ"
+    },
+    {
+     "着順": 2,
+     "馬番": 2,
+     "馬名": "ファーストヒロイン"
+    },
+    {
+     "着順": 3,
+     "馬番": 8,
+     "馬名": "オレニホレルナ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-2-8",
+    "払戻円": 14500
+   },
+   "三連単": {
+    "組合せ": "1-2-8",
+    "払戻円": 72570
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2",
+   "result_fetched_at_jst": "2026-11-08T05:26:04+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "5番ファンタジスタ",
+     "7番ヨシノグレンザ",
+     "4番ヨシノヤマト"
+    ],
+    "box_umaban": [
+     5,
+     7,
+     4
+    ],
+    "tickets": [
+     "5-7-4",
+     "5-4-7",
+     "7-5-4",
+     "7-4-5",
+     "4-5-7",
+     "4-7-5"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "15:15",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261107-R03",
+   "date": "2026-11-07",
+   "race_no": 3,
+   "status": "確定",
+   "発走時刻": "15:50",
+   "馬場水分%": 2.3,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 9,
+     "馬名": "アーススノーパール"
+    },
+    {
+     "着順": 2,
+     "馬番": 7,
+     "馬名": "オレノゴウリキ"
+    },
+    {
+     "着順": 3,
+     "馬番": 1,
+     "馬名": "アアモンドドレミ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-7-9",
+    "払戻円": 5640
+   },
+   "三連単": {
+    "組合せ": "9-7-1",
+    "払戻円": 22580
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3",
+   "result_fetched_at_jst": "2026-11-08T05:26:05+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.863,
+    "box_horses": [
+     "9番アーススノーパール",
+     "2番ジェイカイン",
+     "4番キンリュウ"
+    ],
+    "box_umaban": [
+     9,
+     2,
+     4
+    ],
+    "tickets": [
+     "9-2-4",
+     "9-4-2",
+     "2-9-4",
+     "2-4-9",
+     "4-9-2",
+     "4-2-9"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "15:50",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  },
+  {
+   "race_id": "20261107-R04",
+   "date": "2026-11-07",
+   "race_no": 4,
+   "status": "確定",
+   "発走時刻": "16:20",
+   "馬場水分%": 2.3,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 2,
+     "馬名": "ポプコ"
+    },
+    {
+     "着順": 2,
+     "馬番": 4,
+     "馬名": "キラキラトレイン"
+    },
+    {
+     "着順": 3,
+     "馬番": 10,
+     "馬名": "ストロングポイント"
+    }
+   ],
+   "三連複": {
+    "組合せ": "2-4-10",
+    "払戻円": 8200
+   },
+   "三連単": {
+    "組合せ": "2-4-10",
+    "払戻円": 52270
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4",
+   "result_fetched_at_jst": "2026-11-08T05:26:05+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "10番ストロングポイント",
+     "1番サカノブラック",
+     "9番トップラン"
+    ],
+    "box_umaban": [
+     10,
+     1,
+     9
+    ],
+    "tickets": [
+     "10-1-9",
+     "10-9-1",
+     "1-10-9",
+     "1-9-10",
+     "9-10-1",
+     "9-1-10"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "16:20",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261107-R05",
+   "date": "2026-11-07",
+   "race_no": 5,
+   "status": "確定",
+   "発走時刻": "16:50",
+   "馬場水分%": 2.2,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 7,
+     "馬名": "タカラオー"
+    },
+    {
+     "着順": 2,
+     "馬番": 1,
+     "馬名": "スズノチカラ"
+    },
+    {
+     "着順": 3,
+     "馬番": 6,
+     "馬名": "アサヒファイヤー"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-6-7",
+    "払戻円": 2000
+   },
+   "三連単": {
+    "組合せ": "7-1-6",
+    "払戻円": 14010
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5",
+   "result_fetched_at_jst": "2026-11-08T05:26:05+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "1番スズノチカラ",
+     "3番ハートキング",
+     "4番リキ"
+    ],
+    "box_umaban": [
+     1,
+     3,
+     4
+    ],
+    "tickets": [
+     "1-3-4",
+     "1-4-3",
+     "3-1-4",
+     "3-4-1",
+     "4-1-3",
+     "4-3-1"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "16:50",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261107-R06",
+   "date": "2026-11-07",
+   "race_no": 6,
+   "status": "確定",
+   "発走時刻": "17:25",
+   "馬場水分%": 2.2,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 6,
+     "馬名": "シンザンミハル"
+    },
+    {
+     "着順": 2,
+     "馬番": 2,
+     "馬名": "ツガルイチバン"
+    },
+    {
+     "着順": 3,
+     "馬番": 9,
+     "馬名": "コハクヒメ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "2-6-9",
+    "払戻円": 1890
+   },
+   "三連単": {
+    "組合せ": "6-2-9",
+    "払戻円": 5570
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6",
+   "result_fetched_at_jst": "2026-11-08T05:26:05+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "6番シンザンミハル",
+     "2番ツガルイチバン",
+     "4番オシマダイヤ"
+    ],
+    "box_umaban": [
+     6,
+     2,
+     4
+    ],
+    "tickets": [
+     "6-2-4",
+     "6-4-2",
+     "2-6-4",
+     "2-4-6",
+     "4-6-2",
+     "4-2-6"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "17:25",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261107-R07",
+   "date": "2026-11-07",
+   "race_no": 7,
+   "status": "確定",
+   "発走時刻": "17:55",
+   "馬場水分%": 2.2,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 4,
+     "馬名": "サトノブレイカー"
+    },
+    {
+     "着順": 2,
+     "馬番": 2,
+     "馬名": "ヤマノリュウ"
+    },
+    {
+     "着順": 3,
+     "馬番": 7,
+     "馬名": "ホクセイダイジン"
+    }
+   ],
+   "三連複": {
+    "組合せ": "2-4-7",
+    "払戻円": 920
+   },
+   "三連単": {
+    "組合せ": "4-2-7",
+    "払戻円": 3730
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7",
+   "result_fetched_at_jst": "2026-11-08T05:26:06+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": false,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.748,
+    "box_horses": [
+     "2番ヤマノリュウ",
+     "4番サトノブレイカー",
+     "10番ツガルタカラフジ"
+    ],
+    "box_umaban": [
+     2,
+     4,
+     10
+    ],
+    "tickets": [
+     "2-4-10",
+     "2-10-4",
+     "4-2-10",
+     "4-10-2",
+     "10-2-4",
+     "10-4-2"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "17:55",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  },
+  {
+   "race_id": "20261107-R08",
+   "date": "2026-11-07",
+   "race_no": 8,
+   "status": "確定",
+   "発走時刻": "18:25",
+   "馬場水分%": 2.2,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 1,
+     "馬名": "ワールドジパング"
+    },
+    {
+     "着順": 2,
+     "馬番": 6,
+     "馬名": "ヤマカツサクラ"
+    },
+    {
+     "着順": 3,
+     "馬番": 4,
+     "馬名": "フジノモンスター"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-4-6",
+    "払戻円": 2600
+   },
+   "三連単": {
+    "組合せ": "1-6-4",
+    "払戻円": 19940
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8",
+   "result_fetched_at_jst": "2026-11-08T05:26:06+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": true,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.748,
+    "box_horses": [
+     "4番フジノモンスター",
+     "10番アクセルアララ",
+     "7番キンカザン"
+    ],
+    "box_umaban": [
+     4,
+     10,
+     7
+    ],
+    "tickets": [
+     "4-10-7",
+     "4-7-10",
+     "10-4-7",
+     "10-7-4",
+     "7-4-10",
+     "7-10-4"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "18:25",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  },
+  {
+   "race_id": "20261107-R09",
+   "date": "2026-11-07",
+   "race_no": 9,
+   "status": "確定",
+   "発走時刻": "18:55",
+   "馬場水分%": 2.1,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 3,
+     "馬名": "ヤマツネライン"
+    },
+    {
+     "着順": 2,
+     "馬番": 2,
+     "馬名": "リックンフィーバー"
+    },
+    {
+     "着順": 3,
+     "馬番": 5,
+     "馬名": "リアンドノール"
+    }
+   ],
+   "三連複": {
+    "組合せ": "2-3-5",
+    "払戻円": 5470
+   },
+   "三連単": {
+    "組合せ": "3-2-5",
+    "払戻円": 15300
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9",
+   "result_fetched_at_jst": "2026-11-08T05:26:06+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": true,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": false,
+    "confidence": 0.25,
+    "box_horses": [
+     "6番トマランサカミカゼ",
+     "3番ヤマツネライン",
+     "4番ジェイドラゴン"
+    ],
+    "box_umaban": [
+     6,
+     3,
+     4
+    ],
+    "tickets": [
+     "6-3-4",
+     "6-4-3",
+     "3-6-4",
+     "3-4-6",
+     "4-6-3",
+     "4-3-6"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "18:55",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "not_recommended",
+    "hit": null,
+    "reference": {
+     "box_hit": false,
+     "stake_yen": 600,
+     "return_yen": 0,
+     "profit_yen": -600
+    }
+   }
+  },
+  {
+   "race_id": "20261107-R10",
+   "date": "2026-11-07",
+   "race_no": 10,
+   "status": "確定",
+   "発走時刻": "19:25",
+   "馬場水分%": 2.1,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 7,
+     "馬名": "アカオビ"
+    },
+    {
+     "着順": 2,
+     "馬番": 3,
+     "馬名": "ヤマノトップ"
+    },
+    {
+     "着順": 3,
+     "馬番": 5,
+     "馬名": "マツサンブラック"
+    }
+   ],
+   "三連複": {
+    "組合せ": "3-5-7",
+    "払戻円": 34280
+   },
+   "三連単": {
+    "組合せ": "7-3-5",
+    "払戻円": 111610
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10",
+   "result_fetched_at_jst": "2026-11-08T05:26:06+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": true,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.801,
+    "box_horses": [
+     "10番コウイッテン",
+     "7番アカオビ",
+     "1番サトノプリンス"
+    ],
+    "box_umaban": [
+     10,
+     7,
+     1
+    ],
+    "tickets": [
+     "10-7-1",
+     "10-1-7",
+     "7-10-1",
+     "7-1-10",
+     "1-10-7",
+     "1-7-10"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "19:25",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  },
+  {
+   "race_id": "20261107-R11",
+   "date": "2026-11-07",
+   "race_no": 11,
+   "status": "確定",
+   "発走時刻": "20:00",
+   "馬場水分%": 2.1,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 4,
+     "馬名": "タカラキングダム"
+    },
+    {
+     "着順": 2,
+     "馬番": 6,
+     "馬名": "ツガルノヒロイモノ"
+    },
+    {
+     "着順": 3,
+     "馬番": 1,
+     "馬名": "キングフェスタ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "1-4-6",
+    "払戻円": 1290
+   },
+   "三連単": {
+    "組合せ": "4-6-1",
+    "払戻円": 8320
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11",
+   "result_fetched_at_jst": "2026-11-08T05:26:07+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": true,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.748,
+    "box_horses": [
+     "7番スターイチバン",
+     "4番タカラキングダム",
+     "6番ツガルノヒロイモノ"
+    ],
+    "box_umaban": [
+     7,
+     4,
+     6
+    ],
+    "tickets": [
+     "7-4-6",
+     "7-6-4",
+     "4-7-6",
+     "4-6-7",
+     "6-7-4",
+     "6-4-7"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "20:00",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  },
+  {
+   "race_id": "20261107-R12",
+   "date": "2026-11-07",
+   "race_no": 12,
+   "status": "確定",
+   "発走時刻": "20:30",
+   "馬場水分%": 2.1,
+   "top3": [
+    {
+     "着順": 1,
+     "馬番": 7,
+     "馬名": "センショウロック"
+    },
+    {
+     "着順": 2,
+     "馬番": 9,
+     "馬名": "テツジ"
+    },
+    {
+     "着順": 3,
+     "馬番": 8,
+     "馬名": "サクラタユウ"
+    }
+   ],
+   "三連複": {
+    "組合せ": "7-8-9",
+    "払戻円": 2760
+   },
+   "三連単": {
+    "組合せ": "7-9-8",
+    "払戻円": 26440
+   },
+   "payout_unit": "円/100円",
+   "result_source": "NAR公式keiba.go.jp",
+   "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12",
+   "result_fetched_at_jst": "2026-11-08T05:26:07+09:00",
+   "first_successful_user_order_source": "umanity",
+   "source_disagreements": [],
+   "initially_missing_in_prior_file": true,
+   "validation": {
+    "top3_ranks": true,
+    "top3_unique": true,
+    "三連単=着順": true,
+    "三連複=上位3集合": true,
+    "配当int>=100": true
+   },
+   "prediction": {
+    "recommended": true,
+    "confidence": 0.7,
+    "box_horses": [
+     "8番サクラタユウ",
+     "3番ホクショウラナ",
+     "6番ホクセイシンノスケ"
+    ],
+    "box_umaban": [
+     8,
+     3,
+     6
+    ],
+    "tickets": [
+     "8-3-6",
+     "8-6-3",
+     "3-8-6",
+     "3-6-8",
+     "6-8-3",
+     "6-3-8"
+    ],
+    "prediction_saved_at_jst": "2026-11-06T19:06:48+09:00",
+    "race_start_jst": "20:30",
+    "timing": "prerace",
+    "source": "/workspace/banma-confidence-dates/frontend/src/data/recommendations.json",
+    "status": "evaluated",
+    "hit": false,
+    "box_hit": false,
+    "stake_yen": 600,
+    "return_yen": 0,
+    "profit_yen": -600
+   }
+  }
+ ]
+}

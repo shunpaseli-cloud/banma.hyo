@@ -7,6 +7,19 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def materialize(snapshot, schedules, results, source_hash):
+    if snapshot.get('meta', {}).get('version'):
+        rows=[]
+        for row in snapshot['races']:
+            if row.get('recommended') is not True: continue
+            if row.get('snapshot_version') != snapshot['meta']['version']:
+                raise ValueError('Prediction version mismatch; refusing legacy regeneration')
+            result=results.get('races', {}).get(row['race_id'], {'status':'missing','finishes':[]})
+            payouts=result.get('payouts', {}).get('trifecta') or []
+            known=result.get('status')=='final' and bool(payouts) and not result.get('refunds') and all(isinstance(p.get('yen'),int) and p['yen']>0 for p in payouts) and all(f.get('status','finished') in ['finished','dnf'] for f in result.get('finishes',[]))
+            hit=any(p['combo'] in row['tickets'] for p in payouts) if known else None
+            pre=row.get('snapshot_timing')=='prestart'
+            rows.append({**row,'result':result,'hit':hit if pre else None,'reference_box_hit':hit if not pre else None,'evaluation_status':'evaluated' if pre and hit is not None else 'pending' if pre else 'postrace_reference'})
+        return {'schema_version':2,'meta':snapshot['meta'],'races':rows}
     by_id={r['race_id']:r for r in schedules}
     rows=[]
     for rec in snapshot['races']:
@@ -32,7 +45,9 @@ def materialize(snapshot, schedules, results, source_hash):
         'note':'保存済み本番λモデル由来推奨のみ。予測・confidence・選定commentを再生成しない。6券各100円、実購入記録ではない。'},'races':rows}
 
 if __name__=='__main__':
-    path=ROOT/'src/data/recommendations.json';raw=path.read_bytes()
+    path=ROOT/'src/data/prediction_snapshot.json'
+    if not path.exists(): path=ROOT/'src/data/recommendations.json'
+    raw=path.read_bytes()
     output=materialize(json.loads(raw),json.loads((ROOT/'src/data/races_from_pdf.json').read_text()),
         json.loads((ROOT/'src/data/verified_results.json').read_text()),hashlib.sha256(raw).hexdigest())
     text=json.dumps(output,ensure_ascii=False,indent=2)+'\n'
