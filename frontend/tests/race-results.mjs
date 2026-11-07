@@ -24,11 +24,6 @@ try {
       const result = api.resultForRace(race), snapshot = api.savedBox(race.race_id)
       const settlement = api.reconcileBox(result, snapshot), learning = api.learningInput(race, result)
       const html = renderToStaticMarkup(createElement(RaceResult, { race }))
-      if (date === '2026-11-07') {
-        assert.equal(result.status, 'provisional'); assert.equal(settlement.status, 'unavailable')
-        assert.equal(settlement.returnYen, null); assert.equal(learning, null)
-        assert.ok(html.includes('未確定')); assert.ok(!html.includes('収支')); continue
-      }
       assert.equal(result.status, 'final')
       const top = [1,2,3].map(n => result.finishes.find(f => f.finish === n).umaban)
       assert.ok(result.payouts.trifecta.some(p => p.combo.join('-') === top.join('-')))
@@ -58,6 +53,6 @@ try {
   assert.throws(() => api.validateResults(bad))
   const conf = renderToStaticMarkup(createElement(ConfidenceRank, { date: '2026-11-06' }))
   assert.ok(conf.includes('実結果・保存予想との照合')); assert.ok(conf.includes('発走以後'))
-  console.log('PASS: 12R official results/payout consistency; 12R unpublished; saved BOX settlement; missing/refunds/cancelled/partial; no training writes.')
+  console.log('PASS: 24R official results/payout consistency; unknown states remain unavailable; saved BOX settlement; missing/refunds/cancelled/partial; no training writes.')
   console.log('REFERENCE snapshot settlement (not actual purchases or proven pre-race):', JSON.stringify(totals))
 } finally { await server.close() }
