@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Tokyo",
+  "unit": "percentage point",
+  "prediction_policy": "first successful forecast saved strictly before scheduled start; immutable; no retrospective prediction",
+  "daily_scope": "Same date-level weather formula for all races; not a per-race weather model",
+  "formula": {
+    "version": "moisture-js-ols-frozen-v1-strict-inputs",
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132,
+    "clamp": [
+      0.5,
+      8
+    ],
+    "rounding": "positive JS Math.round to 0.1",
+    "missing_policy": "any required input missing => no prediction"
+  },
+  "formula_sha256": "781c06de82e521fc24f92190915ec52d3ee84485596a785e36190e59c5eadf2e",
+  "forecasts": {
+    "04e3ba4725784fd64f895cd4659bdefda335ed969b084aa241ed10d4a92864a5": {
+      "source_url": "https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=2&forecast_days=3&timezone=Asia%2FTokyo",
+      "fetched_at": "2026-11-07T18:16:56.754627+09:00",
+      "http_headers": {
+        "Date": "Sat, 07 Nov 2026 09:16:56 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "X-RateLimit-Cost": "1.0",
+        "X-RateLimit-Limit": "600.0",
+        "X-RateLimit-Remaining": "599.0",
+        "X-RateLimit-Reset": "1794043052",
+        "X-RateLimit-Window": "60"
+      },
+      "response_sha256": "9472c9c34c7050d631b8e10f7de60bef82e5e58bd4208fe8bfac1543585cad49",
+      "response": {
+        "latitude": 42.917397,
+        "longitude": 143.1454,
+        "generationtime_ms": 0.14770030975341797,
+        "utc_offset_seconds": 32400,
+        "timezone": "Asia/Tokyo",
+        "timezone_abbreviation": "GMT+9",
+        "elevation": 43.0,
+        "daily_units": {
+          "time": "iso8601",
+          "precipitation_sum": "mm",
+          "relative_humidity_2m_mean": "%",
+          "et0_fao_evapotranspiration": "mm"
+        },
+        "daily": {
+          "time": [
+            "2026-11-05",
+            "2026-11-06",
+            "2026-11-07",
+            "2026-11-08",
+            "2026-11-09"
+          ],
+          "precipitation_sum": [
+            7.0,
+            11.7,
+            1.4,
+            0.1,
+            0.3
+          ],
+          "relative_humidity_2m_mean": [
+            76,
+            80,
+            52,
+            57,
+            60
+          ],
+          "et0_fao_evapotranspiration": [
+            1.02,
+            1.37,
+            1.95,
+            1.79,
+            1.35
+          ]
+        }
+      },
+      "forecast_model": "Open-Meteo best_match seamless",
+      "run_issued_at": null,
+      "run_metadata_status": "Operational seamless endpoint does not identify individual issuance runs"
+    }
+  },
+  "races": {
+    "20261107-R01": {
+      "race_id": "20261107-R01",
+      "date": "2026-11-07",
+      "race_no": 1,
+      "scheduled_start_at": "2026-11-07T14:40:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.4,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.4,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1",
+          "source_retrieved_at": "2026-11-07T18:16:36+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1",
+      "actual_source_retrieved_at": "2026-11-07T18:16:36+09:00"
+    },
+    "20261107-R02": {
+      "race_id": "20261107-R02",
+      "date": "2026-11-07",
+      "race_no": 2,
+      "scheduled_start_at": "2026-11-07T15:15:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.4,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.4,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2",
+          "source_retrieved_at": "2026-11-07T18:16:36+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2",
+      "actual_source_retrieved_at": "2026-11-07T18:16:36+09:00"
+    },
+    "20261107-R03": {
+      "race_id": "20261107-R03",
+      "date": "2026-11-07",
+      "race_no": 3,
+      "scheduled_start_at": "2026-11-07T15:50:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.3,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.3,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3",
+          "source_retrieved_at": "2026-11-07T18:16:36+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3",
+      "actual_source_retrieved_at": "2026-11-07T18:16:36+09:00"
+    },
+    "20261107-R04": {
+      "race_id": "20261107-R04",
+      "date": "2026-11-07",
+      "race_no": 4,
+      "scheduled_start_at": "2026-11-07T16:20:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.3,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.3,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4",
+          "source_retrieved_at": "2026-11-07T18:16:37+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4",
+      "actual_source_retrieved_at": "2026-11-07T18:16:37+09:00"
+    },
+    "20261107-R05": {
+      "race_id": "20261107-R05",
+      "date": "2026-11-07",
+      "race_no": 5,
+      "scheduled_start_at": "2026-11-07T16:50:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.2,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.2,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5",
+          "source_retrieved_at": "2026-11-07T18:16:38+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5",
+      "actual_source_retrieved_at": "2026-11-07T18:16:38+09:00"
+    },
+    "20261107-R06": {
+      "race_id": "20261107-R06",
+      "date": "2026-11-07",
+      "race_no": 6,
+      "scheduled_start_at": "2026-11-07T17:25:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.2,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.2,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6",
+          "source_retrieved_at": "2026-11-07T18:16:38+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6",
+      "actual_source_retrieved_at": "2026-11-07T18:16:38+09:00"
+    },
+    "20261107-R07": {
+      "race_id": "20261107-R07",
+      "date": "2026-11-07",
+      "race_no": 7,
+      "scheduled_start_at": "2026-11-07T17:55:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": null,
+      "prediction_saved_at": null,
+      "prediction_status": "missed_prestart",
+      "attempts": [],
+      "actual_moisture": 2.2,
+      "actual_observed_at": null,
+      "actual_history": [
+        {
+          "actual_moisture": 2.2,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7",
+          "source_retrieved_at": "2026-11-07T18:16:38+09:00",
+          "appended_at": "2026-11-07T18:18:15.227755+09:00",
+          "revision": 1
+        }
+      ],
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7",
+      "actual_source_retrieved_at": "2026-11-07T18:16:38+09:00"
+    },
+    "20261107-R08": {
+      "race_id": "20261107-R08",
+      "date": "2026-11-07",
+      "race_no": 8,
+      "scheduled_start_at": "2026-11-07T18:25:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": 2.4,
+      "prediction_saved_at": "2026-11-07T18:18:15.227755+09:00",
+      "prediction_status": "saved",
+      "attempts": [],
+      "actual_moisture": null,
+      "actual_observed_at": null,
+      "actual_history": [],
+      "forecast_key": "04e3ba4725784fd64f895cd4659bdefda335ed969b084aa241ed10d4a92864a5",
+      "forecast_retrieved_at": "2026-11-07T18:16:56.754627+09:00",
+      "forecast_run_issued_at": null,
+      "inputs": {
+        "2026-11-07": {
+          "precipitation_sum": 1.4,
+          "relative_humidity_2m_mean": 52,
+          "et0_fao_evapotranspiration": 1.95
+        },
+        "2026-11-06": {
+          "precipitation_sum": 11.7,
+          "relative_humidity_2m_mean": 80,
+          "et0_fao_evapotranspiration": 1.37
+        },
+        "2026-11-05": {
+          "precipitation_sum": 7.0,
+          "relative_humidity_2m_mean": 76,
+          "et0_fao_evapotranspiration": 1.02
+        }
+      },
+      "formula_version": "moisture-js-ols-frozen-v1-strict-inputs",
+      "formula_sha256": "781c06de82e521fc24f92190915ec52d3ee84485596a785e36190e59c5eadf2e",
+      "inputs_sha256": "96211cd54684cdfbcf2db84c95740ecd9317065c8911ddf2a01873b7c35a0ad7"
+    },
+    "20261107-R09": {
+      "race_id": "20261107-R09",
+      "date": "2026-11-07",
+      "race_no": 9,
+      "scheduled_start_at": "2026-11-07T18:55:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": 2.4,
+      "prediction_saved_at": "2026-11-07T18:18:15.227755+09:00",
+      "prediction_status": "saved",
+      "attempts": [],
+      "actual_moisture": null,
+      "actual_observed_at": null,
+      "actual_history": [],
+      "forecast_key": "04e3ba4725784fd64f895cd4659bdefda335ed969b084aa241ed10d4a92864a5",
+      "forecast_retrieved_at": "2026-11-07T18:16:56.754627+09:00",
+      "forecast_run_issued_at": null,
+      "inputs": {
+        "2026-11-07": {
+          "precipitation_sum": 1.4,
+          "relative_humidity_2m_mean": 52,
+          "et0_fao_evapotranspiration": 1.95
+        },
+        "2026-11-06": {
+          "precipitation_sum": 11.7,
+          "relative_humidity_2m_mean": 80,
+          "et0_fao_evapotranspiration": 1.37
+        },
+        "2026-11-05": {
+          "precipitation_sum": 7.0,
+          "relative_humidity_2m_mean": 76,
+          "et0_fao_evapotranspiration": 1.02
+        }
+      },
+      "formula_version": "moisture-js-ols-frozen-v1-strict-inputs",
+      "formula_sha256": "781c06de82e521fc24f92190915ec52d3ee84485596a785e36190e59c5eadf2e",
+      "inputs_sha256": "96211cd54684cdfbcf2db84c95740ecd9317065c8911ddf2a01873b7c35a0ad7"
+    },
+    "20261107-R10": {
+      "race_id": "20261107-R10",
+      "date": "2026-11-07",
+      "race_no": 10,
+      "scheduled_start_at": "2026-11-07T19:25:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": 2.4,
+      "prediction_saved_at": "2026-11-07T18:18:15.227755+09:00",
+      "prediction_status": "saved",
+      "attempts": [],
+      "actual_moisture": null,
+      "actual_observed_at": null,
+      "actual_history": [],
+      "forecast_key": "04e3ba4725784fd64f895cd4659bdefda335ed969b084aa241ed10d4a92864a5",
+      "forecast_retrieved_at": "2026-11-07T18:16:56.754627+09:00",
+      "forecast_run_issued_at": null,
+      "inputs": {
+        "2026-11-07": {
+          "precipitation_sum": 1.4,
+          "relative_humidity_2m_mean": 52,
+          "et0_fao_evapotranspiration": 1.95
+        },
+        "2026-11-06": {
+          "precipitation_sum": 11.7,
+          "relative_humidity_2m_mean": 80,
+          "et0_fao_evapotranspiration": 1.37
+        },
+        "2026-11-05": {
+          "precipitation_sum": 7.0,
+          "relative_humidity_2m_mean": 76,
+          "et0_fao_evapotranspiration": 1.02
+        }
+      },
+      "formula_version": "moisture-js-ols-frozen-v1-strict-inputs",
+      "formula_sha256": "781c06de82e521fc24f92190915ec52d3ee84485596a785e36190e59c5eadf2e",
+      "inputs_sha256": "96211cd54684cdfbcf2db84c95740ecd9317065c8911ddf2a01873b7c35a0ad7"
+    },
+    "20261107-R11": {
+      "race_id": "20261107-R11",
+      "date": "2026-11-07",
+      "race_no": 11,
+      "scheduled_start_at": "2026-11-07T20:00:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": 2.4,
+      "prediction_saved_at": "2026-11-07T18:18:15.227755+09:00",
+      "prediction_status": "saved",
+      "attempts": [],
+      "actual_moisture": null,
+      "actual_observed_at": null,
+      "actual_history": [],
+      "forecast_key": "04e3ba4725784fd64f895cd4659bdefda335ed969b084aa241ed10d4a92864a5",
+      "forecast_retrieved_at": "2026-11-07T18:16:56.754627+09:00",
+      "forecast_run_issued_at": null,
+      "inputs": {
+        "2026-11-07": {
+          "precipitation_sum": 1.4,
+          "relative_humidity_2m_mean": 52,
+          "et0_fao_evapotranspiration": 1.95
+        },
+        "2026-11-06": {
+          "precipitation_sum": 11.7,
+          "relative_humidity_2m_mean": 80,
+          "et0_fao_evapotranspiration": 1.37
+        },
+        "2026-11-05": {
+          "precipitation_sum": 7.0,
+          "relative_humidity_2m_mean": 76,
+          "et0_fao_evapotranspiration": 1.02
+        }
+      },
+      "formula_version": "moisture-js-ols-frozen-v1-strict-inputs",
+      "formula_sha256": "781c06de82e521fc24f92190915ec52d3ee84485596a785e36190e59c5eadf2e",
+      "inputs_sha256": "96211cd54684cdfbcf2db84c95740ecd9317065c8911ddf2a01873b7c35a0ad7"
+    },
+    "20261107-R12": {
+      "race_id": "20261107-R12",
+      "date": "2026-11-07",
+      "race_no": 12,
+      "scheduled_start_at": "2026-11-07T20:30:00+09:00",
+      "schedule_source_url": null,
+      "predicted_moisture": 2.4,
+      "prediction_saved_at": "2026-11-07T18:18:15.227755+09:00",
+      "prediction_status": "saved",
+      "attempts": [],
+      "actual_moisture": null,
+      "actual_observed_at": null,
+      "actual_history": [],
+      "forecast_key": "04e3ba4725784fd64f895cd4659bdefda335ed969b084aa241ed10d4a92864a5",
+      "forecast_retrieved_at": "2026-11-07T18:16:56.754627+09:00",
+      "forecast_run_issued_at": null,
+      "inputs": {
+        "2026-11-07": {
+          "precipitation_sum": 1.4,
+          "relative_humidity_2m_mean": 52,
+          "et0_fao_evapotranspiration": 1.95
+        },
+        "2026-11-06": {
+          "precipitation_sum": 11.7,
+          "relative_humidity_2m_mean": 80,
+          "et0_fao_evapotranspiration": 1.37
+        },
+        "2026-11-05": {
+          "precipitation_sum": 7.0,
+          "relative_humidity_2m_mean": 76,
+          "et0_fao_evapotranspiration": 1.02
+        }
+      },
+      "formula_version": "moisture-js-ols-frozen-v1-strict-inputs",
+      "formula_sha256": "781c06de82e521fc24f92190915ec52d3ee84485596a785e36190e59c5eadf2e",
+      "inputs_sha256": "96211cd54684cdfbcf2db84c95740ecd9317065c8911ddf2a01873b7c35a0ad7"
+    }
+  },
+  "metrics": {
+    "n": 0,
+    "unit": "percentage point",
+    "mae": null,
+    "rmse": null,
+    "bias_prediction_minus_actual": null
+  }
+}
