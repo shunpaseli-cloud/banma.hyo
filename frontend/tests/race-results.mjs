@@ -10,7 +10,6 @@ try {
   const api = await server.ssrLoadModule('/src/raceResults.js')
   const { dayInfo } = await server.ssrLoadModule('/src/lib/paginate.js')
   const { default: RaceResult } = await server.ssrLoadModule('/src/components/RaceResult.jsx')
-  const { default: Summary } = await server.ssrLoadModule('/src/components/Summary.jsx')
   const { default: ConfidenceRank } = await server.ssrLoadModule('/src/components/ConfidenceRank.jsx')
   const bundled = JSON.parse(await readFile(new URL('../src/data/verified_results.json', import.meta.url)))
   api.validateResults(bundled)
@@ -44,9 +43,6 @@ try {
       }
     }
   }
-  const summary = renderToStaticMarkup(createElement(Summary, { date: '2026-11-06' }))
-  assert.ok(summary.includes('実結果・保存予想との照合'))
-  assert.ok(!summary.includes('3連複 予想'))
   assert.equal(JSON.stringify([...memory]), storageBefore, 'adapter/display must not train or write storage')
   const sample = bundled.races['20261106-R01']
   const prediction = { recommended: true, stakeYen: 600, tickets: [sample.payouts.trifecta[0].combo] }

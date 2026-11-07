@@ -3,11 +3,10 @@ import DataBanner from './components/DataBanner.jsx'
 import DatePicker from './components/DatePicker.jsx'
 import { DEFAULT_DATE, dayInfo } from './lib/paginate.js'
 import { DATA } from './dataSource.js'
-import Summary from './components/Summary.jsx'
 import RaceList from './components/RaceList.jsx'
 import ConfidenceRank from './components/ConfidenceRank.jsx'
 
-const VIEWS = new Set(['races', 'summary', 'confidence'])
+const VIEWS = new Set(['races', 'confidence'])
 
 export default function App() {
   const [date, setDate] = useState(() => new URLSearchParams(location.search).get('date') || DEFAULT_DATE)
@@ -35,7 +34,6 @@ export default function App() {
         <DatePicker date={date} onChange={pick} />
         <nav className="nav">
           <button className={view === 'races' ? 'on' : ''} onClick={() => go('races')}>出走表・予想</button>
-          <button className={view === 'summary' ? 'on' : ''} onClick={() => go('summary')}>日別まとめ</button>
           <button className={view === 'confidence' ? 'on' : ''} onClick={() => go('confidence')}>自信度順</button>
         </nav>
         <p className="auto-note">3連複予想は自動生成 · 自信度順は本番BOX推奨（0.8以上 / 0.7以上の2帯）</p>
@@ -48,7 +46,7 @@ export default function App() {
         ) : (
           <>
             {banner && <DataBanner data={banner} />}
-            {view === 'summary' ? <Summary date={date} /> : <RaceList key={date} date={date} />}
+            <RaceList key={date} date={date} />
           </>
         )}
       </main>

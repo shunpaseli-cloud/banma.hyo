@@ -38,9 +38,16 @@ try {
     globalThis.location = { search: `?view=confidence&date=${date}` }
     const app = render(ui.App)
     assert.ok(app.includes(`type="date" value="${date}"`), date)
+    assert.ok(!app.includes('日別まとめ'), 'Removed summary navigation must not reappear')
+    assert.ok(app.includes('自信度順'))
     assert.ok(app.includes(html), `App forwards selected date ${date}`)
     checked += cards.length
   }
+  globalThis.location = { search: '?view=summary&date=2026-11-06' }
+  const legacy = render(ui.App)
+  assert.ok(!legacy.includes('日別まとめ'))
+  assert.ok(!legacy.includes('confidence-rank'))
+  assert.ok(legacy.includes('class="horses"'), 'Removed summary URL falls back to normal races')
   assert.ok(checked > 0, 'Fixture must include recommended races')
   console.log(`PASS: ${ui.DATES.length} available dates plus empty date; ${checked} recommendations, date isolation, confidence order, shared date picker and URL date.`)
 } finally {
