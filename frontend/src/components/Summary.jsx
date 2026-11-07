@@ -1,3 +1,5 @@
+import RaceResult from './RaceResult.jsx'
+import { resultForRace } from '../raceResults.js'
 import { predict } from '../feedback.js'
 import { markOf } from '../marks.js'
 import { picks, trioPayout } from '../trioPayout.jsx'
@@ -6,6 +8,13 @@ import { dayInfo } from '../lib/paginate.js'
 export default function Summary({ date }) {
   const races = dayInfo(date).races
   if (!races.length) return <p className="end">{date} のデータはありません。</p>
+  // Verified-result days never generate a fresh prediction for settlement.
+  if (races.some(race => resultForRace(race).status !== 'missing')) return <div className="summary">
+    {races.map(race => <article className="card" key={race.race_id}>
+      <h2>{race.race_date} {race.race_no}R</h2>
+      <RaceResult race={race} />
+    </article>)}
+  </div>
   return <div className="summary" style={{ overflowX: 'auto' }}><table className="horses results-big">
     <thead><tr><th>日付・R</th><th>3連複 予想</th><th>3連複 配当</th></tr></thead>
     <tbody>{races.map(race => {
