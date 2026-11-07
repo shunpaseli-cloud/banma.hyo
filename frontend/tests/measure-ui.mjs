@@ -14,7 +14,7 @@ try{
  for(const [key,file] of Object.entries(names)){
   const {default:Component}=await server.ssrLoadModule(file)
   const race=dayInfo('2026-11-07').races[0]
-  const html=renderToStaticMarkup(createElement(Component,key==='detail'?{race,preds:predict(race)}:{date:'2026-11-07'}))
+  const html=renderToStaticMarkup(createElement(Component,key==='detail'?{rec:(await server.ssrLoadModule('/src/predictionSnapshot.js')).snapshotForRace(race.race_id)}:{date:'2026-11-07'}))
   report.dom[key]={elements:(html.match(/<[A-Za-z][^>]*>/g)||[]).length,htmlBytes:Buffer.byteLength(html)}
  }
  const dir=process.argv[2]
@@ -32,7 +32,7 @@ try{
   report.routeJs={}
   for(const [route,keys] of Object.entries(routes)){
    const included=new Set()
-   const visit=key=>{if(included.has(key))return;included.add(key);for(const dep of manifest[key].imports||[])visit(dep)}
+   const visit=key=>{if(!manifest[key]||included.has(key))return;included.add(key);for(const dep of manifest[key].imports||[])visit(dep)}
    visit(entry);for(const key of keys)visit(key)
    const files=[...included].map(key=>manifest[key].file).filter(file=>file.endsWith('.js'))
    const assets=files.map(file=>report.assets.find(a=>a.file===path.basename(file)))

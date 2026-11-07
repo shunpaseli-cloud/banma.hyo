@@ -1,15 +1,91 @@
 {
  "meta": {
-  "generated_at_asia_tokyo": "2026-11-06T19:06:48+09:00",
+  "version": "pred-20261108T064209JST-5e5a68d2cf47",
+  "generated_at_asia_tokyo": "2026-11-08T06:42:09+09:00",
+  "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
   "config": "plus_hjz BOX123 pf≥0.65 k=0.05",
-  "races": 36,
-  "recommended": 15,
-  "fields": [
-   "recommended",
-   "confidence",
-   "selection_comment",
-   "selection_meta"
-  ]
+  "timezone": "Asia/Tokyo",
+  "source_races_sha256": "4b50a6b89f427ab49182f5f812414b7eb5ddf3bcc96e88986bba4ce89c8d41a1",
+  "models": {
+   "learned_model.json": "877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5",
+   "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
+   "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7"
+  },
+  "engine": "5e134f7c93944ee716170c8a6b8f2326b5a5b60314d970315898ed2ddf504ef7",
+  "weather": {
+   "source_url": "https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=4&forecast_days=3&timezone=Asia%2FTokyo",
+   "retrieved_at": "2026-11-08T06:42:08+09:00",
+   "provider_run_issued_at": null,
+   "run_time_status": "provider does not publish a run issue time in this response",
+   "status": "retrieved",
+   "error": null,
+   "raw": {
+    "latitude": 42.917397,
+    "longitude": 143.1454,
+    "generationtime_ms": 0.12695789337158203,
+    "utc_offset_seconds": 32400,
+    "timezone": "Asia/Tokyo",
+    "timezone_abbreviation": "GMT+9",
+    "elevation": 43,
+    "daily_units": {
+     "time": "iso8601",
+     "precipitation_sum": "mm",
+     "relative_humidity_2m_mean": "%",
+     "et0_fao_evapotranspiration": "mm"
+    },
+    "daily": {
+     "time": [
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-07",
+      "2026-11-08",
+      "2026-11-09",
+      "2026-11-10"
+     ],
+     "precipitation_sum": [
+      1.1,
+      7,
+      11.7,
+      1.2,
+      0.1,
+      0,
+      0
+     ],
+     "relative_humidity_2m_mean": [
+      65,
+      76,
+      80,
+      52,
+      59,
+      57,
+      57
+     ],
+     "et0_fao_evapotranspiration": [
+      1.53,
+      1.02,
+      1.37,
+      1.84,
+      1.65,
+      1.5,
+      1.34
+     ]
+    }
+   },
+   "raw_sha256": "26fce4e3dd7a888a8f1ed349df8566e16add0d5ac41f6bf74bbd6da24c8871e8",
+   "note": "同一取得レスポンスを全Rで共有。過去日の気象は事後入力であり当時の予報ではない。",
+   "missing_races": []
+  },
+  "legacy": {
+   "path": "prediction-history/legacy-20261106T190648/",
+   "prestart_summary": {
+    "races": 7,
+    "hits": 0,
+    "stake_yen": 4200,
+    "return_yen": 0
+   }
+  },
+  "policy": "全画面はこの保存版のみ。過去分は事後再計算。気象欠測は代替予測しない。結果は馬の選定後にrace_idで結合する。"
  },
  "races": [
   {
@@ -17,9 +93,14 @@
    "race_date": "2026-11-06",
    "race_no": 1,
    "race_name": "帯広1R エゾノー杯Ｃ２−５（２２０万円未満）",
+   "scheduled_start_at": "2026-11-06T14:20:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.510 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 8番ヒメトラダイア（モデル1位・スコア 0.662・past_form 0.510<0.65）。 出走 10 頭・一般。レース名「帯広1R エゾノー杯Ｃ２−５（２２０万円未満）」。 馬場水分 2.8%（帯=wet）。 上位3頭: 1位 8番ヒメトラダイア（スコア0.662・past_form 0.510）、2位 2番レディームキムキ（スコア0.644・past_form 0.576）、3位 10番アルバノチエチャン（スコア0.616・past_form 0.448）。 主買い目は三連単三頭ボックス6点（8番ヒメトラダイア−2番レディームキムキ−10番アルバノチエチャンの全順列）。 軸スコアへの主な正寄与: 馬番+0.154、レース番号+0.041、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.510 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 8番ヒメトラダイア（モデル1位・スコア 0.630・past_form 0.510<0.65）。 出走 10 頭・一般。レース名「帯広1R エゾノー杯Ｃ２−５（２２０万円未満）」。 馬場水分 2.8%（帯=wet）。 上位3頭: 1位 8番ヒメトラダイア（スコア0.630・past_form 0.510）、2位 2番レディームキムキ（スコア0.612・past_form 0.576）、3位 10番アルバノチエチャン（スコア0.582・past_form 0.448）。 主買い目は三連単三頭ボックス6点（8番ヒメトラダイア−2番レディームキムキ−10番アルバノチエチャンの全順列）。 軸スコアへの主な正寄与: 馬番+0.154、レース番号+0.041、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -59,8 +140,8 @@
      "horse_id": "20261106-R01-08",
      "umaban": 8,
      "name": "ヒメトラダイア",
-     "score": 0.6619,
-     "finish_score": 0.6619,
+     "score": 0.6297,
+     "finish_score": 0.6297,
      "past_form": 0.5101,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -87,9 +168,9 @@
        "value": 0
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "body_x_sled",
+       "contrib": 0.0175,
+       "value": 595360
       }
      ]
     },
@@ -97,19 +178,19 @@
      {
       "umaban": 8,
       "name": "ヒメトラダイア",
-      "score": 0.6619,
+      "score": 0.6297,
       "past_form": 0.5101
      },
      {
       "umaban": 2,
       "name": "レディームキムキ",
-      "score": 0.6438,
+      "score": 0.6116,
       "past_form": 0.5756
      },
      {
       "umaban": 10,
       "name": "アルバノチエチャン",
-      "score": 0.616,
+      "score": 0.5818,
       "past_form": 0.4483
      }
     ],
@@ -149,16 +230,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     8,
+     2,
+     10
+    ],
+    [
+     8,
+     10,
+     2
+    ],
+    [
+     2,
+     8,
+     10
+    ],
+    [
+     2,
+     10,
+     8
+    ],
+    [
+     10,
+     8,
+     2
+    ],
+    [
+     10,
+     2,
+     8
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.8,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.8,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.8,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R02",
    "race_date": "2026-11-06",
    "race_no": 2,
    "race_name": "帯広2R 豚丼賞２歳Ｄ−１",
+   "scheduled_start_at": "2026-11-06T14:50:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.627 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 8番ライデンファンタジ（モデル1位・スコア 0.693・past_form 0.627<0.65）。 出走 10 頭・一般。レース名「帯広2R 豚丼賞２歳Ｄ−１」。 馬場水分 2.8%（帯=wet）。 上位3頭: 1位 8番ライデンファンタジ（スコア0.693・past_form 0.627）、2位 5番ニューシノツワン（スコア0.653・past_form 1.000）、3位 10番ユメニシキ（スコア0.590・past_form 0.420）。 主買い目は三連単三頭ボックス6点（8番ライデンファンタジ−5番ニューシノツワン−10番ユメニシキの全順列）。 軸スコアへの主な正寄与: 馬番+0.154、過去着順平均+0.079、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.627 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 8番ライデンファンタジ（モデル1位・スコア 0.665・past_form 0.627<0.65）。 出走 10 頭・一般。レース名「帯広2R 豚丼賞２歳Ｄ−１」。 馬場水分 2.8%（帯=wet）。 上位3頭: 1位 8番ライデンファンタジ（スコア0.665・past_form 0.627）、2位 5番ニューシノツワン（スコア0.619・past_form 1.000）、3位 10番ユメニシキ（スコア0.562・past_form 0.420）。 主買い目は三連単三頭ボックス6点（8番ライデンファンタジ−5番ニューシノツワン−10番ユメニシキの全順列）。 軸スコアへの主な正寄与: 馬番+0.154、過去着順平均+0.079、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -198,8 +342,8 @@
      "horse_id": "20261106-R02-08",
      "umaban": 8,
      "name": "ライデンファンタジ",
-     "score": 0.6928,
-     "finish_score": 0.6928,
+     "score": 0.6649,
+     "finish_score": 0.6649,
      "past_form": 0.6265,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -236,19 +380,19 @@
      {
       "umaban": 8,
       "name": "ライデンファンタジ",
-      "score": 0.6928,
+      "score": 0.6649,
       "past_form": 0.6265
      },
      {
       "umaban": 5,
       "name": "ニューシノツワン",
-      "score": 0.6526,
+      "score": 0.6192,
       "past_form": 1
      },
      {
       "umaban": 10,
       "name": "ユメニシキ",
-      "score": 0.5903,
+      "score": 0.5616,
       "past_form": 0.4201
      }
     ],
@@ -288,16 +432,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     8,
+     5,
+     10
+    ],
+    [
+     8,
+     10,
+     5
+    ],
+    [
+     5,
+     8,
+     10
+    ],
+    [
+     5,
+     10,
+     8
+    ],
+    [
+     10,
+     8,
+     5
+    ],
+    [
+     10,
+     5,
+     8
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.8,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.8,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.8,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R03",
    "race_date": "2026-11-06",
    "race_no": 3,
    "race_name": "帯広3R 石窯ピザ記念２歳Ｃ−６",
+   "scheduled_start_at": "2026-11-06T15:25:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.567 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 2番キョウドノホシ（モデル1位・スコア 0.561・past_form 0.567<0.65）。 出走 10 頭・一般。レース名「帯広3R 石窯ピザ記念２歳Ｃ−６」。 馬場水分 2.7%（帯=wet）。 上位3頭: 1位 2番キョウドノホシ（スコア0.561・past_form 0.567）、2位 10番ヒノクニゴールド（スコア0.543・past_form 0.486）、3位 7番メオトテンザン（スコア0.533・past_form 0.622）。 主買い目は三連単三頭ボックス6点（2番キョウドノホシ−10番ヒノクニゴールド−7番メオトテンザンの全順列）。 軸スコアへの主な正寄与: 枠番+0.166、過去着順平均+0.043、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.567 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 2番キョウドノホシ（モデル1位・スコア 0.532・past_form 0.567<0.65）。 出走 10 頭・一般。レース名「帯広3R 石窯ピザ記念２歳Ｃ−６」。 馬場水分 2.7%（帯=wet）。 上位3頭: 1位 2番キョウドノホシ（スコア0.532・past_form 0.567）、2位 10番ヒノクニゴールド（スコア0.513・past_form 0.486）、3位 7番メオトテンザン（スコア0.502・past_form 0.622）。 主買い目は三連単三頭ボックス6点（2番キョウドノホシ−10番ヒノクニゴールド−7番メオトテンザンの全順列）。 軸スコアへの主な正寄与: 枠番+0.166、過去着順平均+0.043、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -337,8 +544,8 @@
      "horse_id": "20261106-R03-02",
      "umaban": 2,
      "name": "キョウドノホシ",
-     "score": 0.5614,
-     "finish_score": 0.5614,
+     "score": 0.5321,
+     "finish_score": 0.5321,
      "past_form": 0.5671,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -365,9 +572,9 @@
        "value": 2
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0264,
-       "value": 848
+       "name": "race_no",
+       "contrib": 0.0261,
+       "value": 3
       }
      ]
     },
@@ -375,19 +582,19 @@
      {
       "umaban": 2,
       "name": "キョウドノホシ",
-      "score": 0.5614,
+      "score": 0.5321,
       "past_form": 0.5671
      },
      {
       "umaban": 10,
       "name": "ヒノクニゴールド",
-      "score": 0.5435,
+      "score": 0.5127,
       "past_form": 0.4861
      },
      {
       "umaban": 7,
       "name": "メオトテンザン",
-      "score": 0.5327,
+      "score": 0.5022,
       "past_form": 0.6222
      }
     ],
@@ -427,16 +634,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     2,
+     10,
+     7
+    ],
+    [
+     2,
+     7,
+     10
+    ],
+    [
+     10,
+     2,
+     7
+    ],
+    [
+     10,
+     7,
+     2
+    ],
+    [
+     7,
+     2,
+     10
+    ],
+    [
+     7,
+     10,
+     2
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.7,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.7,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.7,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R04",
    "race_date": "2026-11-06",
    "race_no": 4,
    "race_name": "帯広4R 副ぶちょー賞２歳Ｃ−２",
+   "scheduled_start_at": "2026-11-06T16:00:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
    "confidence": 0.744,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 3番ジェイマット（モデル1位・スコア 0.616・past_form 0.688≥0.65）。 出走 10 頭・一般。レース名「帯広4R 副ぶちょー賞２歳Ｃ−２」。 馬場水分 2.7%（帯=wet）。 上位3頭: 1位 3番ジェイマット（スコア0.616・past_form 0.688）、2位 4番モンスター（スコア0.594・past_form 0.502）、3位 6番マルホンエルフ（スコア0.578・past_form 0.642）。 主買い目は三連単三頭ボックス6点（3番ジェイマット−4番モンスター−6番マルホンエルフの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.116、枠番+0.111、年齢+0.032。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 3番ジェイマット（モデル1位・スコア 0.586・past_form 0.688≥0.65）。 出走 10 頭・一般。レース名「帯広4R 副ぶちょー賞２歳Ｃ−２」。 馬場水分 2.7%（帯=wet）。 上位3頭: 1位 3番ジェイマット（スコア0.586・past_form 0.688）、2位 4番モンスター（スコア0.565・past_form 0.502）、3位 6番マルホンエルフ（スコア0.549・past_form 0.642）。 主買い目は三連単三頭ボックス6点（3番ジェイマット−4番モンスター−6番マルホンエルフの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.116、枠番+0.111、年齢+0.032。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
     "confidence": 0.744,
@@ -476,8 +746,8 @@
      "horse_id": "20261106-R04-03",
      "umaban": 3,
      "name": "ジェイマット",
-     "score": 0.6157,
-     "finish_score": 0.6157,
+     "score": 0.5861,
+     "finish_score": 0.5861,
      "past_form": 0.688,
      "past_form_ok": true,
      "horse_streak": 0,
@@ -499,14 +769,14 @@
        "value": 2
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0264,
-       "value": 848
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0215,
+       "value": 0.75
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "last5_fin_std",
+       "contrib": 0.0188,
+       "value": 0.1592
       }
      ]
     },
@@ -514,19 +784,19 @@
      {
       "umaban": 3,
       "name": "ジェイマット",
-      "score": 0.6157,
+      "score": 0.5861,
       "past_form": 0.688
      },
      {
       "umaban": 4,
       "name": "モンスター",
-      "score": 0.594,
+      "score": 0.5653,
       "past_form": 0.502
      },
      {
       "umaban": 6,
       "name": "マルホンエルフ",
-      "score": 0.578,
+      "score": 0.5488,
       "past_form": 0.6417
      }
     ],
@@ -566,16 +836,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     3,
+     4,
+     6
+    ],
+    [
+     3,
+     6,
+     4
+    ],
+    [
+     4,
+     3,
+     6
+    ],
+    [
+     4,
+     6,
+     3
+    ],
+    [
+     6,
+     3,
+     4
+    ],
+    [
+     6,
+     4,
+     3
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.7,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.7,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.7,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R05",
    "race_date": "2026-11-06",
    "race_no": 5,
    "race_name": "帯広5R ミカゲホマレ賞Ｃ１−６（３４０万円未満）",
+   "scheduled_start_at": "2026-11-06T16:35:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.631 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番ヤマノシテンノウ（モデル1位・スコア 0.661・past_form 0.631<0.65）。 出走 10 頭・一般。レース名「帯広5R ミカゲホマレ賞Ｃ１−６（３４０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 9番ヤマノシテンノウ（スコア0.661・past_form 0.631）、2位 5番レオナウイン（スコア0.588・past_form 0.549）、3位 8番スーパーサンセイ（スコア0.586・past_form 0.510）。 主買い目は三連単三頭ボックス6点（9番ヤマノシテンノウ−5番レオナウイン−8番スーパーサンセイの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、過去着順平均+0.082、馬体重×ソリ+0.030。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.631 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番ヤマノシテンノウ（モデル1位・スコア 0.628・past_form 0.631<0.65）。 出走 10 頭・一般。レース名「帯広5R ミカゲホマレ賞Ｃ１−６（３４０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 9番ヤマノシテンノウ（スコア0.628・past_form 0.631）、2位 5番レオナウイン（スコア0.560・past_form 0.549）、3位 8番スーパーサンセイ（スコア0.555・past_form 0.510）。 主買い目は三連単三頭ボックス6点（9番ヤマノシテンノウ−5番レオナウイン−8番スーパーサンセイの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、過去着順平均+0.082、馬体重×ソリ+0.030。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -615,8 +948,8 @@
      "horse_id": "20261106-R05-09",
      "umaban": 9,
      "name": "ヤマノシテンノウ",
-     "score": 0.6612,
-     "finish_score": 0.6612,
+     "score": 0.6277,
+     "finish_score": 0.6277,
      "past_form": 0.6307,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -638,14 +971,14 @@
        "value": 611100
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "last5_fin_std",
+       "contrib": 0.0176,
+       "value": 0.1638
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0183,
-       "value": 1008
+       "name": "age",
+       "contrib": 0.0165,
+       "value": 3
       }
      ]
     },
@@ -653,19 +986,19 @@
      {
       "umaban": 9,
       "name": "ヤマノシテンノウ",
-      "score": 0.6612,
+      "score": 0.6277,
       "past_form": 0.6307
      },
      {
       "umaban": 5,
       "name": "レオナウイン",
-      "score": 0.5879,
+      "score": 0.5601,
       "past_form": 0.5487
      },
      {
       "umaban": 8,
       "name": "スーパーサンセイ",
-      "score": 0.5857,
+      "score": 0.5546,
       "past_form": 0.5099
      }
     ],
@@ -705,16 +1038,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     5,
+     8
+    ],
+    [
+     9,
+     8,
+     5
+    ],
+    [
+     5,
+     9,
+     8
+    ],
+    [
+     5,
+     8,
+     9
+    ],
+    [
+     8,
+     9,
+     5
+    ],
+    [
+     8,
+     5,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R06",
    "race_date": "2026-11-06",
    "race_no": 6,
    "race_name": "帯広6R 荒川弘記念２歳Ｂ−１",
+   "scheduled_start_at": "2026-11-06T17:10:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.574 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番ハゴロモミニョン（モデル1位・スコア 0.684・past_form 0.574<0.65）。 出走 10 頭・一般。レース名「帯広6R 荒川弘記念２歳Ｂ−１」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 10番ハゴロモミニョン（スコア0.684・past_form 0.574）、2位 1番サカノヒカルアオ（スコア0.626・past_form 0.619）、3位 3番ラストユウセン（スコア0.603・past_form 0.677）。 主買い目は三連単三頭ボックス6点（10番ハゴロモミニョン−1番サカノヒカルアオ−3番ラストユウセンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.047、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.574 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番ハゴロモミニョン（モデル1位・スコア 0.656・past_form 0.574<0.65）。 出走 10 頭・一般。レース名「帯広6R 荒川弘記念２歳Ｂ−１」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 10番ハゴロモミニョン（スコア0.656・past_form 0.574）、2位 1番サカノヒカルアオ（スコア0.600・past_form 0.619）、3位 3番ラストユウセン（スコア0.573・past_form 0.677）。 主買い目は三連単三頭ボックス6点（10番ハゴロモミニョン−1番サカノヒカルアオ−3番ラストユウセンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.047、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -754,8 +1150,8 @@
      "horse_id": "20261106-R06-10",
      "umaban": 10,
      "name": "ハゴロモミニョン",
-     "score": 0.6841,
-     "finish_score": 0.6841,
+     "score": 0.6558,
+     "finish_score": 0.6558,
      "past_form": 0.5743,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -792,19 +1188,19 @@
      {
       "umaban": 10,
       "name": "ハゴロモミニョン",
-      "score": 0.6841,
+      "score": 0.6558,
       "past_form": 0.5743
      },
      {
       "umaban": 1,
       "name": "サカノヒカルアオ",
-      "score": 0.6258,
+      "score": 0.5999,
       "past_form": 0.6187
      },
      {
       "umaban": 3,
       "name": "ラストユウセン",
-      "score": 0.6028,
+      "score": 0.5726,
       "past_form": 0.6775
      }
     ],
@@ -844,16 +1240,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     1,
+     3
+    ],
+    [
+     10,
+     3,
+     1
+    ],
+    [
+     1,
+     10,
+     3
+    ],
+    [
+     1,
+     3,
+     10
+    ],
+    [
+     3,
+     10,
+     1
+    ],
+    [
+     3,
+     1,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R07",
    "race_date": "2026-11-06",
    "race_no": 7,
    "race_name": "帯広7R マロン号賞Ｃ１−２（３４０万円未満）",
+   "scheduled_start_at": "2026-11-06T17:45:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.611 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番キタノレンザン（モデル1位・スコア 0.700・past_form 0.611<0.65）。 出走 10 頭・一般。レース名「帯広7R マロン号賞Ｃ１−２（３４０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 10番キタノレンザン（スコア0.700・past_form 0.611）、2位 2番イワキマッシグラ（スコア0.671・past_form 0.707）、3位 7番ヨシノフクヒメ（スコア0.668・past_form 0.793）。 主買い目は三連単三頭ボックス6点（10番キタノレンザン−2番イワキマッシグラ−7番ヨシノフクヒメの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.069、馬体重×ソリ+0.056。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.611 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番キタノレンザン（モデル1位・スコア 0.667・past_form 0.611<0.65）。 出走 10 頭・一般。レース名「帯広7R マロン号賞Ｃ１−２（３４０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 10番キタノレンザン（スコア0.667・past_form 0.611）、2位 2番イワキマッシグラ（スコア0.639・past_form 0.707）、3位 7番ヨシノフクヒメ（スコア0.635・past_form 0.793）。 主買い目は三連単三頭ボックス6点（10番キタノレンザン−2番イワキマッシグラ−7番ヨシノフクヒメの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.069、馬体重×ソリ+0.056。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -893,8 +1352,8 @@
      "horse_id": "20261106-R07-10",
      "umaban": 10,
      "name": "キタノレンザン",
-     "score": 0.7003,
-     "finish_score": 0.7003,
+     "score": 0.6675,
+     "finish_score": 0.6675,
      "past_form": 0.6107,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -916,14 +1375,14 @@
        "value": 645120
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "age",
+       "contrib": 0.0165,
+       "value": 3
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0175,
-       "value": 1024
+       "name": "moist_x_body",
+       "contrib": 0.0133,
+       "value": 2721.6
       }
      ]
     },
@@ -931,19 +1390,19 @@
      {
       "umaban": 10,
       "name": "キタノレンザン",
-      "score": 0.7003,
+      "score": 0.6675,
       "past_form": 0.6107
      },
      {
       "umaban": 2,
       "name": "イワキマッシグラ",
-      "score": 0.6714,
+      "score": 0.6386,
       "past_form": 0.7067
      },
      {
       "umaban": 7,
       "name": "ヨシノフクヒメ",
-      "score": 0.6683,
+      "score": 0.6347,
       "past_form": 0.7927
      }
     ],
@@ -983,16 +1442,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     2,
+     7
+    ],
+    [
+     10,
+     7,
+     2
+    ],
+    [
+     2,
+     10,
+     7
+    ],
+    [
+     2,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     2
+    ],
+    [
+     7,
+     2,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R08",
    "race_date": "2026-11-06",
    "race_no": 8,
    "race_name": "帯広8R 御影カップＢ４−５（４３０万円未満）",
+   "scheduled_start_at": "2026-11-06T18:20:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.541 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番イワキオーカン（モデル1位・スコア 0.614・past_form 0.541<0.65）。 出走 10 頭・一般。レース名「帯広8R 御影カップＢ４−５（４３０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 10番イワキオーカン（スコア0.614・past_form 0.541）、2位 9番テンボシヴィーナス（スコア0.517・past_form 0.466）、3位 7番フクフクライデン（スコア0.510・past_form 0.411）。 主買い目は三連単三頭ボックス6点（10番イワキオーカン−9番テンボシヴィーナス−7番フクフクライデンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、馬体重×ソリ+0.094、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.541 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番イワキオーカン（モデル1位・スコア 0.583・past_form 0.541<0.65）。 出走 10 頭・一般。レース名「帯広8R 御影カップＢ４−５（４３０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 10番イワキオーカン（スコア0.583・past_form 0.541）、2位 9番テンボシヴィーナス（スコア0.485・past_form 0.466）、3位 7番フクフクライデン（スコア0.479・past_form 0.411）。 主買い目は三連単三頭ボックス6点（10番イワキオーカン−9番テンボシヴィーナス−7番フクフクライデンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、馬体重×ソリ+0.094、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -1032,8 +1554,8 @@
      "horse_id": "20261106-R08-10",
      "umaban": 10,
      "name": "イワキオーカン",
-     "score": 0.614,
-     "finish_score": 0.614,
+     "score": 0.5828,
+     "finish_score": 0.5828,
      "past_form": 0.5411,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -1060,9 +1582,9 @@
        "value": 0.5411
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "moist_x_body",
+       "contrib": 0.0183,
+       "value": 2880.9
       }
      ]
     },
@@ -1070,19 +1592,19 @@
      {
       "umaban": 10,
       "name": "イワキオーカン",
-      "score": 0.614,
+      "score": 0.5828,
       "past_form": 0.5411
      },
      {
       "umaban": 9,
       "name": "テンボシヴィーナス",
-      "score": 0.5173,
+      "score": 0.4854,
       "past_form": 0.4659
      },
      {
       "umaban": 7,
       "name": "フクフクライデン",
-      "score": 0.5103,
+      "score": 0.4786,
       "past_form": 0.4106
      }
     ],
@@ -1122,16 +1644,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     9,
+     10,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R09",
    "race_date": "2026-11-06",
    "race_no": 9,
    "race_name": "帯広9R 八軒カップＢ３−５（５５０万円未満）",
+   "scheduled_start_at": "2026-11-06T18:55:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.600 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 7番オーディン（モデル1位・スコア 0.671・past_form 0.600<0.65）。 出走 10 頭・一般。レース名「帯広9R 八軒カップＢ３−５（５５０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 7番オーディン（スコア0.671・past_form 0.600）、2位 10番マサノスパークル（スコア0.581・past_form 0.428）、3位 9番ビール（スコア0.574・past_form 0.569）。 主買い目は三連単三頭ボックス6点（7番オーディン−10番マサノスパークル−9番ビールの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.107、馬番+0.097、せん馬+0.079。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.600 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 7番オーディン（モデル1位・スコア 0.641・past_form 0.600<0.65）。 出走 10 頭・一般。レース名「帯広9R 八軒カップＢ３−５（５５０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 7番オーディン（スコア0.641・past_form 0.600）、2位 10番マサノスパークル（スコア0.547・past_form 0.428）、3位 9番ビール（スコア0.542・past_form 0.569）。 主買い目は三連単三頭ボックス6点（7番オーディン−10番マサノスパークル−9番ビールの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.107、馬番+0.097、せん馬+0.079。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -1171,8 +1756,8 @@
      "horse_id": "20261106-R09-07",
      "umaban": 7,
      "name": "オーディン",
-     "score": 0.671,
-     "finish_score": 0.671,
+     "score": 0.6407,
+     "finish_score": 0.6407,
      "past_form": 0.6,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -1209,19 +1794,19 @@
      {
       "umaban": 7,
       "name": "オーディン",
-      "score": 0.671,
+      "score": 0.6407,
       "past_form": 0.6
      },
      {
       "umaban": 10,
       "name": "マサノスパークル",
-      "score": 0.5809,
+      "score": 0.5468,
       "past_form": 0.4276
      },
      {
       "umaban": 9,
       "name": "ビール",
-      "score": 0.574,
+      "score": 0.5422,
       "past_form": 0.5685
      }
     ],
@@ -1261,16 +1846,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     9,
+     10,
+     7
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R10",
    "race_date": "2026-11-06",
    "race_no": 10,
    "race_name": "帯広10R 株式会社ＧＩＮＳＡＪＩ記念Ｂ２−３（６７０万円未満）",
+   "scheduled_start_at": "2026-11-06T19:30:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.619 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番ハゴロモビクトリー（モデル1位・スコア 0.585・past_form 0.619<0.65）。 出走 9 頭・一般。レース名「帯広10R 株式会社ＧＩＮＳＡＪＩ記念Ｂ２−３（６７０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 9番ハゴロモビクトリー（スコア0.585・past_form 0.619）、2位 8番ダイヤセンプー（スコア0.526・past_form 0.506）、3位 1番ジェイスカイ（スコア0.526・past_form 0.619）。 主買い目は三連単三頭ボックス6点（9番ハゴロモビクトリー−8番ダイヤセンプー−1番ジェイスカイの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、馬体重×ソリ+0.078、過去着順平均+0.075。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.619 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番ハゴロモビクトリー（モデル1位・スコア 0.550・past_form 0.619<0.65）。 出走 9 頭・一般。レース名「帯広10R 株式会社ＧＩＮＳＡＪＩ記念Ｂ２−３（６７０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 9番ハゴロモビクトリー（スコア0.550・past_form 0.619）、2位 8番ダイヤセンプー（スコア0.494・past_form 0.506）、3位 1番ジェイスカイ（スコア0.492・past_form 0.619）。 主買い目は三連単三頭ボックス6点（9番ハゴロモビクトリー−8番ダイヤセンプー−1番ジェイスカイの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、馬体重×ソリ+0.078、過去着順平均+0.075。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -1310,8 +1958,8 @@
      "horse_id": "20261106-R10-09",
      "umaban": 9,
      "name": "ハゴロモビクトリー",
-     "score": 0.585,
-     "finish_score": 0.585,
+     "score": 0.5505,
+     "finish_score": 0.5505,
      "past_form": 0.6194,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -1333,14 +1981,14 @@
        "value": 0.6194
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "moist_x_body",
+       "contrib": 0.013,
+       "value": 2713.5
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0151,
-       "value": 1072
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0072,
+       "value": 0.5833
       }
      ]
     },
@@ -1348,19 +1996,19 @@
      {
       "umaban": 9,
       "name": "ハゴロモビクトリー",
-      "score": 0.585,
+      "score": 0.5505,
       "past_form": 0.6194
      },
      {
       "umaban": 8,
       "name": "ダイヤセンプー",
-      "score": 0.5264,
+      "score": 0.4945,
       "past_form": 0.506
      },
      {
       "umaban": 1,
       "name": "ジェイスカイ",
-      "score": 0.526,
+      "score": 0.4923,
       "past_form": 0.6189
      }
     ],
@@ -1400,16 +2048,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     8,
+     1
+    ],
+    [
+     9,
+     1,
+     8
+    ],
+    [
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     1,
+     9
+    ],
+    [
+     1,
+     9,
+     8
+    ],
+    [
+     1,
+     8,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R11",
    "race_date": "2026-11-06",
    "race_no": 11,
    "race_name": "帯広11R 『銀の匙』１５周年記念杯Ａ１−２（１３００万円未満）",
+   "scheduled_start_at": "2026-11-06T20:00:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.506 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 8番ジェイホース（モデル1位・スコア 0.594・past_form 0.506<0.65）。 出走 10 頭・一般。レース名「帯広11R 『銀の匙』１５周年記念杯Ａ１−２（１３００万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 8番ジェイホース（スコア0.594・past_form 0.506）、2位 3番クリスタルゴースト（スコア0.581・past_form 0.598）、3位 4番ジェイヒーロー（スコア0.561・past_form 0.551）。 主買い目は三連単三頭ボックス6点（8番ジェイホース−3番クリスタルゴースト−4番ジェイヒーローの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.158、馬番+0.154、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.506 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 8番ジェイホース（モデル1位・スコア 0.559・past_form 0.506<0.65）。 出走 10 頭・一般。レース名「帯広11R 『銀の匙』１５周年記念杯Ａ１−２（１３００万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 8番ジェイホース（スコア0.559・past_form 0.506）、2位 3番クリスタルゴースト（スコア0.550・past_form 0.598）、3位 4番ジェイヒーロー（スコア0.527・past_form 0.551）。 主買い目は三連単三頭ボックス6点（8番ジェイホース−3番クリスタルゴースト−4番ジェイヒーローの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.158、馬番+0.154、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -1449,8 +2160,8 @@
      "horse_id": "20261106-R11-08",
      "umaban": 8,
      "name": "ジェイホース",
-     "score": 0.5944,
-     "finish_score": 0.5944,
+     "score": 0.5587,
+     "finish_score": 0.5587,
      "past_form": 0.5061,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -1477,9 +2188,9 @@
        "value": 0.1278
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
+       "name": "moist_x_body",
+       "contrib": 0.0181,
+       "value": 2872.8
       }
      ]
     },
@@ -1487,19 +2198,19 @@
      {
       "umaban": 8,
       "name": "ジェイホース",
-      "score": 0.5944,
+      "score": 0.5587,
       "past_form": 0.5061
      },
      {
       "umaban": 3,
       "name": "クリスタルゴースト",
-      "score": 0.5808,
+      "score": 0.5498,
       "past_form": 0.5982
      },
      {
       "umaban": 4,
       "name": "ジェイヒーロー",
-      "score": 0.5611,
+      "score": 0.5272,
       "past_form": 0.5506
      }
     ],
@@ -1539,16 +2250,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     8,
+     3,
+     4
+    ],
+    [
+     8,
+     4,
+     3
+    ],
+    [
+     3,
+     8,
+     4
+    ],
+    [
+     3,
+     4,
+     8
+    ],
+    [
+     4,
+     8,
+     3
+    ],
+    [
+     4,
+     3,
+     8
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261106-R12",
    "race_date": "2026-11-06",
    "race_no": 12,
    "race_name": "帯広12R 小学館少年サンデー杯Ｂ１−２（８５０万円未満）",
+   "scheduled_start_at": "2026-11-06T20:40:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
    "confidence": 0.763,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 9番キタノミネ（モデル1位・スコア 0.619・past_form 0.666≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 9 頭・一般。レース名「帯広12R 小学館少年サンデー杯Ｂ１−２（８５０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 9番キタノミネ（スコア0.619・past_form 0.666）、2位 8番ツガルフジ（スコア0.542・past_form 0.589）、3位 4番マサタカラ（スコア0.522・past_form 0.558）。 主買い目は三連単三頭ボックス6点（9番キタノミネ−8番ツガルフジ−4番マサタカラの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、馬体重×ソリ+0.123、過去着順平均+0.103。 自信度 0.76（高）。類似条件（pf帯=065_070・頭数帯=eq9・水分帯=wet・normal／照合=065_070|eq9|wet|normal）の過去実績はN=37・的中率8.108%・回収率201.67%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 9番キタノミネ（モデル1位・スコア 0.587・past_form 0.666≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 9 頭・一般。レース名「帯広12R 小学館少年サンデー杯Ｂ１−２（８５０万円未満）」。 馬場水分 2.6%（帯=wet）。 上位3頭: 1位 9番キタノミネ（スコア0.587・past_form 0.666）、2位 8番ツガルフジ（スコア0.510・past_form 0.589）、3位 4番マサタカラ（スコア0.491・past_form 0.558）。 主買い目は三連単三頭ボックス6点（9番キタノミネ−8番ツガルフジ−4番マサタカラの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、馬体重×ソリ+0.123、過去着順平均+0.103。 自信度 0.76（高）。類似条件（pf帯=065_070・頭数帯=eq9・水分帯=wet・normal／照合=065_070|eq9|wet|normal）の過去実績はN=37・的中率8.108%・回収率201.67%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
     "confidence": 0.763,
@@ -1588,8 +2362,8 @@
      "horse_id": "20261106-R12-09",
      "umaban": 9,
      "name": "キタノミネ",
-     "score": 0.6191,
-     "finish_score": 0.6691,
+     "score": 0.5866,
+     "finish_score": 0.6366,
      "past_form": 0.6664,
      "past_form_ok": true,
      "horse_streak": 1,
@@ -1611,14 +2385,14 @@
        "value": 0.6664
       },
       {
-       "name": "est_moist",
-       "contrib": 0.0225,
-       "value": 1.6
-      },
-      {
        "name": "same_moist_bucket_fin_mean",
        "contrib": 0.0225,
        "value": 0.7616
+      },
+      {
+       "name": "moist_x_body",
+       "contrib": 0.019,
+       "value": 2902.5
       }
      ]
     },
@@ -1626,19 +2400,19 @@
      {
       "umaban": 9,
       "name": "キタノミネ",
-      "score": 0.6191,
+      "score": 0.5866,
       "past_form": 0.6664
      },
      {
       "umaban": 8,
       "name": "ツガルフジ",
-      "score": 0.5425,
+      "score": 0.5098,
       "past_form": 0.5894
      },
      {
       "umaban": 4,
       "name": "マサタカラ",
-      "score": 0.522,
+      "score": 0.4912,
       "past_form": 0.5584
      }
     ],
@@ -1678,16 +2452,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     8,
+     4
+    ],
+    [
+     9,
+     4,
+     8
+    ],
+    [
+     8,
+     9,
+     4
+    ],
+    [
+     8,
+     4,
+     9
+    ],
+    [
+     4,
+     9,
+     8
+    ],
+    [
+     4,
+     8,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.6,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.6,
+    "feature_estimate_pct": 2.7,
+    "measured_pct": 2.6,
+    "source": "race_input_measured",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R01",
    "race_date": "2026-11-07",
    "race_no": 1,
    "race_name": "帯広1R ありがとう帯広！旅費回収杯Ｃ２−２（２２０万円未満）",
+   "scheduled_start_at": "2026-11-07T14:40:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.598 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 7番サカノオオオク（モデル1位・スコア 0.632・past_form 0.598<0.65）。 出走 10 頭・一般。レース名「帯広1R ありがとう帯広！旅費回収杯Ｃ２−２（２２０万円未満）」。 上位3頭: 1位 7番サカノオオオク（スコア0.632・past_form 0.598）、2位 10番クリスタルクロリス（スコア0.630・past_form 0.639）、3位 4番ディースピード（スコア0.610・past_form 0.640）。 主買い目は三連単三頭ボックス6点（7番サカノオオオク−10番クリスタルクロリス−4番ディースピードの全順列）。 軸スコアへの主な正寄与: 馬番+0.053、馬勝率(直近10)+0.036、過去着順平均+0.032。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.639 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番クリスタルクロリス（モデル1位・スコア 0.730・past_form 0.639<0.65）。 出走 10 頭・一般。レース名「帯広1R ありがとう帯広！旅費回収杯Ｃ２−２（２２０万円未満）」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 10番クリスタルクロリス（スコア0.730・past_form 0.639）、2位 7番サカノオオオク（スコア0.663・past_form 0.598）、3位 4番ディースピード（スコア0.603・past_form 0.640）。 主買い目は三連単三頭ボックス6点（10番クリスタルクロリス−7番サカノオオオク−4番ディースピードの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.087、レース番号+0.041。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -1701,7 +2538,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R01",
@@ -1709,7 +2546,7 @@
     "race_no": 1,
     "race_name": "帯広1R ありがとう帯広！旅費回収杯Ｃ２−２（２２０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -1722,68 +2559,68 @@
     "ticket_label": "三連単三頭ボックス6点",
     "plus_hjz": true,
     "gate_skip": true,
-    "gate_reason": "軸の過去着順平均 0.598 < 0.65（参考：買い目は表示）",
+    "gate_reason": "軸の過去着順平均 0.639 < 0.65（参考：買い目は表示）",
     "axis": {
-     "horse_id": "20261107-R01-07",
-     "umaban": 7,
-     "name": "サカノオオオク",
-     "score": 0.6325,
-     "finish_score": 0.6325,
-     "past_form": 0.5983,
+     "horse_id": "20261107-R01-10",
+     "umaban": 10,
+     "name": "クリスタルクロリス",
+     "score": 0.7301,
+     "finish_score": 0.7301,
+     "past_form": 0.6395,
      "past_form_ok": false,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
        "name": "umaban",
-       "contrib": 0.0533,
-       "value": 7
-      },
-      {
-       "name": "horse_win_rate_10",
-       "contrib": 0.0358,
-       "value": 0
+       "contrib": 0.269,
+       "value": 10
       },
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0315,
-       "value": 0.5983
-      },
-      {
-       "name": "body_x_sled",
-       "contrib": 0.0278,
-       "value": 619150
+       "contrib": 0.0869,
+       "value": 0.6395
       },
       {
        "name": "race_no",
-       "contrib": 0.0259,
+       "contrib": 0.0408,
        "value": 1
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.0199,
+       "value": 598410
       }
      ]
     },
     "top3": [
      {
-      "umaban": 7,
-      "name": "サカノオオオク",
-      "score": 0.6325,
-      "past_form": 0.5983
-     },
-     {
       "umaban": 10,
       "name": "クリスタルクロリス",
-      "score": 0.6299,
+      "score": 0.7301,
       "past_form": 0.6395
+     },
+     {
+      "umaban": 7,
+      "name": "サカノオオオク",
+      "score": 0.6635,
+      "past_form": 0.5983
      },
      {
       "umaban": 4,
       "name": "ディースピード",
-      "score": 0.6104,
+      "score": 0.6031,
       "past_form": 0.6404
      }
     ],
     "box_horses": [
-     "7番サカノオオオク",
      "10番クリスタルクロリス",
+     "7番サカノオオオク",
      "4番ディースピード"
     ],
     "feature_names": [
@@ -1817,16 +2654,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     7,
+     4
+    ],
+    [
+     10,
+     4,
+     7
+    ],
+    [
+     7,
+     10,
+     4
+    ],
+    [
+     7,
+     4,
+     10
+    ],
+    [
+     4,
+     10,
+     7
+    ],
+    [
+     4,
+     7,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R02",
    "race_date": "2026-11-07",
    "race_no": 2,
    "race_name": "帯広2R 第３回凛ちゃん生誕記念２歳Ｄ−５",
+   "scheduled_start_at": "2026-11-07T15:15:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.644 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 5番ファンタジスタ（モデル1位・スコア 0.598・past_form 0.644<0.65）。 出走 9 頭・一般。レース名「帯広2R 第３回凛ちゃん生誕記念２歳Ｄ−５」。 上位3頭: 1位 5番ファンタジスタ（スコア0.598・past_form 0.644）、2位 7番ヨシノグレンザ（スコア0.563・past_form 0.526）、3位 4番ヨシノヤマト（スコア0.548・past_form 0.380）。 主買い目は三連単三頭ボックス6点（5番ファンタジスタ−7番ヨシノグレンザ−4番ヨシノヤマトの全順列）。 軸スコアへの主な正寄与: ソリ荷重+0.064、水分×馬体重+0.064、過去着順平均+0.047。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.644 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 5番ファンタジスタ（モデル1位・スコア 0.639・past_form 0.644<0.65）。 出走 9 頭・一般。レース名「帯広2R 第３回凛ちゃん生誕記念２歳Ｄ−５」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 5番ファンタジスタ（スコア0.639・past_form 0.644）、2位 7番ヨシノグレンザ（スコア0.607・past_form 0.526）、3位 1番デンテツ（スコア0.506・past_form 0.498）。 主買い目は三連単三頭ボックス6点（5番ファンタジスタ−7番ヨシノグレンザ−1番デンテツの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.089、馬体重+0.048、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -1840,7 +2740,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "eq9",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R02",
@@ -1848,7 +2748,7 @@
     "race_no": 2,
     "race_name": "帯広2R 第３回凛ちゃん生誕記念２歳Ｄ−５",
     "field_size": 9,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -1866,37 +2766,37 @@
      "horse_id": "20261107-R02-05",
      "umaban": 5,
      "name": "ファンタジスタ",
-     "score": 0.5979,
-     "finish_score": 0.5979,
+     "score": 0.6395,
+     "finish_score": 0.6395,
      "past_form": 0.6437,
      "past_form_ok": false,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "sled_weight",
-       "contrib": 0.0643,
-       "value": 520
-      },
-      {
-       "name": "moist_x_body",
-       "contrib": 0.064,
-       "value": 1281.6
-      },
-      {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0468,
+       "contrib": 0.0894,
        "value": 0.6437
+      },
+      {
+       "name": "body_weight",
+       "contrib": 0.0475,
+       "value": 801
       },
       {
        "name": "horse_win_rate_10",
-       "contrib": 0.0358,
+       "contrib": 0.0364,
        "value": 0
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0337,
-       "value": 0.6437
+       "name": "race_no",
+       "contrib": 0.0334,
+       "value": 2
+      },
+      {
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
       }
      ]
     },
@@ -1904,26 +2804,26 @@
      {
       "umaban": 5,
       "name": "ファンタジスタ",
-      "score": 0.5979,
+      "score": 0.6395,
       "past_form": 0.6437
      },
      {
       "umaban": 7,
       "name": "ヨシノグレンザ",
-      "score": 0.5629,
+      "score": 0.6073,
       "past_form": 0.5255
      },
      {
-      "umaban": 4,
-      "name": "ヨシノヤマト",
-      "score": 0.548,
-      "past_form": 0.3798
+      "umaban": 1,
+      "name": "デンテツ",
+      "score": 0.5061,
+      "past_form": 0.498
      }
     ],
     "box_horses": [
      "5番ファンタジスタ",
      "7番ヨシノグレンザ",
-     "4番ヨシノヤマト"
+     "1番デンテツ"
     ],
     "feature_names": [
      "est_moist",
@@ -1956,30 +2856,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     5,
+     7,
+     1
+    ],
+    [
+     5,
+     1,
+     7
+    ],
+    [
+     7,
+     5,
+     1
+    ],
+    [
+     7,
+     1,
+     5
+    ],
+    [
+     1,
+     5,
+     7
+    ],
+    [
+     1,
+     7,
+     5
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R03",
    "race_date": "2026-11-07",
    "race_no": 3,
    "race_name": "帯広3R 牧祐樹＆藤田南結婚記念２歳Ｄ−３",
+   "scheduled_start_at": "2026-11-07T15:50:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.863,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 9番アーススノーパール（モデル1位・スコア 0.654・past_form 0.655≥0.65）。 出走 9 頭・一般。レース名「帯広3R 牧祐樹＆藤田南結婚記念２歳Ｄ−３」。 上位3頭: 1位 9番アーススノーパール（スコア0.654・past_form 0.655）、2位 2番ジェイカイン（スコア0.544・past_form 0.568）、3位 4番キンリュウ（スコア0.526・past_form 0.567）。 主買い目は三連単三頭ボックス6点（9番アーススノーパール−2番ジェイカイン−4番キンリュウの全順列）。 軸スコアへの主な正寄与: 馬番+0.116、ソリ荷重+0.064、過去着順平均+0.051。 自信度 0.86（高）。類似条件（pf帯=065_070・頭数帯=eq9・水分帯=unk・normal／照合=065_070|eq9|normal）の過去実績はN=83・的中率9.639%・回収率270.28%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.763,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 9番アーススノーパール（モデル1位・スコア 0.697・past_form 0.655≥0.65）。 出走 9 頭・一般。レース名「帯広3R 牧祐樹＆藤田南結婚記念２歳Ｄ−３」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 9番アーススノーパール（スコア0.697・past_form 0.655）、2位 2番ジェイカイン（スコア0.526・past_form 0.568）、3位 7番オレノゴウリキ（スコア0.502・past_form 0.514）。 主買い目は三連単三頭ボックス6点（9番アーススノーパール−2番ジェイカイン−7番オレノゴウリキの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、過去着順平均+0.096、馬勝率(直近10)+0.036。 自信度 0.76（高）。類似条件（pf帯=065_070・頭数帯=eq9・水分帯=wet・normal／照合=065_070|eq9|wet|normal）の過去実績はN=37・的中率8.108%・回収率201.67%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.863,
+    "confidence": 0.763,
     "confidence_label": "高",
-    "confidence_source": "065_070|eq9|normal",
+    "confidence_source": "065_070|eq9|wet|normal",
     "confidence_stats": {
-     "N": 83,
-     "hit_pct": 9.639,
-     "ROI_pct": 270.28
+     "N": 37,
+     "hit_pct": 8.108,
+     "ROI_pct": 201.67
     },
     "confidence_bands": {
      "pf": "065_070",
      "field": "eq9",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R03",
@@ -1987,7 +2950,7 @@
     "race_no": 3,
     "race_name": "帯広3R 牧祐樹＆藤田南結婚記念２歳Ｄ−３",
     "field_size": 9,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2005,8 +2968,8 @@
      "horse_id": "20261107-R03-09",
      "umaban": 9,
      "name": "アーススノーパール",
-     "score": 0.6542,
-     "finish_score": 0.6542,
+     "score": 0.6974,
+     "finish_score": 0.6974,
      "past_form": 0.6551,
      "past_form_ok": true,
      "horse_streak": 0,
@@ -2014,28 +2977,28 @@
      "top_contribs": [
       {
        "name": "umaban",
-       "contrib": 0.1159,
+       "contrib": 0.2117,
        "value": 9
       },
       {
-       "name": "sled_weight",
-       "contrib": 0.0643,
-       "value": 520
-      },
-      {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0507,
+       "contrib": 0.0964,
        "value": 0.6551
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0379,
-       "value": 0.6611
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
       },
       {
-       "name": "horse_win_rate_10",
-       "contrib": 0.0358,
-       "value": 0
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
+      },
+      {
+       "name": "race_no",
+       "contrib": 0.0261,
+       "value": 3
       }
      ]
     },
@@ -2043,26 +3006,26 @@
      {
       "umaban": 9,
       "name": "アーススノーパール",
-      "score": 0.6542,
+      "score": 0.6974,
       "past_form": 0.6551
      },
      {
       "umaban": 2,
       "name": "ジェイカイン",
-      "score": 0.544,
+      "score": 0.5265,
       "past_form": 0.5679
      },
      {
-      "umaban": 4,
-      "name": "キンリュウ",
-      "score": 0.5263,
-      "past_form": 0.5667
+      "umaban": 7,
+      "name": "オレノゴウリキ",
+      "score": 0.5023,
+      "past_form": 0.5139
      }
     ],
     "box_horses": [
      "9番アーススノーパール",
      "2番ジェイカイン",
-     "4番キンリュウ"
+     "7番オレノゴウリキ"
     ],
     "feature_names": [
      "est_moist",
@@ -2095,16 +3058,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     2,
+     7
+    ],
+    [
+     9,
+     7,
+     2
+    ],
+    [
+     2,
+     9,
+     7
+    ],
+    [
+     2,
+     7,
+     9
+    ],
+    [
+     7,
+     9,
+     2
+    ],
+    [
+     7,
+     2,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R04",
    "race_date": "2026-11-07",
    "race_no": 4,
    "race_name": "帯広4R みなみちゃん花嫁記念２歳Ｃ−４",
+   "scheduled_start_at": "2026-11-07T16:20:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.489 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番ストロングポイント（モデル1位・スコア 0.639・past_form 0.489<0.65）。 出走 10 頭・一般。レース名「帯広4R みなみちゃん花嫁記念２歳Ｃ−４」。 上位3頭: 1位 10番ストロングポイント（スコア0.639・past_form 0.489）、2位 1番サカノブラック（スコア0.612・past_form 0.593）、3位 9番トップラン（スコア0.598・past_form 0.574）。 主買い目は三連単三頭ボックス6点（10番ストロングポイント−1番サカノブラック−9番トップランの全順列）。 軸スコアへの主な正寄与: 馬番+0.147、ソリ荷重+0.074、直近5走着順平均+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.489 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番ストロングポイント（モデル1位・スコア 0.715・past_form 0.489<0.65）。 出走 10 頭・一般。レース名「帯広4R みなみちゃん花嫁記念２歳Ｃ−４」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 10番ストロングポイント（スコア0.715・past_form 0.489）、2位 9番トップラン（スコア0.595・past_form 0.574）、3位 1番サカノブラック（スコア0.539・past_form 0.593）。 主買い目は三連単三頭ボックス6点（10番ストロングポイント−9番トップラン−1番サカノブラックの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、せん馬+0.079、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -2118,7 +3144,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R04",
@@ -2126,7 +3152,7 @@
     "race_no": 4,
     "race_name": "帯広4R みなみちゃん花嫁記念２歳Ｃ−４",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2144,8 +3170,8 @@
      "horse_id": "20261107-R04-10",
      "umaban": 10,
      "name": "ストロングポイント",
-     "score": 0.6392,
-     "finish_score": 0.6392,
+     "score": 0.7149,
+     "finish_score": 0.7149,
      "past_form": 0.4886,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -2153,27 +3179,27 @@
      "top_contribs": [
       {
        "name": "umaban",
-       "contrib": 0.1471,
+       "contrib": 0.269,
        "value": 10
       },
       {
-       "name": "sled_weight",
-       "contrib": 0.0744,
-       "value": 510
-      },
-      {
-       "name": "last5_fin_mean",
-       "contrib": 0.0359,
-       "value": 0.6528
+       "name": "sex_gelding",
+       "contrib": 0.0789,
+       "value": 1
       },
       {
        "name": "horse_win_rate_10",
-       "contrib": 0.0358,
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
        "value": 0
       },
       {
        "name": "age",
-       "contrib": 0.0228,
+       "contrib": 0.0315,
        "value": 2
       }
      ]
@@ -2182,26 +3208,26 @@
      {
       "umaban": 10,
       "name": "ストロングポイント",
-      "score": 0.6392,
+      "score": 0.7149,
       "past_form": 0.4886
-     },
-     {
-      "umaban": 1,
-      "name": "サカノブラック",
-      "score": 0.6119,
-      "past_form": 0.5931
      },
      {
       "umaban": 9,
       "name": "トップラン",
-      "score": 0.5978,
+      "score": 0.5946,
       "past_form": 0.5741
+     },
+     {
+      "umaban": 1,
+      "name": "サカノブラック",
+      "score": 0.5392,
+      "past_form": 0.5931
      }
     ],
     "box_horses": [
      "10番ストロングポイント",
-     "1番サカノブラック",
-     "9番トップラン"
+     "9番トップラン",
+     "1番サカノブラック"
     ],
     "feature_names": [
      "est_moist",
@@ -2234,16 +3260,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     1,
+     9
+    ],
+    [
+     9,
+     10,
+     1
+    ],
+    [
+     9,
+     1,
+     10
+    ],
+    [
+     1,
+     10,
+     9
+    ],
+    [
+     1,
+     9,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R05",
    "race_date": "2026-11-07",
    "race_no": 5,
    "race_name": "帯広5R 稚草隆５５で賞Ｃ１−５（３４０万円未満）",
+   "scheduled_start_at": "2026-11-07T16:50:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.491 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 1番スズノチカラ（モデル1位・スコア 0.555・past_form 0.491<0.65）。 出走 9 頭・一般。レース名「帯広5R 稚草隆５５で賞Ｃ１−５（３４０万円未満）」。 上位3頭: 1位 1番スズノチカラ（スコア0.555・past_form 0.491）、2位 3番ハートキング（スコア0.537・past_form 0.598）、3位 4番リキ（スコア0.534・past_form 0.509）。 主買い目は三連単三頭ボックス6点（1番スズノチカラ−3番ハートキング−4番リキの全順列）。 軸スコアへの主な正寄与: 枠番+0.136、直近5走着順ばらつき+0.034、馬体重×ソリ+0.027。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.491 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 1番スズノチカラ（モデル1位・スコア 0.531・past_form 0.491<0.65）。 出走 9 頭・一般。レース名「帯広5R 稚草隆５５で賞Ｃ１−５（３４０万円未満）」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 1番スズノチカラ（スコア0.531・past_form 0.491）、2位 4番リキ（スコア0.514・past_form 0.509）、3位 3番ハートキング（スコア0.484・past_form 0.598）。 主買い目は三連単三頭ボックス6点（1番スズノチカラ−4番リキ−3番ハートキングの全順列）。 軸スコアへの主な正寄与: 枠番+0.221、馬体重×ソリ+0.035、牡馬+0.033。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -2257,7 +3346,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "eq9",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R05",
@@ -2265,7 +3354,7 @@
     "race_no": 5,
     "race_name": "帯広5R 稚草隆５５で賞Ｃ１−５（３４０万円未満）",
     "field_size": 9,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2283,8 +3372,8 @@
      "horse_id": "20261107-R05-01",
      "umaban": 1,
      "name": "スズノチカラ",
-     "score": 0.5547,
-     "finish_score": 0.5547,
+     "score": 0.531,
+     "finish_score": 0.531,
      "past_form": 0.4907,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -2292,28 +3381,28 @@
      "top_contribs": [
       {
        "name": "gate",
-       "contrib": 0.1356,
+       "contrib": 0.2211,
        "value": 1
       },
       {
-       "name": "last5_fin_std",
-       "contrib": 0.0343,
-       "value": 0.1077
-      },
-      {
        "name": "body_x_sled",
-       "contrib": 0.0267,
+       "contrib": 0.0347,
        "value": 617520
       },
       {
        "name": "sex_male",
-       "contrib": 0.0186,
+       "contrib": 0.0325,
        "value": 0
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0161,
-       "value": 992
+       "name": "last5_fin_std",
+       "contrib": 0.0317,
+       "value": 0.1077
+      },
+      {
+       "name": "age",
+       "contrib": 0.0165,
+       "value": 3
       }
      ]
     },
@@ -2321,26 +3410,26 @@
      {
       "umaban": 1,
       "name": "スズノチカラ",
-      "score": 0.5547,
+      "score": 0.531,
       "past_form": 0.4907
-     },
-     {
-      "umaban": 3,
-      "name": "ハートキング",
-      "score": 0.5375,
-      "past_form": 0.5976
      },
      {
       "umaban": 4,
       "name": "リキ",
-      "score": 0.5339,
+      "score": 0.5142,
       "past_form": 0.5089
+     },
+     {
+      "umaban": 3,
+      "name": "ハートキング",
+      "score": 0.484,
+      "past_form": 0.5976
      }
     ],
     "box_horses": [
      "1番スズノチカラ",
-     "3番ハートキング",
-     "4番リキ"
+     "4番リキ",
+     "3番ハートキング"
     ],
     "feature_names": [
      "est_moist",
@@ -2373,16 +3462,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     1,
+     4,
+     3
+    ],
+    [
+     1,
+     3,
+     4
+    ],
+    [
+     4,
+     1,
+     3
+    ],
+    [
+     4,
+     3,
+     1
+    ],
+    [
+     3,
+     1,
+     4
+    ],
+    [
+     3,
+     4,
+     1
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R06",
    "race_date": "2026-11-07",
    "race_no": 6,
    "race_name": "帯広6R 敏樹＆和子金婚ハッピー記念２歳Ｂ−６",
+   "scheduled_start_at": "2026-11-07T17:25:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.521 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 6番シンザンミハル（モデル1位・スコア 0.567・past_form 0.521<0.65）。 出走 9 頭・一般。レース名「帯広6R 敏樹＆和子金婚ハッピー記念２歳Ｂ−６」。 上位3頭: 1位 6番シンザンミハル（スコア0.567・past_form 0.521）、2位 2番ツガルイチバン（スコア0.533・past_form 0.552）、3位 4番オシマダイヤ（スコア0.492・past_form 0.533）。 主買い目は三連単三頭ボックス6点（6番シンザンミハル−2番ツガルイチバン−4番オシマダイヤの全順列）。 軸スコアへの主な正寄与: ソリ荷重+0.064、直近5走着順平均+0.055、年齢+0.023。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.552 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 2番ツガルイチバン（モデル1位・スコア 0.496・past_form 0.552<0.65）。 出走 9 頭・一般。レース名「帯広6R 敏樹＆和子金婚ハッピー記念２歳Ｂ−６」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 2番ツガルイチバン（スコア0.496・past_form 0.552）、2位 6番シンザンミハル（スコア0.487・past_form 0.521）、3位 9番コハクヒメ（スコア0.478・past_form 0.338）。 主買い目は三連単三頭ボックス6点（2番ツガルイチバン−6番シンザンミハル−9番コハクヒメの全順列）。 軸スコアへの主な正寄与: 枠番+0.166、馬勝率(直近10)+0.036、過去着順平均+0.034。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -2396,7 +3548,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "eq9",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R06",
@@ -2404,7 +3556,7 @@
     "race_no": 6,
     "race_name": "帯広6R 敏樹＆和子金婚ハッピー記念２歳Ｂ−６",
     "field_size": 9,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2417,69 +3569,69 @@
     "ticket_label": "三連単三頭ボックス6点",
     "plus_hjz": true,
     "gate_skip": true,
-    "gate_reason": "軸の過去着順平均 0.521 < 0.65（参考：買い目は表示）",
+    "gate_reason": "軸の過去着順平均 0.552 < 0.65（参考：買い目は表示）",
     "axis": {
-     "horse_id": "20261107-R06-06",
-     "umaban": 6,
-     "name": "シンザンミハル",
-     "score": 0.5672,
-     "finish_score": 0.5672,
-     "past_form": 0.5215,
+     "horse_id": "20261107-R06-02",
+     "umaban": 2,
+     "name": "ツガルイチバン",
+     "score": 0.4957,
+     "finish_score": 0.4957,
+     "past_form": 0.5518,
      "past_form_ok": false,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "sled_weight",
-       "contrib": 0.0643,
-       "value": 520
-      },
-      {
-       "name": "last5_fin_mean",
-       "contrib": 0.0553,
-       "value": 0.7333
-      },
-      {
-       "name": "age",
-       "contrib": 0.0228,
+       "name": "gate",
+       "contrib": 0.1659,
        "value": 2
       },
       {
-       "name": "umaban",
-       "contrib": 0.0221,
-       "value": 6
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
       },
       {
-       "name": "sex_male",
-       "contrib": 0.0186,
-       "value": 0
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0337,
+       "value": 0.5518
+      },
+      {
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
+      },
+      {
+       "name": "body_weight",
+       "contrib": 0.0182,
+       "value": 910
       }
      ]
     },
     "top3": [
      {
-      "umaban": 6,
-      "name": "シンザンミハル",
-      "score": 0.5672,
-      "past_form": 0.5215
-     },
-     {
       "umaban": 2,
       "name": "ツガルイチバン",
-      "score": 0.5328,
+      "score": 0.4957,
       "past_form": 0.5518
      },
      {
-      "umaban": 4,
-      "name": "オシマダイヤ",
-      "score": 0.4916,
-      "past_form": 0.5333
+      "umaban": 6,
+      "name": "シンザンミハル",
+      "score": 0.4875,
+      "past_form": 0.5215
+     },
+     {
+      "umaban": 9,
+      "name": "コハクヒメ",
+      "score": 0.4776,
+      "past_form": 0.3375
      }
     ],
     "box_horses": [
-     "6番シンザンミハル",
      "2番ツガルイチバン",
-     "4番オシマダイヤ"
+     "6番シンザンミハル",
+     "9番コハクヒメ"
     ],
     "feature_names": [
      "est_moist",
@@ -2512,30 +3664,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     2,
+     6,
+     9
+    ],
+    [
+     2,
+     9,
+     6
+    ],
+    [
+     6,
+     2,
+     9
+    ],
+    [
+     6,
+     9,
+     2
+    ],
+    [
+     9,
+     2,
+     6
+    ],
+    [
+     9,
+     6,
+     2
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R07",
    "race_date": "2026-11-07",
    "race_no": 7,
    "race_name": "帯広7R あやＰ４０歳聖誕記念大祭典Ｂ４−４（４３０万円未満）",
+   "scheduled_start_at": "2026-11-07T17:55:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.748,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 2番ヤマノリュウ（モデル1位・スコア 0.699・past_form 0.830≥0.65）。 出走 10 頭・一般。レース名「帯広7R あやＰ４０歳聖誕記念大祭典Ｂ４−４（４３０万円未満）」。 上位3頭: 1位 2番ヤマノリュウ（スコア0.699・past_form 0.830）、2位 4番サトノブレイカー（スコア0.636・past_form 0.586）、3位 10番ツガルタカラフジ（スコア0.592・past_form 0.571）。 主買い目は三連単三頭ボックス6点（2番ヤマノリュウ−4番サトノブレイカー−10番ツガルタカラフジの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.110、枠番+0.102、直近5走着順平均+0.079。 自信度 0.75（中）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=unk・normal／照合=080_plus|ge10|normal）の過去実績はN=44・的中率6.818%・回収率194.81%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.767,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 2番ヤマノリュウ（モデル1位・スコア 0.719・past_form 0.830≥0.65）。 出走 10 頭・一般。レース名「帯広7R あやＰ４０歳聖誕記念大祭典Ｂ４−４（４３０万円未満）」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 2番ヤマノリュウ（スコア0.719・past_form 0.830）、2位 10番ツガルタカラフジ（スコア0.604・past_form 0.571）、3位 4番サトノブレイカー（スコア0.572・past_form 0.586）。 主買い目は三連単三頭ボックス6点（2番ヤマノリュウ−10番ツガルタカラフジ−4番サトノブレイカーの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.202、枠番+0.166、馬体重×ソリ+0.066。 自信度 0.77（高）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=wet・normal／照合=080_plus|ge10|wet|normal）の過去実績はN=27・的中率11.111%・回収率317.47%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.748,
-    "confidence_label": "中",
-    "confidence_source": "080_plus|ge10|normal",
+    "confidence": 0.767,
+    "confidence_label": "高",
+    "confidence_source": "080_plus|ge10|wet|normal",
     "confidence_stats": {
-     "N": 44,
-     "hit_pct": 6.818,
-     "ROI_pct": 194.81
+     "N": 27,
+     "hit_pct": 11.111,
+     "ROI_pct": 317.47
     },
     "confidence_bands": {
      "pf": "080_plus",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R07",
@@ -2543,7 +3758,7 @@
     "race_no": 7,
     "race_name": "帯広7R あやＰ４０歳聖誕記念大祭典Ｂ４−４（４３０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2561,8 +3776,8 @@
      "horse_id": "20261107-R07-02",
      "umaban": 2,
      "name": "ヤマノリュウ",
-     "score": 0.6986,
-     "finish_score": 0.6986,
+     "score": 0.7191,
+     "finish_score": 0.7191,
      "past_form": 0.8299,
      "past_form_ok": true,
      "horse_streak": 0,
@@ -2570,28 +3785,28 @@
      "top_contribs": [
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.1097,
+       "contrib": 0.2024,
        "value": 0.8299
       },
       {
        "name": "gate",
-       "contrib": 0.1017,
+       "contrib": 0.1659,
        "value": 2
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0786,
-       "value": 0.8299
-      },
-      {
        "name": "body_x_sled",
-       "contrib": 0.0523,
+       "contrib": 0.0656,
        "value": 657280
       },
       {
        "name": "last5_fin_std",
-       "contrib": 0.0303,
+       "contrib": 0.0279,
        "value": 0.1228
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0235,
+       "value": 0.7731
       }
      ]
     },
@@ -2599,26 +3814,26 @@
      {
       "umaban": 2,
       "name": "ヤマノリュウ",
-      "score": 0.6986,
+      "score": 0.7191,
       "past_form": 0.8299
-     },
-     {
-      "umaban": 4,
-      "name": "サトノブレイカー",
-      "score": 0.6364,
-      "past_form": 0.5864
      },
      {
       "umaban": 10,
       "name": "ツガルタカラフジ",
-      "score": 0.592,
+      "score": 0.604,
       "past_form": 0.5714
+     },
+     {
+      "umaban": 4,
+      "name": "サトノブレイカー",
+      "score": 0.5717,
+      "past_form": 0.5864
      }
     ],
     "box_horses": [
      "2番ヤマノリュウ",
-     "4番サトノブレイカー",
-     "10番ツガルタカラフジ"
+     "10番ツガルタカラフジ",
+     "4番サトノブレイカー"
     ],
     "feature_names": [
      "est_moist",
@@ -2651,30 +3866,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     2,
+     10,
+     4
+    ],
+    [
+     2,
+     4,
+     10
+    ],
+    [
+     10,
+     2,
+     4
+    ],
+    [
+     10,
+     4,
+     2
+    ],
+    [
+     4,
+     2,
+     10
+    ],
+    [
+     4,
+     10,
+     2
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R08",
    "race_date": "2026-11-07",
    "race_no": 8,
    "race_name": "帯広8R 富士香還暦１年後記念杯２歳Ａ−１",
+   "scheduled_start_at": "2026-11-07T18:25:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.748,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 4番フジノモンスター（モデル1位・スコア 0.700・past_form 0.823≥0.65）。 出走 10 頭・一般。レース名「帯広8R 富士香還暦１年後記念杯２歳Ａ−１」。 上位3頭: 1位 4番フジノモンスター（スコア0.700・past_form 0.823）、2位 10番アクセルアララ（スコア0.636・past_form 0.705）、3位 7番キンカザン（スコア0.599・past_form 0.821）。 主買い目は三連単三頭ボックス6点（4番フジノモンスター−10番アクセルアララ−7番キンカザンの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.107、直近5走着順平均+0.098、直近5走着順ばらつき+0.041。 自信度 0.75（中）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=unk・normal／照合=080_plus|ge10|normal）の過去実績はN=44・的中率6.818%・回収率194.81%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.65,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 10番アクセルアララ（モデル1位・スコア 0.664・past_form 0.705≥0.65）。 出走 10 頭・一般。レース名「帯広8R 富士香還暦１年後記念杯２歳Ａ−１」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 10番アクセルアララ（スコア0.664・past_form 0.705）、2位 4番フジノモンスター（スコア0.633・past_form 0.823）、3位 7番キンカザン（スコア0.593・past_form 0.821）。 主買い目は三連単三頭ボックス6点（10番アクセルアララ−4番フジノモンスター−7番キンカザンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.127、牡馬+0.033。 自信度 0.65（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=wet・normal／照合=070_080|ge10|wet|normal）の過去実績はN=33・的中率9.091%・回収率138.99%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.748,
+    "confidence": 0.65,
     "confidence_label": "中",
-    "confidence_source": "080_plus|ge10|normal",
+    "confidence_source": "070_080|ge10|wet|normal",
     "confidence_stats": {
-     "N": 44,
-     "hit_pct": 6.818,
-     "ROI_pct": 194.81
+     "N": 33,
+     "hit_pct": 9.091,
+     "ROI_pct": 138.99
     },
     "confidence_bands": {
-     "pf": "080_plus",
+     "pf": "070_080",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R08",
@@ -2682,7 +3960,7 @@
     "race_no": 8,
     "race_name": "帯広8R 富士香還暦１年後記念杯２歳Ａ−１",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2697,66 +3975,66 @@
     "gate_skip": false,
     "gate_reason": null,
     "axis": {
-     "horse_id": "20261107-R08-04",
-     "umaban": 4,
-     "name": "フジノモンスター",
-     "score": 0.7004,
-     "finish_score": 0.7004,
-     "past_form": 0.8232,
+     "horse_id": "20261107-R08-10",
+     "umaban": 10,
+     "name": "アクセルアララ",
+     "score": 0.6638,
+     "finish_score": 0.6638,
+     "past_form": 0.7053,
      "past_form_ok": true,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
+      },
+      {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.1074,
-       "value": 0.8232
+       "contrib": 0.1268,
+       "value": 0.7053
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0982,
-       "value": 0.9111
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
       },
       {
-       "name": "last5_fin_std",
-       "contrib": 0.0408,
-       "value": 0.0831
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
       },
       {
-       "name": "gate",
-       "contrib": 0.0338,
-       "value": 4
-      },
-      {
-       "name": "sled_weight",
-       "contrib": 0.0291,
-       "value": 555
+       "name": "body_weight",
+       "contrib": 0.0231,
+       "value": 892
       }
      ]
     },
     "top3": [
      {
-      "umaban": 4,
-      "name": "フジノモンスター",
-      "score": 0.7004,
-      "past_form": 0.8232
-     },
-     {
       "umaban": 10,
       "name": "アクセルアララ",
-      "score": 0.6364,
+      "score": 0.6638,
       "past_form": 0.7053
+     },
+     {
+      "umaban": 4,
+      "name": "フジノモンスター",
+      "score": 0.6328,
+      "past_form": 0.8232
      },
      {
       "umaban": 7,
       "name": "キンカザン",
-      "score": 0.5992,
+      "score": 0.5932,
       "past_form": 0.821
      }
     ],
     "box_horses": [
-     "4番フジノモンスター",
      "10番アクセルアララ",
+     "4番フジノモンスター",
      "7番キンカザン"
     ],
     "feature_names": [
@@ -2790,16 +4068,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     4,
+     7
+    ],
+    [
+     10,
+     7,
+     4
+    ],
+    [
+     4,
+     10,
+     7
+    ],
+    [
+     4,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     4
+    ],
+    [
+     7,
+     4,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R09",
    "race_date": "2026-11-07",
    "race_no": 9,
    "race_name": "帯広9R 喜っせ今日で１６周年記念Ｂ３−３混合（５５０万円未満）",
+   "scheduled_start_at": "2026-11-07T18:55:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.580 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 6番トマランサカミカゼ（モデル1位・スコア 0.618・past_form 0.580<0.65）。 出走 10 頭・一般。レース名「帯広9R 喜っせ今日で１６周年記念Ｂ３−３混合（５５０万円未満）」。 上位3頭: 1位 6番トマランサカミカゼ（スコア0.618・past_form 0.580）、2位 3番ヤマツネライン（スコア0.573・past_form 0.709）、3位 4番ジェイドラゴン（スコア0.525・past_form 0.628）。 主買い目は三連単三頭ボックス6点（6番トマランサカミカゼ−3番ヤマツネライン−4番ジェイドラゴンの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.109、馬体重+0.071、直近5走着順平均+0.065。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.580 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 6番トマランサカミカゼ（モデル1位・スコア 0.515・past_form 0.580<0.65）。 出走 10 頭・一般。レース名「帯広9R 喜っせ今日で１６周年記念Ｂ３−３混合（５５０万円未満）」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 6番トマランサカミカゼ（スコア0.515・past_form 0.580）、2位 3番ヤマツネライン（スコア0.511・past_form 0.709）、3位 4番ジェイドラゴン（スコア0.505・past_form 0.628）。 主買い目は三連単三頭ボックス6点（6番トマランサカミカゼ−3番ヤマツネライン−4番ジェイドラゴンの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.134、過去着順平均+0.051、馬番+0.040。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -2813,7 +4154,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R09",
@@ -2821,7 +4162,7 @@
     "race_no": 9,
     "race_name": "帯広9R 喜っせ今日で１６周年記念Ｂ３−３混合（５５０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2839,8 +4180,8 @@
      "horse_id": "20261107-R09-06",
      "umaban": 6,
      "name": "トマランサカミカゼ",
-     "score": 0.618,
-     "finish_score": 0.618,
+     "score": 0.5152,
+     "finish_score": 0.5152,
      "past_form": 0.5796,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -2848,28 +4189,28 @@
      "top_contribs": [
       {
        "name": "body_x_sled",
-       "contrib": 0.109,
+       "contrib": 0.1341,
        "value": 745550
       },
       {
-       "name": "body_weight",
-       "contrib": 0.0707,
-       "value": 1147
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0506,
+       "value": 0.5796
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0654,
-       "value": 0.775
+       "name": "umaban",
+       "contrib": 0.04,
+       "value": 6
       },
       {
        "name": "last5_fin_std",
-       "contrib": 0.0304,
+       "contrib": 0.028,
        "value": 0.1225
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0296,
-       "value": 1040
+       "name": "moist_x_body",
+       "contrib": 0.0143,
+       "value": 2752.8
       }
      ]
     },
@@ -2877,19 +4218,19 @@
      {
       "umaban": 6,
       "name": "トマランサカミカゼ",
-      "score": 0.618,
+      "score": 0.5152,
       "past_form": 0.5796
      },
      {
       "umaban": 3,
       "name": "ヤマツネライン",
-      "score": 0.5726,
+      "score": 0.5107,
       "past_form": 0.709
      },
      {
       "umaban": 4,
       "name": "ジェイドラゴン",
-      "score": 0.5247,
+      "score": 0.5053,
       "past_form": 0.6285
      }
     ],
@@ -2929,30 +4270,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     6,
+     3,
+     4
+    ],
+    [
+     6,
+     4,
+     3
+    ],
+    [
+     3,
+     6,
+     4
+    ],
+    [
+     3,
+     4,
+     6
+    ],
+    [
+     4,
+     6,
+     3
+    ],
+    [
+     4,
+     3,
+     6
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R10",
    "race_date": "2026-11-07",
    "race_no": 10,
    "race_name": "帯広10R 藤井塗装店６６期お疲れ様盃Ｂ３−１（５５０万円未満）",
+   "scheduled_start_at": "2026-11-07T19:25:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.801,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 10番コウイッテン（モデル1位・スコア 0.697・past_form 0.683≥0.65）。 出走 10 頭・一般。レース名「帯広10R 藤井塗装店６６期お疲れ様盃Ｂ３−１（５５０万円未満）」。 上位3頭: 1位 10番コウイッテン（スコア0.697・past_form 0.683）、2位 7番アカオビ（スコア0.650・past_form 0.711）、3位 1番サトノプリンス（スコア0.619・past_form 0.807）。 主買い目は三連単三頭ボックス6点（10番コウイッテン−7番アカオビ−1番サトノプリンスの全順列）。 軸スコアへの主な正寄与: 馬番+0.147、馬体重×ソリ+0.069、過去着順平均+0.060。 自信度 0.80（高）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=unk・normal／照合=065_070|ge10|normal）の過去実績はN=135・的中率6.667%・回収率232.78%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.744,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 10番コウイッテン（モデル1位・スコア 0.732・past_form 0.683≥0.65）。 出走 10 頭・一般。レース名「帯広10R 藤井塗装店６６期お疲れ様盃Ｂ３−１（５５０万円未満）」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 10番コウイッテン（スコア0.732・past_form 0.683）、2位 9番サクラジェームス（スコア0.676・past_form 0.733）、3位 7番アカオビ（スコア0.607・past_form 0.711）。 主買い目は三連単三頭ボックス6点（10番コウイッテン−9番サクラジェームス−7番アカオビの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.114、馬体重×ソリ+0.086。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.801,
-    "confidence_label": "高",
-    "confidence_source": "065_070|ge10|normal",
+    "confidence": 0.744,
+    "confidence_label": "中",
+    "confidence_source": "065_070|ge10|wet|normal",
     "confidence_stats": {
-     "N": 135,
-     "hit_pct": 6.667,
-     "ROI_pct": 232.78
+     "N": 62,
+     "hit_pct": 4.839,
+     "ROI_pct": 304.73
     },
     "confidence_bands": {
      "pf": "065_070",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R10",
@@ -2960,7 +4364,7 @@
     "race_no": 10,
     "race_name": "帯広10R 藤井塗装店６６期お疲れ様盃Ｂ３−１（５５０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -2978,8 +4382,8 @@
      "horse_id": "20261107-R10-10",
      "umaban": 10,
      "name": "コウイッテン",
-     "score": 0.6969,
-     "finish_score": 0.6969,
+     "score": 0.732,
+     "finish_score": 0.732,
      "past_form": 0.6834,
      "past_form_ok": true,
      "horse_streak": 0,
@@ -2987,28 +4391,28 @@
      "top_contribs": [
       {
        "name": "umaban",
-       "contrib": 0.1471,
+       "contrib": 0.269,
        "value": 10
       },
       {
-       "name": "body_x_sled",
-       "contrib": 0.069,
-       "value": 683240
-      },
-      {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0602,
+       "contrib": 0.1135,
        "value": 0.6834
       },
       {
-       "name": "body_weight",
-       "contrib": 0.0518,
-       "value": 1102
+       "name": "body_x_sled",
+       "contrib": 0.0857,
+       "value": 683240
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0493,
-       "value": 0.7083
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0142,
+       "value": 0.6644
       }
      ]
     },
@@ -3016,26 +4420,26 @@
      {
       "umaban": 10,
       "name": "コウイッテン",
-      "score": 0.6969,
+      "score": 0.732,
       "past_form": 0.6834
+     },
+     {
+      "umaban": 9,
+      "name": "サクラジェームス",
+      "score": 0.676,
+      "past_form": 0.7332
      },
      {
       "umaban": 7,
       "name": "アカオビ",
-      "score": 0.6496,
+      "score": 0.6071,
       "past_form": 0.7113
-     },
-     {
-      "umaban": 1,
-      "name": "サトノプリンス",
-      "score": 0.6189,
-      "past_form": 0.8072
      }
     ],
     "box_horses": [
      "10番コウイッテン",
-     "7番アカオビ",
-     "1番サトノプリンス"
+     "9番サクラジェームス",
+     "7番アカオビ"
     ],
     "feature_names": [
      "est_moist",
@@ -3068,30 +4472,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     9,
+     10,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R11",
    "race_date": "2026-11-07",
    "race_no": 11,
    "race_name": "帯広11R 第２回世界の山ちゃん幻杯オープン−１",
+   "scheduled_start_at": "2026-11-07T20:00:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.748,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 7番スターイチバン（モデル1位・スコア 0.739・past_form 0.883≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・一般。レース名「帯広11R 第２回世界の山ちゃん幻杯オープン−１」。 上位3頭: 1位 7番スターイチバン（スコア0.739・past_form 0.883）、2位 4番タカラキングダム（スコア0.569・past_form 0.493）、3位 6番ツガルノヒロイモノ（スコア0.561・past_form 0.659）。 主買い目は三連単三頭ボックス6点（7番スターイチバン−4番タカラキングダム−6番ツガルノヒロイモノの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.197、過去着順平均+0.128、直近5走着順平均+0.091。 自信度 0.75（中）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=unk・normal／照合=080_plus|ge10|normal）の過去実績はN=44・的中率6.818%・回収率194.81%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.767,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 7番スターイチバン（モデル1位・スコア 0.803・past_form 0.883≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・一般。レース名「帯広11R 第２回世界の山ちゃん幻杯オープン−１」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 7番スターイチバン（スコア0.803・past_form 0.883）、2位 9番シンエイアロイ（スコア0.651・past_form 0.689）、3位 6番ツガルノヒロイモノ（スコア0.606・past_form 0.659）。 主買い目は三連単三頭ボックス6点（7番スターイチバン−9番シンエイアロイ−6番ツガルノヒロイモノの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.241、過去着順平均+0.235、馬番+0.097。 自信度 0.77（高）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=wet・normal／照合=080_plus|ge10|wet|normal）の過去実績はN=27・的中率11.111%・回収率317.47%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.748,
-    "confidence_label": "中",
-    "confidence_source": "080_plus|ge10|normal",
+    "confidence": 0.767,
+    "confidence_label": "高",
+    "confidence_source": "080_plus|ge10|wet|normal",
     "confidence_stats": {
-     "N": 44,
-     "hit_pct": 6.818,
-     "ROI_pct": 194.81
+     "N": 27,
+     "hit_pct": 11.111,
+     "ROI_pct": 317.47
     },
     "confidence_bands": {
      "pf": "080_plus",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R11",
@@ -3099,7 +4566,7 @@
     "race_no": 11,
     "race_name": "帯広11R 第２回世界の山ちゃん幻杯オープン−１",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3117,8 +4584,8 @@
      "horse_id": "20261107-R11-07",
      "umaban": 7,
      "name": "スターイチバン",
-     "score": 0.7394,
-     "finish_score": 0.7894,
+     "score": 0.803,
+     "finish_score": 0.853,
      "past_form": 0.8833,
      "past_form_ok": true,
      "horse_streak": 1,
@@ -3126,28 +4593,28 @@
      "top_contribs": [
       {
        "name": "body_x_sled",
-       "contrib": 0.1972,
+       "contrib": 0.2406,
        "value": 882825
       },
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.1277,
+       "contrib": 0.2348,
        "value": 0.8833
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0915,
-       "value": 0.8833
+       "name": "umaban",
+       "contrib": 0.0973,
+       "value": 7
       },
       {
-       "name": "body_weight",
-       "contrib": 0.0866,
-       "value": 1185
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0429,
+       "value": 1
       },
       {
-       "name": "moist_x_sled",
-       "contrib": 0.0723,
-       "value": 1192
+       "name": "last5_fin_std",
+       "contrib": 0.0321,
+       "value": 0.106
       }
      ]
     },
@@ -3155,25 +4622,25 @@
      {
       "umaban": 7,
       "name": "スターイチバン",
-      "score": 0.7394,
+      "score": 0.803,
       "past_form": 0.8833
      },
      {
-      "umaban": 4,
-      "name": "タカラキングダム",
-      "score": 0.5686,
-      "past_form": 0.493
+      "umaban": 9,
+      "name": "シンエイアロイ",
+      "score": 0.6508,
+      "past_form": 0.6887
      },
      {
       "umaban": 6,
       "name": "ツガルノヒロイモノ",
-      "score": 0.5612,
+      "score": 0.6061,
       "past_form": 0.6586
      }
     ],
     "box_horses": [
      "7番スターイチバン",
-     "4番タカラキングダム",
+     "9番シンエイアロイ",
      "6番ツガルノヒロイモノ"
     ],
     "feature_names": [
@@ -3207,30 +4674,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     7,
+     9,
+     6
+    ],
+    [
+     7,
+     6,
+     9
+    ],
+    [
+     9,
+     7,
+     6
+    ],
+    [
+     9,
+     6,
+     7
+    ],
+    [
+     6,
+     7,
+     9
+    ],
+    [
+     6,
+     9,
+     7
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261107-R12",
    "race_date": "2026-11-07",
    "race_no": 12,
    "race_name": "帯広12R Ｃ１−３（３４０万円未満）",
+   "scheduled_start_at": "2026-11-07T20:30:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.7,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 8番サクラタユウ（モデル1位・スコア 0.689・past_form 0.787≥0.65）。 出走 10 頭・一般。レース名「帯広12R Ｃ１−３（３４０万円未満）」。 上位3頭: 1位 8番サクラタユウ（スコア0.689・past_form 0.787）、2位 3番ホクショウラナ（スコア0.686・past_form 0.701）、3位 6番ホクセイシンノスケ（スコア0.565・past_form 0.608）。 主買い目は三連単三頭ボックス6点（8番サクラタユウ−3番ホクショウラナ−6番ホクセイシンノスケの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.095、馬番+0.085、直近5走着順平均+0.045。 自信度 0.70（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=unk・normal／照合=070_080|ge10|normal）の過去実績はN=88・的中率9.091%・回収率131.8%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.65,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 8番サクラタユウ（モデル1位・スコア 0.758・past_form 0.787≥0.65）。 出走 10 頭・一般。レース名「帯広12R Ｃ１−３（３４０万円未満）」。 馬場水分 2.4%（帯=wet）。 上位3頭: 1位 8番サクラタユウ（スコア0.758・past_form 0.787）、2位 3番ホクショウラナ（スコア0.644・past_form 0.701）、3位 10番サクセスオーショウ（スコア0.579・past_form 0.598）。 主買い目は三連単三頭ボックス6点（8番サクラタユウ−3番ホクショウラナ−10番サクセスオーショウの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.176、馬番+0.154、牡馬+0.033。 自信度 0.65（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=wet・normal／照合=070_080|ge10|wet|normal）の過去実績はN=33・的中率9.091%・回収率138.99%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.7,
+    "confidence": 0.65,
     "confidence_label": "中",
-    "confidence_source": "070_080|ge10|normal",
+    "confidence_source": "070_080|ge10|wet|normal",
     "confidence_stats": {
-     "N": 88,
+     "N": 33,
      "hit_pct": 9.091,
-     "ROI_pct": 131.8
+     "ROI_pct": 138.99
     },
     "confidence_bands": {
      "pf": "070_080",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261107-R12",
@@ -3238,7 +4768,7 @@
     "race_no": 12,
     "race_name": "帯広12R Ｃ１−３（３４０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 2.4,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3256,8 +4786,8 @@
      "horse_id": "20261107-R12-08",
      "umaban": 8,
      "name": "サクラタユウ",
-     "score": 0.6885,
-     "finish_score": 0.6885,
+     "score": 0.7581,
+     "finish_score": 0.7581,
      "past_form": 0.7866,
      "past_form_ok": true,
      "horse_streak": 0,
@@ -3265,28 +4795,28 @@
      "top_contribs": [
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0951,
+       "contrib": 0.1761,
        "value": 0.7866
       },
       {
        "name": "umaban",
-       "contrib": 0.0846,
+       "contrib": 0.1545,
        "value": 8
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0446,
-       "value": 0.6889
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
       },
       {
        "name": "last5_fin_std",
-       "contrib": 0.034,
+       "contrib": 0.0314,
        "value": 0.1089
       },
       {
-       "name": "sex_male",
-       "contrib": 0.0186,
-       "value": 0
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0239,
+       "value": 0.7778
       }
      ]
     },
@@ -3294,26 +4824,26 @@
      {
       "umaban": 8,
       "name": "サクラタユウ",
-      "score": 0.6885,
+      "score": 0.7581,
       "past_form": 0.7866
      },
      {
       "umaban": 3,
       "name": "ホクショウラナ",
-      "score": 0.6863,
+      "score": 0.6442,
       "past_form": 0.7011
      },
      {
-      "umaban": 6,
-      "name": "ホクセイシンノスケ",
-      "score": 0.5653,
-      "past_form": 0.6077
+      "umaban": 10,
+      "name": "サクセスオーショウ",
+      "score": 0.5793,
+      "past_form": 0.5979
      }
     ],
     "box_horses": [
      "8番サクラタユウ",
      "3番ホクショウラナ",
-     "6番ホクセイシンノスケ"
+     "10番サクセスオーショウ"
     ],
     "feature_names": [
      "est_moist",
@@ -3346,16 +4876,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     8,
+     3,
+     10
+    ],
+    [
+     8,
+     10,
+     3
+    ],
+    [
+     3,
+     8,
+     10
+    ],
+    [
+     3,
+     10,
+     8
+    ],
+    [
+     10,
+     8,
+     3
+    ],
+    [
+     10,
+     3,
+     8
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2.4,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2.4,
+    "feature_estimate_pct": 2.4,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "posthoc_weather"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R01",
    "race_date": "2026-11-08",
    "race_no": 1,
    "race_name": "帯広1R ちゃむさんじゅっさい記念Ｃ２−３（２２０万円未満）",
+   "scheduled_start_at": "2026-11-08T14:35:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.626 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番マキシゴールド（モデル1位・スコア 0.650・past_form 0.626<0.65）。 出走 10 頭・一般。レース名「帯広1R ちゃむさんじゅっさい記念Ｃ２−３（２２０万円未満）」。 上位3頭: 1位 9番マキシゴールド（スコア0.650・past_form 0.626）、2位 8番モトイチヒメ（スコア0.584・past_form 0.562）、3位 6番タカノアイリス（スコア0.565・past_form 0.558）。 主買い目は三連単三頭ボックス6点（9番マキシゴールド−8番モトイチヒメ−6番タカノアイリスの全順列）。 軸スコアへの主な正寄与: 馬番+0.116、過去着順平均+0.041、直近5走着順平均+0.041。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.626 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番マキシゴールド（モデル1位・スコア 0.684・past_form 0.626<0.65）。 出走 10 頭・一般。レース名「帯広1R ちゃむさんじゅっさい記念Ｃ２−３（２２０万円未満）」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 9番マキシゴールド（スコア0.684・past_form 0.626）、2位 8番モトイチヒメ（スコア0.672・past_form 0.562）、3位 10番カネノキセキ（スコア0.582・past_form 0.456）。 主買い目は三連単三頭ボックス6点（9番マキシゴールド−8番モトイチヒメ−10番カネノキセキの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、過去着順平均+0.079、レース番号+0.041。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -3369,7 +4962,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R01",
@@ -3377,7 +4970,7 @@
     "race_no": 1,
     "race_name": "帯広1R ちゃむさんじゅっさい記念Ｃ２−３（２２０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3395,8 +4988,8 @@
      "horse_id": "20261108-R01-09",
      "umaban": 9,
      "name": "マキシゴールド",
-     "score": 0.6499,
-     "finish_score": 0.6499,
+     "score": 0.6838,
+     "finish_score": 0.6838,
      "past_form": 0.6257,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -3404,28 +4997,28 @@
      "top_contribs": [
       {
        "name": "umaban",
-       "contrib": 0.1159,
+       "contrib": 0.2117,
        "value": 9
       },
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0408,
+       "contrib": 0.0785,
        "value": 0.6257
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0406,
-       "value": 0.6722
+       "name": "race_no",
+       "contrib": 0.0408,
+       "value": 1
       },
       {
        "name": "horse_win_rate_10",
-       "contrib": 0.0358,
+       "contrib": 0.0364,
        "value": 0
       },
       {
-       "name": "race_no",
-       "contrib": 0.0259,
-       "value": 1
+       "name": "body_x_sled",
+       "contrib": 0.0304,
+       "value": 611940
       }
      ]
     },
@@ -3433,26 +5026,26 @@
      {
       "umaban": 9,
       "name": "マキシゴールド",
-      "score": 0.6499,
+      "score": 0.6838,
       "past_form": 0.6257
      },
      {
       "umaban": 8,
       "name": "モトイチヒメ",
-      "score": 0.5844,
+      "score": 0.6716,
       "past_form": 0.5625
      },
      {
-      "umaban": 6,
-      "name": "タカノアイリス",
-      "score": 0.5651,
-      "past_form": 0.5577
+      "umaban": 10,
+      "name": "カネノキセキ",
+      "score": 0.5823,
+      "past_form": 0.4558
      }
     ],
     "box_horses": [
      "9番マキシゴールド",
      "8番モトイチヒメ",
-     "6番タカノアイリス"
+     "10番カネノキセキ"
     ],
     "feature_names": [
      "est_moist",
@@ -3485,30 +5078,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     8,
+     10
+    ],
+    [
+     9,
+     10,
+     8
+    ],
+    [
+     8,
+     9,
+     10
+    ],
+    [
+     8,
+     10,
+     9
+    ],
+    [
+     10,
+     9,
+     8
+    ],
+    [
+     10,
+     8,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R02",
    "race_date": "2026-11-08",
    "race_no": 2,
    "race_name": "帯広2R 阪急交通社トラピックス杯２歳Ｄ−２",
+   "scheduled_start_at": "2026-11-08T15:10:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.748,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 5番ビックドラゴン（モデル1位・スコア 0.556・past_form 0.815≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・一般。レース名「帯広2R 阪急交通社トラピックス杯２歳Ｄ−２」。 上位3頭: 1位 5番ビックドラゴン（スコア0.556・past_form 0.815）、2位 10番キュータロウ（スコア0.543・past_form 0.487）、3位 1番フカガワハナビ（スコア0.540・past_form 0.537）。 主買い目は三連単三頭ボックス6点（5番ビックドラゴン−10番キュータロウ−1番フカガワハナビの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.105、直近5走着順平均+0.075、水分×馬体重+0.065。 自信度 0.75（中）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=unk・normal／照合=080_plus|ge10|normal）の過去実績はN=44・的中率6.818%・回収率194.81%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.767,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 5番ビックドラゴン（モデル1位・スコア 0.630・past_form 0.815≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・一般。レース名「帯広2R 阪急交通社トラピックス杯２歳Ｄ−２」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 5番ビックドラゴン（スコア0.630・past_form 0.815）、2位 10番キュータロウ（スコア0.596・past_form 0.487）、3位 1番フカガワハナビ（スコア0.536・past_form 0.537）。 主買い目は三連単三頭ボックス6点（5番ビックドラゴン−10番キュータロウ−1番フカガワハナビの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.193、馬体重+0.048、同水分帯着順平均+0.043。 自信度 0.77（高）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=wet・normal／照合=080_plus|ge10|wet|normal）の過去実績はN=27・的中率11.111%・回収率317.47%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.748,
-    "confidence_label": "中",
-    "confidence_source": "080_plus|ge10|normal",
+    "confidence": 0.767,
+    "confidence_label": "高",
+    "confidence_source": "080_plus|ge10|wet|normal",
     "confidence_stats": {
-     "N": 44,
-     "hit_pct": 6.818,
-     "ROI_pct": 194.81
+     "N": 27,
+     "hit_pct": 11.111,
+     "ROI_pct": 317.47
     },
     "confidence_bands": {
      "pf": "080_plus",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R02",
@@ -3516,7 +5172,7 @@
     "race_no": 2,
     "race_name": "帯広2R 阪急交通社トラピックス杯２歳Ｄ−２",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3534,8 +5190,8 @@
      "horse_id": "20261108-R02-05",
      "umaban": 5,
      "name": "ビックドラゴン",
-     "score": 0.5557,
-     "finish_score": 0.6057,
+     "score": 0.6305,
+     "finish_score": 0.6805,
      "past_form": 0.8148,
      "past_form_ok": true,
      "horse_streak": 1,
@@ -3543,28 +5199,28 @@
      "top_contribs": [
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.1046,
+       "contrib": 0.1932,
        "value": 0.8148
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.075,
-       "value": 0.8148
+       "name": "body_weight",
+       "contrib": 0.0483,
+       "value": 798
       },
       {
-       "name": "moist_x_body",
-       "contrib": 0.065,
-       "value": 1276.8
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0429,
+       "value": 1
       },
       {
-       "name": "sled_weight",
-       "contrib": 0.0643,
-       "value": 520
+       "name": "race_no",
+       "contrib": 0.0334,
+       "value": 2
       },
       {
-       "name": "last5_fin_std",
-       "contrib": 0.0261,
-       "value": 0.1386
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
       }
      ]
     },
@@ -3572,19 +5228,19 @@
      {
       "umaban": 5,
       "name": "ビックドラゴン",
-      "score": 0.5557,
+      "score": 0.6305,
       "past_form": 0.8148
      },
      {
       "umaban": 10,
       "name": "キュータロウ",
-      "score": 0.5429,
+      "score": 0.5961,
       "past_form": 0.4875
      },
      {
       "umaban": 1,
       "name": "フカガワハナビ",
-      "score": 0.5399,
+      "score": 0.5361,
       "past_form": 0.537
      }
     ],
@@ -3624,16 +5280,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     5,
+     10,
+     1
+    ],
+    [
+     5,
+     1,
+     10
+    ],
+    [
+     10,
+     5,
+     1
+    ],
+    [
+     10,
+     1,
+     5
+    ],
+    [
+     1,
+     5,
+     10
+    ],
+    [
+     1,
+     10,
+     5
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R03",
    "race_date": "2026-11-08",
    "race_no": 3,
    "race_name": "帯広3R 60年に1度!炎の丙午杯!",
+   "scheduled_start_at": "2026-11-08T15:40:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.570 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 6番パワーシンデレラ（モデル1位・スコア 0.612・past_form 0.570<0.65）。 出走 10 頭・一般。レース名「帯広3R 60年に1度!炎の丙午杯!」。 上位3頭: 1位 6番パワーシンデレラ（スコア0.612・past_form 0.570）、2位 10番ホクセイハスゴイ（スコア0.592・past_form 0.436）、3位 4番キタサカエクオン（スコア0.589・past_form 0.573）。 主買い目は三連単三頭ボックス6点（6番パワーシンデレラ−10番ホクセイハスゴイ−4番キタサカエクオンの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.055、馬体重+0.037、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.570 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 6番パワーシンデレラ（モデル1位・スコア 0.646・past_form 0.570<0.65）。 出走 10 頭・一般。レース名「帯広3R 60年に1度!炎の丙午杯!」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 6番パワーシンデレラ（スコア0.646・past_form 0.570）、2位 10番ホクセイハスゴイ（スコア0.642・past_form 0.436）、3位 4番キタサカエクオン（スコア0.600・past_form 0.573）。 主買い目は三連単三頭ボックス6点（6番パワーシンデレラ−10番ホクセイハスゴイ−4番キタサカエクオンの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.068、過去着順平均+0.045、馬番+0.040。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -3647,7 +5366,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R03",
@@ -3655,7 +5374,7 @@
     "race_no": 3,
     "race_name": "帯広3R 60年に1度!炎の丙午杯!",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3673,8 +5392,8 @@
      "horse_id": "20261108-R03-06",
      "umaban": 6,
      "name": "パワーシンデレラ",
-     "score": 0.6115,
-     "finish_score": 0.6115,
+     "score": 0.6458,
+     "finish_score": 0.6458,
      "past_form": 0.5702,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -3682,28 +5401,28 @@
      "top_contribs": [
       {
        "name": "body_x_sled",
-       "contrib": 0.0546,
+       "contrib": 0.0684,
        "value": 660920
       },
       {
-       "name": "body_weight",
-       "contrib": 0.0367,
-       "value": 1066
-      },
-      {
-       "name": "horse_win_rate_10",
-       "contrib": 0.0358,
-       "value": 0
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0448,
+       "value": 0.5702
       },
       {
        "name": "umaban",
-       "contrib": 0.0221,
+       "contrib": 0.04,
        "value": 6
       },
       {
-       "name": "horse_prev_fin_mean",
-       "contrib": 0.022,
-       "value": 0.5702
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
       }
      ]
     },
@@ -3711,19 +5430,19 @@
      {
       "umaban": 6,
       "name": "パワーシンデレラ",
-      "score": 0.6115,
+      "score": 0.6458,
       "past_form": 0.5702
      },
      {
       "umaban": 10,
       "name": "ホクセイハスゴイ",
-      "score": 0.5917,
+      "score": 0.6419,
       "past_form": 0.4355
      },
      {
       "umaban": 4,
       "name": "キタサカエクオン",
-      "score": 0.5893,
+      "score": 0.5995,
       "past_form": 0.5729
      }
     ],
@@ -3763,30 +5482,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     6,
+     10,
+     4
+    ],
+    [
+     6,
+     4,
+     10
+    ],
+    [
+     10,
+     6,
+     4
+    ],
+    [
+     10,
+     4,
+     6
+    ],
+    [
+     4,
+     6,
+     10
+    ],
+    [
+     4,
+     10,
+     6
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R04",
    "race_date": "2026-11-08",
    "race_no": 4,
    "race_name": "帯広4R 脩斗くん２５歳ハピバ２歳Ｃ−７",
+   "scheduled_start_at": "2026-11-08T16:15:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.801,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 4番フジノメグミ（モデル1位・スコア 0.540・past_form 0.668≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・一般。レース名「帯広4R 脩斗くん２５歳ハピバ２歳Ｃ−７」。 上位3頭: 1位 4番フジノメグミ（スコア0.540・past_form 0.668）、2位 1番キョウエイローズ（スコア0.519・past_form 0.480）、3位 2番スーパーハクリュウ（スコア0.506・past_form 0.492）。 主買い目は三連単三頭ボックス6点（4番フジノメグミ−1番キョウエイローズ−2番スーパーハクリュウの全順列）。 軸スコアへの主な正寄与: ソリ荷重+0.074、過去着順平均+0.055、直近5走着順平均+0.037。 自信度 0.80（高）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=unk・normal／照合=065_070|ge10|normal）の過去実績はN=135・的中率6.667%・回収率232.78%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.744,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 4番フジノメグミ（モデル1位・スコア 0.582・past_form 0.668≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・一般。レース名「帯広4R 脩斗くん２５歳ハピバ２歳Ｃ−７」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 4番フジノメグミ（スコア0.582・past_form 0.668）、2位 10番イワキエスポワール（スコア0.564・past_form 0.352）、3位 8番キングジョー（スコア0.508・past_form 0.467）。 主買い目は三連単三頭ボックス6点（4番フジノメグミ−10番イワキエスポワール−8番キングジョーの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.104、枠番+0.055、牡馬+0.033。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.801,
-    "confidence_label": "高",
-    "confidence_source": "065_070|ge10|normal",
+    "confidence": 0.744,
+    "confidence_label": "中",
+    "confidence_source": "065_070|ge10|wet|normal",
     "confidence_stats": {
-     "N": 135,
-     "hit_pct": 6.667,
-     "ROI_pct": 232.78
+     "N": 62,
+     "hit_pct": 4.839,
+     "ROI_pct": 304.73
     },
     "confidence_bands": {
      "pf": "065_070",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R04",
@@ -3794,7 +5576,7 @@
     "race_no": 4,
     "race_name": "帯広4R 脩斗くん２５歳ハピバ２歳Ｃ−７",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3812,37 +5594,37 @@
      "horse_id": "20261108-R04-04",
      "umaban": 4,
      "name": "フジノメグミ",
-     "score": 0.5397,
-     "finish_score": 0.5897,
+     "score": 0.5817,
+     "finish_score": 0.6317,
      "past_form": 0.6677,
      "past_form_ok": true,
      "horse_streak": 1,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "sled_weight",
-       "contrib": 0.0744,
-       "value": 510
-      },
-      {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0549,
+       "contrib": 0.104,
        "value": 0.6677
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0372,
-       "value": 0.6583
-      },
-      {
        "name": "gate",
-       "contrib": 0.0338,
+       "contrib": 0.0554,
        "value": 4
       },
       {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
        "name": "age",
-       "contrib": 0.0228,
+       "contrib": 0.0315,
        "value": 2
+      },
+      {
+       "name": "moist_x_sled",
+       "contrib": 0.0203,
+       "value": 969
       }
      ]
     },
@@ -3850,26 +5632,26 @@
      {
       "umaban": 4,
       "name": "フジノメグミ",
-      "score": 0.5397,
+      "score": 0.5817,
       "past_form": 0.6677
      },
      {
-      "umaban": 1,
-      "name": "キョウエイローズ",
-      "score": 0.5192,
-      "past_form": 0.4799
+      "umaban": 10,
+      "name": "イワキエスポワール",
+      "score": 0.5639,
+      "past_form": 0.3518
      },
      {
-      "umaban": 2,
-      "name": "スーパーハクリュウ",
-      "score": 0.5065,
-      "past_form": 0.4923
+      "umaban": 8,
+      "name": "キングジョー",
+      "score": 0.5081,
+      "past_form": 0.4672
      }
     ],
     "box_horses": [
      "4番フジノメグミ",
-     "1番キョウエイローズ",
-     "2番スーパーハクリュウ"
+     "10番イワキエスポワール",
+     "8番キングジョー"
     ],
     "feature_names": [
      "est_moist",
@@ -3902,30 +5684,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     4,
+     10,
+     8
+    ],
+    [
+     4,
+     8,
+     10
+    ],
+    [
+     10,
+     4,
+     8
+    ],
+    [
+     10,
+     8,
+     4
+    ],
+    [
+     8,
+     4,
+     10
+    ],
+    [
+     8,
+     10,
+     4
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R05",
    "race_date": "2026-11-08",
    "race_no": 5,
    "race_name": "帯広5R 稲ちゃん結婚記念祝ｂｙ福松Ｃ１−１（３４０万円未満）",
+   "scheduled_start_at": "2026-11-08T16:45:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.7,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 7番ツガルミサキ（モデル1位・スコア 0.664・past_form 0.727≥0.65）。 出走 10 頭・一般。レース名「帯広5R 稲ちゃん結婚記念祝ｂｙ福松Ｃ１−１（３４０万円未満）」。 上位3頭: 1位 7番ツガルミサキ（スコア0.664・past_form 0.727）、2位 3番ガッツワン（スコア0.642・past_form 0.743）、3位 9番クリスタルデビル（スコア0.558・past_form 0.692）。 主買い目は三連単三頭ボックス6点（7番ツガルミサキ−3番ガッツワン−9番クリスタルデビルの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.075、直近5走着順平均+0.071、馬番+0.053。 自信度 0.70（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=unk・normal／照合=070_080|ge10|normal）の過去実績はN=88・的中率9.091%・回収率131.8%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.65,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 7番ツガルミサキ（モデル1位・スコア 0.663・past_form 0.727≥0.65）。 出走 10 頭・一般。レース名「帯広5R 稲ちゃん結婚記念祝ｂｙ福松Ｃ１−１（３４０万円未満）」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 7番ツガルミサキ（スコア0.663・past_form 0.727）、2位 10番ホクセイモモコ（スコア0.660・past_form 0.662）、3位 3番ガッツワン（スコア0.646・past_form 0.743）。 主買い目は三連単三頭ボックス6点（7番ツガルミサキ−10番ホクセイモモコ−3番ガッツワンの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.140、馬番+0.097、馬体重×ソリ+0.064。 自信度 0.65（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=wet・normal／照合=070_080|ge10|wet|normal）の過去実績はN=33・的中率9.091%・回収率138.99%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.7,
+    "confidence": 0.65,
     "confidence_label": "中",
-    "confidence_source": "070_080|ge10|normal",
+    "confidence_source": "070_080|ge10|wet|normal",
     "confidence_stats": {
-     "N": 88,
+     "N": 33,
      "hit_pct": 9.091,
-     "ROI_pct": 131.8
+     "ROI_pct": 138.99
     },
     "confidence_bands": {
      "pf": "070_080",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R05",
@@ -3933,7 +5778,7 @@
     "race_no": 5,
     "race_name": "帯広5R 稲ちゃん結婚記念祝ｂｙ福松Ｃ１−１（３４０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -3951,8 +5796,8 @@
      "horse_id": "20261108-R05-07",
      "umaban": 7,
      "name": "ツガルミサキ",
-     "score": 0.6644,
-     "finish_score": 0.6644,
+     "score": 0.6626,
+     "finish_score": 0.6626,
      "past_form": 0.7266,
      "past_form_ok": true,
      "horse_streak": 0,
@@ -3960,28 +5805,28 @@
      "top_contribs": [
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0748,
+       "contrib": 0.1398,
        "value": 0.7266
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0707,
-       "value": 0.7972
-      },
-      {
        "name": "umaban",
-       "contrib": 0.0533,
+       "contrib": 0.0973,
        "value": 7
       },
       {
        "name": "body_x_sled",
-       "contrib": 0.0509,
+       "contrib": 0.0639,
        "value": 655200
       },
       {
        "name": "last5_fin_std",
-       "contrib": 0.0415,
+       "contrib": 0.0385,
        "value": 0.0803
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0239,
+       "value": 0.7782
       }
      ]
     },
@@ -3989,26 +5834,26 @@
      {
       "umaban": 7,
       "name": "ツガルミサキ",
-      "score": 0.6644,
+      "score": 0.6626,
       "past_form": 0.7266
+     },
+     {
+      "umaban": 10,
+      "name": "ホクセイモモコ",
+      "score": 0.6605,
+      "past_form": 0.6621
      },
      {
       "umaban": 3,
       "name": "ガッツワン",
-      "score": 0.6423,
+      "score": 0.6461,
       "past_form": 0.7434
-     },
-     {
-      "umaban": 9,
-      "name": "クリスタルデビル",
-      "score": 0.5577,
-      "past_form": 0.6918
      }
     ],
     "box_horses": [
      "7番ツガルミサキ",
-     "3番ガッツワン",
-     "9番クリスタルデビル"
+     "10番ホクセイモモコ",
+     "3番ガッツワン"
     ],
     "feature_names": [
      "est_moist",
@@ -4041,30 +5886,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     7,
+     10,
+     3
+    ],
+    [
+     7,
+     3,
+     10
+    ],
+    [
+     10,
+     7,
+     3
+    ],
+    [
+     10,
+     3,
+     7
+    ],
+    [
+     3,
+     7,
+     10
+    ],
+    [
+     3,
+     10,
+     7
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R06",
    "race_date": "2026-11-08",
    "race_no": 6,
    "race_name": "帯広6R 爆誕！ムラトミ４３周年記念２歳Ｂ−５",
+   "scheduled_start_at": "2026-11-08T17:20:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.801,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 6番エスペランサ（モデル1位・スコア 0.642・past_form 0.657≥0.65）。 出走 10 頭・一般。レース名「帯広6R 爆誕！ムラトミ４３周年記念２歳Ｂ−５」。 上位3頭: 1位 6番エスペランサ（スコア0.642・past_form 0.657）、2位 8番ロキノクラン（スコア0.632・past_form 0.658）、3位 4番ホクセイモモカ（スコア0.563・past_form 0.633）。 主買い目は三連単三頭ボックス6点（6番エスペランサ−8番ロキノクラン−4番ホクセイモモカの全順列）。 軸スコアへの主な正寄与: ソリ荷重+0.064、過去着順平均+0.051、直近5走着順平均+0.043。 自信度 0.80（高）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=unk・normal／照合=065_070|ge10|normal）の過去実績はN=135・的中率6.667%・回収率232.78%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.744,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 9番クリボー（モデル1位・スコア 0.707・past_form 0.676≥0.65）。 出走 10 頭・一般。レース名「帯広6R 爆誕！ムラトミ４３周年記念２歳Ｂ−５」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 9番クリボー（スコア0.707・past_form 0.676）、2位 8番ロキノクラン（スコア0.668・past_form 0.658）、3位 6番エスペランサ（スコア0.659・past_form 0.657）。 主買い目は三連単三頭ボックス6点（9番クリボー−8番ロキノクラン−6番エスペランサの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、過去着順平均+0.109、せん馬+0.079。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.801,
-    "confidence_label": "高",
-    "confidence_source": "065_070|ge10|normal",
+    "confidence": 0.744,
+    "confidence_label": "中",
+    "confidence_source": "065_070|ge10|wet|normal",
     "confidence_stats": {
-     "N": 135,
-     "hit_pct": 6.667,
-     "ROI_pct": 232.78
+     "N": 62,
+     "hit_pct": 4.839,
+     "ROI_pct": 304.73
     },
     "confidence_bands": {
      "pf": "065_070",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R06",
@@ -4072,7 +5980,7 @@
     "race_no": 6,
     "race_name": "帯広6R 爆誕！ムラトミ４３周年記念２歳Ｂ−５",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4087,67 +5995,67 @@
     "gate_skip": false,
     "gate_reason": null,
     "axis": {
-     "horse_id": "20261108-R06-06",
-     "umaban": 6,
-     "name": "エスペランサ",
-     "score": 0.6423,
-     "finish_score": 0.6423,
-     "past_form": 0.6565,
+     "horse_id": "20261108-R06-09",
+     "umaban": 9,
+     "name": "クリボー",
+     "score": 0.7074,
+     "finish_score": 0.7074,
+     "past_form": 0.6759,
      "past_form_ok": true,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "sled_weight",
-       "contrib": 0.0643,
-       "value": 520
+       "name": "umaban",
+       "contrib": 0.2117,
+       "value": 9
       },
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0512,
-       "value": 0.6565
+       "contrib": 0.109,
+       "value": 0.6759
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0426,
-       "value": 0.6806
+       "name": "sex_gelding",
+       "contrib": 0.0789,
+       "value": 1
       },
       {
-       "name": "horse_win_rate_10",
-       "contrib": 0.0358,
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0334,
+       "value": 0.8889
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
        "value": 0
-      },
-      {
-       "name": "moist_x_body",
-       "contrib": 0.029,
-       "value": 1436.8
       }
      ]
     },
     "top3": [
      {
-      "umaban": 6,
-      "name": "エスペランサ",
-      "score": 0.6423,
-      "past_form": 0.6565
+      "umaban": 9,
+      "name": "クリボー",
+      "score": 0.7074,
+      "past_form": 0.6759
      },
      {
       "umaban": 8,
       "name": "ロキノクラン",
-      "score": 0.6324,
+      "score": 0.6679,
       "past_form": 0.6578
      },
      {
-      "umaban": 4,
-      "name": "ホクセイモモカ",
-      "score": 0.5633,
-      "past_form": 0.6333
+      "umaban": 6,
+      "name": "エスペランサ",
+      "score": 0.659,
+      "past_form": 0.6565
      }
     ],
     "box_horses": [
-     "6番エスペランサ",
+     "9番クリボー",
      "8番ロキノクラン",
-     "4番ホクセイモモカ"
+     "6番エスペランサ"
     ],
     "feature_names": [
      "est_moist",
@@ -4180,30 +6088,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     8,
+     6
+    ],
+    [
+     9,
+     6,
+     8
+    ],
+    [
+     8,
+     9,
+     6
+    ],
+    [
+     8,
+     6,
+     9
+    ],
+    [
+     6,
+     9,
+     8
+    ],
+    [
+     6,
+     8,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R07",
    "race_date": "2026-11-08",
    "race_no": 7,
    "race_name": "帯広7R 第45回 十勝産駒特別２歳産地限定",
+   "scheduled_start_at": "2026-11-08T17:55:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.748,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 1番キタサカエヒトミ（モデル1位・スコア 0.613・past_form 0.853≥0.65）。 出走 10 頭・一般。レース名「帯広7R 第45回 十勝産駒特別２歳産地限定」。 上位3頭: 1位 1番キタサカエヒトミ（スコア0.613・past_form 0.853）、2位 8番モンスターオウキ（スコア0.577・past_form 0.609）、3位 3番ハマカムイ（スコア0.574・past_form 0.725）。 主買い目は三連単三頭ボックス6点（1番キタサカエヒトミ−8番モンスターオウキ−3番ハマカムイの全順列）。 軸スコアへの主な正寄与: 枠番+0.136、過去着順平均+0.118、直近5走着順平均+0.076。 自信度 0.75（中）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=unk・normal／照合=080_plus|ge10|normal）の過去実績はN=44・的中率6.818%・回収率194.81%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.65,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 10番アオニシキ（モデル1位・スコア 0.656・past_form 0.701≥0.65）。 出走 10 頭・一般。レース名「帯広7R 第45回 十勝産駒特別２歳産地限定」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 10番アオニシキ（スコア0.656・past_form 0.701）、2位 1番キタサカエヒトミ（スコア0.645・past_form 0.853）、3位 4番ビエイキャノン（スコア0.608・past_form 0.742）。 主買い目は三連単三頭ボックス6点（10番アオニシキ−1番キタサカエヒトミ−4番ビエイキャノンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.124、年齢+0.032。 自信度 0.65（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=wet・normal／照合=070_080|ge10|wet|normal）の過去実績はN=33・的中率9.091%・回収率138.99%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.748,
+    "confidence": 0.65,
     "confidence_label": "中",
-    "confidence_source": "080_plus|ge10|normal",
+    "confidence_source": "070_080|ge10|wet|normal",
     "confidence_stats": {
-     "N": 44,
-     "hit_pct": 6.818,
-     "ROI_pct": 194.81
+     "N": 33,
+     "hit_pct": 9.091,
+     "ROI_pct": 138.99
     },
     "confidence_bands": {
-     "pf": "080_plus",
+     "pf": "070_080",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R07",
@@ -4211,7 +6182,7 @@
     "race_no": 7,
     "race_name": "帯広7R 第45回 十勝産駒特別２歳産地限定",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4226,67 +6197,67 @@
     "gate_skip": false,
     "gate_reason": null,
     "axis": {
-     "horse_id": "20261108-R07-01",
-     "umaban": 1,
-     "name": "キタサカエヒトミ",
-     "score": 0.6128,
-     "finish_score": 0.6128,
-     "past_form": 0.8532,
+     "horse_id": "20261108-R07-10",
+     "umaban": 10,
+     "name": "アオニシキ",
+     "score": 0.6557,
+     "finish_score": 0.6557,
+     "past_form": 0.7006,
      "past_form_ok": true,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "gate",
-       "contrib": 0.1356,
-       "value": 1
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
       },
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.1176,
-       "value": 0.8532
-      },
-      {
-       "name": "last5_fin_mean",
-       "contrib": 0.0761,
-       "value": 0.8194
-      },
-      {
-       "name": "sled_weight",
-       "contrib": 0.0442,
-       "value": 540
+       "contrib": 0.124,
+       "value": 0.7006
       },
       {
        "name": "age",
-       "contrib": 0.0228,
+       "contrib": 0.0315,
        "value": 2
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0175,
+       "value": 0.7037
+      },
+      {
+       "name": "moist_x_sled",
+       "contrib": 0.015,
+       "value": 1073.5
       }
      ]
     },
     "top3": [
      {
+      "umaban": 10,
+      "name": "アオニシキ",
+      "score": 0.6557,
+      "past_form": 0.7006
+     },
+     {
       "umaban": 1,
       "name": "キタサカエヒトミ",
-      "score": 0.6128,
+      "score": 0.6447,
       "past_form": 0.8532
      },
      {
-      "umaban": 8,
-      "name": "モンスターオウキ",
-      "score": 0.5766,
-      "past_form": 0.6091
-     },
-     {
-      "umaban": 3,
-      "name": "ハマカムイ",
-      "score": 0.5742,
-      "past_form": 0.725
+      "umaban": 4,
+      "name": "ビエイキャノン",
+      "score": 0.6083,
+      "past_form": 0.7424
      }
     ],
     "box_horses": [
+     "10番アオニシキ",
      "1番キタサカエヒトミ",
-     "8番モンスターオウキ",
-     "3番ハマカムイ"
+     "4番ビエイキャノン"
     ],
     "feature_names": [
      "est_moist",
@@ -4319,30 +6290,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     1,
+     4
+    ],
+    [
+     10,
+     4,
+     1
+    ],
+    [
+     1,
+     10,
+     4
+    ],
+    [
+     1,
+     4,
+     10
+    ],
+    [
+     4,
+     10,
+     1
+    ],
+    [
+     4,
+     1,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R08",
    "race_date": "2026-11-08",
    "race_no": 8,
    "race_name": "帯広8R 第２回せーのがさん杯Ｂ４−２（４３０万円未満）",
-   "recommended": true,
-   "confidence": 0.801,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 3番ブラックバカラ（モデル1位・スコア 0.663・past_form 0.676≥0.65）。 出走 10 頭・一般。レース名「帯広8R 第２回せーのがさん杯Ｂ４−２（４３０万円未満）」。 上位3頭: 1位 3番ブラックバカラ（スコア0.663・past_form 0.676）、2位 8番ミスベンティ（スコア0.584・past_form 0.640）、3位 6番アグライア（スコア0.551・past_form 0.618）。 主買い目は三連単三頭ボックス6点（3番ブラックバカラ−8番ミスベンティ−6番アグライアの全順列）。 軸スコアへの主な正寄与: 直近5走着順平均+0.081、枠番+0.068、過去着順平均+0.058。 自信度 0.80（高）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=unk・normal／照合=065_070|ge10|normal）の過去実績はN=135・的中率6.667%・回収率232.78%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "scheduled_start_at": "2026-11-08T18:30:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.581 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番イチマツ（モデル1位・スコア 0.652・past_form 0.581<0.65）。 出走 10 頭・一般。レース名「帯広8R 第２回せーのがさん杯Ｂ４−２（４３０万円未満）」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 10番イチマツ（スコア0.652・past_form 0.581）、2位 3番ブラックバカラ（スコア0.605・past_form 0.676）、3位 8番ミスベンティ（スコア0.582・past_form 0.640）。 主買い目は三連単三頭ボックス6点（10番イチマツ−3番ブラックバカラ−8番ミスベンティの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、馬体重×ソリ+0.055、過去着順平均+0.051。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
-    "recommended": true,
-    "confidence": 0.801,
-    "confidence_label": "高",
-    "confidence_source": "065_070|ge10|normal",
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
     "confidence_stats": {
-     "N": 135,
-     "hit_pct": 6.667,
-     "ROI_pct": 232.78
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
     },
     "confidence_bands": {
-     "pf": "065_070",
+     "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R08",
@@ -4350,7 +6384,7 @@
     "race_no": 8,
     "race_name": "帯広8R 第２回せーのがさん杯Ｂ４−２（４３０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4362,70 +6396,70 @@
     ],
     "ticket_label": "三連単三頭ボックス6点",
     "plus_hjz": true,
-    "gate_skip": false,
-    "gate_reason": null,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.581 < 0.65（参考：買い目は表示）",
     "axis": {
-     "horse_id": "20261108-R08-03",
-     "umaban": 3,
-     "name": "ブラックバカラ",
-     "score": 0.6631,
-     "finish_score": 0.6631,
-     "past_form": 0.676,
-     "past_form_ok": true,
+     "horse_id": "20261108-R08-10",
+     "umaban": 10,
+     "name": "イチマツ",
+     "score": 0.6524,
+     "finish_score": 0.6524,
+     "past_form": 0.5809,
+     "past_form_ok": false,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0814,
-       "value": 0.8417
-      },
-      {
-       "name": "gate",
-       "contrib": 0.0677,
-       "value": 3
-      },
-      {
-       "name": "horse_prev_fin_mean",
-       "contrib": 0.0577,
-       "value": 0.676
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
       },
       {
        "name": "body_x_sled",
-       "contrib": 0.0391,
-       "value": 636740
+       "contrib": 0.0551,
+       "value": 643860
       },
       {
-       "name": "last5_fin_std",
-       "contrib": 0.0231,
-       "value": 0.15
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0514,
+       "value": 0.5809
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "est_moist",
+       "contrib": 0.0136,
+       "value": 1.9
       }
      ]
     },
     "top3": [
      {
+      "umaban": 10,
+      "name": "イチマツ",
+      "score": 0.6524,
+      "past_form": 0.5809
+     },
+     {
       "umaban": 3,
       "name": "ブラックバカラ",
-      "score": 0.6631,
+      "score": 0.6049,
       "past_form": 0.676
      },
      {
       "umaban": 8,
       "name": "ミスベンティ",
-      "score": 0.5838,
+      "score": 0.5822,
       "past_form": 0.6397
-     },
-     {
-      "umaban": 6,
-      "name": "アグライア",
-      "score": 0.5515,
-      "past_form": 0.6177
      }
     ],
     "box_horses": [
+     "10番イチマツ",
      "3番ブラックバカラ",
-     "8番ミスベンティ",
-     "6番アグライア"
+     "8番ミスベンティ"
     ],
     "feature_names": [
      "est_moist",
@@ -4458,16 +6492,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     3,
+     8
+    ],
+    [
+     10,
+     8,
+     3
+    ],
+    [
+     3,
+     10,
+     8
+    ],
+    [
+     3,
+     8,
+     10
+    ],
+    [
+     8,
+     10,
+     3
+    ],
+    [
+     8,
+     3,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R09",
    "race_date": "2026-11-08",
    "race_no": 9,
    "race_name": "帯広9R 的野美青天才二十一歳生誕祭Ｂ２−４（６７０万円未満）",
+   "scheduled_start_at": "2026-11-08T19:00:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.493 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 3番クロカゲパワー（モデル1位・スコア 0.526・past_form 0.493<0.65）。 出走 8 頭・一般。レース名「帯広9R 的野美青天才二十一歳生誕祭Ｂ２−４（６７０万円未満）」。 上位3頭: 1位 3番クロカゲパワー（スコア0.526・past_form 0.493）、2位 5番ツカサマーチ（スコア0.491・past_form 0.424）、3位 7番フジノボーイ（スコア0.487・past_form 0.514）。 主買い目は三連単三頭ボックス6点（3番クロカゲパワー−5番ツカサマーチ−7番フジノボーイの全順列）。 軸スコアへの主な正寄与: 枠番+0.068、馬体重×ソリ+0.058、直近5走着順平均+0.041。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=le8・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.514 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 7番フジノボーイ（モデル1位・スコア 0.511・past_form 0.514<0.65）。 出走 8 頭・一般。レース名「帯広9R 的野美青天才二十一歳生誕祭Ｂ２−４（６７０万円未満）」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 7番フジノボーイ（スコア0.511・past_form 0.514）、2位 6番ホクセイマジェスタ（スコア0.494・past_form 0.368）、3位 3番クロカゲパワー（スコア0.468・past_form 0.493）。 主買い目は三連単三頭ボックス6点（7番フジノボーイ−6番ホクセイマジェスタ−3番クロカゲパワーの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.143、馬番+0.097、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=le8・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -4481,7 +6578,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "le8",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R09",
@@ -4489,7 +6586,7 @@
     "race_no": 9,
     "race_name": "帯広9R 的野美青天才二十一歳生誕祭Ｂ２−４（６７０万円未満）",
     "field_size": 8,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4502,69 +6599,69 @@
     "ticket_label": "三連単三頭ボックス6点",
     "plus_hjz": true,
     "gate_skip": true,
-    "gate_reason": "軸の過去着順平均 0.493 < 0.65（参考：買い目は表示）",
+    "gate_reason": "軸の過去着順平均 0.514 < 0.65（参考：買い目は表示）",
     "axis": {
-     "horse_id": "20261108-R09-03",
-     "umaban": 3,
-     "name": "クロカゲパワー",
-     "score": 0.5256,
-     "finish_score": 0.5256,
-     "past_form": 0.493,
+     "horse_id": "20261108-R09-07",
+     "umaban": 7,
+     "name": "フジノボーイ",
+     "score": 0.5106,
+     "finish_score": 0.5106,
+     "past_form": 0.5143,
      "past_form_ok": false,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "gate",
-       "contrib": 0.0677,
-       "value": 3
-      },
-      {
        "name": "body_x_sled",
-       "contrib": 0.0583,
-       "value": 666650
+       "contrib": 0.143,
+       "value": 757100
       },
       {
-       "name": "last5_fin_mean",
-       "contrib": 0.0406,
-       "value": 0.6722
-      },
-      {
-       "name": "moist_x_sled",
-       "contrib": 0.0386,
-       "value": 1072
+       "name": "umaban",
+       "contrib": 0.0973,
+       "value": 7
       },
       {
        "name": "horse_win_rate_10",
-       "contrib": 0.0358,
+       "contrib": 0.0364,
        "value": 0
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0162,
+       "value": 0.1693
+      },
+      {
+       "name": "field",
+       "contrib": 0.0158,
+       "value": 8
       }
      ]
     },
     "top3": [
      {
-      "umaban": 3,
-      "name": "クロカゲパワー",
-      "score": 0.5256,
-      "past_form": 0.493
-     },
-     {
-      "umaban": 5,
-      "name": "ツカサマーチ",
-      "score": 0.4909,
-      "past_form": 0.4239
-     },
-     {
       "umaban": 7,
       "name": "フジノボーイ",
-      "score": 0.4869,
+      "score": 0.5106,
       "past_form": 0.5143
+     },
+     {
+      "umaban": 6,
+      "name": "ホクセイマジェスタ",
+      "score": 0.4939,
+      "past_form": 0.3683
+     },
+     {
+      "umaban": 3,
+      "name": "クロカゲパワー",
+      "score": 0.4684,
+      "past_form": 0.493
      }
     ],
     "box_horses": [
-     "3番クロカゲパワー",
-     "5番ツカサマーチ",
-     "7番フジノボーイ"
+     "7番フジノボーイ",
+     "6番ホクセイマジェスタ",
+     "3番クロカゲパワー"
     ],
     "feature_names": [
      "est_moist",
@@ -4597,16 +6694,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     7,
+     6,
+     3
+    ],
+    [
+     7,
+     3,
+     6
+    ],
+    [
+     6,
+     7,
+     3
+    ],
+    [
+     6,
+     3,
+     7
+    ],
+    [
+     3,
+     7,
+     6
+    ],
+    [
+     3,
+     6,
+     7
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R10",
    "race_date": "2026-11-08",
    "race_no": 10,
    "race_name": "帯広10R 櫻坂のラーメンクインＢ１−３（８５０万円未満）",
+   "scheduled_start_at": "2026-11-08T19:30:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.589 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 7番ホクショウレディー（モデル1位・スコア 0.548・past_form 0.589<0.65）。 出走 10 頭・一般。レース名「帯広10R 櫻坂のラーメンクインＢ１−３（８５０万円未満）」。 上位3頭: 1位 7番ホクショウレディー（スコア0.548・past_form 0.589）、2位 10番スーパーチヨコ（スコア0.494・past_form 0.403）、3位 9番コマサンリキ（スコア0.469・past_form 0.543）。 主買い目は三連単三頭ボックス6点（7番ホクショウレディー−10番スーパーチヨコ−9番コマサンリキの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.080、馬番+0.053、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.589 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 7番ホクショウレディー（モデル1位・スコア 0.570・past_form 0.589<0.65）。 出走 10 頭・一般。レース名「帯広10R 櫻坂のラーメンクインＢ１−３（８５０万円未満）」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 7番ホクショウレディー（スコア0.570・past_form 0.589）、2位 3番コーワレックス（スコア0.509・past_form 0.582）、3位 9番コマサンリキ（スコア0.497・past_form 0.543）。 主買い目は三連単三頭ボックス6点（7番ホクショウレディー−3番コーワレックス−9番コマサンリキの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.098、馬番+0.097、過去着順平均+0.056。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -4620,7 +6780,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R10",
@@ -4628,7 +6788,7 @@
     "race_no": 10,
     "race_name": "帯広10R 櫻坂のラーメンクインＢ１−３（８５０万円未満）",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4646,8 +6806,8 @@
      "horse_id": "20261108-R10-07",
      "umaban": 7,
      "name": "ホクショウレディー",
-     "score": 0.548,
-     "finish_score": 0.548,
+     "score": 0.5695,
+     "finish_score": 0.5695,
      "past_form": 0.5886,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -4655,28 +6815,28 @@
      "top_contribs": [
       {
        "name": "body_x_sled",
-       "contrib": 0.0795,
+       "contrib": 0.0984,
        "value": 699600
       },
       {
        "name": "umaban",
-       "contrib": 0.0533,
+       "contrib": 0.0973,
        "value": 7
       },
       {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.056,
+       "value": 0.5886
+      },
+      {
        "name": "horse_win_rate_10",
-       "contrib": 0.0358,
+       "contrib": 0.0364,
        "value": 0
       },
       {
-       "name": "body_weight",
-       "contrib": 0.0342,
-       "value": 1060
-      },
-      {
-       "name": "moist_x_sled",
-       "contrib": 0.0341,
-       "value": 1056
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
       }
      ]
     },
@@ -4684,25 +6844,25 @@
      {
       "umaban": 7,
       "name": "ホクショウレディー",
-      "score": 0.548,
+      "score": 0.5695,
       "past_form": 0.5886
      },
      {
-      "umaban": 10,
-      "name": "スーパーチヨコ",
-      "score": 0.494,
-      "past_form": 0.4031
+      "umaban": 3,
+      "name": "コーワレックス",
+      "score": 0.5089,
+      "past_form": 0.5825
      },
      {
       "umaban": 9,
       "name": "コマサンリキ",
-      "score": 0.4695,
+      "score": 0.4974,
       "past_form": 0.5427
      }
     ],
     "box_horses": [
      "7番ホクショウレディー",
-     "10番スーパーチヨコ",
+     "3番コーワレックス",
      "9番コマサンリキ"
     ],
     "feature_names": [
@@ -4736,30 +6896,93 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     7,
+     3,
+     9
+    ],
+    [
+     7,
+     9,
+     3
+    ],
+    [
+     3,
+     7,
+     9
+    ],
+    [
+     3,
+     9,
+     7
+    ],
+    [
+     9,
+     7,
+     3
+    ],
+    [
+     9,
+     3,
+     7
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R11",
    "race_date": "2026-11-08",
    "race_no": 11,
    "race_name": "帯広11R 第51回 クインカップ（ＢＧ３）４歳牝馬オープン別定",
+   "scheduled_start_at": "2026-11-08T20:00:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": true,
-   "confidence": 0.405,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 2番ホクセイヒラリ（モデル1位・スコア 0.600・past_form 0.696≥0.65）。 出走 10 頭・重賞（BG等）扱い。レース名「帯広11R 第51回 クインカップ（ＢＧ３）４歳牝馬オープン別定」。 上位3頭: 1位 2番ホクセイヒラリ（スコア0.600・past_form 0.696）、2位 9番プロサングエ（スコア0.588・past_form 0.720）、3位 10番ジェイセリーヌ（スコア0.571・past_form 0.776）。 主買い目は三連単三頭ボックス6点（2番ホクセイヒラリ−9番プロサングエ−10番ジェイセリーヌの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.137、直近5走着順平均+0.114、枠番+0.102。 自信度 0.41（やや低）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=unk・grade／照合=065_070|ge10|grade）の過去実績はN=2・的中率0%・回収率0%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "confidence": 0.426,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 10番ジェイセリーヌ（モデル1位・スコア 0.689・past_form 0.776≥0.65）。 出走 10 頭・重賞（BG等）扱い。レース名「帯広11R 第51回 クインカップ（ＢＧ３）４歳牝馬オープン別定」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 10番ジェイセリーヌ（スコア0.689・past_form 0.776）、2位 9番プロサングエ（スコア0.644・past_form 0.720）、3位 7番ホクショウサクラ（スコア0.613・past_form 0.704）。 主買い目は三連単三頭ボックス6点（10番ジェイセリーヌ−9番プロサングエ−7番ホクショウサクラの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.170、馬体重×ソリ+0.113。 自信度 0.43（やや低）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=wet・grade／照合=070_080|ge10|wet|grade）の過去実績はN=1・的中率0%・回収率0%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": true,
-    "confidence": 0.405,
+    "confidence": 0.426,
     "confidence_label": "やや低",
-    "confidence_source": "065_070|ge10|grade",
+    "confidence_source": "070_080|ge10|wet|grade",
     "confidence_stats": {
-     "N": 2,
+     "N": 1,
      "hit_pct": 0,
      "ROI_pct": 0
     },
     "confidence_bands": {
-     "pf": "065_070",
+     "pf": "070_080",
      "field": "ge10",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "grade"
     },
     "race_id": "20261108-R11",
@@ -4767,7 +6990,7 @@
     "race_no": 11,
     "race_name": "帯広11R 第51回 クインカップ（ＢＧ３）４歳牝馬オープン別定",
     "field_size": 10,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": true,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4782,67 +7005,67 @@
     "gate_skip": false,
     "gate_reason": null,
     "axis": {
-     "horse_id": "20261108-R11-02",
-     "umaban": 2,
-     "name": "ホクセイヒラリ",
-     "score": 0.5999,
-     "finish_score": 0.5999,
-     "past_form": 0.6964,
+     "horse_id": "20261108-R11-10",
+     "umaban": 10,
+     "name": "ジェイセリーヌ",
+     "score": 0.689,
+     "finish_score": 0.689,
+     "past_form": 0.7761,
      "past_form_ok": true,
      "horse_streak": 0,
      "jockey_streak": 0,
      "top_contribs": [
       {
-       "name": "body_x_sled",
-       "contrib": 0.1367,
-       "value": 788670
-      },
-      {
-       "name": "last5_fin_mean",
-       "contrib": 0.1136,
-       "value": 0.975
-      },
-      {
-       "name": "gate",
-       "contrib": 0.1017,
-       "value": 2
-      },
-      {
-       "name": "body_weight",
-       "contrib": 0.069,
-       "value": 1143
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
       },
       {
        "name": "horse_prev_fin_mean",
-       "contrib": 0.0646,
-       "value": 0.6964
+       "contrib": 0.1698,
+       "value": 0.7761
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.1128,
+       "value": 718080
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
+       "name": "sled_change_prev",
+       "contrib": 0.0296,
+       "value": 50
       }
      ]
     },
     "top3": [
      {
-      "umaban": 2,
-      "name": "ホクセイヒラリ",
-      "score": 0.5999,
-      "past_form": 0.6964
+      "umaban": 10,
+      "name": "ジェイセリーヌ",
+      "score": 0.689,
+      "past_form": 0.7761
      },
      {
       "umaban": 9,
       "name": "プロサングエ",
-      "score": 0.5877,
+      "score": 0.6442,
       "past_form": 0.7202
      },
      {
-      "umaban": 10,
-      "name": "ジェイセリーヌ",
-      "score": 0.5706,
-      "past_form": 0.7761
+      "umaban": 7,
+      "name": "ホクショウサクラ",
+      "score": 0.6127,
+      "past_form": 0.704
      }
     ],
     "box_horses": [
-     "2番ホクセイヒラリ",
+     "10番ジェイセリーヌ",
      "9番プロサングエ",
-     "10番ジェイセリーヌ"
+     "7番ホクショウサクラ"
     ],
     "feature_names": [
      "est_moist",
@@ -4875,16 +7098,79 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     9,
+     10,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   },
   {
    "race_id": "20261108-R12",
    "race_date": "2026-11-08",
    "race_no": 12,
    "race_name": "帯広12R Ｂ３−６（５５０万円未満）",
+   "scheduled_start_at": "2026-11-08T20:45:00+09:00",
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
    "recommended": false,
    "confidence": 0.25,
-   "selection_comment": "【見送り】軸の過去着順平均 0.580 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 3番ヤマノドラゴン（モデル1位・スコア 0.650・past_form 0.580<0.65）。 出走 9 頭・一般。レース名「帯広12R Ｂ３−６（５５０万円未満）」。 上位3頭: 1位 3番ヤマノドラゴン（スコア0.650・past_form 0.580）、2位 8番サカノカイリキ（スコア0.509・past_form 0.482）、3位 7番パワーハンター（スコア0.464・past_form 0.437）。 主買い目は三連単三頭ボックス6点（3番ヤマノドラゴン−8番サカノカイリキ−7番パワーハンターの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.099、枠番+0.068、馬体重+0.061。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=unk・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【見送り】軸の過去着順平均 0.580 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 3番ヤマノドラゴン（モデル1位・スコア 0.583・past_form 0.580<0.65）。 出走 9 頭・一般。レース名「帯広12R Ｂ３−６（５５０万円未満）」。 馬場水分 1.9%（帯=wet）。 上位3頭: 1位 3番ヤマノドラゴン（スコア0.583・past_form 0.580）、2位 1番クニキヨタイショウ（スコア0.497・past_form 0.424）、3位 4番ショコラペガサス（スコア0.492・past_form 0.531）。 主買い目は三連単三頭ボックス6点（3番ヤマノドラゴン−1番クニキヨタイショウ−4番ショコラペガサスの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.122、枠番+0.111、過去着順平均+0.051。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
    "selection_meta": {
     "recommended": false,
     "confidence": 0.25,
@@ -4898,7 +7184,7 @@
     "confidence_bands": {
      "pf": "lt065",
      "field": "eq9",
-     "moist": "unk",
+     "moist": "wet",
      "grade": "normal"
     },
     "race_id": "20261108-R12",
@@ -4906,7 +7192,7 @@
     "race_no": 12,
     "race_name": "帯広12R Ｂ３−６（５５０万円未満）",
     "field_size": 9,
-    "track_moisture": null,
+    "track_moisture": 1.9,
     "is_grade": false,
     "memrobo_axis": false,
     "past_form_threshold": 0.65,
@@ -4924,8 +7210,8 @@
      "horse_id": "20261108-R12-03",
      "umaban": 3,
      "name": "ヤマノドラゴン",
-     "score": 0.6502,
-     "finish_score": 0.6502,
+     "score": 0.5825,
+     "finish_score": 0.5825,
      "past_form": 0.5799,
      "past_form_ok": false,
      "horse_streak": 0,
@@ -4933,28 +7219,28 @@
      "top_contribs": [
       {
        "name": "body_x_sled",
-       "contrib": 0.0994,
+       "contrib": 0.1225,
        "value": 730600
       },
       {
        "name": "gate",
-       "contrib": 0.0677,
+       "contrib": 0.1106,
        "value": 3
       },
       {
-       "name": "body_weight",
-       "contrib": 0.061,
-       "value": 1124
-      },
-      {
-       "name": "last5_fin_mean",
-       "contrib": 0.0426,
-       "value": 0.6806
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0507,
+       "value": 0.5799
       },
       {
        "name": "last5_fin_std",
-       "contrib": 0.0397,
+       "contrib": 0.0369,
        "value": 0.087
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
       }
      ]
     },
@@ -4962,26 +7248,26 @@
      {
       "umaban": 3,
       "name": "ヤマノドラゴン",
-      "score": 0.6502,
+      "score": 0.5825,
       "past_form": 0.5799
      },
      {
-      "umaban": 8,
-      "name": "サカノカイリキ",
-      "score": 0.5094,
-      "past_form": 0.4823
+      "umaban": 1,
+      "name": "クニキヨタイショウ",
+      "score": 0.4968,
+      "past_form": 0.4245
      },
      {
-      "umaban": 7,
-      "name": "パワーハンター",
-      "score": 0.4644,
-      "past_form": 0.4365
+      "umaban": 4,
+      "name": "ショコラペガサス",
+      "score": 0.4925,
+      "past_form": 0.5306
      }
     ],
     "box_horses": [
      "3番ヤマノドラゴン",
-     "8番サカノカイリキ",
-     "7番パワーハンター"
+     "1番クニキヨタイショウ",
+     "4番ショコラペガサス"
     ],
     "feature_names": [
      "est_moist",
@@ -5014,7 +7300,65 @@
      "jockey_win_rate_100",
      "is_grade"
     ]
-   }
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     3,
+     1,
+     4
+    ],
+    [
+     3,
+     4,
+     1
+    ],
+    [
+     1,
+     3,
+     4
+    ],
+    [
+     1,
+     4,
+     3
+    ],
+    [
+     4,
+     3,
+     1
+    ],
+    [
+     4,
+     1,
+     3
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 1.9,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 1.9,
+    "feature_estimate_pct": 1.9,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261108T064209JST-5e5a68d2cf47"
   }
  ]
 }

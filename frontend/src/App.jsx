@@ -1,11 +1,11 @@
 import { lazy, Suspense, useState } from 'react'
-import { forecastReady } from './forecastReady.js'
+import SnapshotInfo from './components/SnapshotInfo.jsx'
 import DataBanner from './components/DataBanner.jsx'
 import DatePicker from './components/DatePicker.jsx'
 import { DEFAULT_DATE, dayInfo } from './lib/paginate.js'
 import { DATA } from './dataSource.js'
-const RaceList=lazy(()=>Promise.all([import('./components/RaceList.jsx'),forecastReady()]).then(([view])=>view))
-const ConfidenceRank=lazy(()=>Promise.all([import('./components/ConfidenceRank.jsx'),forecastReady()]).then(([view])=>view))
+const RaceList=lazy(()=>import('./components/RaceList.jsx'))
+const ConfidenceRank=lazy(()=>import('./components/ConfidenceRank.jsx'))
 const ConfidenceResults=lazy(()=>import('./components/ConfidenceResults.jsx'))
 
 export const VIEWS = new Set(['races', 'confidence', 'confidence-results'])
@@ -44,7 +44,9 @@ export default function App() {
         </nav>
         <p className="auto-note">推奨馬・買い目・公式結果を、日付ごとに確認できます。</p>
       </header>
+      <SnapshotInfo date={date} view={view}/>
       <main>
+
         <Suspense fallback={<p className="loading" role="status">表示を読み込んでいます…</p>}>
         {view === 'confidence-results' ? (
           <ConfidenceResults date={date} />

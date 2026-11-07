@@ -18,14 +18,14 @@ try {
   const { default: App } = await server.ssrLoadModule('/src/App.jsx')
   const { default: ConfidenceRank } = await server.ssrLoadModule('/src/components/ConfidenceRank.jsx')
   const { DATES, dayInfo } = await server.ssrLoadModule('/src/lib/paginate.js')
-  const { predict } = await server.ssrLoadModule('/src/feedback.js')
+  const {snapshotRows} = await server.ssrLoadModule('/src/predictionSnapshot.js')
   const { buildRaceRecommendation } = await server.ssrLoadModule('/src/selectionReason.js')
-  const ui = { App, ConfidenceRank, DATES, dayInfo, predict, buildRaceRecommendation, createElement, renderToStaticMarkup }
+  const ui = { App, ConfidenceRank, DATES, dayInfo, buildRaceRecommendation, createElement, renderToStaticMarkup }
   const render = (Component, props) => ui.renderToStaticMarkup(ui.createElement(Component, props))
   let checked = 0
   for (const date of [...ui.DATES, '2099-01-01']) {
     const expected = ui.dayInfo(date).races.map(race => ({
-      race, rec: ui.buildRaceRecommendation(race, ui.predict(race)),
+      race, rec: snapshotRows(date).find(r=>r.race_id===race.race_id) || {recommended:false},
     })).filter(({ rec }) => rec.recommended && rec.confidence >= 0.7)
       .sort((a, b) => b.rec.confidence - a.rec.confidence || a.race.race_no - b.race.race_no)
     const html = render(ui.ConfidenceRank, { date })
@@ -48,7 +48,7 @@ try {
   const legacy = await renderResolved(createElement(ui.App))
   assert.ok(!legacy.includes('日別まとめ'))
   assert.ok(!legacy.includes('confidence-rank'))
-  assert.ok(legacy.includes('race-card'), 'Removed summary URL falls back to normal races')
+  assert.ok(legacy.includes('recommendation-card'), 'Removed summary URL falls back to normal races')
   assert.ok(checked > 0, 'Fixture must include recommended races')
   console.log(`PASS: ${ui.DATES.length} available dates plus empty date; ${checked} recommendations, date isolation, confidence order, shared date picker and URL date.`)
 } finally {

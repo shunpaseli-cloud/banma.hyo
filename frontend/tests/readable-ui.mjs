@@ -93,5 +93,5 @@ try {
   assert.ok(css.includes('font-size: clamp(1.5rem, 1.1rem + 2vw, 2rem)'),'retain enlarged podium')
   const model=await readFile('src/data/learned_model.json')
   assert.equal(createHash('sha256').update(model).digest('hex'),'877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5')
-  console.log('PASS readable UI: 15 frozen comments, no numeric rationale, confidence/6 tickets/payouts retained, lazy disclosure open/close, top3/all finishes, post-start/pending separation, single result section, route/date preservation, unchanged model.')
+  console.log('PASS readable UI: current shared comments, no numeric rationale, confidence/6 tickets/payouts retained, lazy disclosure open/close, top3/all finishes, post-start/pending separation, single result section, route/date preservation, unchanged model.')
 }finally{await server.close()}
