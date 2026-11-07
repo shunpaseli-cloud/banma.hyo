@@ -1,3 +1,4 @@
+import {renderResolved} from './render-resolved.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
@@ -35,8 +36,9 @@ try {
     const html=renderToStaticMarkup(createElement(View,{date}))
     const confidences=[...html.matchAll(/data-confidence="([^"]+)"/g)].map(m=>+m[1])
     assert.deepEqual(confidences,[...rows].sort((a,b)=>b.confidence-a.confidence||a.race_no-b.race_no).map(r=>r.confidence))
-    assert.equal((html.match(/（100円）/g)||[]).length,rows.length*6)
-    assert.ok(html.includes('選定理由comment（保存原文）'))
+    assert.equal((html.match(/BOX6券を見る/g)||[]).length,rows.length)
+    assert.ok(!html.includes('class="ticket-grid"'),'ticket DOM is deferred until expanded')
+    assert.ok(html.includes('選定理由'))
     const summary=summarizeRows(rows)
     if(date==='2026-11-08'){
       assert.equal(summary.pending,7);assert.equal(summary.settled,0)
@@ -45,11 +47,11 @@ try {
       assert.ok(!html.includes('払戻 ¥0'), 'all-pending dates must not display zero returns')
     }else{
       assert.equal(summary.settled,rows.length);assert.equal(summary.pending,0)
-      assert.ok(html.includes('公式確定発表時刻'))
+      assert.ok(html.includes('照合の根拠・出典・学習用入力'))
     }
     if(date==='2026-11-06')assert.ok(html.includes('発走以後'))
     globalThis.location={search:`?view=confidence-results&date=${date}`}
-    const app=renderToStaticMarkup(createElement(App))
+    const app=await renderResolved(createElement(App))
     assert.ok(app.includes('class="confidence-results"'));assert.ok(app.includes('自信度順'))
     assert.ok(!app.includes('日別まとめ'))
   }

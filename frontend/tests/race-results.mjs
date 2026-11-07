@@ -52,7 +52,7 @@ try {
   const bad = structuredClone(bundled); bad.races['20261106-R01'].payouts.trifecta[0].yen = null
   assert.throws(() => api.validateResults(bad))
   const conf = renderToStaticMarkup(createElement(ConfidenceRank, { date: '2026-11-06' }))
-  assert.ok(conf.includes('実結果・保存予想との照合')); assert.ok(conf.includes('発走以後'))
+  assert.ok(conf.includes('公式結果')); assert.ok(conf.includes('発走以後'))
   console.log('PASS: 24R official results/payout consistency; unknown states remain unavailable; saved BOX settlement; missing/refunds/cancelled/partial; no training writes.')
   console.log('REFERENCE snapshot settlement (not actual purchases or proven pre-race):', JSON.stringify(totals))
 } finally { await server.close() }

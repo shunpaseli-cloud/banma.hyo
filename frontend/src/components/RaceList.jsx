@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { listRaces } from '../lib/paginate.js'
-import { accuracyReport, getWeights, resetModel } from '../feedback.js'
+import { accuracyReport, resetModel } from '../feedback.js'
 import { autoFetchAll } from '../scraper.js'
 import RaceCard from './RaceCard.jsx'
+import Disclosure from './Disclosure.jsx'
 const PAGE = 2
 export default function RaceList({ date }) {
   const [races, setRaces] = useState(() => listRaces({ limit: PAGE, offset: 0, date }))
@@ -23,15 +24,15 @@ export default function RaceList({ date }) {
     } catch (e) { console.error('[autoFetch]', e); setMsg('取得に失敗しました') }
     finally { setBusy(false) }
   }
-  const acc = accuracyReport(), w = getWeights()
+  const acc = accuracyReport()
   return (
     <section>
       <div className="count">{races.items.length} / {races.total} レース表示中</div>
-      <div className="stats">学習件数 {acc.n}・単勝的中率 {acc.win_rate ?? '—'}・複勝的中率 {acc.place_rate ?? '—'}
-        <br />重み: 牽引力 {w.weight_pull.toFixed(3)} / 近走3走 {(w.recent_form_3 ?? 0).toFixed(3)} / 近走5走 {(w.recent_form_5 ?? 0).toFixed(3)} / 枠 {w.gate.toFixed(3)} / 騎手 {w.jockey.toFixed(3)}
+      <Disclosure label="結果取得・学習ツール"><div className="stats">学習件数 {acc.n}・単勝的中率 {acc.win_rate ?? '—'}・複勝的中率 {acc.place_rate ?? '—'}
+
         <button className="more" disabled={busy} onClick={autoFetch}>結果を自動取得</button>
         {msg && <div className="count">{msg}</div>}
-        <button className="link" onClick={() => { resetModel(); setVer(v => v + 1) }}>学習をリセット</button></div>
+        <button className="link" onClick={() => { resetModel(); setVer(v => v + 1) }}>学習をリセット</button></div></Disclosure>
       {races.items.map(r => <RaceCard key={r.race_id + ver} race={r} fetchStatus={status[r.race_id]} onLearn={() => setVer(v => v + 1)} />)}
       {races.has_more
         ? <button className="more" onClick={more}>もっと見る</button>

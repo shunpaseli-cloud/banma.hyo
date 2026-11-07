@@ -1,3 +1,5 @@
+import Disclosure from './components/Disclosure.jsx'
+import SelectionComment from './components/SelectionComment.jsx'
 import { resultForRace } from './raceResults.js'
 import RaceResult from './components/RaceResult.jsx'
 import R from './data/results_from_pdf.json'
@@ -32,35 +34,17 @@ export function boxPicks(race, preds) {
   return { horses, tickets: tickets.map(t => t.map(p => U[p.horse_id])), idx }
 }
 // 主推奨: 三連単三頭ボックス6点（選定#2）。3連複5点は参考表示。
-export function TrioPayout({ race, preds }) {
-  const gate = axisGate(preds || [])
+export function TrioPayout({ race, preds, rec: suppliedRec, showReason = true }) {
   const box = boxPicks(race, preds || [])
   const { fuku, kinds } = picks(race, preds || [])
-  const fp = trioPayout(race.race_id)
-  const tp = trifectaPayout(race.race_id)
-  const label = rules.ticket?.label || '三連単三頭ボックス6点'
-  const stake = rules.ticket?.stakeYen || 600
-  const rec = buildRaceRecommendation(race, preds || [])
-  const confPct = Math.round((rec.confidence ?? 0) * 100)
-  return <div className="trio result-row" data-recommended={rec.recommended ? '1' : '0'} data-confidence={rec.confidence}>
-    <h3>{race.race_date} {race.race_no}R{rec.recommended ? ' · 推奨' : ' · 見送り'}
-      <span style={{ marginLeft: 8, fontWeight: 600, color: rec.recommended ? '#2A6B3C' : '#8A6A3A' }}>
-        自信度 {confPct}%（{rec.selection_meta?.confidence_label || '—'}）
-      </span>
-    </h3>
-    <p className="meta payout"><b>{label}</b>（¥{stake}・BOX{ (rules.ticket?.boxIdx||[0,1,2]).map(i=>i+1).join('') }・pf≥{rules.pastFormThreshold}・k={rules.streakPenaltyK}）
-      {' '}予想: {box.horses.length ? <span className="nowrap">{box.horses.join('−')}</span> : '—'}
-      {gate.skip && <span style={{color:'#D85A2A'}}>　⚠見送り推奨</span>}
-      <br />
-      三連単配当: {tp ? <><span className="nowrap">{tp.combo.join('−')}</span> <b>{(tp.payout ?? tp.yen)?.toLocaleString?.() ?? tp.payout}円</b></> : '未確定'}
-    </p>
-    <div className="selection-comment" style={{ border: rec.recommended ? '2px solid #2A6B3C' : '1px solid #C9B8A0', background: rec.recommended ? '#E8F3EA' : '#F3EEE4', padding: '8px 10px', margin: '6px 0', borderRadius: 4 }}>
-      <p className="meta" style={{ margin: 0 }}><b>選定理由</b>（confidence={rec.confidence.toFixed(2)}）</p>
-      <p className="meta" style={{ margin: '4px 0 0', whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{rec.selection_comment}</p>
-    </div>
-    <p className="meta payout"><small>参考・3連複5点: {fuku.map((c, i) => <span key={i} className="nowrap">[{kinds[i]}]{c.join('−')}　</span>)}
-      配当: {fp ? <><span className="nowrap">{fp.combo.join('−')}</span> <b>{fp.payout.toLocaleString()}円</b></> : '未確定'}</small></p>
+  const rec = suppliedRec || buildRaceRecommendation(race, preds || [])
+  const axis=rec.selection_meta?.axis
+  const partners=(rec.selection_meta?.top3||[]).filter(h=>Number(h.umaban)!==Number(axis?.umaban))
+  return <div className="race-recommendation" data-recommended={rec.recommended?'1':'0'} data-confidence={rec.confidence}>
+    <div className="horse-picks"><p><span>軸</span><b>{axis?`${axis.umaban}番 ${axis.name}`:'未保存'}</b></p><p><span>相手</span><b>{partners.map(h=>`${h.umaban}番 ${h.name}`).join(' ／ ')||'未保存'}</b></p></div>
+    {showReason && <SelectionComment rec={rec} />}
+    <Disclosure label="BOX6券を見る · 各100円／計600円"><ol className="ticket-grid">{box.tickets.map(t=><li key={t.join('-')}>{t.join('−')} <small>100円</small></li>)}</ol></Disclosure>
+    <Disclosure label="参考の三連複候補を見る"><ul>{fuku.map((c,i)=><li key={i}>{kinds[i]} · {c.join('−')}</li>)}</ul></Disclosure>
     <RaceResult race={race} />
-    {rules.paperRun?.enabled && <p className="meta"><small>紙運用/本番: {rules.paperRun.status}</small></p>}
   </div>
 }
