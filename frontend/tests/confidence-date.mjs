@@ -26,7 +26,7 @@ try {
   for (const date of [...ui.DATES, '2099-01-01']) {
     const expected = ui.dayInfo(date).races.map(race => ({
       race, rec: snapshotRows(date).find(r=>r.race_id===race.race_id) || {recommended:false},
-    })).filter(({ rec }) => rec.recommended && rec.confidence >= 0.7)
+    })).filter(({ rec }) => rec.recommended)
       .sort((a, b) => b.rec.confidence - a.rec.confidence || a.race.race_no - b.race.race_no)
     const html = render(ui.ConfidenceRank, { date })
     const cards = [...html.matchAll(/<article[^>]*data-confidence="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)]

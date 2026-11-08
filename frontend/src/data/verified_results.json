@@ -4,7 +4,8 @@
     "retrieved_at_asia_tokyo": "2026-11-07T11:48:39+09:00",
     "source": "NAR公式（単一出典）",
     "payout_unit_yen": 100,
-    "note": "表示・照合専用。予測入力や自動学習には使用しない。オッズ・人気は除外。"
+    "note": "表示・照合専用。予測入力や自動学習には使用しない。オッズ・人気は除外。",
+    "additional_result_source": "umanity result-only import;24final crosschecked NAR,12pending; incoming predictions ignored"
   },
   "dates": {
     "2026-11-06": {
@@ -25,7 +26,8 @@
       "race_name": "エゾノー杯Ｃ２－５",
       "start_time_jst": "14:20",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160101"
       ],
       "finishes": [
         {
@@ -219,7 +221,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160101",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160101",
+      "result_source_retrieved_at": "2026-11-08T11:56:30+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.8,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R02": {
       "race_date": "2026-11-06",
@@ -229,7 +242,8 @@
       "race_name": "豚丼賞２歳Ｄ－１",
       "start_time_jst": "14:50",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160102"
       ],
       "finishes": [
         {
@@ -418,7 +432,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160102",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160102",
+      "result_source_retrieved_at": "2026-11-08T11:56:31+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.8,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R03": {
       "race_date": "2026-11-06",
@@ -428,7 +453,8 @@
       "race_name": "石窯ピザ記念２歳Ｃ－６",
       "start_time_jst": "15:25",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160103"
       ],
       "finishes": [
         {
@@ -622,7 +648,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160103",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160103",
+      "result_source_retrieved_at": "2026-11-08T11:56:31+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.7,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R04": {
       "race_date": "2026-11-06",
@@ -632,7 +669,8 @@
       "race_name": "副ぶちょー賞２歳Ｃ－２",
       "start_time_jst": "16:00",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160104"
       ],
       "finishes": [
         {
@@ -826,7 +864,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160104",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160104",
+      "result_source_retrieved_at": "2026-11-08T11:56:32+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.7,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R05": {
       "race_date": "2026-11-06",
@@ -836,7 +885,8 @@
       "race_name": "ミカゲホマレ賞Ｃ１－６",
       "start_time_jst": "16:35",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160105"
       ],
       "finishes": [
         {
@@ -1030,7 +1080,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160105",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160105",
+      "result_source_retrieved_at": "2026-11-08T11:56:33+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.6,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R06": {
       "race_date": "2026-11-06",
@@ -1040,7 +1101,8 @@
       "race_name": "荒川弘記念２歳Ｂ－１",
       "start_time_jst": "17:10",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160106"
       ],
       "finishes": [
         {
@@ -1229,7 +1291,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160106",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160106",
+      "result_source_retrieved_at": "2026-11-08T11:56:34+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.6,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R07": {
       "race_date": "2026-11-06",
@@ -1239,7 +1312,8 @@
       "race_name": "マロン号賞Ｃ１－２",
       "start_time_jst": "17:45",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160107"
       ],
       "finishes": [
         {
@@ -1433,7 +1507,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160107",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160107",
+      "result_source_retrieved_at": "2026-11-08T11:56:35+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.6,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R08": {
       "race_date": "2026-11-06",
@@ -1443,7 +1528,8 @@
       "race_name": "御影カップＢ４－５",
       "start_time_jst": "18:20",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160108"
       ],
       "finishes": [
         {
@@ -1637,7 +1723,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160108",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160108",
+      "result_source_retrieved_at": "2026-11-08T11:56:36+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.6,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R09": {
       "race_date": "2026-11-06",
@@ -1647,7 +1744,8 @@
       "race_name": "八軒カップＢ３－５",
       "start_time_jst": "18:55",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160109"
       ],
       "finishes": [
         {
@@ -1841,7 +1939,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160109",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160109",
+      "result_source_retrieved_at": "2026-11-08T11:56:37+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.5,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R10": {
       "race_date": "2026-11-06",
@@ -1851,7 +1960,8 @@
       "race_name": "株式会社ＧＩＮＳＡＪＩ記念Ｂ２－３",
       "start_time_jst": "19:30",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160110"
       ],
       "finishes": [
         {
@@ -2037,7 +2147,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160110",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160110",
+      "result_source_retrieved_at": "2026-11-08T11:56:38+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.5,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R11": {
       "race_date": "2026-11-06",
@@ -2047,7 +2168,8 @@
       "race_name": "『銀の匙』１５周年記念杯Ａ１－２",
       "start_time_jst": "20:00",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160111"
       ],
       "finishes": [
         {
@@ -2241,7 +2363,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160111",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160111",
+      "result_source_retrieved_at": "2026-11-08T11:56:39+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.5,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261106-R12": {
       "race_date": "2026-11-06",
@@ -2251,7 +2384,8 @@
       "race_name": "小学館 少年サンデー杯Ｂ１－２",
       "start_time_jst": "20:40",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160112"
       ],
       "finishes": [
         {
@@ -2437,7 +2571,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110603160112",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160112",
+      "result_source_retrieved_at": "2026-11-08T11:56:40+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.5,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R01": {
       "race_date": "2026-11-07",
@@ -2446,7 +2591,8 @@
       "race_name": "ありがとう帯広！旅費回収杯Ｃ２－２",
       "start_time_jst": "14:40",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160201"
       ],
       "finishes": [
         {
@@ -2556,7 +2702,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160201",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160201",
+      "result_source_retrieved_at": "2026-11-08T11:56:41+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.4,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R02": {
       "race_date": "2026-11-07",
@@ -2565,7 +2722,8 @@
       "race_name": "第３回凛ちゃん生誕記念２歳Ｄ－５",
       "start_time_jst": "15:15",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160202"
       ],
       "finishes": [
         {
@@ -2669,7 +2827,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160202",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160202",
+      "result_source_retrieved_at": "2026-11-08T11:56:42+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.4,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R03": {
       "race_date": "2026-11-07",
@@ -2678,7 +2847,8 @@
       "race_name": "牧祐樹＆藤田南結婚記念２歳Ｄ－３",
       "start_time_jst": "15:50",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160203"
       ],
       "finishes": [
         {
@@ -2782,7 +2952,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160203",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160203",
+      "result_source_retrieved_at": "2026-11-08T11:56:43+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.3,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R04": {
       "race_date": "2026-11-07",
@@ -2791,7 +2972,8 @@
       "race_name": "みなみちゃん花嫁記念２歳Ｃ－４",
       "start_time_jst": "16:20",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160204"
       ],
       "finishes": [
         {
@@ -2896,7 +3078,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160204",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160204",
+      "result_source_retrieved_at": "2026-11-08T11:56:44+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.3,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R05": {
       "race_date": "2026-11-07",
@@ -2905,7 +3098,8 @@
       "race_name": "稚草隆５５で賞Ｃ１－５",
       "start_time_jst": "16:50",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160205"
       ],
       "finishes": [
         {
@@ -3009,7 +3203,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160205",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160205",
+      "result_source_retrieved_at": "2026-11-08T11:56:45+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.2,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R06": {
       "race_date": "2026-11-07",
@@ -3018,7 +3223,8 @@
       "race_name": "敏樹＆和子金婚ハッピー記念２歳Ｂ－６",
       "start_time_jst": "17:25",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160206"
       ],
       "finishes": [
         {
@@ -3122,7 +3328,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160206",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160206",
+      "result_source_retrieved_at": "2026-11-08T11:56:46+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.2,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R07": {
       "race_date": "2026-11-07",
@@ -3131,7 +3348,8 @@
       "race_name": "あやＰ４０歳聖誕記念大祭典Ｂ４－４",
       "start_time_jst": "17:55",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160207"
       ],
       "finishes": [
         {
@@ -3241,7 +3459,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160207",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160207",
+      "result_source_retrieved_at": "2026-11-08T11:56:47+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.2,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R08": {
       "race_date": "2026-11-07",
@@ -3250,7 +3479,8 @@
       "race_name": "富士香還暦１年後記念杯２歳Ａ－１",
       "start_time_jst": "18:25",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160208"
       ],
       "finishes": [
         {
@@ -3360,7 +3590,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160208",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160208",
+      "result_source_retrieved_at": "2026-11-08T11:56:48+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.2,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R09": {
       "race_date": "2026-11-07",
@@ -3369,7 +3610,8 @@
       "race_name": "喜っせ今日で１６周年記念Ｂ３－３混合",
       "start_time_jst": "18:55",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160209"
       ],
       "finishes": [
         {
@@ -3479,7 +3721,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160209",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160209",
+      "result_source_retrieved_at": "2026-11-08T11:56:49+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.1,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R10": {
       "race_date": "2026-11-07",
@@ -3488,7 +3741,8 @@
       "race_name": "藤井塗装店６６期お疲れ様盃Ｂ３－１",
       "start_time_jst": "19:25",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160210"
       ],
       "finishes": [
         {
@@ -3598,7 +3852,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160210",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160210",
+      "result_source_retrieved_at": "2026-11-08T11:56:50+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.1,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R11": {
       "race_date": "2026-11-07",
@@ -3607,7 +3872,8 @@
       "race_name": "第２回世界の山ちゃん幻杯オープン－１",
       "start_time_jst": "20:00",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160211"
       ],
       "finishes": [
         {
@@ -3717,7 +3983,18 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160211",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160211",
+      "result_source_retrieved_at": "2026-11-08T11:56:50+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.1,
+      "official_moisture_source": "NAR公式レース別"
     },
     "20261107-R12": {
       "race_date": "2026-11-07",
@@ -3726,7 +4003,8 @@
       "race_name": "Ｃ１－３",
       "start_time_jst": "20:30",
       "source_urls": [
-        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12"
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160212"
       ],
       "finishes": [
         {
@@ -3836,7 +4114,306 @@
         }
       ],
       "crosschecked_at": "2026-11-08T05:28:38+09:00",
-      "source_disagreements": []
+      "source_disagreements": [],
+      "umanity_race_id": "2026110703160212",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160212",
+      "result_source_retrieved_at": "2026-11-08T11:56:51+09:00",
+      "official_crosscheck": {
+        "source": "NAR keiba.go.jp",
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12",
+        "match": true
+      },
+      "official_measured_moisture_pct": 2.1,
+      "official_moisture_source": "NAR公式レース別"
+    },
+    "20261108-R01": {
+      "race_date": "2026-11-08",
+      "race_no": 1,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160301"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160301",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160301",
+      "result_source_retrieved_at": "2026-11-08T11:56:52+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "14:35"
+    },
+    "20261108-R02": {
+      "race_date": "2026-11-08",
+      "race_no": 2,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160302"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160302",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160302",
+      "result_source_retrieved_at": "2026-11-08T11:56:54+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "15:10"
+    },
+    "20261108-R03": {
+      "race_date": "2026-11-08",
+      "race_no": 3,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160303"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160303",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160303",
+      "result_source_retrieved_at": "2026-11-08T11:56:55+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "15:40"
+    },
+    "20261108-R04": {
+      "race_date": "2026-11-08",
+      "race_no": 4,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160304"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160304",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160304",
+      "result_source_retrieved_at": "2026-11-08T11:56:57+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "16:15"
+    },
+    "20261108-R05": {
+      "race_date": "2026-11-08",
+      "race_no": 5,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160305"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160305",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160305",
+      "result_source_retrieved_at": "2026-11-08T11:56:59+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "16:45"
+    },
+    "20261108-R06": {
+      "race_date": "2026-11-08",
+      "race_no": 6,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160306"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160306",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160306",
+      "result_source_retrieved_at": "2026-11-08T11:57:00+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "17:20"
+    },
+    "20261108-R07": {
+      "race_date": "2026-11-08",
+      "race_no": 7,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160307"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160307",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160307",
+      "result_source_retrieved_at": "2026-11-08T11:57:01+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "17:55"
+    },
+    "20261108-R08": {
+      "race_date": "2026-11-08",
+      "race_no": 8,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160308"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160308",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160308",
+      "result_source_retrieved_at": "2026-11-08T11:57:03+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "18:30"
+    },
+    "20261108-R09": {
+      "race_date": "2026-11-08",
+      "race_no": 9,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160309"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160309",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160309",
+      "result_source_retrieved_at": "2026-11-08T11:57:05+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "19:00"
+    },
+    "20261108-R10": {
+      "race_date": "2026-11-08",
+      "race_no": 10,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160310"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160310",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160310",
+      "result_source_retrieved_at": "2026-11-08T11:57:06+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "19:30"
+    },
+    "20261108-R11": {
+      "race_date": "2026-11-08",
+      "race_no": 11,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160311"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160311",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160311",
+      "result_source_retrieved_at": "2026-11-08T11:57:08+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "20:00"
+    },
+    "20261108-R12": {
+      "race_date": "2026-11-08",
+      "race_no": 12,
+      "status": "provisional",
+      "finishes": [],
+      "payouts": {
+        "trio": [],
+        "trifecta": []
+      },
+      "refunds": [],
+      "source_urls": [
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312"
+      ],
+      "official_finalized_at": null,
+      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "umanity_race_id": "2026110803160312",
+      "result_source": "umanity",
+      "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312",
+      "result_source_retrieved_at": "2026-11-08T11:57:09+09:00",
+      "official_crosscheck": null,
+      "official_measured_moisture_pct": null,
+      "official_moisture_source": null,
+      "start_time_jst": "20:45"
     }
   }
 }

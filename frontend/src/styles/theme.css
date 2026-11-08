@@ -131,3 +131,22 @@ a { overflow-wrap:anywhere; }
 .selection-comment .horse-comment { max-inline-size:32em; margin:0 0 10px; font-size:.9375rem; line-height:1.65; overflow-wrap:anywhere; }
 .horse-comment strong { font-weight:700; margin-inline-end:.15em; }
 @media(max-width:480px) { .selection-comment .horse-comment { font-size:.875rem; line-height:1.65; } }
+
+/* Results: one flat all-race comparison, with legible columns rather than squeezed cards. */
+.results-table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;border:1px solid var(--line,#d5d7d9);border-radius:8px;background:var(--paper,#fff)}
+.results-table{width:100%;min-width:960px;border-collapse:collapse;table-layout:fixed;font-size:15px;line-height:1.55}
+.results-table caption{text-align:left;padding:12px;font-weight:700}
+.results-table th,.results-table td{padding:14px 12px;text-align:left;vertical-align:top;border-top:1px solid var(--line,#d5d7d9);overflow-wrap:anywhere}
+.results-table thead th{background:#eef2f4;color:#182633;font-weight:700}
+.results-table th:nth-child(1){width:24%}.results-table th:nth-child(2){width:29%}.results-table th:nth-child(3){width:32%}.results-table th:nth-child(4){width:15%}
+.results-race-number{display:block;font-size:22px}.results-race-name{display:block;margin:4px 0 8px;font-weight:600}
+.results-table small{display:block;font-size:12px;line-height:1.6;font-weight:400;color:#4b5563;margin-top:5px}
+.results-selected{margin:0 0 10px;font-size:14px;font-weight:600}
+.results-box-tickets{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;font-variant-numeric:tabular-nums}
+.results-box-tickets li{padding:5px 8px;background:#f3f5f6;border-radius:4px;font-size:17px;font-weight:700;white-space:nowrap}
+.results-table .official-finishes{padding:0;margin:0;border:0;background:transparent}.results-table .official-finishes h4{margin:0 0 7px;font-size:13px}
+.results-table .official-finish-list{gap:7px}.results-table .official-finish{padding:4px 0}
+.results-payouts{margin-top:10px;font-size:13px}.results-payouts p{margin:3px 0}
+.results-hit{font-size:19px;display:block;color:#263443}.results-hit.is-hit{color:#08623c}.results-scroll-hint{font-size:13px;color:#4b5563}
+.results-table .disclosure{margin-top:10px;font-weight:400}.results-table .disclosure summary{min-height:44px}
+@media(max-width:480px){.results-table{min-width:960px}.results-table-scroll:focus-visible{outline:3px solid #2368ac;outline-offset:2px}}

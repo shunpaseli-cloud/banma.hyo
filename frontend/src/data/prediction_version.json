@@ -1,12 +1,12 @@
 {
- "version": "pred-20261108T064209JST-5e5a68d2cf47",
- "generated_at_asia_tokyo": "2026-11-08T06:42:09+09:00",
+ "version": "nearest-20261108T120807JST-bcf443b07628",
+ "generated_at_asia_tokyo": "2026-11-08T12:08:07+09:00",
  "models": {
-  "learned_model.json": "877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5",
+  "learned_model.json": "c86bafb1d79947e369a1651b73f4d6cac1ddec33d28c79aefaea8c407c38fc5a",
   "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
   "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7"
  },
- "engine": "5e134f7c93944ee716170c8a6b8f2326b5a5b60314d970315898ed2ddf504ef7",
+ "engine": "b29cf580045c37e17cb05ef4bf666a266773a9324cca7a0ca7f26df3391778bf",
  "weather_status": "retrieved",
  "weather_retrieved_at": "2026-11-08T06:42:08+09:00",
  "legacy": {
@@ -18,5 +18,11 @@
    "return_yen": 0
   }
  },
- "snapshot_sha256": "dfb8ee340a45aa320fe2c07af76d2ae5549359afd1077b0d77dcd30a3151699a"
+ "confidence_method": "nearest-v1",
+ "confidence_history": {
+  "version": "nearest-history-20261107-8f38d3b9a583",
+  "latest_result_date": "2026-11-07",
+  "races": 6751
+ },
+ "snapshot_sha256": "87adcf04a9ad34e38bddbabe11a80e4fe4dec52b38873bab62fec1f1c6d0d38a"
 }
