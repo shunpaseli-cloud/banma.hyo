@@ -50,7 +50,7 @@ async function generateUnlocked({apply=false,weatherFile=null,outputDir='/worksp
  const fetchedAt=stamp(),weather={source_url:sourceUrl,retrieved_at:fetchedAt,provider_run_issued_at:null,run_time_status:'provider does not publish a run issue time in this response',status:error?'missing':'retrieved',error,raw,raw_sha256:sha(bytes(raw)),note:'同一取得レスポンスを全Rで共有。過去日の気象は事後入力であり当時の予報ではない。'}
  const source=await read('races_from_pdf.json'),races=json(source),models={}
  for(const name of ['learned_model.json','learned_model_rain.json','learned_weights.json'])models[name]=sha(await read(name))
- const engineFiles=['feedback.js','learnScore.js','learnCore.js','moisture.js','memrobo.js','trio.js','selectionReason.js','calculateSnapshot.js','snapshotPolicy.js','confidenceNearest.js']
+ const engineFiles=['feedback.js','learnScore.js','learnCore.js','moisture.js','memrobo.js','trio.js','selectionReason.js','calculateSnapshot.js','snapshotPolicy.js','confidenceTable.js']
  const engine=sha(Buffer.concat(await Promise.all(engineFiles.map(name=>fs.readFile(path.join(ROOT,'src',name))))))
  const protectedFiles=['learned_model.json','learned_model_rain.json','learned_weights.json','verified_results.json','results_from_pdf.json']
  const protectedHashes=Object.fromEntries(await Promise.all(protectedFiles.map(async n=>[n,sha(await read(n))])))
@@ -58,8 +58,6 @@ async function generateUnlocked({apply=false,weatherFile=null,outputDir='/worksp
  const server=await createServer({root:ROOT,optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true}})
  let rows
  try{
-  const nearest=await server.ssrLoadModule('/src/confidenceNearest.js')
-  nearest.setConfidenceIndex(new nearest.NearestIndex(json(await fs.readFile(path.join(ROOT,'public/confidence-history.json')))))
   const {calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
   rows=calculateRows(races,raw,stamp())
  }finally{await server.close()}
@@ -71,8 +69,8 @@ async function generateUnlocked({apply=false,weatherFile=null,outputDir='/worksp
  const legacyPath='prediction-history/legacy-20261106T190648/'
  let legacy;try{legacy=json(await fs.readFile(path.join(ROOT,'public',legacyPath,'manifest.json')))}catch(e){if(e.code!=='ENOENT')throw e;legacy=apply?await archiveCurrent():null}
  if(apply&&await fs.access(path.join(ROOT,'src/data/prediction_snapshot.json')).then(()=>true,()=>false))await archiveCurrent()
- const confidenceHistory=json(await fs.readFile(path.join(ROOT,'public/confidence-history-version.json')))
- const meta={confidence_method:'nearest-v1',confidence_history:{version:confidenceHistory.version,latest_result_date:confidenceHistory.latest_result_date,races:confidenceHistory.races},version,generated_at_asia_tokyo:generated,snapshot_saved_at:generated,config:'plus_hjz BOX123 pf≥0.65 k=0.05',timezone:'Asia/Tokyo',source_races_sha256:sha(source),models,engine,weather,legacy:{path:legacyPath,prestart_summary:legacy?.prestart_summary||null},policy:'全画面はこの保存版のみ。過去分は事後再計算。気象欠測は代替予測しない。結果は馬の選定後にrace_idで結合する。'}
+ const confidenceTable=json(await read('confidence_table_meta.json'))
+ const meta={confidence_method:confidenceTable.version,confidence_table:confidenceTable,version,generated_at_asia_tokyo:generated,snapshot_saved_at:generated,config:'plus_hjz BOX123 pf≥0.65 k=0.05',timezone:'Asia/Tokyo',source_races_sha256:sha(source),models,engine,weather,legacy:{path:legacyPath,prestart_summary:legacy?.prestart_summary||null},policy:'全画面はこの保存版のみ。過去分は事後再計算。気象欠測は代替予測しない。結果は馬の選定後にrace_idで結合する。'}
  const snapshot={schema_version:2,meta,races:rows}
  // Result JSON is deliberately read only AFTER all predictions have been selected.
  const results=json(await read('verified_results.json')),projection=resultProjection(snapshot,results)

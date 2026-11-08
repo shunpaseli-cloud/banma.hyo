@@ -1,3 +1,7 @@
+# Historical migration notes (NOT current runtime)
+
+The original saved-condition table is restored by t260. See CONFIDENCE_TABLE.md. Nearest artifacts below are historical audit only, archived under analysis/nearest-v1, not deployed as the current method.
+
 # Nearest confidence v1 / Results
 
 K=30, population z-score and Euclidean distance. Seven fixed features:

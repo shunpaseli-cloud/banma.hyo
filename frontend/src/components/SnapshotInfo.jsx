@@ -18,11 +18,12 @@ export default function SnapshotInfo({date,view}){
   {['checking','refreshing'].includes(current.status)&&<p className="muted" role="status">全画面共通の最新入力を確認中です。</p>}
   {current.status==='stale'&&<p className="notice" role="alert">最新確認できず: {current.error}。表示中は最後に取得できた共通版です。「最新」とは扱いません。</p>}
   {current.persistence==='unavailable'&&<p className="notice">端末に履歴を保存できませんでした。発走前の精度検証用記録としては扱えません。</p>}
-  {meta.confidence_method==='nearest-v1'&&<p className="muted">自信度は似た過去レースの的中・回収から検索する合成指標です（的中確率ではありません）。履歴は {meta.confidence_history?.latest_result_date||'未取得'} まで。近傍が少ない場合は控えめに評価します。</p>}
+  {meta.confidence_method==='condition-table-v1'&&<p className="muted">自信度は元の条件別テーブル（軸の過去成績帯・頭数・水分・重賞）を参照します。馬順位・BOX選定とは別の値です。</p>}
   <Disclosure label="共有予想の更新・旧版の事前成績">
-   <p>内容版は日付・同一入力・モデル・近傍履歴・予想内容から決まり、確認時刻だけでは変わりません。履歴には最小の予想記録のみ保存し、候補全集・近傍監査配列は複製しません。</p>
+   <p>内容版は日付・同一入力・モデル・条件別テーブル・予想内容から決まり、確認時刻だけでは変わりません。履歴には最小の予想記録のみ保存し、全馬の詳細配列は複製しません。</p>
    {meta.persistence_warning&&<p>{meta.persistence_warning}</p>}
    {meta.persistence_error&&<p>保存失敗の詳細: {meta.persistence_error}</p>}
+   {meta.confidence_updated_at&&<p>自信度方式更新 {meta.confidence_updated_at} JST。馬予想の元の保存時刻は保持し、過去の自信度履歴は上書きしていません。</p>}
    <p>起動・画面/日付変更・再訪と表示中1分ごとに最新入力を確認します。各画面では計算せず、共有ストアが入力変更時だけ全36Rを一括更新します。</p>
    <p>過去のレースを新しい気象で計算した版は事後再計算です。旧版の事前成績には合算しません。発走前の記録と水分予測の正本ログは上書きしません。</p>
    {old&&<p>旧保存版の事前照合: {old.races}R／的中{old.hits}R · 想定投資 ¥{old.stake_yen.toLocaleString()}／払戻 ¥{old.return_yen.toLocaleString()}。新版とは合算しません。</p>}
