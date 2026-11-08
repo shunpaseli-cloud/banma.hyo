@@ -1,9 +1,0 @@
-{
-  "schema_version": 1,
-  "version": "nearest-history-20261107-8f38d3b9a583",
-  "sha256": "763d99dec7a2bd1d5e75d2aa54da58280091bcee56f2fdfb8896cf2ebd29c43c",
-  "url": "confidence-history.json",
-  "latest_result_date": "2026-11-07",
-  "races": 6751,
-  "built_at_jst": "2026-11-08T12:01:05.273315+09:00"
-}
