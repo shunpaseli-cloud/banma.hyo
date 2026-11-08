@@ -50,6 +50,6 @@ try{
  const views=[['/src/components/RaceCard.jsx',null],['/src/components/ConfidenceRank.jsx','2026-11-08'],['/src/components/ConfidenceResults.jsx','2026-11-08'],['/src/components/RaceDetail.jsx',null]]
  const row=snapshot.races.find(r=>r.race_id==='20261108-R04'),notes=horseComments(row),race=races.find(r=>r.race_id===row.race_id)
  for(const [file,date] of views){const {default:View}=await server.ssrLoadModule(file);const html=renderToStaticMarkup(createElement(View,date?{date}:{race,rec:row}));for(const note of notes)assert.ok(html.includes(note.text),file);assert.ok(html.includes(comment_style.version))}
- const css=await fs.readFile('src/styles/theme.css','utf8');assert.ok(css.includes('.horse-comment')&&css.includes('overflow-wrap:anywhere')&&css.includes('@media(max-width:480px)'))
+ const css=await fs.readFile('src/styles/theme.css','utf8');assert.ok(css.includes('.horse-comment')&&css.includes('max-inline-size:32em')&&css.includes('overflow-wrap:anywhere')&&css.includes('@media(max-width:480px)'))
  console.log(JSON.stringify({pass:'short newspaper capsules, model metadata only, all36 exact replay, all4 shared views, no numerical rationale/fabrication, fallback/skip/negative-evidence guards',notes:n,unique:unique.size,max_characters:max,model_before:style.predictive_payload_sha256,model_after:style.model_file_sha256,numeric_parameters_sha256:sha(JSON.stringify(numeric(predictive))),same_input_36_sha256:sha(JSON.stringify(replay)),example:notes},null,2))
 }finally{await server.close()}

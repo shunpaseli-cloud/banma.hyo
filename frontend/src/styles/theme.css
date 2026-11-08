@@ -128,6 +128,6 @@ a { overflow-wrap:anywhere; }
 .conf-band-title { font-size:1.05rem; padding-bottom:6px; border-bottom:1px solid var(--line); }
 
 /* Compact newspaper-style capsules: one paragraph, never headline/body/closing blocks. */
-.selection-comment .horse-comment { margin:0 0 10px; font-size:.9375rem; line-height:1.65; overflow-wrap:anywhere; }
+.selection-comment .horse-comment { max-inline-size:32em; margin:0 0 10px; font-size:.9375rem; line-height:1.65; overflow-wrap:anywhere; }
 .horse-comment strong { font-weight:700; margin-inline-end:.15em; }
 @media(max-width:480px) { .selection-comment .horse-comment { font-size:.875rem; line-height:1.65; } }
