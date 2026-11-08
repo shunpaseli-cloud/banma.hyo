@@ -28,7 +28,7 @@ try {
   assert.equal(renderToStaticMarkup(createElement(OfficialFinishes,{finishes:[]})),'')
   const detail=renderToStaticMarkup(createElement(RaceCard,{race}))
   assert.ok(detail.includes('公式実着順'))
-  const confidence=renderToStaticMarkup(createElement(View,{date:'2026-11-06'}))
+  const confidence=renderToStaticMarkup(createElement(View,{date:'2026-11-06',detailsOpen:true}))
   const stress=renderToStaticMarkup(createElement(OfficialFinishes,{finishes:[{finish:1,umaban:10,name:'非常に長い馬名LongUnbrokenHorseName'.repeat(10)}]}))
   const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;')
   let frames=''

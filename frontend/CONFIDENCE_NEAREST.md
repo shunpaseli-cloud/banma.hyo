@@ -99,3 +99,16 @@ history is deleted. localStorage failure falls back to an add-only IndexedDB
 record; both failures remain visibly unavailable with diagnostic details.
 Minimal records are evidence, not a fabricated full-runtime cache: cold views
 reconstruct once through the shared latest-input calculator.
+
+## t259 compact no-scroll Results (supersedes the previous wide-table layout)
+
+The primary list now shows only R /3 BOX horse numbers /official1-2-3 horse
+numbers /reference verdict. BOX is explicitly unordered, not an ordered ticket.
+The900px minimum, scrolling wrapper and sticky verdict are removed. Fixed48px R
+and64px verdict columns leave equal fluid prediction/result columns, with18px
+numerals, even at320px. No overflow clipping hides information. Long race names
+wrap in a full-width details summary; horse names, all6 permutations, short
+comments, payouts, sources and save metadata remain in its expandable body.
+No models, prediction data, results, confidence values, browser-history logic,
+water logs or schedules changed. Static/SSR width budgets cover320/375/1280;
+real browser visual verification remains with the parent.
