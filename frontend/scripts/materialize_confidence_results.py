@@ -10,7 +10,6 @@ def materialize(snapshot, schedules, results, source_hash):
     if snapshot.get('meta', {}).get('version'):
         rows=[]
         for row in snapshot['races']:
-            if row.get('recommended') is not True: continue
             if row.get('snapshot_version') != snapshot['meta']['version']:
                 raise ValueError('Prediction version mismatch; refusing legacy regeneration')
             result=results.get('races', {}).get(row['race_id'], {'status':'missing','finishes':[]})
@@ -18,7 +17,7 @@ def materialize(snapshot, schedules, results, source_hash):
             known=result.get('status')=='final' and bool(payouts) and not result.get('refunds') and all(isinstance(p.get('yen'),int) and p['yen']>0 for p in payouts) and all(f.get('status','finished') in ['finished','dnf'] for f in result.get('finishes',[]))
             hit=any(p['combo'] in row['tickets'] for p in payouts) if known else None
             pre=row.get('snapshot_timing')=='prestart'
-            rows.append({**row,'result':result,'hit':hit if pre else None,'reference_box_hit':hit if not pre else None,'evaluation_status':'evaluated' if pre and hit is not None else 'pending' if pre else 'postrace_reference'})
+            rows.append({**row,'result':result,'hit':hit if pre and row.get('recommended') else None,'reference_box_hit':hit if not pre or not row.get('recommended') else None,'evaluation_status':'postrace_reference' if not pre else 'nonrecommended_reference' if not row.get('recommended') else 'pending' if hit is None else 'evaluated'})
         return {'schema_version':2,'meta':snapshot['meta'],'races':rows}
     by_id={r['race_id']:r for r in schedules}
     rows=[]
@@ -52,4 +51,4 @@ if __name__=='__main__':
         json.loads((ROOT/'src/data/verified_results.json').read_text()),hashlib.sha256(raw).hexdigest())
     text=json.dumps(output,ensure_ascii=False,indent=2)+'\n'
     for path in [ROOT/'src/data/confidence-results.json',ROOT/'public/confidence-results.json']:path.write_text(text)
-    print('Materialized',len(output['races']),'frozen recommended races; source hash',output['meta']['source_sha256'])
+    print('Materialized',len(output['races']),'saved races; version',output['meta'].get('version',output['meta'].get('source_sha256')))

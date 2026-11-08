@@ -18,6 +18,7 @@ export default function SnapshotInfo({date,view}){
   {['checking','refreshing'].includes(current.status)&&<p className="muted" role="status">全画面共通の最新入力を確認中です。</p>}
   {current.status==='stale'&&<p className="notice" role="alert">最新確認できず: {current.error}。表示中は最後に取得できた共通版です。「最新」とは扱いません。</p>}
   {current.persistence==='unavailable'&&<p className="notice">端末に履歴を保存できませんでした。発走前の精度検証用記録としては扱えません。</p>}
+  {meta.confidence_method==='nearest-v1'&&<p className="muted">自信度は似た過去レースの的中・回収から検索する合成指標です（的中確率ではありません）。履歴は {meta.confidence_history?.latest_result_date||'未取得'} まで。近傍が少ない場合は控えめに評価します。</p>}
   <Disclosure label="共有予想の更新・旧版の事前成績">
    <p>起動・画面/日付変更・再訪と表示中1分ごとに最新入力を確認します。各画面では計算せず、共有ストアが入力変更時だけ全36Rを一括更新します。</p>
    <p>過去のレースを新しい気象で計算した版は事後再計算です。旧版の事前成績には合算しません。発走前の記録と水分予測の正本ログは上書きしません。</p>

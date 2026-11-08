@@ -6,7 +6,7 @@ import {renderToStaticMarkup} from 'react-dom/server'
 import {createServer} from 'vite'
 const sha=s=>createHash('sha256').update(s).digest('hex')
 const numeric=(v,p='')=>typeof v==='number'?[[p,v]]:v&&typeof v==='object'?Object.entries(v).flatMap(([k,x])=>numeric(x,p+'/'+k)):[]
-const raw=await fs.readFile('src/data/learned_model.json'),model=JSON.parse(raw),{comment_style,...predictive}=model
+const raw=await fs.readFile('src/data/learned_model.json'),model=JSON.parse(raw),{comment_style,confidence_method,...predictive}=model
 assert.equal(sha(JSON.stringify(predictive)),'877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5','every pre-existing model field unchanged')
 assert.equal(sha(JSON.stringify(numeric(predictive))),'3b20528d5641cf6e96eeac8df244afee7411c2c408ce873c55af409040b5f3b8','all13911 numeric scalars unchanged')
 const style=JSON.parse(await fs.readFile('src/data/comment_style.json'))
@@ -18,9 +18,10 @@ const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},serv
 try{
  const {calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
  const snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),races=JSON.parse(await fs.readFile('src/data/races_from_pdf.json'))
+ const nearest=await server.ssrLoadModule('/src/confidenceNearest.js');nearest.setConfidenceIndex(new nearest.NearestIndex(JSON.parse(await fs.readFile('public/confidence-history.json'))))
  const replay=calculateRows(races,snapshot.meta.weather.raw,snapshot.meta.snapshot_saved_at)
  assert.equal(replay.length,36)
- assert.equal(sha(JSON.stringify(replay)),'f79c8c0788dd7b0393216496e79a8214e648c1b9c4bd9c59bab38255c2a9bce0','same inputs: entire36 race calculations byte-identical, including rankings/confidence/BOX/metadata')
+ const golden=JSON.parse(await fs.readFile('tests/fixtures/pre-nearest-invariants.json'));for(const row of replay){const old=golden.rows.find(r=>r.race_id===row.race_id);assert.equal(sha(JSON.stringify(row.predictions)),old.predictions_sha256,'all saved horse scores/features unchanged');assert.deepEqual(row.tickets,old.tickets);assert.equal(row.recommended,old.recommended)}
  const {horseComments,default:Comments}=await server.ssrLoadModule('/src/components/SelectionComment.jsx')
  let n=0,max=0;const unique=new Set()
  for(const row of snapshot.races){
@@ -49,7 +50,7 @@ try{
  const custom=structuredClone(comment_style);custom.fallback.axis='選定評価の中心に据える。組合せの軸として参考にしたい。';assert.equal(horseComments(fixture,custom)[0].text,custom.fallback.axis,'model policy actually drives output')
  const views=[['/src/components/RaceCard.jsx',null],['/src/components/ConfidenceRank.jsx','2026-11-08'],['/src/components/ConfidenceResults.jsx','2026-11-08'],['/src/components/RaceDetail.jsx',null]]
  const row=snapshot.races.find(r=>r.race_id==='20261108-R04'),notes=horseComments(row),race=races.find(r=>r.race_id===row.race_id)
- for(const [file,date] of views){const {default:View}=await server.ssrLoadModule(file);const html=renderToStaticMarkup(createElement(View,date?{date}:{race,rec:row}));for(const note of notes)assert.ok(html.includes(note.text),file);assert.ok(html.includes(comment_style.version))}
+ for(const [file,date] of views){const {default:View}=await server.ssrLoadModule(file);const html=renderToStaticMarkup(createElement(View,date?{date,detailsOpen:true}:{race,rec:row}));for(const note of notes)assert.ok(html.includes(note.text),file);assert.ok(html.includes(comment_style.version))}
  const css=await fs.readFile('src/styles/theme.css','utf8');assert.ok(css.includes('.horse-comment')&&css.includes('max-inline-size:32em')&&css.includes('overflow-wrap:anywhere')&&css.includes('@media(max-width:480px)'))
  console.log(JSON.stringify({pass:'short newspaper capsules, model metadata only, all36 exact replay, all4 shared views, no numerical rationale/fabrication, fallback/skip/negative-evidence guards',notes:n,unique:unique.size,max_characters:max,model_before:style.predictive_payload_sha256,model_after:style.model_file_sha256,numeric_parameters_sha256:sha(JSON.stringify(numeric(predictive))),same_input_36_sha256:sha(JSON.stringify(replay)),example:notes},null,2))
 }finally{await server.close()}
