@@ -5,7 +5,18 @@
     "source": "NAR公式（単一出典）",
     "payout_unit_yen": 100,
     "note": "表示・照合専用。予測入力や自動学習には使用しない。オッズ・人気は除外。",
-    "additional_result_source": "umanity result-only import;24final crosschecked NAR,12pending; incoming predictions ignored"
+    "additional_result_source": "umanity result-only import;24final crosschecked NAR,12pending; incoming predictions ignored",
+    "last_result_update": {
+      "date": "2026-11-08",
+      "retrieved_at_jst": "2026-11-08T20:22:36+09:00",
+      "confirmed_races": 11,
+      "pending_races": [
+        12
+      ],
+      "payout_missing_races": [],
+      "crosscheck_disagreements": 0,
+      "prediction_unchanged": true
+    }
   },
   "dates": {
     "2026-11-06": {
@@ -15,6 +26,10 @@
     "2026-11-07": {
       "status": "final",
       "confirmed_races": 12
+    },
+    "2026-11-08": {
+      "status": "provisional",
+      "confirmed_races": 11
     }
   },
   "races": {
@@ -4130,266 +4145,1222 @@
     "20261108-R01": {
       "race_date": "2026-11-08",
       "race_no": 1,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "ちゃむさんじゅっさい記念Ｃ２－３",
+      "start_time_jst": "14:35",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=1",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160301"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "カネノキセキ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 9,
+          "name": "マキシゴールド",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 5,
+          "name": "チェルシーヴォラ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 2,
+          "name": "イワキハルヒメ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 8,
+          "name": "モトイチヒメ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 6,
+          "name": "タカノアイリス",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 7,
+          "name": "グローリースター",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 3,
+          "name": "マオノビクトリー",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 4,
+          "name": "アアモンドサン",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 1,
+          "name": "ジェイメーカー",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "8583c935fbfe0aebac18bb9355ecf688fc7feb556ba06771396940e386b4eb2e",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              5,
+              9,
+              10
+            ],
+            "yen": 4510
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              9,
+              5
+            ],
+            "yen": 25010
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:41+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160301",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160301",
-      "result_source_retrieved_at": "2026-11-08T11:56:52+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "14:35"
+      "result_source_retrieved_at": "2026-11-08T20:20:40+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=1",
+        "retrieved_at_jst": "2026-11-08T20:20:41+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R02": {
       "race_date": "2026-11-08",
       "race_no": 2,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "阪急交通社トラピックス杯２歳Ｄ－２",
+      "start_time_jst": "15:10",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=2",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160302"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "キュータロウ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 6,
+          "name": "ヴィクトリアマサミ",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 4,
+          "name": "キタノショウヘイ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 2,
+          "name": "ワシノオ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 3,
+          "name": "ヒメトラルビー",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 7,
+          "name": "ミスターボブオ",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 8,
+          "name": "レガシーブラック",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 9,
+          "name": "ツカサヤンキース",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 5,
+          "name": "ビックドラゴン",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 1,
+          "name": "フカガワハナビ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "6b8402ed7d9d84ba95f6b8a8d976a0be046c388031518126c7a9270db0fed906",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              4,
+              6,
+              10
+            ],
+            "yen": 36950
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              6,
+              4
+            ],
+            "yen": 155950
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:42+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160302",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160302",
-      "result_source_retrieved_at": "2026-11-08T11:56:54+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "15:10"
+      "result_source_retrieved_at": "2026-11-08T20:20:41+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=2",
+        "retrieved_at_jst": "2026-11-08T20:20:42+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R03": {
       "race_date": "2026-11-08",
       "race_no": 3,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "６０年に１度！炎の丙午杯！Ｃ１－８",
+      "start_time_jst": "15:40",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=3",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160303"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "ホクセイハスゴイ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 6,
+          "name": "パワーシンデレラ",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 4,
+          "name": "キタサカエクオン",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 8,
+          "name": "ジェイノホマレ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 2,
+          "name": "マルホンポナ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 5,
+          "name": "カネオー",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 1,
+          "name": "キタサカエヒメコ",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 7,
+          "name": "シンエイパーク",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 3,
+          "name": "ジェイキングダム",
+          "status": "finished"
+        },
+        {
+          "finish": null,
+          "umaban": 9,
+          "name": "コマサンクリスタル",
+          "status": "dnf"
+        }
+      ],
+      "source_html_sha256": "9db05cc0ec11e82f72ff8130049de717473e4a05745f18614f92ac046ca781af",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              4,
+              6,
+              10
+            ],
+            "yen": 2920
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              6,
+              4
+            ],
+            "yen": 9420
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:42+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160303",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160303",
-      "result_source_retrieved_at": "2026-11-08T11:56:55+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "15:40"
+      "result_source_retrieved_at": "2026-11-08T20:20:42+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=3",
+        "retrieved_at_jst": "2026-11-08T20:20:42+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R04": {
       "race_date": "2026-11-08",
       "race_no": 4,
-      "status": "provisional",
-      "finishes": [],
+      "status": "final",
+      "race_name": "脩斗くん２５歳ハピバ２歳Ｃ－７",
+      "start_time_jst": "16:15",
+      "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=4",
+        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160304",
+        "https://sports.yahoo.co.jp/keiba_local/race/index/20261108030304"
+      ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 8,
+          "name": "キングジョー",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 2,
+          "name": "スーパーハクリュウ",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 1,
+          "name": "キョウエイローズ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 10,
+          "name": "イワキエスポワール",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 3,
+          "name": "ホクショウテレサ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 9,
+          "name": "イワキファミリー",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 7,
+          "name": "ヒロインナツミ",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 5,
+          "name": "ホープノチカラ",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 6,
+          "name": "イワキニセイ",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 4,
+          "name": "フジノメグミ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "1a1ade5c1145637fae8832f7badf316559849e5f64b52b8210e307fcaa34bcbc",
       "payouts": {
-        "trio": [],
-        "trifecta": []
+        "trio": [
+          {
+            "combo": [
+              1,
+              2,
+              8
+            ],
+            "yen": 6730
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              8,
+              2,
+              1
+            ],
+            "yen": 38900
+          }
+        ]
       },
       "refunds": [],
-      "source_urls": [
-        "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160304"
-      ],
+      "result_retrieved_at": "2026-11-08T20:20:42+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160304",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160304",
-      "result_source_retrieved_at": "2026-11-08T11:56:57+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "16:15"
+      "result_source_retrieved_at": "2026-11-08T20:20:43+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=4",
+        "retrieved_at_jst": "2026-11-08T20:20:42+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      },
+      "sportsnavi_crosscheck": {
+        "url": "https://sports.yahoo.co.jp/keiba_local/race/index/20261108030304",
+        "retrieved_at_jst": "2026-11-08T20:22:35+09:00",
+        "match": true,
+        "fields": [
+          "top3",
+          "trio",
+          "trifecta"
+        ]
+      }
     },
     "20261108-R05": {
       "race_date": "2026-11-08",
       "race_no": 5,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "稲ちゃん結婚記念祝ｂｙ福松Ｃ１－１",
+      "start_time_jst": "16:45",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=5",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160305"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 9,
+          "name": "クリスタルデビル",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 2,
+          "name": "フジダイマルス",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 7,
+          "name": "ツガルミサキ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 10,
+          "name": "ホクセイモモコ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 5,
+          "name": "ピュアリーヒナリ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 3,
+          "name": "ガッツワン",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 1,
+          "name": "エマパワー",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 8,
+          "name": "サッコノオトウト",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 6,
+          "name": "クリスタルティアラ",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 4,
+          "name": "ゲキリンドトウ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "62379ec75418118bd4e7710fcf6f8dbafedc6f7842166426e7fdb04af5358121",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              2,
+              7,
+              9
+            ],
+            "yen": 1740
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              9,
+              2,
+              7
+            ],
+            "yen": 10010
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:43+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160305",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160305",
-      "result_source_retrieved_at": "2026-11-08T11:56:59+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "16:45"
+      "result_source_retrieved_at": "2026-11-08T20:20:44+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=5",
+        "retrieved_at_jst": "2026-11-08T20:20:43+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R06": {
       "race_date": "2026-11-08",
       "race_no": 6,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "爆誕！ムラトミ４３周年記念２歳Ｂ－５",
+      "start_time_jst": "17:20",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=6",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160306"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 9,
+          "name": "クリボー",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 1,
+          "name": "マオノジュピター",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 8,
+          "name": "ロキノクラン",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 2,
+          "name": "ホクセイヒビキ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 5,
+          "name": "アアモンドドキドキ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 7,
+          "name": "ストロングダッシュ",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 3,
+          "name": "シンエイライデン",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 6,
+          "name": "エスペランサ",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 10,
+          "name": "トト",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 4,
+          "name": "ホクセイモモカ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "9918c0d3a3c837eb6a67f88d8310211df4d9d8db32c142604ea0d612d67fae6d",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              1,
+              8,
+              9
+            ],
+            "yen": 5200
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              9,
+              1,
+              8
+            ],
+            "yen": 18850
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:43+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160306",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160306",
-      "result_source_retrieved_at": "2026-11-08T11:57:00+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "17:20"
+      "result_source_retrieved_at": "2026-11-08T20:20:45+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=6",
+        "retrieved_at_jst": "2026-11-08T20:20:43+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R07": {
       "race_date": "2026-11-08",
       "race_no": 7,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "第４５回 十勝産駒特別２歳産地限定",
+      "start_time_jst": "17:55",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=7",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160307"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "アオニシキ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 8,
+          "name": "モンスターオウキ",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 7,
+          "name": "ハゴロモゴールド",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 4,
+          "name": "ビエイキャノン",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 5,
+          "name": "ドウナンリュウホオ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 6,
+          "name": "アンズティエルナ",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 2,
+          "name": "ニシオギオリジン",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 1,
+          "name": "キタサカエヒトミ",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 9,
+          "name": "ショウライトマユ",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 3,
+          "name": "ハマカムイ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "cf8f54a807ca88da3158f29e5d07b6dbe7dbda61e2d520a7349f52aaef81e190",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              7,
+              8,
+              10
+            ],
+            "yen": 9800
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              8,
+              7
+            ],
+            "yen": 32790
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:44+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160307",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160307",
-      "result_source_retrieved_at": "2026-11-08T11:57:01+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "17:55"
+      "result_source_retrieved_at": "2026-11-08T20:20:46+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=7",
+        "retrieved_at_jst": "2026-11-08T20:20:44+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R08": {
       "race_date": "2026-11-08",
       "race_no": 8,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "第２回せーのがさん杯Ｂ４－２",
+      "start_time_jst": "18:30",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=8",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160308"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 10,
+          "name": "イチマツ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 1,
+          "name": "インカン",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 7,
+          "name": "ジェイノミキ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 5,
+          "name": "クリスタルアッシュ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 9,
+          "name": "ナナイロ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 6,
+          "name": "アグライア",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 8,
+          "name": "ミスベンティ",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 4,
+          "name": "クリスタルケルビム",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 2,
+          "name": "ミストレンタ",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 3,
+          "name": "ブラックバカラ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "3a223fb233e04562098b98f9f65ebeedf842e981ffa51b2933e35b96c91d046b",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              1,
+              7,
+              10
+            ],
+            "yen": 860
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              10,
+              1,
+              7
+            ],
+            "yen": 7420
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:44+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160308",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160308",
-      "result_source_retrieved_at": "2026-11-08T11:57:03+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "18:30"
+      "result_source_retrieved_at": "2026-11-08T20:20:47+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=8",
+        "retrieved_at_jst": "2026-11-08T20:20:44+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R09": {
       "race_date": "2026-11-08",
       "race_no": 9,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "的野美青天才二十一歳生誕祭Ｂ２－４",
+      "start_time_jst": "19:00",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=9",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160309"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 2,
+          "name": "イナノホマレ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 1,
+          "name": "フクノエル",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 5,
+          "name": "ツカサマーチ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 3,
+          "name": "クロカゲパワー",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 6,
+          "name": "ホクセイマジェスタ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 7,
+          "name": "フジノボーイ",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 8,
+          "name": "タイトルボス",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 4,
+          "name": "ウンジョウノキセキ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "5eac23e63918e19ebcf4c831c98a53d14b3984d4d0157154abe879f13f070925",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              1,
+              2,
+              5
+            ],
+            "yen": 3140
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              2,
+              1,
+              5
+            ],
+            "yen": 30420
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:44+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160309",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160309",
-      "result_source_retrieved_at": "2026-11-08T11:57:05+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "19:00"
+      "result_source_retrieved_at": "2026-11-08T20:20:48+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=9",
+        "retrieved_at_jst": "2026-11-08T20:20:44+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R10": {
       "race_date": "2026-11-08",
       "race_no": 10,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "櫻坂のラーメンクインＢ１－３",
+      "start_time_jst": "19:30",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=10",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160310"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 7,
+          "name": "ホクショウレディー",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 2,
+          "name": "レジェンドボス",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 5,
+          "name": "ココロノニダイメ",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 6,
+          "name": "グリフィス",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 4,
+          "name": "サダノブラボー",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 3,
+          "name": "コーワレックス",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 9,
+          "name": "コマサンリキ",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 8,
+          "name": "キタノボブサップ",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 1,
+          "name": "ユウマダイマジン",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 10,
+          "name": "スーパーチヨコ",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "59bc58aa9b594a62554977f08aa62a80f148ba53ca39b12ca9eb66445a34278f",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              2,
+              5,
+              7
+            ],
+            "yen": 890
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              7,
+              2,
+              5
+            ],
+            "yen": 9430
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:45+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160310",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160310",
-      "result_source_retrieved_at": "2026-11-08T11:57:06+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "19:30"
+      "result_source_retrieved_at": "2026-11-08T20:20:49+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=10",
+        "retrieved_at_jst": "2026-11-08T20:20:45+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R11": {
       "race_date": "2026-11-08",
       "race_no": 11,
-      "status": "provisional",
-      "finishes": [],
-      "payouts": {
-        "trio": [],
-        "trifecta": []
-      },
-      "refunds": [],
+      "status": "final",
+      "race_name": "第５１回 クインカップ４歳牝馬オープン別定",
+      "start_time_jst": "20:00",
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=11",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160311"
       ],
+      "finishes": [
+        {
+          "finish": 1,
+          "umaban": 2,
+          "name": "ホクセイヒラリ",
+          "status": "finished"
+        },
+        {
+          "finish": 2,
+          "umaban": 7,
+          "name": "ホクショウサクラ",
+          "status": "finished"
+        },
+        {
+          "finish": 3,
+          "umaban": 5,
+          "name": "パワフルクィーン",
+          "status": "finished"
+        },
+        {
+          "finish": 4,
+          "umaban": 9,
+          "name": "プロサングエ",
+          "status": "finished"
+        },
+        {
+          "finish": 5,
+          "umaban": 8,
+          "name": "ツルイミツサクラ",
+          "status": "finished"
+        },
+        {
+          "finish": 6,
+          "umaban": 3,
+          "name": "クリスタルスペリオ",
+          "status": "finished"
+        },
+        {
+          "finish": 7,
+          "umaban": 10,
+          "name": "ジェイセリーヌ",
+          "status": "finished"
+        },
+        {
+          "finish": 8,
+          "umaban": 4,
+          "name": "フジエース",
+          "status": "finished"
+        },
+        {
+          "finish": 9,
+          "umaban": 1,
+          "name": "ジェイオージョ",
+          "status": "finished"
+        },
+        {
+          "finish": 10,
+          "umaban": 6,
+          "name": "ホクセイマリン",
+          "status": "finished"
+        }
+      ],
+      "source_html_sha256": "cf31a86415901212c45fbd7f36adb4d275988da9b0807d22008bd326b7ff6dd9",
+      "payouts": {
+        "trio": [
+          {
+            "combo": [
+              2,
+              5,
+              7
+            ],
+            "yen": 3250
+          }
+        ],
+        "trifecta": [
+          {
+            "combo": [
+              2,
+              7,
+              5
+            ],
+            "yen": 9180
+          }
+        ]
+      },
+      "refunds": [],
+      "result_retrieved_at": "2026-11-08T20:20:45+09:00",
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "retrieval_time_scope": "race",
+      "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。",
       "umanity_race_id": "2026110803160311",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160311",
-      "result_source_retrieved_at": "2026-11-08T11:57:08+09:00",
-      "official_crosscheck": null,
-      "official_measured_moisture_pct": null,
-      "official_moisture_source": null,
-      "start_time_jst": "20:00"
+      "result_source_retrieved_at": "2026-11-08T20:20:50+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=11",
+        "retrieved_at_jst": "2026-11-08T20:20:45+09:00",
+        "match": true,
+        "status": "top3_and_trio_trifecta_match"
+      }
     },
     "20261108-R12": {
       "race_date": "2026-11-08",
@@ -4397,23 +5368,31 @@
       "status": "provisional",
       "finishes": [],
       "payouts": {
-        "trio": [],
-        "trifecta": []
+        "trio": null,
+        "trifecta": null
       },
       "refunds": [],
       "source_urls": [
+        "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=12",
         "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312"
       ],
       "official_finalized_at": null,
-      "note": "結果未確定。的中/外れ・払戻0円として集計しません。",
+      "note": "公式結果未確定・未公表",
       "umanity_race_id": "2026110803160312",
-      "result_source": "umanity",
+      "result_source": "NAR公式 / umanity",
       "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312",
-      "result_source_retrieved_at": "2026-11-08T11:57:09+09:00",
-      "official_crosscheck": null,
+      "result_source_retrieved_at": "2026-11-08T20:20:51+09:00",
+      "official_crosscheck": {
+        "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=12",
+        "retrieved_at_jst": "2026-11-08T20:20:45+09:00",
+        "match": null,
+        "status": "both_unpublished"
+      },
       "official_measured_moisture_pct": null,
       "official_moisture_source": null,
-      "start_time_jst": "20:45"
+      "start_time_jst": "20:45",
+      "result_retrieved_at": "2026-11-08T20:20:45+09:00",
+      "retrieval_time_scope": "race"
     }
   }
 }

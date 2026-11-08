@@ -20,7 +20,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=1&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160101"
         ],
         "partial": false,
         "excluded": [],
@@ -44,7 +45,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=2&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160102"
         ],
         "partial": false,
         "excluded": [],
@@ -68,7 +70,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=3&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160103"
         ],
         "partial": false,
         "excluded": [],
@@ -92,7 +95,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=4&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160104"
         ],
         "partial": false,
         "excluded": [],
@@ -116,7 +120,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=5&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160105"
         ],
         "partial": false,
         "excluded": [],
@@ -140,7 +145,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=6&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160106"
         ],
         "partial": false,
         "excluded": [],
@@ -164,7 +170,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=7&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160107"
         ],
         "partial": false,
         "excluded": [],
@@ -188,7 +195,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=8&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160108"
         ],
         "partial": false,
         "excluded": [],
@@ -211,7 +219,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=9&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160109"
         ],
         "partial": true,
         "excluded": [
@@ -239,7 +248,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=10&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160110"
         ],
         "partial": false,
         "excluded": [],
@@ -262,7 +272,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=11&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160111"
         ],
         "partial": true,
         "excluded": [
@@ -290,7 +301,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f06&k_raceNo=12&k_babaCode=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110603160112"
         ],
         "partial": false,
         "excluded": [],
@@ -314,7 +326,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=1",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160201"
         ],
         "partial": false,
         "excluded": [],
@@ -337,7 +350,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=2",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160202"
         ],
         "partial": false,
         "excluded": [],
@@ -360,7 +374,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160203"
         ],
         "partial": false,
         "excluded": [],
@@ -382,7 +397,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=4",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160204"
         ],
         "partial": true,
         "excluded": [
@@ -414,7 +430,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=5",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160205"
         ],
         "partial": false,
         "excluded": [],
@@ -437,7 +454,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=6",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160206"
         ],
         "partial": false,
         "excluded": [],
@@ -461,7 +479,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=7",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160207"
         ],
         "partial": false,
         "excluded": [],
@@ -485,7 +504,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=8",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160208"
         ],
         "partial": false,
         "excluded": [],
@@ -509,7 +529,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=9",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160209"
         ],
         "partial": false,
         "excluded": [],
@@ -533,7 +554,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=10",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160210"
         ],
         "partial": false,
         "excluded": [],
@@ -557,7 +579,8 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=11",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160211"
         ],
         "partial": false,
         "excluded": [],
@@ -581,7 +604,286 @@
       "meta": {
         "status": "final",
         "source_urls": [
-          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12"
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f07&k_babaCode=3&k_raceNo=12",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110703160212"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R01",
+      "results": {
+        "20261108-R01-10": 1,
+        "20261108-R01-09": 2,
+        "20261108-R01-05": 3,
+        "20261108-R01-02": 4,
+        "20261108-R01-08": 5,
+        "20261108-R01-06": 6,
+        "20261108-R01-07": 7,
+        "20261108-R01-03": 8,
+        "20261108-R01-04": 9,
+        "20261108-R01-01": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=1",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160301"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R02",
+      "results": {
+        "20261108-R02-10": 1,
+        "20261108-R02-06": 2,
+        "20261108-R02-04": 3,
+        "20261108-R02-02": 4,
+        "20261108-R02-03": 5,
+        "20261108-R02-07": 6,
+        "20261108-R02-08": 7,
+        "20261108-R02-09": 8,
+        "20261108-R02-05": 9,
+        "20261108-R02-01": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=2",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160302"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R03",
+      "results": {
+        "20261108-R03-10": 1,
+        "20261108-R03-06": 2,
+        "20261108-R03-04": 3,
+        "20261108-R03-08": 4,
+        "20261108-R03-02": 5,
+        "20261108-R03-05": 6,
+        "20261108-R03-01": 7,
+        "20261108-R03-07": 8,
+        "20261108-R03-03": 9
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=3",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160303"
+        ],
+        "partial": true,
+        "excluded": [
+          {
+            "umaban": 9,
+            "status": "dnf"
+          }
+        ],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R04",
+      "results": {
+        "20261108-R04-08": 1,
+        "20261108-R04-02": 2,
+        "20261108-R04-01": 3,
+        "20261108-R04-10": 4,
+        "20261108-R04-03": 5,
+        "20261108-R04-09": 6,
+        "20261108-R04-07": 7,
+        "20261108-R04-05": 8,
+        "20261108-R04-06": 9,
+        "20261108-R04-04": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=4",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160304",
+          "https://sports.yahoo.co.jp/keiba_local/race/index/20261108030304"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R05",
+      "results": {
+        "20261108-R05-09": 1,
+        "20261108-R05-02": 2,
+        "20261108-R05-07": 3,
+        "20261108-R05-10": 4,
+        "20261108-R05-05": 5,
+        "20261108-R05-03": 6,
+        "20261108-R05-01": 7,
+        "20261108-R05-08": 8,
+        "20261108-R05-06": 9,
+        "20261108-R05-04": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=5",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160305"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R06",
+      "results": {
+        "20261108-R06-09": 1,
+        "20261108-R06-01": 2,
+        "20261108-R06-08": 3,
+        "20261108-R06-02": 4,
+        "20261108-R06-05": 5,
+        "20261108-R06-07": 6,
+        "20261108-R06-03": 7,
+        "20261108-R06-06": 8,
+        "20261108-R06-10": 9,
+        "20261108-R06-04": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=6",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160306"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R07",
+      "results": {
+        "20261108-R07-10": 1,
+        "20261108-R07-08": 2,
+        "20261108-R07-07": 3,
+        "20261108-R07-04": 4,
+        "20261108-R07-05": 5,
+        "20261108-R07-06": 6,
+        "20261108-R07-02": 7,
+        "20261108-R07-01": 8,
+        "20261108-R07-09": 9,
+        "20261108-R07-03": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=7",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160307"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R08",
+      "results": {
+        "20261108-R08-10": 1,
+        "20261108-R08-01": 2,
+        "20261108-R08-07": 3,
+        "20261108-R08-05": 4,
+        "20261108-R08-09": 5,
+        "20261108-R08-06": 6,
+        "20261108-R08-08": 7,
+        "20261108-R08-04": 8,
+        "20261108-R08-02": 9,
+        "20261108-R08-03": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=8",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160308"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R09",
+      "results": {
+        "20261108-R09-02": 1,
+        "20261108-R09-01": 2,
+        "20261108-R09-05": 3,
+        "20261108-R09-03": 4,
+        "20261108-R09-06": 5,
+        "20261108-R09-07": 6,
+        "20261108-R09-08": 7,
+        "20261108-R09-04": 8
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=9",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160309"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R10",
+      "results": {
+        "20261108-R10-07": 1,
+        "20261108-R10-02": 2,
+        "20261108-R10-05": 3,
+        "20261108-R10-06": 4,
+        "20261108-R10-04": 5,
+        "20261108-R10-03": 6,
+        "20261108-R10-09": 7,
+        "20261108-R10-08": 8,
+        "20261108-R10-01": 9,
+        "20261108-R10-10": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=10",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160310"
+        ],
+        "partial": false,
+        "excluded": [],
+        "note": "結果入力のみ。重み更新は実行していません。updateWithResult(race, results)互換。"
+      }
+    },
+    {
+      "race_id": "20261108-R11",
+      "results": {
+        "20261108-R11-02": 1,
+        "20261108-R11-07": 2,
+        "20261108-R11-05": 3,
+        "20261108-R11-09": 4,
+        "20261108-R11-08": 5,
+        "20261108-R11-03": 6,
+        "20261108-R11-10": 7,
+        "20261108-R11-04": 8,
+        "20261108-R11-01": 9,
+        "20261108-R11-06": 10
+      },
+      "meta": {
+        "status": "final",
+        "source_urls": [
+          "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=11",
+          "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160311"
         ],
         "partial": false,
         "excluded": [],
