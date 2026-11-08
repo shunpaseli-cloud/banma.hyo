@@ -19,6 +19,7 @@ export function ResultRowDetails({row,result}){return <>
  <h4>三連単BOX6券（各100円）</h4><ol className="results-box-tickets">{row.tickets.map(ticket=><li key={ticket.join('-')}>{ticket.join('−')}</li>)}</ol>
  <SelectionComment rec={row}/><OfficialFinishes finishes={result.finishes}/>
  <div className="results-payouts">{[['trifecta','三連単'],['trio','三連複']].map(([kind,name])=><p key={kind}>{name} {result.payouts?.[kind]?.length?result.payouts[kind].map(p=>`${p.combo.join('−')} ¥${p.yen.toLocaleString('ja-JP')}`).join(' ／ '):'未確定・払戻未取得'}</p>)}</div>
+ {row.confidence_saved_at&&<p className="meta">自信度算出 {row.confidence_saved_at} JST{row.confidence_timing==='postrace'?' · 発走後の方式変更・再算出は参考（旧自信度履歴と別版）':''}</p>}
  <p className="meta">保存 {row.snapshot_saved_at} JST · 共通版 {row.snapshot_version}</p><p className="meta">公式確定発表時刻 {result.official_finalized_at||'未取得'}。結果出典の取得 {result.result_source_retrieved_at||result.result_retrieved_at||'未取得'}</p>{(result.source_urls||[]).map((url,i)=><p key={url}><a href={url} target="_blank" rel="noreferrer">結果出典 {i+1}</a></p>)}</>}
 function NumberTriplet({numbers,label}){return <span className="results-number-triplet" aria-label={label}>{numbers.map((n,i)=><b key={i}>{n}</b>)}</span>}
 export default function ConfidenceResults({date,detailsOpen=false}){

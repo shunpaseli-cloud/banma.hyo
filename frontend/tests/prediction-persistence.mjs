@@ -5,7 +5,7 @@ import {compactRecord,persistSharedSnapshot} from '../src/predictionPersistence.
 const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v)),removeItem:()=>{throw new Error('history deletion forbidden')}}
 const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true}})
 try{
- const {contentIdentity,forecastFingerprint}=await server.ssrLoadModule('/src/predictionSnapshot.js'),snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),history=JSON.parse(await fs.readFile('public/confidence-history-version.json')),raw=snapshot.meta.weather.raw
+ const {contentIdentity,forecastFingerprint}=await server.ssrLoadModule('/src/predictionSnapshot.js'),snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),history=JSON.parse(await fs.readFile('src/data/confidence_table_meta.json')),raw=snapshot.meta.weather.raw
  const identity=await contentIdentity(snapshot,raw,history,snapshot.races),again=await contentIdentity(snapshot,structuredClone(raw),history,snapshot.races.map(r=>({...r,snapshot_saved_at:'2026-11-08T13:00:00+09:00',snapshot_timing:'postrace',confidence_saved_at:'2026-11-08T13:00:00+09:00',snapshot_version:'random-time-id',persistence_status:'unavailable'})))
  assert.deepEqual(identity,again,'content versions ignore check/save times, random IDs, persistence flags and route load order')
  const irrelevant=structuredClone(raw);irrelevant.generationtime_ms=999;irrelevant.daily.time.push('2030-01-01');for(const key of ['precipitation_sum','relative_humidity_2m_mean','et0_fao_evapotranspiration'])irrelevant.daily[key].push(999)

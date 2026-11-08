@@ -12,7 +12,7 @@ try{
  const store=await server.ssrLoadModule('/src/predictionSnapshot.js'),policy=await server.ssrLoadModule('/src/snapshotPolicy.js'),{calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
  const {default:Normal}=await server.ssrLoadModule('/src/components/RaceCard.jsx'),{default:Rank}=await server.ssrLoadModule('/src/components/ConfidenceRank.jsx'),{default:Results}=await server.ssrLoadModule('/src/components/ConfidenceResults.jsx'),{default:Detail}=await server.ssrLoadModule('/src/components/RaceDetail.jsx'),{default:Info}=await server.ssrLoadModule('/src/components/SnapshotInfo.jsx')
  const original=store.getSnapshotState().snapshot,rawRaces=JSON.parse(await readFile('src/data/races_from_pdf.json')),rawSnapshot=await readFile('public/prediction-snapshot.json','utf8')
- const nearest=await server.ssrLoadModule('/src/confidenceNearest.js'),index=new nearest.NearestIndex(JSON.parse(await readFile('public/confidence-history.json')));nearest.setConfidenceIndex(index);const historyLoader=async()=>({index,version:index.version,latest_result_date:index.latest,races:index.rows.length})
+ const {lookupConfidence}=await server.ssrLoadModule('/src/selectionReason.js')
  assert.equal(original.races.length,36);assert.equal(original.races.filter(r=>r.snapshot_timing==='postrace').length,24);assert.equal(original.races.filter(r=>r.snapshot_timing==='prestart').length,12)
  const replay=calculateRows(rawRaces,original.meta.weather.raw,original.meta.snapshot_saved_at)
  for(const row of original.races){const r=replay.find(r=>r.race_id===row.race_id);for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(r[key],row[key],`one calculator replay ${row.race_id} ${key}`)}
@@ -28,19 +28,19 @@ try{
   }
  }
  allViews(original)
- const race4=original.races.find(r=>r.race_id==='20261108-R04');assert.deepEqual(race4.selection_meta.top3.map(h=>h.umaban),[4,10,8]);assert.equal(race4.confidence,nearest.confidenceForSelection(rawRaces.find(r=>r.race_id===race4.race_id),race4.selection_meta,{index,at:original.meta.snapshot_saved_at}).confidence);assert.notEqual(race4.confidence,.744)
+ const race4=original.races.find(r=>r.race_id==='20261108-R04');assert.deepEqual(race4.selection_meta.top3.map(h=>h.umaban),[4,10,8]);assert.equal(race4.confidence,.744);assert.equal(race4.selection_meta.confidence_source,'065_070|ge10|wet|normal');assert.equal(race4.selection_meta.confidence_stats.N,62)
  for(const View of [Normal,Rank,Results]){const html=render(View,View===Normal?{race:rawRaces.find(r=>r.race_id===race4.race_id)}:{date:'2026-11-08'});assert.ok(html.includes('data-top3="4-10-8"')&&html.includes(`data-confidence="${race4.confidence}"`))}
  const weather=structuredClone(original.meta.weather.raw);weather.daily.precipitation_sum[weather.daily.time.indexOf('2026-11-08')]+=10
  let calculations=0,weatherCalls=0
  const pointer={version:original.meta.version,snapshot_sha256:createHash('sha256').update(rawSnapshot).digest('hex')}
  const fetcher=async url=>{if(url.includes('prediction-version.json'))return {ok:true,json:async()=>pointer};if(url.includes('prediction-snapshot.json'))return {ok:true,text:async()=>rawSnapshot};weatherCalls++;return {ok:true,json:async()=>weather}}
  const calculate=async(...args)=>{calculations++;return calculateRows(...args)}
- await Promise.all([store.refreshSnapshot({force:true,fetcher,calculate,historyLoader}),store.refreshSnapshot({force:true,fetcher,calculate,historyLoader})]);assert.equal(calculations,1);assert.equal(weatherCalls,1)
+ await Promise.all([store.refreshSnapshot({force:true,fetcher,calculate}),store.refreshSnapshot({force:true,fetcher,calculate})]);assert.equal(calculations,1);assert.equal(weatherCalls,1)
  const updated=store.getSnapshotState().snapshot;assert.notEqual(updated.meta.version,original.meta.version);allViews(updated)
  const immutableHistory=[...memory].filter(([key])=>key.startsWith('banma.snapshot.history.'))
  assert.equal(immutableHistory.length,1)
  store.acceptSnapshot(original);assert.equal(store.adoptLocalSnapshot(),false,'compact proof is not misused as a complete runtime snapshot');assert.equal(store.getSnapshotState().snapshot.meta.version,original.meta.version)
- await store.refreshSnapshot({force:true,fetcher,calculate,historyLoader});assert.equal(calculations,2,'cold reconstruction uses one shared calculator, not a per-view calculation');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),immutableHistory)
+ await store.refreshSnapshot({force:true,fetcher,calculate});assert.equal(calculations,2,'cold reconstruction uses one shared calculator, not a per-view calculation');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),immutableHistory)
  await store.refreshSnapshot({force:true,fetcher:async()=>{throw new Error('offline')}});assert.equal(store.getSnapshotState().status,'stale');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.ok(render(Info,{date:'2026-11-08',view:'confidence'}).includes('最新確認できず'))
  const mismatchFetcher=async url=>url.includes('prediction-version.json')?{ok:true,json:async()=>({...pointer,version:'wrong'})}:{ok:true,text:async()=>rawSnapshot}
  await store.refreshSnapshot({force:true,fetcher:mismatchFetcher});assert.equal(store.getSnapshotState().status,'stale');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version,'reject cross-version response')
@@ -52,10 +52,10 @@ try{
  const moreWeather=structuredClone(weather);moreWeather.daily.precipitation_sum[moreWeather.daily.time.indexOf('2026-11-08')]+=10
  const quotaFetcher=async url=>url.includes('prediction-version.json')?{ok:true,json:async()=>pointer}:{ok:true,json:async()=>moreWeather}
  const savedSet=localStorage.setItem;localStorage.setItem=()=>{throw new Error('quota')}
- await store.refreshSnapshot({force:true,fetcher:quotaFetcher,calculate,historyLoader});localStorage.setItem=savedSet
+ await store.refreshSnapshot({force:true,fetcher:quotaFetcher,calculate});localStorage.setItem=savedSet
  assert.equal(store.getSnapshotState().persistence,'unavailable');assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),priorHistory,'never overwrite/delete prior histories on quota failure')
  assert.ok(render(Info,{date:'2026-11-08',view:'races'}).includes('精度検証用記録としては扱えません'))
  assert.equal(memory.has('banma.feedback'),false,'no automatic learning')
  store.acceptSnapshot(original,{status:'current'})
- console.log('PASS shared snapshot: all36 exact CLI replay; normal/confidence/results/detail same version/top3/score/confidence/6 tickets; Nov8 R4 4-10-8/nearest; one concurrent calculation; stable load order; latest-input refresh; immutable history; stale/version mismatch/missing weather; strict prestart boundary; no auto learning.')
+ console.log('PASS shared snapshot: all36 exact CLI replay; normal/confidence/results/detail same version/top3/score/confidence/6 tickets; Nov8 R4 4-10-8/.744 original table; one concurrent calculation; stable load order; latest-input refresh; immutable history; stale/version mismatch/missing weather; strict prestart boundary; no auto learning.')
 }finally{await server.close()}

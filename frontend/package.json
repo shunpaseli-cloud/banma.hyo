@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "test": "node tests/confidence-date.mjs && node tests/race-results.mjs && node tests/confidence-results.mjs && node tests/official-finishes.mjs && node tests/readable-ui.mjs && node tests/shared-snapshot.mjs && python3 -m unittest discover -s tests -p test_moisture_log.py && node tests/short-comments.mjs && node tests/nearest-confidence.mjs && node tests/prediction-persistence.mjs && node tests/results-no-scroll.mjs",
+    "test": "node tests/confidence-date.mjs && node tests/race-results.mjs && node tests/confidence-results.mjs && node tests/official-finishes.mjs && node tests/readable-ui.mjs && node tests/shared-snapshot.mjs && python3 -m unittest discover -s tests -p test_moisture_log.py && node tests/short-comments.mjs && node tests/original-confidence-table.mjs && node tests/prediction-persistence.mjs && node tests/results-no-scroll.mjs",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",

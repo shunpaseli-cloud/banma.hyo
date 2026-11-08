@@ -1,0 +1,12 @@
+{
+  "version": "condition-table-v1",
+  "source_commit": "6d887900e859109b415d04ecb585fa4bc160ee2f",
+  "table_sha256": "1406e81faaf37601bca1fc93734c1d9b9d796165ea7753a21bf3924f7dfab254",
+  "fallback": [
+    "joint",
+    "coarse",
+    "pf_only",
+    "baseline"
+  ],
+  "note": "元の保存条件別テーブルと元の見送り・メムロ補正。29特徴の馬スコア・順位・BOX・推奨ゲートは不変。"
+}

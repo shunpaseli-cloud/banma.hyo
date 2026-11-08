@@ -18,7 +18,6 @@ const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},serv
 try{
  const {calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
  const snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),races=JSON.parse(await fs.readFile('src/data/races_from_pdf.json'))
- const nearest=await server.ssrLoadModule('/src/confidenceNearest.js');nearest.setConfidenceIndex(new nearest.NearestIndex(JSON.parse(await fs.readFile('public/confidence-history.json'))))
  const replay=calculateRows(races,snapshot.meta.weather.raw,snapshot.meta.snapshot_saved_at)
  assert.equal(replay.length,36)
  const golden=JSON.parse(await fs.readFile('tests/fixtures/pre-nearest-invariants.json'));for(const row of replay){const old=golden.rows.find(r=>r.race_id===row.race_id);assert.equal(sha(JSON.stringify(row.predictions)),old.predictions_sha256,'all saved horse scores/features unchanged');assert.deepEqual(row.tickets,old.tickets);assert.equal(row.recommended,old.recommended)}

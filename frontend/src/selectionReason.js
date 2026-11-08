@@ -1,6 +1,6 @@
 // 推奨レースの選定理由（日本語プロズ + confidence + UI用メタ）。オッズ・人気は使わない。
 import rules from './data/skip_rules.json' with { type: 'json' }
-import {confidenceForSelection} from './confidenceNearest.js'
+import bands from './data/confidence_bands.json' with { type: 'json' }
 import { axisGate, rankedPreds, trifectaBox3 } from './trio.js'
 import { isMemrobo, findMemrobo } from './memrobo.js'
 import { FEATURE_NAMES } from './learnCore.js'
@@ -48,6 +48,68 @@ function contribPhrase(p) {
   return tops.map(c => `${FEATURE_JP[c.name] || c.name}+${(+c.contrib).toFixed(3)}`).join('、')
 }
 
+export function pfBand(pf) {
+  if (pf == null || Number.isNaN(+pf)) return 'unk'
+  const v = +pf
+  if (v < 0.65) return 'lt065'
+  if (v < 0.70) return '065_070'
+  if (v < 0.80) return '070_080'
+  return '080_plus'
+}
+
+export function fieldBand(n) {
+  if (n <= 8) return 'le8'
+  if (n === 9) return 'eq9'
+  return 'ge10'
+}
+
+export function moistBand(m) {
+  if (m == null || Number.isNaN(+m)) return 'unk'
+  const v = +m
+  if (v < 1.5) return 'dry'
+  if (v < 1.8) return 'mid'
+  if (v < 3.0) return 'wet'
+  return 'heavy'
+}
+
+export function gradeBand(isGrade) {
+  return isGrade ? 'grade' : 'normal'
+}
+
+/**
+ * Lookup confidence (0–1) from historical similar-condition bands.
+ * Backoff: joint → coarse → pf_only → baseline.
+ */
+export function lookupConfidence({ pf, field, moist, isGrade }) {
+  const pb = pfBand(pf)
+  const fb = fieldBand(field)
+  const mb = moistBand(moist)
+  const gb = gradeBand(!!isGrade)
+  const jointKey = `${pb}|${fb}|${mb}|${gb}`
+  const coarseKey = `${pb}|${fb}|${gb}`
+
+  const tryGet = (table, key) => {
+    const row = table?.[key]
+    if (!row || row.N == null || row.N <= 0 || row.confidence == null) return null
+    return { confidence: +row.confidence, source: key, stats: { N: row.N, hit_pct: row.hit_pct, ROI_pct: row.ROI_pct } }
+  }
+
+  return (
+    tryGet(bands.joint, jointKey) ||
+    tryGet(bands.coarse, coarseKey) ||
+    tryGet(bands.pf_only, pb) ||
+    {
+      confidence: +(bands.baseline?.confidence ?? 0.45),
+      source: 'baseline',
+      stats: {
+        N: bands.baseline?.N ?? 0,
+        hit_pct: bands.baseline?.hit_pct ?? null,
+        ROI_pct: bands.baseline?.ROI_pct ?? null,
+      },
+    }
+  )
+}
+
 function confLabel(c) {
   if (c >= 0.75) return '高'
   if (c >= 0.55) return '中'
@@ -63,7 +125,7 @@ function confLabel(c) {
  *   selection_meta: object
  * }}
  */
-export function buildRaceRecommendation(race, preds, r = rules, confidenceOptions = {}) {
+export function buildRaceRecommendation(race, preds, r = rules) {
   const gate = axisGate(preds, r)
   const ordered = rankedPreds(preds || [])
   const ax = ordered[0] || null
@@ -81,7 +143,11 @@ export function buildRaceRecommendation(race, preds, r = rules, confidenceOption
   const pfOk = memrobo || (pf != null && pf >= thr)
   const moist = race.track_moisture ?? race.track_moisture_est ?? resolveMoisture(race)?.pct ?? null
 
-  let confidence = 0
+  const confInfo = lookupConfidence({ pf: pf ?? 0.5, field, moist, isGrade })
+  // 見送りは自信度を下げて表示（購入しないため）
+  let confidence = confInfo.confidence
+  if (!recommended) confidence = Math.min(confidence, 0.25)
+  if (memrobo) confidence = Math.min(0.95, confidence + 0.05) // 特例で推奨に含めるが過信しない
 
   const parts = []
   if (recommended) {
@@ -105,7 +171,7 @@ export function buildRaceRecommendation(race, preds, r = rules, confidenceOption
   }
 
   parts.push(`出走 ${field} 頭${isGrade ? '・重賞（BG等）扱い' : '・一般'}。${race.name ? `レース名「${race.name}」。` : ''}`)
-  if (moist != null) parts.push(`馬場水分 ${(+moist).toFixed(1)}%。`)
+  if (moist != null) parts.push(`馬場水分 ${(+moist).toFixed(1)}%（帯=${moistBand(moist)}）。`)
   if (ordered.length >= 3) {
     parts.push(`上位3頭: ${scoreLine(race, ordered, 3)}。`)
   }
@@ -116,10 +182,27 @@ export function buildRaceRecommendation(race, preds, r = rules, confidenceOption
     parts.push(`軸スコアへの主な正寄与: ${contribPhrase(ax)}。`)
   }
 
+  const st = confInfo.stats || {}
+  parts.push(
+    `自信度 ${confidence.toFixed(2)}（${confLabel(confidence)}）。` +
+    `類似条件（pf帯=${pfBand(pf)}・頭数帯=${fieldBand(field)}・水分帯=${moistBand(moist)}・${gradeBand(isGrade)}／照合=${confInfo.source}）の過去実績は` +
+    (st.N ? `N=${st.N}・的中率${st.hit_pct}%・回収率${st.ROI_pct}%` : 'サンプル不足のためベースライン') +
+    '。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。',
+  )
+
+  const selection_comment = parts.join(' ')
   const selection_meta = {
     recommended,
     confidence,
     confidence_label: confLabel(confidence),
+    confidence_source: confInfo.source,
+    confidence_stats: st,
+    confidence_bands: {
+      pf: pfBand(pf),
+      field: fieldBand(field),
+      moist: moistBand(moist),
+      grade: gradeBand(isGrade),
+    },
     race_id: race.race_id,
     race_date: race.race_date,
     race_no: race.race_no,
@@ -156,12 +239,7 @@ export function buildRaceRecommendation(race, preds, r = rules, confidenceOption
     box_horses: boxHorses,
     feature_names: FEATURE_NAMES,
   }
-  const stats=confidenceForSelection(race,selection_meta,confidenceOptions)
-  confidence=stats.confidence
-  Object.assign(selection_meta,{confidence,confidence_label:confLabel(confidence),confidence_source:stats.method,confidence_stats:stats})
-  parts.push('自信度は近傍の的中と払戻に基づく合成指標で、的中確率ではありません。')
-  const selection_comment=parts.join(' ')
-  return { recommended, confidence, confidence_status:stats.status, selection_comment, selection_meta }
+  return { recommended, confidence, selection_comment, selection_meta }
 }
 
 export { FEATURE_JP }
