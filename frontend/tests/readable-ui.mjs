@@ -13,7 +13,7 @@ const walk=(node,type)=>{
   return [...(node.type===type?[node]:[]),...Children.toArray(node.props.children).flatMap(child=>walk(child,type))]
 }
 try {
-  const {default:SelectionComment,qualitativeReason}=await server.ssrLoadModule('/src/components/SelectionComment.jsx')
+  const {default:SelectionComment,qualitativeReason,horseComments}=await server.ssrLoadModule('/src/components/SelectionComment.jsx')
   const {default:Card}=await server.ssrLoadModule('/src/components/RecommendationCard.jsx')
   const {default:Disclosure,syncDisclosure}=await server.ssrLoadModule('/src/components/Disclosure.jsx')
   const {default:RaceResult}=await server.ssrLoadModule('/src/components/RaceResult.jsx')
@@ -30,7 +30,7 @@ try {
   for(const row of data.races){
     const reason=qualitativeReason({...row,selection_comment:'pf=0.123 score=99.99 寄与率1.234 λ=0.92'})
     assert.ok(!/[\d０-９]|past_form|\bpf\b|\bscore\b|係数|寄与率|λ|feature/.test(reason))
-    assert.ok(render(SelectionComment,{rec:row}).includes(reason))
+    for(const note of horseComments(row))assert.ok(render(SelectionComment,{rec:row}).includes(note.text))
     assert.ok(!reason.includes('スピード')&&!reason.includes('好調'),'do not invent performance grounds')
     const props={race:{race_id:row.race_id,race_date:row.race_date,race_no:row.race_no,name:row.race_name,entries:[]},rec:row,tickets:row.tickets,resultOverride:row.result,predictionOverride:predictionOf(row)}
     const tree=Card(props),html=render(Card,props)
@@ -91,7 +91,7 @@ try {
   assert.ok(css.includes('minmax(0,1fr)')&&css.includes('overflow-wrap:anywhere'))
   assert.ok(css.includes('@media(max-width:480px)'))
   assert.ok(css.includes('font-size: clamp(1.5rem, 1.1rem + 2vw, 2rem)'),'retain enlarged podium')
-  const model=await readFile('src/data/learned_model.json')
-  assert.equal(createHash('sha256').update(model).digest('hex'),'877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5')
-  console.log('PASS readable UI: current shared comments, no numeric rationale, confidence/6 tickets/payouts retained, lazy disclosure open/close, top3/all finishes, post-start/pending separation, single result section, route/date preservation, unchanged model.')
+  const model=JSON.parse(await readFile('src/data/learned_model.json'));delete model.comment_style
+  assert.equal(createHash('sha256').update(JSON.stringify(model)).digest('hex'),'877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5')
+  console.log('PASS readable UI: current shared comments, no numeric rationale, confidence/6 tickets/payouts retained, lazy disclosure open/close, top3/all finishes, post-start/pending separation, single result section, route/date preservation, unchanged predictive model data (comment metadata allowed).')
 }finally{await server.close()}
