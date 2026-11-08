@@ -39,8 +39,8 @@ try{
  const updated=store.getSnapshotState().snapshot;assert.notEqual(updated.meta.version,original.meta.version);allViews(updated)
  const immutableHistory=[...memory].filter(([key])=>key.startsWith('banma.snapshot.history.'))
  assert.equal(immutableHistory.length,1)
- store.acceptSnapshot(original);assert.equal(store.adoptLocalSnapshot(),true);assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version,'revisit/other tab adopts the same latest shared history')
- await store.refreshSnapshot({force:true,fetcher,calculate,historyLoader});assert.equal(calculations,1,'unchanged inputs never recalculate independently');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),immutableHistory)
+ store.acceptSnapshot(original);assert.equal(store.adoptLocalSnapshot(),false,'compact proof is not misused as a complete runtime snapshot');assert.equal(store.getSnapshotState().snapshot.meta.version,original.meta.version)
+ await store.refreshSnapshot({force:true,fetcher,calculate,historyLoader});assert.equal(calculations,2,'cold reconstruction uses one shared calculator, not a per-view calculation');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),immutableHistory)
  await store.refreshSnapshot({force:true,fetcher:async()=>{throw new Error('offline')}});assert.equal(store.getSnapshotState().status,'stale');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.ok(render(Info,{date:'2026-11-08',view:'confidence'}).includes('最新確認できず'))
  const mismatchFetcher=async url=>url.includes('prediction-version.json')?{ok:true,json:async()=>({...pointer,version:'wrong'})}:{ok:true,text:async()=>rawSnapshot}
  await store.refreshSnapshot({force:true,fetcher:mismatchFetcher});assert.equal(store.getSnapshotState().status,'stale');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version,'reject cross-version response')

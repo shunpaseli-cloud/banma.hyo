@@ -78,3 +78,24 @@ The umanity import merges only results/source IDs/timestamps/official crosscheck
 and separate measured-water metadata (24 final+12pending). Incoming prediction
 fields are ignored; existing full finishes/all payouts/refunds are retained.
 No prediction history, weather-log values or learned ranking parameters change.
+
+## Layout/persistence regression follow-up
+
+Results alone uses a1240px desktop container and900px table minimum; column
+widths live on col elements, tickets wrap in two columns, and the verdict sticks
+to the right on narrow horizontally scrolling screens. Other views keep their
+existing880px container.1280px viewport has1208px inner space, so all four
+columns fit without reducing normal text sizes.
+
+Browser persistence now stores schema3 minimal immutable prediction records,
+not full runtime predictions/near-neighbor audits. Current36R measured size:
+655409bytes full vs26104bytes compact (96.02% smaller). Candidate corpus is
+never stored there. A stable content ID derives from effective normalized
+weather, model/source/engine/corpus hashes and predicted output; per-date IDs
+share that identity across views. Check timestamps and provider metadata/unused
+forecast days do not create new history versions. Identical content reuses the
+first stored record and save times without overwriting it. No prior user
+history is deleted. localStorage failure falls back to an add-only IndexedDB
+record; both failures remain visibly unavailable with diagnostic details.
+Minimal records are evidence, not a fabricated full-runtime cache: cold views
+reconstruct once through the shared latest-input calculator.

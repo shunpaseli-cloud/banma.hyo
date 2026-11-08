@@ -38,7 +38,7 @@ export default function App() {
     ? { ...DATA, warning: false, meta: { ...DATA.meta, race_date: date } }
     : { ...DATA, warning: true, source: DATA.source === 'pdf' ? 'seed' : DATA.source }
   return (
-    <div className="app">
+    <div className={`app${view==='results'?' app-results':''}`}>
       <header className="masthead">
         <h1>ばん馬表</h1>
         <p>ばんえい競馬 出走表・推奨・公式結果</p>
