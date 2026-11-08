@@ -21,7 +21,16 @@ export function predictionOf(row){
  return {horses:row.selection_meta.top3.map(h=>h.umaban),tickets:row.tickets,recommended:row.recommended===true,savedAt:row.snapshot_saved_at,confidence:row.confidence,stakeYen:row.stake_yen,snapshotVersion:row.snapshot_version,snapshotTiming:row.snapshot_timing,scheduledStartAt:row.scheduled_start_at,persistence:row.persistence_status||'server_archive'}
 }
 async function sha(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(hash)].map(x=>x.toString(16).padStart(2,'0')).join('')}
-export function forecastFingerprint(snapshot,raw){const daily=raw?.daily;return JSON.stringify({days:daily?.time?.map((date,i)=>[date,daily.precipitation_sum?.[i],daily.relative_humidity_2m_mean?.[i],daily.et0_fao_evapotranspiration?.[i]]),models:snapshot.meta.models,engine:snapshot.meta.engine,source:snapshot.meta.source_races_sha256,config:snapshot.meta.config})}
+export function forecastFingerprint(snapshot,raw){
+ const daily=raw?.daily,needed=new Set(snapshot.races.flatMap(r=>[0,-1,-2].map(d=>new Date(Date.parse(r.race_date+'T00:00:00Z')+d*86400000).toISOString().slice(0,10))))
+ return JSON.stringify({days:daily?.time?.map((date,i)=>[date,daily.precipitation_sum?.[i],daily.relative_humidity_2m_mean?.[i],daily.et0_fao_evapotranspiration?.[i]]).filter(row=>needed.has(row[0])).sort((a,b)=>a[0].localeCompare(b[0])),models:snapshot.meta.models,engine:snapshot.meta.engine,source:snapshot.meta.source_races_sha256,config:snapshot.meta.config})
+}
+const predictiveContent=rows=>rows.map(r=>({race_id:r.race_id,prediction_status:r.prediction_status,recommended:r.recommended,confidence:r.confidence,top3:r.selection_meta?.top3,axis:r.selection_meta?.axis,predictions:r.predictions,tickets:r.tickets,moisture:r.moisture?{...r.moisture,weather_timing:undefined}:null,model:r.model,cutoff:r.selection_meta?.confidence_stats?.cutoff_exclusive_date}))
+export async function contentIdentity(snapshot,raw,history,rows){
+ const normalized=JSON.parse(forecastFingerprint(snapshot,raw)),corpus={version:history.version,sha256:history.sha||null},predictionDigest=await sha(JSON.stringify(predictiveContent(rows))),inputFingerprint=await sha(JSON.stringify({normalized,corpus})),contentVersion=await sha(inputFingerprint+predictionDigest),dates={}
+ for(const date of [...new Set(rows.map(r=>r.race_date))]){const days=new Set([0,-1,-2].map(d=>new Date(Date.parse(date+'T00:00:00Z')+d*86400000).toISOString().slice(0,10)));dates[date]='day-'+(await sha(JSON.stringify({normalized:{...normalized,days:normalized.days.filter(row=>days.has(row[0]))},corpus,rows:predictiveContent(rows.filter(r=>r.race_date===date))}))).slice(0,20)}
+ return {version:'live-'+contentVersion.slice(0,24),content_version:contentVersion,input_fingerprint:inputFingerprint,prediction_digest:predictionDigest,date_content_versions:dates,normalized_inputs:normalized}
+}
 export function adoptLocalSnapshot(){
  try{
   const id=localStorage.getItem('banma.snapshot.latestVersion');if(!id)return false
@@ -66,10 +75,10 @@ export async function refreshSnapshot({force=false,fetcher=globalThis.fetch,calc
    if(weatherChanged){const engine=calculate||((await import('./calculateSnapshot.js')).calculateRows);rows=await engine(races,raw,checked)}
    else{const {replaceConfidence}=await import('./confidenceNearest.js');const byId=new Map(races.map(r=>[r.race_id,r]));rows=base.races.map(row=>replaceConfidence(row,byId.get(row.race_id),{index:history.index,at:checked}))}
    searchedHistoryVersion=history.version
-   const inputHash=await sha(forecastFingerprint(base,raw)+history.version),version=`live-${checked.replace(/[-:]/g,'').replace('+0900','JST')}-${inputHash.slice(0,8)}-${(crypto.randomUUID?.()||Math.random().toString(16).slice(2)).slice(0,8)}`
-   const snapshot={schema_version:2,meta:{...base.meta,version,server_parent_version:pointer.version,generated_at_asia_tokyo:checked,snapshot_saved_at:checked,generated_in:'browser_shared_store',confidence_method:'nearest-v1',confidence_history:{version:history.version,latest_result_date:history.latest_result_date,races:history.races},weather:{...base.meta.weather,source_url:weatherUrl.href,raw,raw_sha256:await sha(JSON.stringify(raw)),retrieved_at:checked,status:'retrieved'},persistence_status:'browser_history'},races:rows.map(row=>({...row,snapshot_version:version,persistence_status:'browser_history'}))}
+   const identity=await contentIdentity(base,raw,history,rows),version=identity.version
+   let snapshot={schema_version:2,meta:{...base.meta,...identity,version,server_parent_version:pointer.version,generated_at_asia_tokyo:checked,snapshot_saved_at:checked,generated_in:'browser_shared_store',confidence_method:'nearest-v1',confidence_history:{version:history.version,latest_result_date:history.latest_result_date,races:history.races},weather:{...base.meta.weather,source_url:weatherUrl.href,raw,raw_sha256:await sha(JSON.stringify(raw)),retrieved_at:checked,status:'retrieved'},persistence_status:'browser_history'},races:rows.map(row=>({...row,snapshot_version:version,persistence_status:'browser_history'}))}
    validateSnapshot(snapshot)
-   try{const key=`banma.snapshot.history.${version}`,text=JSON.stringify(snapshot),old=localStorage.getItem(key);if(old&&old!==text)throw new Error('同じ履歴版の上書きを拒否');if(!old)localStorage.setItem(key,text);localStorage.setItem('banma.snapshot.latestVersion',version)}catch(error){snapshot.meta.persistence_status='unavailable';snapshot.races=snapshot.races.map(row=>({...row,persistence_status:'unavailable'}))}
+   snapshot=await (await import('./predictionPersistence.js')).persistSharedSnapshot(snapshot)
    publish({snapshot,status:'current',lastCheckedAt:checked,error:null,persistence:snapshot.meta.persistence_status})
    return state
   }catch(error){publish({status:'stale',error:String(error)});return state}

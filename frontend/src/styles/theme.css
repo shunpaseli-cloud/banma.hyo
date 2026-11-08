@@ -138,7 +138,7 @@ a { overflow-wrap:anywhere; }
 .results-table caption{text-align:left;padding:12px;font-weight:700}
 .results-table th,.results-table td{padding:14px 12px;text-align:left;vertical-align:top;border-top:1px solid var(--line,#d5d7d9);overflow-wrap:anywhere}
 .results-table thead th{background:#eef2f4;color:#182633;font-weight:700}
-.results-table th:nth-child(1){width:24%}.results-table th:nth-child(2){width:29%}.results-table th:nth-child(3){width:32%}.results-table th:nth-child(4){width:15%}
+.results-table col:nth-child(1){width:24%}.results-table col:nth-child(2){width:29%}.results-table col:nth-child(3){width:32%}.results-table col:nth-child(4){width:15%}
 .results-race-number{display:block;font-size:22px}.results-race-name{display:block;margin:4px 0 8px;font-weight:600}
 .results-table small{display:block;font-size:12px;line-height:1.6;font-weight:400;color:#4b5563;margin-top:5px}
 .results-selected{margin:0 0 10px;font-size:14px;font-weight:600}
@@ -150,3 +150,13 @@ a { overflow-wrap:anywhere; }
 .results-hit{font-size:19px;display:block;color:#263443}.results-hit.is-hit{color:#08623c}.results-scroll-hint{font-size:13px;color:#4b5563}
 .results-table .disclosure{margin-top:10px;font-weight:400}.results-table .disclosure summary{min-height:44px}
 @media(max-width:480px){.results-table{min-width:960px}.results-table-scroll:focus-visible{outline:3px solid #2368ac;outline-offset:2px}}
+
+/* Wide Results use the desktop viewport; only narrow screens require horizontal scrolling. */
+.app.app-results{max-width:1240px}
+.results-table{min-width:900px}
+.results-table th:last-child,.results-table td:last-child{position:sticky;right:0;background:#fff;box-shadow:-1px 0 0 #d5d7d9}
+.results-table thead th:last-child{background:#eef2f4;z-index:1}
+.results-table .results-box-tickets{grid-template-columns:repeat(2,minmax(0,1fr))}
+.results-table .results-race-name,.results-table .results-selected{overflow-wrap:anywhere;word-break:normal}
+@media(min-width:1000px){.results-scroll-hint{display:none}}
+@media(max-width:480px){.results-table{min-width:900px}.results-table td:last-child,.results-table th:last-child{width:132px}.results-table .results-hit{font-size:18px}}
