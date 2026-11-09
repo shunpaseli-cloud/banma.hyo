@@ -1,18 +1,19 @@
 {
  "schema_version": 2,
  "meta": {
-  "version": "table-20261108T145054JST-e8d6fcc0eb3a",
-  "generated_at_asia_tokyo": "2026-11-08T14:50:54+09:00",
+  "version": "card4-20261109T195011JST-f488b7eea55e",
+  "generated_at_asia_tokyo": "2026-11-09T19:50:11+09:00",
   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
   "config": "plus_hjz BOX123 pf≥0.65 k=0.05",
   "timezone": "Asia/Tokyo",
   "source_races_sha256": "4b50a6b89f427ab49182f5f812414b7eb5ddf3bcc96e88986bba4ce89c8d41a1",
   "models": {
-   "learned_model.json": "f50896e88bffe77475904d32d12280178b150f6c3cc18a5eeea5ad71dc57250f",
+   "learned_model.json": "3b711cf0d157bbe8f0ef2a2c3032c4040d9d41f577c7e16a8a4a211bd05ec6c2",
    "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
-   "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7"
+   "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7",
+   "card_history_age4.json": "76f8c4ffd10074e040edd1d079607879fef633d2cc159cd4d07d5a4e5f030ef9"
   },
-  "engine": "d66548bfdb67f8ed6137c9be3c21d7a8f888427a2cd5f60758ecb4b668122154",
+  "engine": "4922425be20d85e9460b78007ab05f389c5190d9d7fb0d310e00ad62c75b955b",
   "weather": {
    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=4&forecast_days=3&timezone=Asia%2FTokyo",
    "retrieved_at": "2026-11-08T06:42:08+09:00",
@@ -102,7 +103,16 @@
    ],
    "note": "元の保存条件別テーブルと元の見送り・メムロ補正。29特徴の馬スコア・順位・BOX・推奨ゲートは不変。"
   },
-  "confidence_policy": "Confidence-only update. Horse scores/ranking/recommended/tickets/comments and original prediction saved time are retained. Original saved-condition table restored. Confidence recalculated after start is labeled separately; old prestart confidence records are not rewritten."
+  "confidence_policy": "Confidence-only update. Horse scores/ranking/recommended/tickets/comments and original prediction saved time are retained. Original saved-condition table restored. Confidence recalculated after start is labeled separately; old prestart confidence records are not rewritten.",
+  "model_label_updated_at": "2026-11-09T19:50:11+09:00",
+  "previous_model_label_archive": "prediction-history/previous-table-20261108T145054JST-e8d6fcc0eb3a/",
+  "card_score_age4": {
+   "version": "card-score-age4-v1",
+   "effective_from_race_date": "2026-11-09",
+   "history_through": "2026-11-08",
+   "scope": "4歳以上だけのレースの3頭BOX候補のみ。3歳以下・混合・発効日前は29特徴BOXのまま。点数・見送り・自信度は不変。",
+   "saved_rows": "既存保存行は再生成せず不変（snapshot_versionのみ更新）。"
+  }
  },
  "races": [
   {
@@ -1007,7 +1017,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -1068,7 +1078,7 @@
       "name": "ガシンショウタン",
       "status": "finished",
       "time": "2:12.0",
-      "time_sec": 132.0
+      "time_sec": 132
      },
      {
       "finish": 7,
@@ -1100,7 +1110,7 @@
       "name": "サクセストップ",
       "status": "finished",
       "time": "2:34.0",
-      "time_sec": 154.0
+      "time_sec": 154
      }
     ],
     "payouts": {
@@ -2132,7 +2142,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -2177,7 +2187,7 @@
       "name": "ディーエフアレス",
       "status": "finished",
       "time": "1:51.0",
-      "time_sec": 111.0
+      "time_sec": 111
      },
      {
       "finish": 5,
@@ -2201,7 +2211,7 @@
       "name": "コウバイヒメ",
       "status": "finished",
       "time": "2:07.0",
-      "time_sec": 127.0
+      "time_sec": 127
      },
      {
       "finish": 8,
@@ -2209,7 +2219,7 @@
       "name": "ライデンファンタジ",
       "status": "finished",
       "time": "2:09.0",
-      "time_sec": 129.0
+      "time_sec": 129
      },
      {
       "finish": 9,
@@ -3252,7 +3262,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -4377,7 +4387,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -4406,7 +4416,7 @@
       "name": "ジェットクイーン",
       "status": "finished",
       "time": "1:42.0",
-      "time_sec": 102.0
+      "time_sec": 102
      },
      {
       "finish": 3,
@@ -5502,7 +5512,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -5523,7 +5533,7 @@
       "name": "イノスケ",
       "status": "finished",
       "time": "1:46.0",
-      "time_sec": 106.0
+      "time_sec": 106
      },
      {
       "finish": 2,
@@ -6627,7 +6637,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -7747,7 +7757,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -7768,7 +7778,7 @@
       "name": "キタノレンザン",
       "status": "finished",
       "time": "1:42.0",
-      "time_sec": 102.0
+      "time_sec": 102
      },
      {
       "finish": 2,
@@ -8872,7 +8882,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -8901,7 +8911,7 @@
       "name": "テンボシヴィーナス",
       "status": "finished",
       "time": "1:58.0",
-      "time_sec": 118.0
+      "time_sec": 118
      },
      {
       "finish": 3,
@@ -8941,7 +8951,7 @@
       "name": "オーシャンヒーロー",
       "status": "finished",
       "time": "2:03.0",
-      "time_sec": 123.0
+      "time_sec": 123
      },
      {
       "finish": 8,
@@ -9997,7 +10007,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -11052,7 +11062,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -12169,7 +12179,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -12230,7 +12240,7 @@
       "name": "サクラヤマト",
       "status": "finished",
       "time": "1:57.0",
-      "time_sec": 117.0
+      "time_sec": 117
      },
      {
       "finish": 7,
@@ -13224,7 +13234,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -13285,7 +13295,7 @@
       "name": "マサタカラ",
       "status": "finished",
       "time": "1:56.0",
-      "time_sec": 116.0
+      "time_sec": 116
      },
      {
       "finish": 7,
@@ -13309,7 +13319,7 @@
       "name": "クリスタルホーク",
       "status": "finished",
       "time": "2:03.0",
-      "time_sec": 123.0
+      "time_sec": 123
      }
     ],
     "payouts": {
@@ -14341,7 +14351,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -15311,7 +15321,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -16275,7 +16285,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -17309,7 +17319,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -18274,7 +18284,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -19238,7 +19248,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -20272,7 +20282,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -21312,7 +21322,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -22352,7 +22362,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -23392,7 +23402,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -24432,7 +24442,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -25472,7 +25482,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -26512,7 +26522,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace",
    "result": {
@@ -27532,7 +27542,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -28552,7 +28562,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -29572,7 +29582,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -30603,7 +30613,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -31623,7 +31633,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -32643,7 +32653,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -33663,7 +33673,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -34543,7 +34553,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -35551,7 +35561,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -36571,7 +36581,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {
@@ -37521,7 +37531,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "table-20261108T145054JST-e8d6fcc0eb3a",
+   "snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart",
    "result": {

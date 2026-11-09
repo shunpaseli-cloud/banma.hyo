@@ -1,0 +1,89 @@
+{
+ "experiment": "card-only per-horse score, product/Plackett-Luce trifecta approximation, age bands separated (t267u+t268u)",
+ "preregistered_at_JST": "2026-11-09T19:20+09:00",
+ "preregistration_note": "Written before any model fit or evaluation metric was computed. No feature, hyperparameter, band rule or BOX rule is changed after seeing evaluation results.",
+ "protected_untouched": [
+  "production repo /workspace/banma-confidence-dates",
+  "learned_model.json sha f50896e88bffe77475904d32d12280178b150f6c3cc18a5eeea5ad71dc57250f",
+  "routines",
+  "deploy"
+ ],
+ "data": {
+  "2022_warmup": "/workspace/banma_lambda_confidence_experiment/inputs/canonical_races.json (2022 only; actual starters only, no scratched-horse identities)",
+  "2023_onward": "/workspace/banma_official_pdf_audit_2023_onward/clean_results_2023_onward.json (status final; 2023Q1 432R not PDF-verified -> sensitivity run excluding them)",
+  "horse_key": "NFKC(name)+birth_date"
+ },
+ "age_bands": {
+  "Y": "age<=3 (card age)",
+  "O": "age>=4",
+  "race_typing": "pure_Y: all actual starters Y; pure_O: all actual starters O; mixed: both present",
+  "training": "band model fitted only on pure races of that band (no shared coefficients, separate standardization)",
+  "primary_eval": "pure_Y and pure_O races evaluated separately, each with its own model",
+  "mixed_races": "secondary/exploratory only: each horse scored by its OWN band model linear predictor, plus one offset delta for Y horses fitted (1-parameter PL) on prior mixed races only; reported separately, never pooled into band results"
+ },
+ "features_card_only": {
+  "w_rel": "sled weight minus mean sled weight of same-band actual starters in race (card)",
+  "w_delta_prev": "sled weight minus horse's previous-start sled weight (prior dates only)",
+  "w_minus_best_top3": "sled weight minus max sled weight at which horse previously finished top3 (prior dates); missing->0 + flag",
+  "female": "sex from card",
+  "age_months": "months from birth_date to race date (card)",
+  "form_last1": "normalized finish (finish-1)/(n-1) of last start, prior dates only",
+  "form_avg3": "mean normalized finish of last 3 starts",
+  "win_rate5": "wins in last 5 starts, shrunk (w+0.1)/(k+1)... implemented as (wins+prior*2)/(k+2) with prior=0.12",
+  "top3_rate5": "top3 in last 5, shrunk (t+0.35*2)/(k+2)",
+  "log_starts": "log1p(#prior starts in data window)",
+  "log_days_since": "log1p(min(days since previous start,365))",
+  "no_history": "1 if no prior start in data",
+  "last_dnf": "1 if previous start was DNF/disqualified",
+  "class_change": "ladder value(current race) - ladder value(previous start), negative = promoted to higher class; 0 + flag if ladders differ/unknown",
+  "class_unknown_or_switch": "flag",
+  "scratch_hist": "log1p(#withdrawn/excluded entries of this horse in prior 180 days) -- identities only available from 2023, so 0 throughout 2022 warmup (documented bias)",
+  "excluded_from_score": [
+   "same-day body weight",
+   "measured moisture",
+   "popularity/odds",
+   "same-race finish/time",
+   "official assigned-class membership tables (t262 actual membership; not used)"
+  ]
+ },
+ "scratch_handling": "withdrawn/excluded horses removed from candidates (status known before post time); DNF/DQ starters remain candidates",
+ "model": {
+  "type": "linear utility u=x.beta, Plackett-Luce top-3 likelihood, L2 lambda=1.0 per feature (standardized with training-window stats), L-BFGS",
+  "variants": {
+   "M1_primary": "features above",
+   "M2_secondary": "M1 + jockey prior-365d top3 rate shrunk (prior 0.30, k=10)"
+  },
+  "walk_forward": "monthly expanding window: model for eval month M fit on races with date < first day of M (2022 warmup included); features for every race computed from strictly earlier dates only",
+  "p_i": "softmax(u) over actual starters"
+ },
+ "box_rules": {
+  "BOX_PL": "3-horse set maximizing sum of 6 PL ordered probabilities p_i*p_j/(1-p_i)*p_k/(1-p_i-p_j)",
+  "BOX_PROD": "plain product normalization p(i,j,k) ∝ p_i p_j p_k -> top-3 by p",
+  "top_ticket": "single ordered triple with max PL probability (exact trifecta)",
+  "primary_metric": "BOX_PL hit rate (any of 6 tickets equals an official trifecta combination)"
+ },
+ "baselines_same_races": [
+  "random BOX expected hit = 1/C(n,3) averaged",
+  "simple rule: best form_avg3 (no-history = 0.5), ties by lower w_rel",
+  "C lambda walk-forward BOX (/workspace/anauma/chaos_lambda/lambda_box_walkforward.json) where available; different information set",
+  "reference only (not card info): popularity top3 BOX"
+ ],
+ "metrics": [
+  "n races",
+  "BOX hit rate",
+  "top-ticket exact hit",
+  "top1 win rate",
+  "top1-in-top3 rate",
+  "mean # of actual top3 in BOX",
+  "mean Spearman(score, finish)",
+  "winner logloss vs uniform",
+  "ROI reference 600 yen/R BOX, 100 yen top ticket"
+ ],
+ "bootstrap": {
+  "type": "day-block (resample race dates with replacement)",
+  "B": 1000,
+  "seed": 20261109,
+  "outputs": "mean, 95% percentile CI, paired differences vs baselines, share of draws with diff>0 (bootstrap frequency, not a future probability)"
+ },
+ "leakage_audit": "for sampled eval dates D, randomize finishes/statuses of all races dated >= D and re-run feature build + monthly fit; predictions for date D must be bit-identical (prior days within the same month legitimately feed horse history)"
+}

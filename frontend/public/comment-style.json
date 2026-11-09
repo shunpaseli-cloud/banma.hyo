@@ -1,7 +1,7 @@
 {
   "source": "learned_model.json#comment_style",
-  "model_file_sha256": "f50896e88bffe77475904d32d12280178b150f6c3cc18a5eeea5ad71dc57250f",
-  "predictive_payload_sha256": "877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5",
+  "model_file_sha256": "3b711cf0d157bbe8f0ef2a2c3032c4040d9d41f577c7e16a8a4a211bd05ec6c2",
+  "predictive_payload_sha256": "fe40944079fd8306796dcb0f34706bda2c7057cbdf36aca821399361bf70ccfc",
   "comment_style_sha256": "bf297068e4efa0ad06f3de82c81f9c91ccc7da71b44c8e8e79cf432e60e8a5a5",
   "comment_style": {
     "version": "newspaper-short-v1",

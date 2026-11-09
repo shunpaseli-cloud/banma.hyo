@@ -1,0 +1,181 @@
+{
+ "version": "card-score-age4-v1",
+ "status": "production",
+ "purpose": "3頭BOX候補選定のみ（4歳以上だけのレース）。点数・購入/見送り・自信度には使わない。",
+ "applies_to": {
+  "race_type": "pure_O: 取消・除外を除く全出走予定馬の出走表年齢が4歳以上",
+  "effective_from_race_date": "2026-11-09",
+  "not_applied": [
+   "3歳以下を含むレース（3歳以下のみ・混合）: 29特徴の現行BOXのまま",
+   "2026-11-09 より前のレース（保存済み予想を再生成しない）",
+   "年齢・ソリ重量欠測馬がいるレース",
+   "候補3頭未満"
+  ]
+ },
+ "model_type": "linear utility u=z.beta, Plackett-Luce top-3 likelihood, L2 lambda=1.0, L-BFGS-B (scipy, maxiter 500)",
+ "features": [
+  "w_rel",
+  "w_delta_prev",
+  "w_minus_best_top3",
+  "best_top3_missing",
+  "female",
+  "age_months",
+  "form_last1",
+  "form_avg3",
+  "win_rate5",
+  "top3_rate5",
+  "log_starts",
+  "log_days_since",
+  "no_history",
+  "last_dnf",
+  "class_change",
+  "class_unknown_or_switch",
+  "scratch_hist"
+ ],
+ "feature_definitions": {
+  "w_rel": "sled weight minus mean sled weight of same-band actual starters in race (card)",
+  "w_delta_prev": "sled weight minus horse's previous-start sled weight (prior dates only)",
+  "w_minus_best_top3": "sled weight minus max sled weight at which horse previously finished top3 (prior dates); missing->0 + flag",
+  "female": "sex from card",
+  "age_months": "months from birth_date to race date (card)",
+  "form_last1": "normalized finish (finish-1)/(n-1) of last start, prior dates only",
+  "form_avg3": "mean normalized finish of last 3 starts",
+  "win_rate5": "wins in last 5 starts, shrunk (w+0.1)/(k+1)... implemented as (wins+prior*2)/(k+2) with prior=0.12",
+  "top3_rate5": "top3 in last 5, shrunk (t+0.35*2)/(k+2)",
+  "log_starts": "log1p(#prior starts in data window)",
+  "log_days_since": "log1p(min(days since previous start,365))",
+  "no_history": "1 if no prior start in data",
+  "last_dnf": "1 if previous start was DNF/disqualified",
+  "class_change": "ladder value(current race) - ladder value(previous start), negative = promoted to higher class; 0 + flag if ladders differ/unknown",
+  "class_unknown_or_switch": "flag",
+  "scratch_hist": "log1p(#withdrawn/excluded entries of this horse in prior 180 days) -- identities only available from 2023, so 0 throughout 2022 warmup (documented bias)",
+  "excluded_from_score": [
+   "same-day body weight",
+   "measured moisture",
+   "popularity/odds",
+   "same-race finish/time",
+   "official assigned-class membership tables (t262 actual membership; not used)"
+  ]
+ },
+ "feature_notes": {
+  "best_top3_missing": "1 if no prior top3 finish (w_minus_best_top3 then 0)",
+  "age_months": "race date - birth date in days / 30.44; birth date from bundled official history (name match + birth year = race year - card age); no-history fallback: April 15 of (race year - age)",
+  "class": "ladder from race name: A1=1..C2=8 (+sub/20), 2/3歳 A..D, オープン/選抜=0; class_change only if same ladder type",
+  "scratch_hist": "withdrawn/excluded entries in prior 180 days (official history)",
+  "history": "strictly earlier race dates only; same-day earlier races are not used"
+ },
+ "normalization": {
+  "method": "z=(x-mu)/sd with training-window mean/std (population std, sd<1e-9 -> 1)",
+  "mu": [
+   -6.986570457740658e-16,
+   0.8921398165357636,
+   -33.65669404640566,
+   0.03885125007494454,
+   0.2219557527429702,
+   72.49135508317761,
+   0.5041198084845784,
+   0.5021992178169166,
+   0.11072665370476752,
+   0.3319966010866225,
+   3.6461982000033104,
+   2.6953230309043916,
+   0.012530727261826248,
+   0.004256849931051022,
+   -0.02826008753522465,
+   0.0125607050782421,
+   0.04503861415182059
+  ],
+  "sd": [
+   9.541312591945234,
+   34.194411046818146,
+   45.481814312810606,
+   0.19324034372396667,
+   0.4155615436577653,
+   21.88914056394099,
+   0.3185829908072613,
+   0.2212052281672325,
+   0.10647688820820222,
+   0.1753791762988678,
+   0.9442171115819206,
+   0.6028633951889723,
+   0.11123717065852788,
+   0.06510552326579627,
+   0.8819651683435897,
+   0.11136845947647814,
+   0.1804840147007641
+  ]
+ },
+ "beta": {
+  "w_rel": -0.1292431303722797,
+  "w_delta_prev": -0.11136725518050627,
+  "w_minus_best_top3": -0.31761111550927856,
+  "best_top3_missing": 0.056980492301081424,
+  "female": -0.12669781780660405,
+  "age_months": -0.11559920492694278,
+  "form_last1": -0.2724820653886113,
+  "form_avg3": -0.28382711610744926,
+  "win_rate5": -0.06993135282295984,
+  "top3_rate5": 0.07070639773598848,
+  "log_starts": -0.6438435043992835,
+  "log_days_since": -0.03017050017757426,
+  "no_history": 0.10263225419232365,
+  "last_dnf": 0.011527184008212682,
+  "class_change": 0.24527433630740128,
+  "class_unknown_or_switch": -0.13350834272295953,
+  "scratch_hist": -0.0070467320097519015
+ },
+ "box_rule": {
+  "name": "BOX_PL",
+  "p": "softmax(u) over candidate horses (scratched removed)",
+  "definition": "3-horse set maximizing sum over its 6 orders of p_i*p_j/(1-p_i)*p_k/(1-p_i-p_j)",
+  "tickets": "6点（三連単3頭ボックス、従来と同じ）",
+  "memrobo": "メムロボブサップ出走時はメムロを含む集合のうち最大の集合（軸固定特例を維持）",
+  "tie_break": "first maximal set in lexicographic candidate order (umaban order)"
+ },
+ "not_used_for": [
+  "点数（常に6点）",
+  "購入/見送りゲート（29特徴の軸past_formゲートのまま）",
+  "自信度（29特徴の軸による条件別テーブルのまま）"
+ ],
+ "training": {
+  "window_from": "2022-01-02",
+  "window_to": "2026-11-08",
+  "race_type": "pure_O",
+  "n_races": 3630,
+  "history_from": "2022-01 (warmup)",
+  "fitted_at_JST": "2026-11-09T19:49:02+09:00",
+  "rule": "all pure_O races dated < effective_from; same recipe as experiment monthly walk-forward"
+ },
+ "validation": {
+  "source": "/workspace/banma_card_horse_score_experiment/summary_by_band.csv",
+  "pure_O_races": 2923,
+  "box_hit": 0.06808,
+  "box_hit_ci95": [
+   0.05898,
+   0.07692
+  ],
+  "vs_C_walkforward_diff_pt": 2.33,
+  "vs_C_ci95_pt": [
+   1.21,
+   3.44
+  ],
+  "bootstrap": "day-block B=1000 seed 20261109",
+  "note": "walk-forward monthly, 2023-01..2026-11-08; past results do not guarantee future hit rates"
+ },
+ "reproducibility": {
+  "monthly_2026_11_refit_max_abs_beta_diff": 0.0
+ },
+ "provenance": {
+  "experiment_dir": "/workspace/banma_card_horse_score_experiment",
+  "pipeline_py_sha256": "e3f7677a35dd8a11650b46beb861b1347169ade0d5d0ec9ff99a80d6a8c0d4a5",
+  "races_unified_sha256": "6bd7594e7f88032a2364126111b18f87ce0b147261aaf8ad5bf735573df386e0",
+  "clean_results_sha256": "968e5fb818176ba993c431784a7019d4728be43c92ddac86052acd07672de4d7",
+  "manifest_sha256": "f1ac4c3ff75b18d8e746dadbaab676aa6cd18781addf986c721ba447b99afca6",
+  "script": "frontend/analysis/card-score-age4/fit_and_export.py"
+ },
+ "history_file": {
+  "path": "src/data/card_history_age4.json",
+  "history_through": "2026-11-08",
+  "sha256": "76f8c4ffd10074e040edd1d079607879fef633d2cc159cd4d07d5a4e5f030ef9"
+ }
+}
