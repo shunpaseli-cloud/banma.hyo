@@ -49,8 +49,8 @@ async function generateUnlocked({apply=false,weatherFile=null,outputDir='/worksp
  try{raw=weatherFile?json(await fs.readFile(weatherFile)):await(await fetch(sourceUrl,{signal:AbortSignal.timeout(30000)})).json();if(!raw.daily)throw new Error('Missing forecast daily data')}catch(e){error=String(e)}
  const fetchedAt=stamp(),weather={source_url:sourceUrl,retrieved_at:fetchedAt,provider_run_issued_at:null,run_time_status:'provider does not publish a run issue time in this response',status:error?'missing':'retrieved',error,raw,raw_sha256:sha(bytes(raw)),note:'同一取得レスポンスを全Rで共有。過去日の気象は事後入力であり当時の予報ではない。'}
  const source=await read('races_from_pdf.json'),races=json(source),models={}
- for(const name of ['learned_model.json','learned_model_rain.json','learned_weights.json'])models[name]=sha(await read(name))
- const engineFiles=['feedback.js','learnScore.js','learnCore.js','moisture.js','memrobo.js','trio.js','selectionReason.js','calculateSnapshot.js','snapshotPolicy.js','confidenceTable.js']
+ for(const name of ['learned_model.json','learned_model_rain.json','learned_weights.json','card_history_age4.json'])models[name]=sha(await read(name))
+ const engineFiles=['feedback.js','learnScore.js','learnCore.js','moisture.js','memrobo.js','trio.js','selectionReason.js','calculateSnapshot.js','snapshotPolicy.js','confidenceTable.js','boxSelection.js','cardScoreAge4.js']
  const engine=sha(Buffer.concat(await Promise.all(engineFiles.map(name=>fs.readFile(path.join(ROOT,'src',name))))))
  const protectedFiles=['learned_model.json','learned_model_rain.json','learned_weights.json','verified_results.json','results_from_pdf.json']
  const protectedHashes=Object.fromEntries(await Promise.all(protectedFiles.map(async n=>[n,sha(await read(n))])))

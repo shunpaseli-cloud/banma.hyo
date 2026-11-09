@@ -73,7 +73,7 @@ export async function refreshSnapshot({force=false,fetcher=globalThis.fetch,calc
    const weatherChanged=forecastFingerprint(base,raw)!==forecastFingerprint(base,base.meta.weather.raw)
    let rows
    if(weatherChanged){const engine=calculate||((await import('./calculateSnapshot.js')).calculateRows);rows=await engine(races,raw,checked)}
-   else{const {replaceConfidence}=await import('./confidenceTable.js');const byId=new Map(races.map(r=>[r.race_id,r]));rows=base.races.map(row=>replaceConfidence(row,byId.get(row.race_id),{at:checked}))}
+   else{const {replaceConfidence}=await import('./confidenceTable.js');const byId=new Map(races.map(r=>[r.race_id,r]));rows=base.races.map(row=>replaceConfidence(row,byId.get(row.race_id),{at:checked,laterCards:races}))}
    checkedConfidenceTable=true
    const identity=await contentIdentity(base,raw,CONFIDENCE_METHOD,rows),version=identity.version
    let snapshot={schema_version:2,meta:{...base.meta,...identity,version,server_parent_version:pointer.version,generated_at_asia_tokyo:checked,snapshot_saved_at:checked,generated_in:'browser_shared_store',confidence_method:CONFIDENCE_METHOD.version,confidence_table:CONFIDENCE_METHOD,weather:{...base.meta.weather,source_url:weatherUrl.href,raw,raw_sha256:await sha(JSON.stringify(raw)),retrieved_at:checked,status:'retrieved'},persistence_status:'browser_history'},races:rows.map(row=>({...row,snapshot_version:version,persistence_status:'browser_history'}))}

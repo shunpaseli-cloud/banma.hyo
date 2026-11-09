@@ -26,6 +26,7 @@ export default function SelectionComment({ rec }) {
   const notes=horseComments(rec)
   return <div className="selection-comment" data-comment-style={STYLE.comment_style.version} data-comment-model={STYLE.model_file_sha256}>
     <h3>選定理由</h3>
+    {rec?.selection_meta?.box_method==='card_score_age4'&&<p className="box-method muted" data-box-method="card_score_age4">買い目の3頭は、4歳以上限定の出走表評価で選びました。</p>}
     {notes.length?notes.map(h=><p className="horse-comment" key={h.umaban}><strong>{h.name}</strong><span>　{h.text}</span></p>):<p>保存された選定馬の情報がなく、寸評は用意できません。</p>}
   </div>
 }
