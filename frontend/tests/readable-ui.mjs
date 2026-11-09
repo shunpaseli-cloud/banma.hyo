@@ -91,7 +91,7 @@ try {
   assert.ok(css.includes('minmax(0,1fr)')&&css.includes('overflow-wrap:anywhere'))
   assert.ok(css.includes('@media(max-width:480px)'))
   assert.ok(css.includes('font-size: clamp(1.5rem, 1.1rem + 2vw, 2rem)'),'retain enlarged podium')
-  const model=JSON.parse(await readFile('src/data/learned_model.json'));delete model.comment_style;delete model.confidence_method;delete model.card_score_age4
+  const model=JSON.parse(await readFile('src/data/learned_model.json'));delete model.comment_style;delete model.confidence_method;delete model.card_score_age4;delete model.graded5_age4
   assert.equal(createHash('sha256').update(JSON.stringify(model)).digest('hex'),'877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5')
   console.log('PASS readable UI: current shared comments, no numeric rationale, confidence/6 tickets/payouts retained, lazy disclosure open/close, top3/all finishes, post-start/pending separation, single result section, route/date preservation, unchanged predictive model data (comment metadata allowed).')
 }finally{await server.close()}

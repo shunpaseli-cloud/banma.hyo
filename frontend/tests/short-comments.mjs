@@ -6,7 +6,7 @@ import {renderToStaticMarkup} from 'react-dom/server'
 import {createServer} from 'vite'
 const sha=s=>createHash('sha256').update(s).digest('hex')
 const numeric=(v,p='')=>typeof v==='number'?[[p,v]]:v&&typeof v==='object'?Object.entries(v).flatMap(([k,x])=>numeric(x,p+'/'+k)):[]
-const raw=await fs.readFile('src/data/learned_model.json'),model=JSON.parse(raw),{comment_style,confidence_method,card_score_age4,...predictive}=model
+const raw=await fs.readFile('src/data/learned_model.json'),model=JSON.parse(raw),{comment_style,confidence_method,card_score_age4,graded5_age4,...predictive}=model
 assert.equal(sha(JSON.stringify(predictive)),'877b650d3f340d403ad61667c415c8ee2f1967e76a928466ee31d4436edb55a5','every pre-existing model field unchanged')
 assert.equal(sha(JSON.stringify(numeric(predictive))),'3b20528d5641cf6e96eeac8df244afee7411c2c408ce873c55af409040b5f3b8','all13911 numeric scalars unchanged')
 const style=JSON.parse(await fs.readFile('src/data/comment_style.json'))
