@@ -9,6 +9,7 @@ const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)??null,s
 const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true}})
 try{
  const C=await server.ssrLoadModule('/src/cardScoreAge4.js')
+ const Gmod=await server.ssrLoadModule('/src/gradedScoreAge4.js')
  // 1) age-band classification (scratched excluded; any <=3 -> not pure_O; missing age/sled -> unknown)
  const E=(age,status=null,sled=700)=>({umaban:1,name:'x',age,sled_weight:sled,status})
  assert.equal(C.ageType({entries:[E(4),E(5),E(9)]}),'pure_O')
@@ -65,7 +66,7 @@ try{
   const fr={...race,race_date:'2026-11-14'},fut=buildSelection(fr,row.predictions,{laterCards:races}),base=buildRaceRecommendation(fr,row.predictions)
   assert.equal(fut.recommended,base.recommended);assert.equal(fut.confidence,base.confidence);assert.equal(fut.selection_meta.gate_skip,base.selection_meta.gate_skip)
   assert.deepEqual(fut.selection_meta.confidence_bands,base.selection_meta.confidence_bands)
-  if(C.cardBoxAge4(fr).eligible){assert.equal(fut.selection_meta.box_method,'card_score_age4');assert.equal(fut.selection_meta.confidence_axis.horse_id,base.selection_meta.axis.horse_id);assert.equal(fut.selection_meta.top3.length,3);if(JSON.stringify(fut.selection_meta.top3.map(h=>h.umaban).sort())!==JSON.stringify(base.selection_meta.top3.map(h=>h.umaban).sort()))replaced++}
+  if(C.cardBoxAge4(fr).eligible){const expectMethod=Gmod.isGradedRace(fr)?'graded5_card_combined':'card_score_age4';assert.equal(fut.selection_meta.box_method,expectMethod);assert.equal(fut.selection_meta.confidence_axis.horse_id,base.selection_meta.axis.horse_id);assert.equal(fut.selection_meta.top3.length,3);if(JSON.stringify(fut.selection_meta.top3.map(h=>h.umaban).sort())!==JSON.stringify(base.selection_meta.top3.map(h=>h.umaban).sort()))replaced++}
   else{assert.equal(fut.selection_meta.box_method,'model29');assert.deepEqual(fut.selection_meta.top3,base.selection_meta.top3);assert.deepEqual(fut.selection_meta.axis,base.selection_meta.axis);assert.equal(fut.selection_comment,base.selection_comment)}
  }
  console.log(JSON.stringify({class_missing:classMissing,parity_races:fx.races.length,box_identical:boxSame,max_feature_diff:maxF,max_utility_diff:maxU,no_history_age_fallbacks:noHist,future_counterfactual_pure_O:elig.length,box_changed_vs_model29:replaced}))

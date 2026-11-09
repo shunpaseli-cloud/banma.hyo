@@ -30,3 +30,5 @@
 1. 公式確定成績のクリーンJSONと実験の races_unified.json を更新
 2. `python3 analysis/card-score-age4/fit_and_export.py`（HISTORY_THROUGH / EFFECTIVE_FROM を更新）→ `node analysis/card-score-age4/merge_into_learned_model.mjs`
 3. `npm test` → build/deploy。ルーティンは作成していない。
+
+関連: 重賞×pure_O は `GRADED5_AGE4.md`（graded5 合成）が優先。非重賞 pure_O は本方式のまま。
