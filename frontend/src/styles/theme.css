@@ -161,3 +161,24 @@ a { overflow-wrap:anywhere; }
 .results-box-tickets{list-style:none;padding:0;margin:8px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
 .results-box-tickets li{padding:5px;background:#f3f5f6;border-radius:4px;font-size:16px;font-weight:700;overflow-wrap:anywhere}
 .results-payouts{margin-top:10px;font-size:14px}
+/* Race cards (view=racecard): fixed 4-column table, wraps instead of scrolling at 320px. */
+.racecards-page .date-chips { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+.rc-list { margin-top:8px; }
+.rc-race { border:1px solid var(--line); border-radius:8px; background:var(--paper); margin:8px 0; min-width:0; }
+.rc-race>summary { display:grid; grid-template-columns:auto auto minmax(0,1fr); gap:2px 8px; align-items:baseline; padding:10px 12px; cursor:pointer; min-height:44px; }
+.rc-no { font-weight:700; font-size:1.05rem; }
+.rc-time { color:var(--muted); font-variant-numeric:tabular-nums; }
+.rc-title { font-weight:700; overflow-wrap:anywhere; min-width:0; }
+.rc-sub { grid-column:1/-1; color:var(--muted); font-size:.875rem; overflow-wrap:anywhere; }
+.rc-horses { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.875rem; }
+.rc-col-num{width:3.6em}.rc-col-wt{width:3.4em}.rc-col-jk{width:31%}
+.rc-horses th,.rc-horses td { padding:6px 4px; text-align:left; vertical-align:top; border-top:1px solid var(--line); overflow-wrap:anywhere; min-width:0; }
+.rc-horses th { font-size:.75rem; color:var(--muted); font-weight:500; }
+.rc-horses small { display:block; color:var(--muted); font-size:.75rem; }
+.rc-name { font-weight:700; }
+.rc-gate { display:inline-block; width:1.3em; margin-right:4px; text-align:center; border:1px solid #8c9da8; border-radius:3px; font-size:.75rem; }
+.rc-gate.g1{background:#fff}.rc-gate.g2{background:#222;color:#fff}.rc-gate.g3{background:#d33;color:#fff}.rc-gate.g4{background:#2a5bd7;color:#fff}.rc-gate.g5{background:#f2d230}.rc-gate.g6{background:#2e8b3e;color:#fff}.rc-gate.g7{background:#f08a24}.rc-gate.g8{background:#f4a6c0}
+.rc-scratched td { text-decoration:line-through; color:var(--muted); }
+.rc-more { padding:4px 12px 10px; font-size:.8125rem; color:var(--muted); }
+.rc-more p { margin:4px 0; overflow-wrap:anywhere; }
+@media(max-width:480px) { .rc-horses { font-size:.8125rem; } .rc-race>summary { padding:10px 8px; } }
