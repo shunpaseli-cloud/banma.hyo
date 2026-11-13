@@ -7,8 +7,10 @@ import { DATA } from './dataSource.js'
 const RaceList=lazy(()=>import('./components/RaceList.jsx'))
 const ConfidenceRank=lazy(()=>import('./components/ConfidenceRank.jsx'))
 const ConfidenceResults=lazy(()=>import('./components/ConfidenceResults.jsx'))
+const RaceCardsView=lazy(()=>import('./components/RaceCardsView.jsx'))
+import { RACECARD_DEFAULT_DATE } from './racecards.js'
 
-export const VIEWS = new Set(['races', 'confidence', 'results'])
+export const VIEWS = new Set(['races', 'confidence', 'results', 'racecard'])
 
 export function canonicalResultsUrl(href){
  const url=new URL(href);if(url.searchParams.get('view')!=='confidence-results')return null
@@ -22,11 +24,11 @@ export function viewSearch(date,view) {
 }
 
 export default function App() {
-  const [date, setDate] = useState(() => new URLSearchParams(location.search).get('date') || DEFAULT_DATE)
   const [view, setView] = useState(() => {
     const v = new URLSearchParams(location.search).get('view') || 'races'
     return v==='confidence-results'?'results':VIEWS.has(v) ? v : 'races'
   })
+  const [date, setDate] = useState(() => new URLSearchParams(location.search).get('date') || (view==='racecard'&&RACECARD_DEFAULT_DATE) || DEFAULT_DATE)
   useEffect(()=>{const next=canonicalResultsUrl(location.href);if(next)history.replaceState(null,'',next)},[])
   const url = (d, v) => {
     history.replaceState(null, '', viewSearch(d,v))
@@ -42,19 +44,22 @@ export default function App() {
       <header className="masthead">
         <h1>ばん馬表</h1>
         <p>ばんえい競馬 出走表・推奨・公式結果</p>
-        <DatePicker date={date} onChange={pick} />
+        {view !== 'racecard' && <DatePicker date={date} onChange={pick} />}
         <nav className="nav">
           <button className={view === 'races' ? 'on' : ''} onClick={() => go('races')}>出走表・予想</button>
           <button className={view === 'confidence' ? 'on' : ''} onClick={() => go('confidence')}>自信度順</button>
           <button className={view === 'results' ? 'on' : ''} onClick={() => go('results')}>結果</button>
+          <button className={view === 'racecard' ? 'on' : ''} onClick={() => go('racecard')}>出走表</button>
         </nav>
         <p className="auto-note">推奨馬・買い目・公式結果を、日付ごとに確認できます。</p>
       </header>
-      <SnapshotInfo date={date} view={view}/>
+      {view !== 'racecard' && <SnapshotInfo date={date} view={view}/>}
       <main>
 
         <Suspense fallback={<p className="loading" role="status">表示を読み込んでいます…</p>}>
-        {view === 'results' ? (
+        {view === 'racecard' ? (
+          <RaceCardsView date={date} onDate={pick} />
+        ) : view === 'results' ? (
           <ConfidenceResults date={date} />
         ) : view === 'confidence' ? (
           <ConfidenceRank date={date} />

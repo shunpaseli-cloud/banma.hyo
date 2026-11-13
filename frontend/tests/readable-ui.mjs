@@ -78,7 +78,7 @@ try {
     const q=new URLSearchParams(viewSearch(date,view))
     assert.equal(q.get('date'),date);assert.equal(q.get('view')||'races',view)
   }
-  assert.deepEqual([...VIEWS],['races','confidence','results'])
+  assert.deepEqual([...VIEWS],['races','confidence','results','racecard'])
   const race=dayInfo('2026-11-07').races[0],preds=predict(race),rec=buildRaceRecommendation(race,preds)
   const predictedBefore=JSON.stringify(preds)
   const detail=render(RaceDetail,{race,preds,rec}),card=render(RaceCard,{race})
