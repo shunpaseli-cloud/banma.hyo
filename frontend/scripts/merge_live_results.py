@@ -43,7 +43,7 @@ def merge(base, raw):
                 cells=[c for c in cells if c]
                 assert len(cells)==r['頭数'],rid
                 finishes=[{'finish':int(c[0]) if c[0].isdigit() else None,'umaban':int(c[2]),'name':c[3],
-                    'status':'finished' if c[0].isdigit() else {'中止':'dnf','取消':'withdrawn','除外':'excluded'}.get(c[0] or c[11],'unknown')}
+                    'status':'finished' if c[0].isdigit() else {'中止':'dnf','取消':'withdrawn','除外':'excluded','失格':'disqualified'}.get(c[0] or c[11],'unknown')}
                     for c in cells]
                 assert [f['umaban'] for f in sorted([f for f in finishes if f['finish']],key=lambda f:f['finish'])[:3]]==nums,rid
                 raw_hash=hashlib.sha256(content).hexdigest()

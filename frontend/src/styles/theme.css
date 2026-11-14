@@ -182,3 +182,7 @@ a { overflow-wrap:anywhere; }
 .rc-more { padding:4px 12px 10px; font-size:.8125rem; color:var(--muted); }
 .rc-more p { margin:4px 0; overflow-wrap:anywhere; }
 @media(max-width:480px) { .rc-horses { font-size:.8125rem; } .rc-race>summary { padding:10px 8px; } }
+/* Post-hoc (事後生成) predictions on Results: clearly labelled, separate from saved day-of predictions. */
+.posthoc-note { border:1px solid #c98a1b; background:#fff7e6; border-radius:8px; padding:8px 12px; margin:8px 0; font-size:.875rem; overflow-wrap:anywhere; }
+.posthoc-note p { margin:4px 0; }
+.posthoc-badge { display:inline-block; padding:1px 8px; border-radius:4px; background:#c98a1b; color:#fff; font-size:.8125rem; }

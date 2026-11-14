@@ -9,7 +9,7 @@ export function reconcileBox(result, prediction) {
   if (result.status !== 'final') return unknown(STATUS_LABELS[result.status] || '未取得')
   if (!prediction) return unknown('当時の保存予想なし')
   if (!prediction.recommended) return unknown('保存予想は見送り（購入想定なし）')
-  if (result.refunds?.length || result.finishes?.some(f => !['finished', 'dnf'].includes(f.status || (f.finish ? 'finished' : 'unknown')))) {
+  if (result.refunds?.length || result.finishes?.some(f => !['finished', 'dnf', 'disqualified'].includes(f.status || (f.finish ? 'finished' : 'unknown')))) {
     return unknown('取消・除外・返還等あり（通常の的中／外れと分けて精算確認）')
   }
   // Official payout combinations also handle dead heats. Missing dividends are not zero.

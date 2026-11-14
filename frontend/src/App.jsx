@@ -9,6 +9,7 @@ const ConfidenceRank=lazy(()=>import('./components/ConfidenceRank.jsx'))
 const ConfidenceResults=lazy(()=>import('./components/ConfidenceResults.jsx'))
 const RaceCardsView=lazy(()=>import('./components/RaceCardsView.jsx'))
 import { RACECARD_DEFAULT_DATE } from './racecards.js'
+import { POSTHOC_DATES } from './resultDates.js'
 
 export const VIEWS = new Set(['races', 'confidence', 'results', 'racecard'])
 
@@ -44,7 +45,7 @@ export default function App() {
       <header className="masthead">
         <h1>ばん馬表</h1>
         <p>ばんえい競馬 出走表・推奨・公式結果</p>
-        {view !== 'racecard' && <DatePicker date={date} onChange={pick} />}
+        {view !== 'racecard' && <DatePicker date={date} onChange={pick} extra={view==='results'?POSTHOC_DATES:[]} />}
         <nav className="nav">
           <button className={view === 'races' ? 'on' : ''} onClick={() => go('races')}>出走表・予想</button>
           <button className={view === 'confidence' ? 'on' : ''} onClick={() => go('confidence')}>自信度順</button>
