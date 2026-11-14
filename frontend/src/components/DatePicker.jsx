@@ -1,8 +1,9 @@
-import { DATES } from '../lib/paginate.js'
+import { DATES as BASE_DATES } from '../lib/paginate.js'
 import Disclosure from './Disclosure.jsx'
 const shift=(d,n)=>{const t=new Date(d+'T00:00:00Z');t.setUTCDate(t.getUTCDate()+n);return t.toISOString().slice(0,10)}
 const WD='日月火水木金土'
-export default function DatePicker({date,onChange}) {
+export default function DatePicker({date,onChange,extra=[]}) {
+  const DATES=[...new Set([...BASE_DATES,...extra])].sort()
   const prev=DATES.filter(d=>d<date).pop(),next=DATES.find(d=>d>date)
   return <div className="datepick">
     <div className="daterow"><button className="link" onClick={()=>onChange(shift(date,-1))}>前日</button><input aria-label="表示日" type="date" value={date} onChange={event=>event.target.value&&onChange(event.target.value)}/><button className="link" onClick={()=>onChange(shift(date,1))}>翌日</button></div>

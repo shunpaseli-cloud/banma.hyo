@@ -1,5 +1,5 @@
 import Disclosure from './Disclosure.jsx'
-const finishStatus = { dnf: '競走中止', withdrawn: '競走取消', excluded: '競走除外', unknown: '着順なし・要確認' }
+const finishStatus = { dnf: '競走中止', withdrawn: '競走取消', excluded: '競走除外', disqualified: '失格', unknown: '着順なし・要確認' }
 function FinishList({ rows }) {
   return <ol className="official-finish-list">{rows.map(f=><li key={f.umaban} className={`official-finish${f.finish>=1&&f.finish<=3?' official-finish-podium':''}`}>
     <span className="official-finish-rank">{f.finish?`${f.finish}着`:finishStatus[f.status]||f.status||'着順なし'}</span>
