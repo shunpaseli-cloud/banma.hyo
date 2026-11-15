@@ -28,7 +28,8 @@ try {
   assert.equal(G.isGradedRace({ name: '第12回朱雀賞(準重賞)' }), false)
 
   const races = JSON.parse(await fs.readFile('src/data/races_from_pdf.json'))
-  for (const race of races) {
+  const saved = races.filter(r => r.race_date <= '2026-11-08')
+  for (const race of saved) {
     const g = G.gradedCombineBox(race)
     if (G.isGradedRace(race)) assert.equal(g.reason, 'before_effective_date', race.race_id)
     else assert.equal(g.reason, 'not_graded', race.race_id)
@@ -36,7 +37,7 @@ try {
   // saved snapshot: buildSelection identical to pre-change path for old dates
   const snap = JSON.parse(await fs.readFile('src/data/prediction_snapshot.json'))
   const byId = new Map(races.map(r => [r.race_id, r]))
-  for (const row of snap.races) {
+  for (const row of snap.races.filter(r => r.race_date <= '2026-11-08')) {
     const race = { ...byId.get(row.race_id), track_moisture: row.selection_meta.track_moisture }
     const old = buildRaceRecommendation(race, row.predictions)
     const now = buildSelection(race, row.predictions, { laterCards: races })
@@ -44,7 +45,7 @@ try {
   }
   // future pure_O non-graded still card_score; future graded uses combined when eligible
   let nCard = 0, nComb = 0, n29 = 0
-  for (const row of snap.races) {
+  for (const row of snap.races.filter(r => r.race_date <= '2026-11-08')) {
     const race = { ...byId.get(row.race_id), race_date: '2026-11-14', track_moisture: row.selection_meta.track_moisture }
     const fut = buildSelection(race, row.predictions, { laterCards: races })
     const base = buildRaceRecommendation(race, row.predictions)

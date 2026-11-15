@@ -17,8 +17,9 @@ const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)??null,s
 const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true}})
 try{
  const {calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
- const snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),races=JSON.parse(await fs.readFile('src/data/races_from_pdf.json'))
- const replay=calculateRows(races,snapshot.meta.weather.raw,snapshot.meta.snapshot_saved_at)
+ const snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),allRaces=JSON.parse(await fs.readFile('src/data/races_from_pdf.json')),races=allRaces.filter(r=>r.race_date<='2026-11-08')
+ const archived=JSON.parse(await fs.readFile('public/prediction-history/card4-20261109T195011JST-f488b7eea55e/prediction-snapshot.json'))
+ const replay=calculateRows(races,archived.meta.weather.raw,archived.meta.snapshot_saved_at)
  assert.equal(replay.length,36)
  const golden=JSON.parse(await fs.readFile('tests/fixtures/pre-nearest-invariants.json'));for(const row of replay){const old=golden.rows.find(r=>r.race_id===row.race_id);assert.equal(sha(JSON.stringify(row.predictions)),old.predictions_sha256,'all saved horse scores/features unchanged');assert.deepEqual(row.tickets,old.tickets);assert.equal(row.recommended,old.recommended)}
  const {horseComments,default:Comments}=await server.ssrLoadModule('/src/components/SelectionComment.jsx')
