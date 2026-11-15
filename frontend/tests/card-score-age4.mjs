@@ -43,10 +43,11 @@ try{
  assert.equal(H.history_through,C.CARD.history_file.history_through);assert.equal(sha(await fs.readFile('src/data/card_history_age4.json')),C.CARD.history_file.sha256)
  assert.ok(H.history_through<C.CARD.applies_to.effective_from_race_date)
  const races=JSON.parse(await fs.readFile('src/data/races_from_pdf.json'))
- for(const race of races)assert.equal(C.cardBoxAge4(race).reason,'before_effective_date','saved Nov 6-8 cards keep 29-feature BOX')
- const future=races.map(r=>({...r,race_date:'2026-11-14',race_id:'20261114'+r.race_id.slice(8)}))
+ const saved=races.filter(r=>r.race_date<='2026-11-08')
+ for(const race of saved)assert.equal(C.cardBoxAge4(race).reason,'before_effective_date','saved Nov 6-8 cards keep 29-feature BOX')
+ const future=saved.map(r=>({...r,race_date:'2026-11-14',race_id:'20261114'+r.race_id.slice(8)}))
  const res=future.map(r=>C.cardBoxAge4(r)),elig=res.filter(x=>x.eligible)
- assert.equal(elig.length,races.filter(r=>C.ageType(r)==='pure_O'&&C.parseClass(r.name).ctype).length)
+ assert.equal(elig.length,saved.filter(r=>C.ageType(r)==='pure_O'&&C.parseClass(r.name).ctype).length)
  for(const [i,x] of res.entries()){if(C.ageType(future[i])!=='pure_O'||!C.parseClass(future[i].name).ctype)assert.equal(x.eligible,false);else{assert.equal(x.box.length,3);assert.equal(new Set(x.box.map(h=>h.umaban)).size,3)}}
  // history gap guard: a candidate horse that ran after history_through but before the race date -> not applied
  const fR=future.find((r,i)=>res[i].eligible),gapCard={race_date:'2026-11-13',entries:[{name:fR.entries[0].name,status:null}]}
@@ -58,7 +59,7 @@ try{
  const {buildSelection}=await server.ssrLoadModule('/src/boxSelection.js'),{buildRaceRecommendation}=await server.ssrLoadModule('/src/selectionReason.js')
  const snap=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),byId=new Map(races.map(r=>[r.race_id,r]))
  let replaced=0
- for(const row of snap.races){
+ for(const row of snap.races.filter(r=>r.race_date<='2026-11-08')){
   const race={...byId.get(row.race_id),track_moisture:row.selection_meta.track_moisture}
   const old=buildRaceRecommendation(race,row.predictions),now=buildSelection(race,row.predictions,{laterCards:races})
   assert.deepEqual(now,old,'saved date: identical recommendation object '+row.race_id)

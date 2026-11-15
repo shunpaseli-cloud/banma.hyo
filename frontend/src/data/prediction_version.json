@@ -1,15 +1,15 @@
 {
- "version": "card4-20261109T195011JST-f488b7eea55e",
- "generated_at_asia_tokyo": "2026-11-09T19:50:11+09:00",
+ "version": "pred-20261115T095331JST-52d7d4cd93c4",
+ "generated_at_asia_tokyo": "2026-11-15T09:53:31+09:00",
  "models": {
-  "learned_model.json": "3b711cf0d157bbe8f0ef2a2c3032c4040d9d41f577c7e16a8a4a211bd05ec6c2",
+  "learned_model.json": "e657cd397eccf5ca5b256d5ece69422b7fe0cffd8cb595663e4bf475ee403893",
   "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
   "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7",
   "card_history_age4.json": "76f8c4ffd10074e040edd1d079607879fef633d2cc159cd4d07d5a4e5f030ef9"
  },
  "engine": "4922425be20d85e9460b78007ab05f389c5190d9d7fb0d310e00ad62c75b955b",
  "weather_status": "retrieved",
- "weather_retrieved_at": "2026-11-08T06:42:08+09:00",
+ "weather_retrieved_at": "2026-11-15T09:50:10+09:00",
  "legacy": {
   "path": "prediction-history/legacy-20261106T190648/",
   "prestart_summary": {
@@ -39,5 +39,6 @@
   "scope": "4歳以上だけのレースの3頭BOX候補のみ。3歳以下・混合・発効日前は29特徴BOXのまま。点数・見送り・自信度は不変。",
   "saved_rows": "既存保存行は再生成せず不変（snapshot_versionのみ更新）。"
  },
- "snapshot_sha256": "3852e0320b5335ca31296ce7a15382dec9bbf72980c815a6ebd0bded343509a5"
+ "previous_snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
+ "snapshot_sha256": "3fda6d5963466cd9ca6cc0a54102696e997de3d2389076ed34522134b08509dd"
 }

@@ -24,7 +24,7 @@ export default function SnapshotInfo({date,view}){
    {meta.persistence_warning&&<p>{meta.persistence_warning}</p>}
    {meta.persistence_error&&<p>保存失敗の詳細: {meta.persistence_error}</p>}
    {meta.confidence_updated_at&&<p>自信度方式更新 {meta.confidence_updated_at} JST。馬予想の元の保存時刻は保持し、過去の自信度履歴は上書きしていません。</p>}
-   <p>起動・画面/日付変更・再訪と表示中1分ごとに最新入力を確認します。各画面では計算せず、共有ストアが入力変更時だけ全36Rを一括更新します。</p>
+   <p>起動・画面/日付変更・再訪と表示中1分ごとに最新入力を確認します。各画面では計算せず、共有ストアが入力変更時だけ保存済み全レースを一括更新します。</p>
    <p>過去のレースを新しい気象で計算した版は事後再計算です。旧版の事前成績には合算しません。発走前の記録と水分予測の正本ログは上書きしません。</p>
    {old&&<p>旧保存版の事前照合: {old.races}R／的中{old.hits}R · 想定投資 ¥{old.stake_yen.toLocaleString()}／払戻 ¥{old.return_yen.toLocaleString()}。新版とは合算しません。</p>}
    <p>ブラウザでの自動更新版は端末の履歴へ別版保存します。公開サーバーへの自動書出しではありません。保存できない場合は明示します。旧保存値は当時のブラウザ表示履歴そのものを証明しません。</p>
