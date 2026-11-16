@@ -1,0 +1,122 @@
+{
+  "version": "graded5-age4-v1",
+  "status": "production",
+  "purpose": "重賞かつ4歳以上のみのレースで、出走表スコアと併用して3頭BOX/表示軸を選ぶ。点数・購入見送り・自信度には使わない。",
+  "applies_to": {
+    "race_type": "graded_pure_O",
+    "grade_definition": "pre-race: race name contains (BG1)/(BG2)/(BG3) OR matches grade_races.json name_keywords; also accepts race.grade if present",
+    "age_rule": "all non-scratched entries age>=4 (pure_O), same as card_score_age4",
+    "effective_from_race_date": "2026-11-09",
+    "not_applied": [
+      "pure_Y",
+      "mixed",
+      "non_graded pure_O (card_score only)",
+      "before effective date",
+      "saved snapshot rows"
+    ]
+  },
+  "model_type": "logistic regression for P(top3), L2 C=1.0, StandardScaler on train only",
+  "features": [
+    "last5_mean_norm_finish",
+    "last5_win_rate",
+    "career_win_rate_before",
+    "last_start_finish",
+    "days_since_last",
+    "prior_graded_count",
+    "n_prior_starts"
+  ],
+  "feature_definitions": {
+    "last5_mean_norm_finish": "mean of (finish-1)/(field_size-1) over up to 5 prior finished starts (date < race)",
+    "last5_win_rate": "wins / n among those last finished starts",
+    "career_win_rate_before": "career wins / prior starts (all statuses in prior window; win only if finish==1)",
+    "last_start_finish": "finish position of most recent prior finished start",
+    "days_since_last": "days between race date and last finished start",
+    "prior_graded_count": "count of prior starts (any age) with grade in {BG1,BG2,BG3}",
+    "n_prior_starts": "count of prior actual starts (any age) with date < race"
+  },
+  "imputation": {
+    "no_finished_prior": {
+      "last5_mean_norm_finish": 0.5,
+      "last5_win_rate": 0.201338199513382,
+      "career_win_rate_before": 0.20968233237797204,
+      "last_start_finish": 4.0,
+      "days_since_last": 15.0,
+      "prior_graded_count": 0.0,
+      "n_prior_starts": 0.0
+    },
+    "note": "If horse has zero finished priors in bundled history, use these defaults. prior_graded_count and n_prior_starts stay 0 when no priors."
+  },
+  "normalization": {
+    "method": "standardize",
+    "mu": {
+      "last5_mean_norm_finish": 0.3883522573668561,
+      "last5_win_rate": 0.20133819951338258,
+      "career_win_rate_before": 0.2096823323779721,
+      "last_start_finish": 4.158759124087592,
+      "days_since_last": 18.883211678832115,
+      "prior_graded_count": 6.766423357664234,
+      "n_prior_starts": 38.51459854014598
+    },
+    "sd": {
+      "last5_mean_norm_finish": 0.20246281609836525,
+      "last5_win_rate": 0.24456424988169656,
+      "career_win_rate_before": 0.14142014131268305,
+      "last_start_finish": 2.6121515435564486,
+      "days_since_last": 12.66212565809824,
+      "prior_graded_count": 6.074972919014017,
+      "n_prior_starts": 18.820264122141094
+    }
+  },
+  "coefficients": {
+    "intercept": -0.7306334871299837,
+    "beta": {
+      "last5_mean_norm_finish": -0.40678393075661656,
+      "last5_win_rate": -0.0171331321378533,
+      "career_win_rate_before": 0.12308710967943019,
+      "last_start_finish": -0.4526968410701475,
+      "days_since_last": -0.02868965412595883,
+      "prior_graded_count": 0.430634274445454,
+      "n_prior_starts": -0.31352057655343396
+    }
+  },
+  "combination_with_card_score_age4": {
+    "rule_id": "equal_z_mean_v1",
+    "registered_before_eval": true,
+    "definition": "In graded pure_O races: z_card = within-race zscore of card-score utilities; z_g = within-race zscore of graded logit; combined = 0.5*z_card + 0.5*z_g. BOX = top 3 by combined (desc); display axis = top combined in BOX. Memrobo: force-include then rank by combined.",
+    "fallback": "If graded features unavailable for all horses, use card_score_age4 BOX alone. Non-graded pure_O unchanged (card only)."
+  },
+  "box_rule": {
+    "name": "top3_combined_z",
+    "tickets": "trifecta 3-horse BOX 6 permutations",
+    "memrobo": "force include when present",
+    "tie_break": "higher combined, then lower umaban"
+  },
+  "not_used_for": [
+    "purchase_skip_gate",
+    "confidence_table",
+    "29feature_scores"
+  ],
+  "training": {
+    "window_from": "2023-04-30",
+    "window_to": "2026-11-08",
+    "n_starts": 548,
+    "n_positive_top3": 193,
+    "in_sample_auc_top3": 0.7284244326059987,
+    "walkforward_auc_top3_reference": 0.702,
+    "walkforward_auc_null_reference": 0.562,
+    "reference_experiment": "/workspace/banma_age4_graded_analysis",
+    "fitted_at_JST": "2026-11-09T21:13:25+09:00",
+    "rule": "fit on all graded age>=4 finished starts with features and date<=history_through; predict only future race dates"
+  },
+  "history_file": {
+    "path": "src/data/graded_form_history_age4.json",
+    "history_through": "2026-11-08",
+    "sha256": "2eb9728ee39776020549475d4352bdfdd6912ca0a936eeeb52471324170cfdf0",
+    "bytes": 1705624
+  },
+  "provenance": {
+    "source_clean_results": "/workspace/banma_official_pdf_audit_2023_onward/clean_results_2023_onward.json",
+    "script": "analysis/graded5-age4/fit_and_export.py"
+  },
+  "requires_card_score_age4_version": "card-score-age4-v1"
+}
