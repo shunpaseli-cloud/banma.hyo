@@ -6,7 +6,7 @@ import {createServer} from 'vite'
 const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v)),removeItem:k=>memory.delete(k)}
 const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true,hmr:false}})
 try{
- const {default:Results}=await server.ssrLoadModule('/src/components/ConfidenceResults.jsx'),{canonicalResultsUrl}=await server.ssrLoadModule('/src/App.jsx'),snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),verified=JSON.parse(await fs.readFile('src/data/verified_results.json')),css=await fs.readFile('src/styles/theme.css','utf8'),resultsCss=css.slice(css.indexOf('/* Compact Results:'))
+ const {default:Results,visiblePayouts}=await server.ssrLoadModule('/src/components/ConfidenceResults.jsx'),{canonicalResultsUrl}=await server.ssrLoadModule('/src/App.jsx'),snapshot=JSON.parse(await fs.readFile('src/data/prediction_snapshot.json')),verified=JSON.parse(await fs.readFile('src/data/verified_results.json')),css=await fs.readFile('src/styles/theme.css','utf8'),resultsCss=css.slice(css.indexOf('/* Compact Results:'))
  for(const date of ['2026-11-06','2026-11-07','2026-11-08']){
   const html=renderToStaticMarkup(createElement(Results,{date})),expanded=renderToStaticMarkup(createElement(Results,{date,detailsOpen:true})),rows=[...html.matchAll(/<tr[^>]*data-race-id="([^"]+)"[^>]*>([\s\S]*?)<\/tr>/g)]
   assert.equal(rows.length,12);assert.ok(html.includes('3頭BOX')&&html.includes('BOXは順不同'));assert.ok(!html.includes('results-box-tickets')&&!html.includes('results-table-scroll')&&!html.includes('左右にスクロール'))
@@ -20,11 +20,36 @@ try{
   }
   assert.equal((expanded.match(/class="results-box-tickets"/g)||[]).length,12);assert.equal((expanded.match(/class="horse-comment"/g)||[]).length,36)
  }
+ // Compact (not details) payouts must be visible on every results date, including post-hoc 11/14.
+ for(const date of ['2026-11-06','2026-11-07','2026-11-08','2026-11-14','2026-11-15']){
+  const html=renderToStaticMarkup(createElement(Results,{date}))
+  assert.ok(!html.includes('results-box-tickets'),`${date}: tickets stay in details`)
+  const payoutRows=[...html.matchAll(/<tr class="results-payout-row"[^>]*>[\s\S]*?<\/tr>/g)]
+  const raceIds=[...html.matchAll(/data-race-id="([^"]+)"/g)].map(m=>m[1])
+  assert.equal(payoutRows.length,12,`${date}: one visible payout line per race`)
+  assert.equal(raceIds.length,12)
+  for(const [i,id] of raceIds.entries()){
+   const result=verified.races[id],payout=visiblePayouts(result),block=payoutRows[i][0]
+   assert.ok(block.includes(`data-payout-status="${payout.status}"`),`${id} status`)
+   assert.ok(html.includes(payout.text),`${id} compact text: ${payout.text}`)
+   assert.ok(block.includes(payout.text),`${id} line contains payout`)
+   if(result.status!=='final'||(!result.payouts?.trio?.length&&!result.payouts?.trifecta?.length)){
+    assert.equal(payout.text,'配当 未確定')
+   }else{
+    for(const [kind,name] of [['trio','三連複'],['trifecta','三連単']]){
+     for(const p of result.payouts[kind]||[])assert.ok(payout.text.includes(`${name} ${p.combo.join('-')} ${p.yen.toLocaleString('ja-JP')}円`),`${id} ${name}`)
+    }
+   }
+  }
+ }
+ assert.ok(renderToStaticMarkup(createElement(Results,{date:'2026-11-15'})).includes('三連複 1-7-9 720円 / 三連単 9-1-7 5,870円'))
+ assert.ok(renderToStaticMarkup(createElement(Results,{date:'2026-11-08'})).includes('配当 未確定'))
+ assert.ok(resultsCss.includes('.results-payout-row>td')&&resultsCss.includes('overflow-wrap:anywhere'))
  assert.ok(!/overflow(?:-x)?\s*:\s*(?:auto|scroll|hidden)|position\s*:\s*sticky|min-width\s*:\s*(?:900|960)px/.test(resultsCss),'no scroll/clip/sticky workaround')
  assert.ok(resultsCss.includes('table-layout:fixed')&&resultsCss.includes('min-width:0')&&resultsCss.includes('grid-template-columns:repeat(3,minmax(0,1fr))'))
  assert.ok(resultsCss.includes('.results-col-r{width:48px}.results-col-verdict{width:64px}')&&resultsCss.includes('font-size:18px'))
  // Conservative static budget, NOT a browser-computed layout assertion. Two-digit numeral at1.2em=21.6px.
  const widths=[320,375,1280].map(viewport=>{const app=Math.min(viewport,880),padding=viewport<=480?24:32,table=app-padding-2,r=48,verdict=64,numberCell=(table-r-verdict)/2,numberInner=numberCell-8,numeralSlot=(numberInner-4)/3;assert.ok(numeralSlot>=21.6,`${viewport}:2-digit18px numerals fit`);assert.ok(verdict-8>=3*14,'14px three-character verdict fits');assert.ok(r-8>=32,'12R fits at16px');return {viewport,table,numberCell,numeralSlot,r,verdict}})
  assert.equal(canonicalResultsUrl('https://example.test/?view=confidence-results&date=2026-11-08&x=1#r4'),'https://example.test/?view=results&date=2026-11-08&x=1#r4')
- console.log(JSON.stringify({pass:'compact Results3 BOX numbers beside ordered actual3; all36 unchanged records/12R order; default no6-ticket/name clutter; full details/tickets/comments preserved; no clip/scroll/sticky CSS; old redirect; static320/375/1280 width budget',widths}))
+ console.log(JSON.stringify({pass:'compact Results3 BOX numbers beside ordered actual3; visible 三連複/三連単 payouts under each race for all result dates; all36 unchanged records/12R order; default no6-ticket/name clutter; full details/tickets/comments preserved; no clip/scroll/sticky CSS; old redirect; static320/375/1280 width budget',widths}))
 }finally{await server.close()}

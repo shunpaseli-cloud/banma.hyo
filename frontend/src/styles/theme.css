@@ -161,6 +161,10 @@ a { overflow-wrap:anywhere; }
 .results-box-tickets{list-style:none;padding:0;margin:8px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
 .results-box-tickets li{padding:5px;background:#f3f5f6;border-radius:4px;font-size:16px;font-weight:700;overflow-wrap:anywhere}
 .results-payouts{margin-top:10px;font-size:14px}
+.results-payout-row>td{text-align:left;padding:0 8px 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere;min-width:0}
+.results-payout-line{margin:0;color:#263443;font-variant-numeric:tabular-nums}
+.results-payout-line.is-hit{font-weight:600}
+.results-hit-payout{display:block;margin-top:2px;font-size:11px;line-height:1.3;font-weight:700;color:#08623c;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 /* Race cards (view=racecard): fixed 4-column table, wraps instead of scrolling at 320px. */
 .racecards-page .date-chips { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
 .rc-list { margin-top:8px; }
