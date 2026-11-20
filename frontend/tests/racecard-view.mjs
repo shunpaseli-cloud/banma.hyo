@@ -8,7 +8,7 @@ const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},serv
 try{
  const {default:View}=await server.ssrLoadModule('/src/components/RaceCardsView.jsx'),{RACECARD_DATES}=await server.ssrLoadModule('/src/racecards.js'),{VIEWS,viewSearch}=await server.ssrLoadModule('/src/App.jsx')
  assert.ok(VIEWS.has('racecard'));assert.equal(viewSearch('2026-11-14','racecard'),'?date=2026-11-14&view=racecard')
- const expect={'2026-11-14':[10,9,9,10,10,10,10,10,10,9,9,7],'2026-11-15':[10,9,10,10,10,10,10,10,10,10,9,9],'2026-11-16':[7,9,9,9,10,9,10,10,10,10,10,9]}
+ const expect={'2026-11-14':[10,9,9,10,10,10,10,10,10,9,9,7],'2026-11-15':[10,9,10,10,10,10,10,10,10,10,9,9],'2026-11-16':[7,9,9,9,10,9,10,10,10,10,10,9],'2026-11-21':[9,10,10,10,9,9,9,10,10,9,10,10],'2026-11-22':[9,10,10,9,9,10,10,9,10,10,10,9]}
  for(const [date,counts] of Object.entries(expect)){
   assert.ok(RACECARD_DATES.includes(date))
   const card=JSON.parse(await fs.readFile(`src/data/racecards/racecard_${date}.json`))
@@ -22,5 +22,5 @@ try{
  const css=await fs.readFile('src/styles/theme.css','utf8'),rc=css.slice(css.indexOf('/* Race cards'))
  assert.ok(!/overflow(?:-x)?\s*:\s*(?:auto|scroll)|min-width\s*:\s*\d{3,}px|white-space\s*:\s*nowrap/.test(rc));assert.ok(rc.includes('table-layout:fixed'))
  assert.equal(crypto.createHash('sha256').update(await fs.readFile('src/data/learned_model.json')).digest('hex'),'e657cd397eccf5ca5b256d5ece69422b7fe0cffd8cb595663e4bf475ee403893')
- console.log(JSON.stringify({pass:'racecard view: 3 dates x 12R, head counts, all horses rendered, no-scroll CSS, learned_model unchanged'}))
+ console.log(JSON.stringify({pass:'racecard view: 5 dates x 12R, head counts, all horses rendered, no-scroll CSS, learned_model unchanged'}))
 }finally{await server.close()}
