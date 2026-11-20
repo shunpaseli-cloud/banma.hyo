@@ -42,7 +42,7 @@ async function archiveCurrent(){
  const manifest={version,archived_at:stamp(),snapshot_saved_at:old.meta.snapshot_saved_at||old.meta.generated_at_asia_tokyo,files,prestart_summary:summary,note:'旧版の事前成績。新版の事後再計算と合算しない。保存CLI値であり当時のブラウザ表示履歴の証明ではない。'}
  await immutable(manifestPath,bytes(manifest));return manifest
 }
-async function generateUnlocked({apply=false,weatherFile=null,outputDir='/workspace/banma-prepared-snapshot'}={}){
+async function generateUnlocked({apply=false,weatherFile=null,moistureV2Log=null,outputDir='/workspace/banma-prepared-snapshot'}={}){
  // Capture once, before any race calculation. Past-day inputs are explicitly post-hoc.
  const today=stamp().slice(0,10),sourceUrl='https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=4&forecast_days=3&timezone=Asia%2FTokyo'
  let raw=null,error=null
@@ -56,10 +56,12 @@ async function generateUnlocked({apply=false,weatherFile=null,outputDir='/worksp
  const protectedHashes=Object.fromEntries(await Promise.all(protectedFiles.map(async n=>[n,sha(await read(n))])))
  const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v)),removeItem:k=>memory.delete(k)}
  const server=await createServer({root:ROOT,optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true}})
- let rows
+ let rows,moistureV2=null,moistureV2Meta=null
  try{
   const {calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
-  rows=calculateRows(races,raw,stamp())
+  // 馬場水分v2: 指定時のみ、ログに発走前保存された stage1/stage2 の有効値を各Rへ渡す(未指定なら従来の v1 のみ)
+  if(moistureV2Log){const logBytes=await fs.readFile(moistureV2Log),{effectiveV2Map,MOISTURE_V2}=await server.ssrLoadModule('/src/moistureV2.js');moistureV2=effectiveV2Map(json(logBytes),new Set(races.map(r=>r.race_id)));moistureV2Meta={config_version:MOISTURE_V2.version,config_sha256:MOISTURE_V2.config_sha256,log_path:moistureV2Log,log_sha256:sha(logBytes),races:Object.keys(moistureV2).length}}
+  rows=moistureV2?calculateRows(races,raw,stamp(),{moistureV2}):calculateRows(races,raw,stamp())
  }finally{await server.close()}
  weather.missing_races=rows.filter(r=>r.prediction_status!=='available').map(r=>r.race_id)
  if(weather.missing_races.length)weather.status=weather.missing_races.length===rows.length?'missing':'partial'
@@ -70,7 +72,7 @@ async function generateUnlocked({apply=false,weatherFile=null,outputDir='/worksp
  let legacy;try{legacy=json(await fs.readFile(path.join(ROOT,'public',legacyPath,'manifest.json')))}catch(e){if(e.code!=='ENOENT')throw e;legacy=apply?await archiveCurrent():null}
  if(apply&&await fs.access(path.join(ROOT,'src/data/prediction_snapshot.json')).then(()=>true,()=>false))await archiveCurrent()
  const confidenceTable=json(await read('confidence_table_meta.json'))
- const meta={confidence_method:confidenceTable.version,confidence_table:confidenceTable,version,generated_at_asia_tokyo:generated,snapshot_saved_at:generated,config:'plus_hjz BOX123 pf≥0.65 k=0.05',timezone:'Asia/Tokyo',source_races_sha256:sha(source),models,engine,weather,legacy:{path:legacyPath,prestart_summary:legacy?.prestart_summary||null},policy:'全画面はこの保存版のみ。過去分は事後再計算。気象欠測は代替予測しない。結果は馬の選定後にrace_idで結合する。'}
+ const meta={confidence_method:confidenceTable.version,confidence_table:confidenceTable,version,generated_at_asia_tokyo:generated,snapshot_saved_at:generated,config:'plus_hjz BOX123 pf≥0.65 k=0.05',timezone:'Asia/Tokyo',source_races_sha256:sha(source),models,engine,weather,legacy:{path:legacyPath,prestart_summary:legacy?.prestart_summary||null},...(moistureV2Meta?{moisture_v2:moistureV2Meta}:{}),policy:'全画面はこの保存版のみ。過去分は事後再計算。気象欠測は代替予測しない。結果は馬の選定後にrace_idで結合する。'}
  const snapshot={schema_version:2,meta,races:rows}
  // Result JSON is deliberately read only AFTER all predictions have been selected.
  const results=json(await read('verified_results.json')),projection=resultProjection(snapshot,results)
@@ -92,5 +94,5 @@ export async function generate(options={}){
  const lock=await fs.open(lockPath,'wx').catch(error=>{throw new Error(`Another export may be running; refusing concurrent snapshot publication: ${error.message}`)})
  try{await lock.writeFile(JSON.stringify({pid:process.pid,started_at:stamp()}));return await generateUnlocked(options)}finally{await lock.close();await fs.unlink(lockPath)}
 }
-export async function runCli(){const a=process.argv.slice(2),at=a.indexOf('--weather-file');return generate({apply:a.includes('--apply'),weatherFile:at<0?null:a[at+1]})}
+export async function runCli(){const a=process.argv.slice(2),at=a.indexOf('--weather-file'),mv=a.indexOf('--moisture-v2-log');return generate({apply:a.includes('--apply'),weatherFile:at<0?null:a[at+1],moistureV2Log:mv<0?null:a[mv+1]})}
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await runCli()

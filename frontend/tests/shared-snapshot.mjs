@@ -49,7 +49,7 @@ try{
  const weather=structuredClone(original.meta.weather.raw);weather.daily.precipitation_sum[weather.daily.time.indexOf('2026-11-15')]+=10
  let calculations=0,weatherCalls=0
  const pointer={version:original.meta.version,snapshot_sha256:createHash('sha256').update(rawSnapshot).digest('hex')}
- const fetcher=async url=>{if(url.includes('prediction-version.json'))return {ok:true,json:async()=>pointer};if(url.includes('prediction-snapshot.json'))return {ok:true,text:async()=>rawSnapshot};weatherCalls++;return {ok:true,json:async()=>weather}}
+ const fetcher=async url=>{if(url.includes('moisture_prediction_log.json'))return {ok:false,status:404};if(url.includes('prediction-version.json'))return {ok:true,json:async()=>pointer};if(url.includes('prediction-snapshot.json'))return {ok:true,text:async()=>rawSnapshot};weatherCalls++;return {ok:true,json:async()=>weather}}
  const calculate=async(...args)=>{calculations++;return calculateRows(...args)}
  await Promise.all([store.refreshSnapshot({force:true,fetcher,calculate}),store.refreshSnapshot({force:true,fetcher,calculate})]);assert.equal(calculations,1);assert.equal(weatherCalls,1)
  const updated=store.getSnapshotState().snapshot;assert.notEqual(updated.meta.version,original.meta.version);allViews(updated)
@@ -66,7 +66,7 @@ try{
  assert.ok(render(Rank,{date:'2099-01-01'}).includes('ライブ再計算は行いません'));assert.ok(render(Results,{date:'2099-01-01'}).includes('ライブ再計算は行いません'))
  const priorHistory=[...memory].filter(([key])=>key.startsWith('banma.snapshot.history.'))
  const moreWeather=structuredClone(weather);moreWeather.daily.precipitation_sum[moreWeather.daily.time.indexOf('2026-11-15')]+=10
- const quotaFetcher=async url=>url.includes('prediction-version.json')?{ok:true,json:async()=>pointer}:{ok:true,json:async()=>moreWeather}
+ const quotaFetcher=async url=>url.includes('moisture_prediction_log.json')?{ok:false,status:404}:url.includes('prediction-version.json')?{ok:true,json:async()=>pointer}:{ok:true,json:async()=>moreWeather}
  const savedSet=localStorage.setItem;localStorage.setItem=()=>{throw new Error('quota')}
  await store.refreshSnapshot({force:true,fetcher:quotaFetcher,calculate});localStorage.setItem=savedSet
  assert.equal(store.getSnapshotState().persistence,'unavailable');assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),priorHistory,'never overwrite/delete prior histories on quota failure')

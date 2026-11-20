@@ -3,14 +3,16 @@ import {predict} from './feedback.js'
 import {buildSelection} from './boxSelection.js'
 import {setForecastDaily,estimateMoisture,MOISTURE_COEF} from './moisture.js'
 import {weatherComplete,timingOf} from './snapshotPolicy.js'
-export function calculateRows(races,raw,generated){
+// options.moistureV2: {race_id:{value,stage,saved_at,model_version,fallback}} (moistureV2.effectiveV2Map)。未指定なら従来どおり v1。
+export function calculateRows(races,raw,generated,options={}){
  if(raw?.daily)setForecastDaily(raw.daily)
  const rows=races.map(original=>{
-  const race=structuredClone(original),start=race.post_time?`${race.race_date}T${race.post_time}:00+09:00`:null
+  const race=structuredClone(original),v2=options.moistureV2?.[original.race_id]||null,start=race.post_time?`${race.race_date}T${race.post_time}:00+09:00`:null
   const identity={race_id:race.race_id,race_date:race.race_date,race_no:race.race_no,race_name:race.name,scheduled_start_at:start,snapshot_saved_at:generated,snapshot_timing:timingOf(generated,start),ticket_yen:100,stake_yen:600}
+  if(v2&&race.track_moisture==null)race.track_moisture_v2=v2.value
   if(!weatherComplete(raw,race.race_date))return {...identity,prediction_status:'weather_missing',recommended:null,confidence:null,selection_meta:null,predictions:[],tickets:[],note:'必要な気象入力が欠測。既定水分による代替予測は行いません。'}
   const predictions=predict(race,false),rec=buildSelection(race,predictions,{laterCards:races}),[a,b,c]=rec.selection_meta.top3.map(h=>h.umaban)
-  return {...identity,...rec,prediction_status:'available',predictions,tickets:[[a,b,c],[a,c,b],[b,a,c],[b,c,a],[c,a,b],[c,b,a]],model:predictions[0]?.model,moisture:{model_selection_pct:predictions[0]?.model?.moist,feature_estimate_pct:estimateMoisture(race.race_date),measured_pct:race.track_moisture??null,source:race.track_moisture!=null?'race_input_measured':'captured_weather',unit:'percentage point',weather_timing:race.race_date<generated.slice(0,10)?'posthoc_weather':'forecast'},formula:MOISTURE_COEF}
+  return {...identity,...rec,prediction_status:'available',predictions,tickets:[[a,b,c],[a,c,b],[b,a,c],[b,c,a],[c,a,b],[c,b,a]],model:predictions[0]?.model,moisture:{model_selection_pct:predictions[0]?.model?.moist,feature_estimate_pct:estimateMoisture(race.race_date),measured_pct:race.track_moisture??null,source:race.track_moisture!=null?'race_input_measured':'captured_weather',unit:'percentage point',weather_timing:race.race_date<generated.slice(0,10)?'posthoc_weather':'forecast',...(v2&&race.track_moisture==null?{v2:{...v2},source:'moisture_v2'}:{})},formula:MOISTURE_COEF}
  })
  // Canonical JSON representation (auxiliary NaN rates become null).
  return JSON.parse(JSON.stringify(rows))
