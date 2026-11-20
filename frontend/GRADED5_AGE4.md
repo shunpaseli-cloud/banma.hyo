@@ -51,3 +51,9 @@ Walk-forward（重賞 pure_O、min_train=40、日ブロックBS1000）: n=55
 1. クリーン結果JSONを更新し history_through / effective_from を決める
 2. `python3` で `analysis/graded5-age4/` の fit（または同等スクリプト）→ `node analysis/graded5-age4/merge_into_learned_model.mjs`
 3. `npm test` → build → gh-pages デプロイ
+
+## 2026-11-20 更新（t314u）: 重賞パス専用履歴と history_gap の扱い
+- 対象: BG1〜BG3 かつ全頭4歳以上（pure_O）。出走表スコア（card_score_age4）と重賞5走モデルをレース内zで等重み合成し上位3頭をBOX、1位を軸（自信度・推奨/見送りは従来どおり29特徴の軸）。
+- 重賞は history_gap で29特徴へ戻さない。締め日後に走った馬は `graded_box.history_gap_horses` に記録のみ。
+- 履歴: レース日が 2026-11-16 より後なら `graded_form_history_age4_r20261116.json` / `card_history_age4_graded_r20261116.json`（同梱履歴に公式確定 11/14〜16 の36R・342走を追記、`analysis/graded5-age4/refresh_graded_history.py`）。それ以前の日付は同梱履歴（〜11/08）のまま。
+- 同梱の `card_history_age4.json` / `graded_form_history_age4.json` と learned_model.json は不変。非重賞の card_score_age4 は同梱履歴・history_gap 判定とも従来どおり。

@@ -1,8 +1,8 @@
 {
  "meta": {
-  "version": "pred-20261120T211110JST-a5b8cb0efaaa",
-  "generated_at_asia_tokyo": "2026-11-20T21:11:10+09:00",
-  "snapshot_saved_at": "2026-11-20T21:11:10+09:00",
+  "version": "pred-20261120T212225JST-bac0f5278db6",
+  "generated_at_asia_tokyo": "2026-11-20T21:22:25+09:00",
+  "snapshot_saved_at": "2026-11-20T21:22:25+09:00",
   "config": "plus_hjz BOX123 pf≥0.65 k=0.05",
   "timezone": "Asia/Tokyo",
   "source_races_sha256": "eaa666ada4b65cf879a6ee174c9380e0d829311c90973007ec85dde870337fd3",
@@ -155,8 +155,21 @@
    "scope": "4歳以上だけのレースの3頭BOX候補のみ。3歳以下・混合・発効日前は29特徴BOXのまま。点数・見送り・自信度は不変。",
    "saved_rows": "既存保存行は再生成せず不変（snapshot_versionのみ更新）。"
   },
-  "previous_snapshot_version": "pred-20261115T095331JST-52d7d4cd93c4",
-  "append_note": "2026-11-21・2026-11-22の予想を現行本番方式で追加。2026-11-06〜08・11-15〜16の既存行は再生成せず不変（snapshot_versionのみ更新）。learned_model.json 不変。11/21 1R 9番ストロングモモは出走取消のため計算から除外。history_gap判定には11/14〜16の公式出走表を使用。"
+  "previous_snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+  "append_note": "2026-11-21・2026-11-22の予想を現行本番方式で追加。2026-11-06〜08・11-15〜16の既存行は再生成せず不変（snapshot_versionのみ更新）。learned_model.json 不変。11/21 1R 9番ストロングモモは出走取消のため計算から除外。history_gap判定には11/14〜16の公式出走表を使用。 2026-11-20T21:22:25+09:00 重賞方式(graded5_age4)を 2026-11-22 11R ドリームエイジカップに適用（履歴は重賞パス専用に11/16まで更新）。他の行は不変。",
+  "graded5_age4": {
+   "version": "graded5-age4-v1",
+   "scope": "重賞(BG1-3)×4歳以上だけのレース: 出走表スコアと重賞5走モデルの等重み合成で3頭BOX、1位を軸。history_gapで29特徴へ戻さない。自信度・推奨/見送りは29特徴の軸で従来どおり。",
+   "history_files": {
+    "graded_form_history_age4_r20261116.json": "1560fe0ba715ce64492ead3bfedf2cf00894870f9aa6492e4409d971b679d333",
+    "card_history_age4_graded_r20261116.json": "ccc14792d1aeff6667975d8118fdf41eb42b0f1c22e3f059f2cd5973fb82c7a1"
+   },
+   "history_through": "2026-11-16",
+   "applied_rows": [
+    "20261122-R11"
+   ],
+   "applied_at": "2026-11-20T21:22:25+09:00"
+  }
  },
  "races": [
   {
@@ -359,7 +372,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -563,7 +576,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -767,7 +780,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -971,7 +984,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1175,7 +1188,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1379,7 +1392,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1583,7 +1596,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1787,7 +1800,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1991,7 +2004,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2195,7 +2208,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2399,7 +2412,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2603,7 +2616,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2807,7 +2820,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3011,7 +3024,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3215,7 +3228,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3419,7 +3432,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3623,7 +3636,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3827,7 +3840,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4031,7 +4044,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4235,7 +4248,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4439,7 +4452,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4643,7 +4656,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4847,7 +4860,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -5051,7 +5064,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -5255,7 +5268,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -5459,7 +5472,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -5663,7 +5676,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -5867,7 +5880,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6071,7 +6084,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6275,7 +6288,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6479,7 +6492,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6683,7 +6696,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6887,7 +6900,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7091,7 +7104,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7295,7 +7308,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7499,7 +7512,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7710,7 +7723,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R02",
@@ -7919,7 +7932,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R03",
@@ -8128,7 +8141,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R04",
@@ -8337,7 +8350,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R05",
@@ -8599,7 +8612,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R06",
@@ -8808,7 +8821,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R07",
@@ -9017,7 +9030,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R08",
@@ -9279,7 +9292,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R09",
@@ -9541,7 +9554,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R10",
@@ -9803,7 +9816,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R11",
@@ -10065,7 +10078,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261115-R12",
@@ -10274,7 +10287,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R01",
@@ -10483,7 +10496,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R02",
@@ -10692,7 +10705,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R03",
@@ -10901,7 +10914,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R04",
@@ -11110,7 +11123,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R05",
@@ -11319,7 +11332,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R06",
@@ -11528,7 +11541,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R07",
@@ -11737,7 +11750,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R08",
@@ -11946,7 +11959,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R09",
@@ -12155,7 +12168,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R10",
@@ -12417,7 +12430,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R11",
@@ -12626,7 +12639,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261116-R12",
@@ -12888,7 +12901,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R01",
@@ -13095,7 +13108,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R02",
@@ -13302,7 +13315,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R03",
@@ -13509,7 +13522,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R04",
@@ -13716,7 +13729,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R05",
@@ -13923,7 +13936,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R06",
@@ -14130,7 +14143,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R07",
@@ -14337,7 +14350,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R08",
@@ -14544,7 +14557,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R09",
@@ -14751,7 +14764,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R10",
@@ -14958,7 +14971,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R11",
@@ -15165,7 +15178,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261121-R12",
@@ -15372,7 +15385,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R01",
@@ -15579,7 +15592,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R02",
@@ -15786,7 +15799,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R03",
@@ -15993,7 +16006,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R04",
@@ -16200,7 +16213,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R05",
@@ -16407,7 +16420,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R06",
@@ -16614,7 +16627,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R07",
@@ -16821,7 +16834,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R08",
@@ -17028,7 +17041,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R09",
@@ -17288,7 +17301,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R10",
@@ -17495,7 +17508,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R11",
@@ -17503,13 +17516,13 @@
    "race_no": 11,
    "race_name": "帯広11R 第１７回 ドリームエイジカップ（ＢＧ３）４歳以上選抜別定",
    "scheduled_start_at": "2026-11-22T19:30:00+09:00",
-   "snapshot_saved_at": "2026-11-20T21:11:10+09:00",
+   "snapshot_saved_at": "2026-11-20T21:22:25+09:00",
    "snapshot_timing": "prestart",
    "ticket_yen": 100,
    "stake_yen": 600,
    "recommended": true,
    "confidence": 0.502,
-   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 1番スターイチバン（モデル1位・スコア 0.796・past_form 0.883≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・重賞（BG等）扱い。レース名「帯広11R 第１７回 ドリームエイジカップ（ＢＧ３）４歳以上選抜別定」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 1番スターイチバン（スコア0.796・past_form 0.883）、2位 6番クリスタルコルド（スコア0.705・past_form 0.686）、3位 3番マルホンリョウユウ（スコア0.626・past_form 0.475）。 主買い目は三連単三頭ボックス6点（1番スターイチバン−6番クリスタルコルド−3番マルホンリョウユウの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.264、過去着順平均+0.235、枠番+0.221。 自信度 0.50（やや低）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=wet・grade／照合=080_plus|ge10|wet|grade）の過去実績はN=6・的中率16.667%・回収率101.39%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 1番スターイチバン（モデル1位・スコア 0.796・past_form 0.883≥0.65）。 軸の馬連勝 1（k=0.05 の連勝ペナルティ適用）。 出走 10 頭・重賞（BG等）扱い。レース名「帯広11R 第１７回 ドリームエイジカップ（ＢＧ３）４歳以上選抜別定」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 1番スターイチバン（スコア0.796・past_form 0.883）、2位 6番クリスタルコルド（スコア0.705・past_form 0.686）、3位 3番マルホンリョウユウ（スコア0.626・past_form 0.475）。 主買い目は三連単三頭ボックス6点（6番クリスタルコルド−5番コウテイ−8番キョウエイエースの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.264、過去着順平均+0.235、枠番+0.221。 自信度 0.50（やや低）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=wet・grade／照合=080_plus|ge10|wet|grade）の過去実績はN=6・的中率16.667%・回収率101.39%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。 買い目の3頭は重賞×4歳以上の出走表スコアと直近5走モデルの合成（graded5-age4-v1）で選定。自信度と推奨/見送りは29特徴の軸 1番スターイチバンで従来どおり判定。",
    "selection_meta": {
     "recommended": true,
     "confidence": 0.502,
@@ -17546,6 +17559,194 @@
     "gate_skip": false,
     "gate_reason": null,
     "axis": {
+     "horse_id": "20261122-R11-06",
+     "umaban": 6,
+     "name": "クリスタルコルド",
+     "score": 0.7048,
+     "finish_score": 0.7048,
+     "past_form": 0.6858,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "body_x_sled",
+       "contrib": 0.2753,
+       "value": 927420
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.115,
+       "value": 0.6858
+      },
+      {
+       "name": "sled_change_vs_last3mean",
+       "contrib": 0.0521,
+       "value": -26.6667
+      },
+      {
+       "name": "umaban",
+       "contrib": 0.04,
+       "value": 6
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0122,
+       "value": 0.1854
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 6,
+      "name": "クリスタルコルド",
+      "score": 0.7048,
+      "past_form": 0.6858
+     },
+     {
+      "umaban": 5,
+      "name": "コウテイ",
+      "score": 0.5311,
+      "past_form": 0.4944
+     },
+     {
+      "umaban": 8,
+      "name": "キョウエイエース",
+      "score": 0.5274,
+      "past_form": 0.4635
+     }
+    ],
+    "box_horses": [
+     "6番クリスタルコルド",
+     "5番コウテイ",
+     "8番キョウエイエース"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method_reason": "graded_pure_O",
+    "graded_box": {
+     "scores": [
+      {
+       "umaban": 1,
+       "combined": 0.5065719166760276,
+       "card_u": 0.49296884967023685,
+       "graded_logit": 0.32448568826648083,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 2,
+       "combined": -1.0041302248845738,
+       "card_u": -0.6181720860589044,
+       "graded_logit": -0.6814349703961406,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 3,
+       "combined": -0.5683254284869014,
+       "card_u": 0.012672358460090651,
+       "graded_logit": -0.6831811306308098,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 4,
+       "combined": -2.060725992650071,
+       "card_u": -1.0696801707937742,
+       "graded_logit": -1.6913353314888946,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 5,
+       "combined": 0.8372601019802267,
+       "card_u": 1.3132342914615855,
+       "graded_logit": 0.0018030427467684018,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 6,
+       "combined": 1.3192858124826756,
+       "card_u": 1.3150685329688436,
+       "graded_logit": 0.654585887839549,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 7,
+       "combined": 0.41021957730916575,
+       "card_u": 0.30916071092132497,
+       "graded_logit": 0.3665812475702173,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 8,
+       "combined": 0.5083500165555781,
+       "card_u": 0.6717552022010178,
+       "graded_logit": 0.15869894940276305,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 9,
+       "combined": -0.301266899885155,
+       "card_u": -0.1065315343164547,
+       "graded_logit": -0.20841503107071524,
+       "graded_history": "official_history"
+      },
+      {
+       "umaban": 10,
+       "combined": 0.3527611209030275,
+       "card_u": 0.09375597260320029,
+       "graded_logit": 0.4912139344658672,
+       "graded_history": "official_history"
+      }
+     ],
+     "memrobo_forced": false,
+     "history_gap_horses": []
+    },
+    "card_score_version": "card-score-age4-v1",
+    "card_history_through": "2026-11-16",
+    "graded5_version": "graded5-age4-v1",
+    "graded_history_through": "2026-11-16",
+    "is_graded_race": true,
+    "card_box": {
+     "ranks": [
+      6,
+      5,
+      8
+     ],
+     "model29_top3": [
+      1,
+      6,
+      3
+     ]
+    },
+    "confidence_axis": {
      "horse_id": "20261122-R11-01",
      "umaban": 1,
      "name": "スターイチバン",
@@ -17583,99 +17784,39 @@
       }
      ]
     },
-    "top3": [
-     {
-      "umaban": 1,
-      "name": "スターイチバン",
-      "score": 0.7956,
-      "past_form": 0.8833
-     },
-     {
-      "umaban": 6,
-      "name": "クリスタルコルド",
-      "score": 0.7048,
-      "past_form": 0.6858
-     },
-     {
-      "umaban": 3,
-      "name": "マルホンリョウユウ",
-      "score": 0.6256,
-      "past_form": 0.4753
-     }
-    ],
-    "box_horses": [
-     "1番スターイチバン",
-     "6番クリスタルコルド",
-     "3番マルホンリョウユウ"
-    ],
-    "feature_names": [
-     "est_moist",
-     "sled_weight",
-     "body_weight",
-     "age",
-     "sex_male",
-     "sex_gelding",
-     "field",
-     "race_no",
-     "gate",
-     "umaban",
-     "jockey_count",
-     "horse_starts",
-     "horse_prev_fin_mean",
-     "moist_x_body",
-     "moist_x_sled",
-     "body_x_sled",
-     "last5_fin_std",
-     "last5_fin_mean",
-     "same_jockey_n",
-     "same_jockey_fin_mean",
-     "same_moist_bucket_n",
-     "same_moist_bucket_fin_mean",
-     "sled_change_prev",
-     "sled_change_vs_last3mean",
-     "horse_win_streak",
-     "horse_win_rate_10",
-     "jockey_win_streak",
-     "jockey_win_rate_100",
-     "is_grade"
-    ],
-    "box_method": "model29",
-    "box_method_reason": "history_gap",
-    "card_score_version": "card-score-age4-v1",
-    "graded5_version": "graded5-age4-v1",
-    "is_graded_race": true
+    "box_method": "graded5_card_combined"
    },
    "prediction_status": "available",
    "tickets": [
     [
-     1,
      6,
-     3
+     5,
+     8
     ],
     [
-     1,
-     3,
+     6,
+     8,
+     5
+    ],
+    [
+     5,
+     6,
+     8
+    ],
+    [
+     5,
+     8,
      6
     ],
     [
+     8,
      6,
-     1,
-     3
+     5
     ],
     [
-     6,
-     3,
-     1
-    ],
-    [
-     3,
-     1,
+     8,
+     5,
      6
-    ],
-    [
-     3,
-     6,
-     1
     ]
    ],
    "model": {
@@ -17702,7 +17843,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   },
   {
    "race_id": "20261122-R12",
@@ -17909,7 +18050,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa"
+   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
   }
  ]
 }

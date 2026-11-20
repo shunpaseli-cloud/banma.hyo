@@ -27,6 +27,11 @@ try{
  const card14=JSON.parse(await readFile('src/data/racecards/racecard_2026-11-14.json')).races.map(r=>({race_id:r.race_id,race_date:r.race_date,race_no:r.race_no,name:r.race_name||'',post_time:r.post_time,track_moisture:null,entries:r.entries.map(e=>({...e,race_id:r.race_id,horse_id:r.race_id+'-'+String(e.umaban).padStart(2,'0'),recent_form:0.3}))}))
  const replayNew=calculateRows([...card14,...rawRaces.filter(r=>r.race_date>='2026-11-15')],original.meta.weather.raw,added[0].snapshot_saved_at)
  for(const row of added){const r=replayNew.find(r=>r.race_id===row.race_id);for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(r[key],row[key],'new calculator replay '+row.race_id+' '+key)}
+ // 重賞×4歳以上（11/22 11R ドリームエイジカップ BG3）はブラウザ再計算（races_from_pdf のみ）でも重賞方式の同じBOX
+ const dream=added.find(r=>r.race_id==='20261122-R11');assert.equal(dream.selection_meta.box_method,'graded5_card_combined');assert.deepEqual(dream.selection_meta.top3.map(h=>h.umaban),[6,5,8]);assert.equal(dream.selection_meta.graded_history_through,'2026-11-16')
+ const browserLike=calculateRows(rawRaces,original.meta.weather.raw,dream.snapshot_saved_at).find(r=>r.race_id===dream.race_id)
+ for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(browserLike[key],dream[key],'graded browser replay '+key)
+ assert.equal(added.filter(r=>r.selection_meta.box_method==='graded5_card_combined').length,1)
  function allViews(snapshot){
   for(const date of ['2026-11-06','2026-11-07','2026-11-08','2026-11-15','2026-11-16','2026-11-21','2026-11-22']){
    const rows=snapshot.races.filter(r=>r.race_date===date)
