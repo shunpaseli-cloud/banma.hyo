@@ -64,15 +64,20 @@ export async function refreshSnapshot({force=false,fetcher=globalThis.fetch,calc
    weatherUrl.searchParams.set('past_days',String(Math.min(92,pastDays)))
    const weatherResponse=await fetchLatest(weatherUrl.href,{cache:'no-store'});if(!weatherResponse.ok)throw new Error('最新気象の取得失敗')
    const raw=await weatherResponse.json();if(!raw.daily?.time?.length)throw new Error('最新気象の入力が欠測')
+   // 馬場水分v2: routine が公開した moisture_prediction_log.json の発走前保存値(stage1/stage2)。取得失敗時は従来どおり v1。
+   let v2map={}
+   try{const lr=await fetchLatest(`${import.meta.env.BASE_URL}moisture_prediction_log.json?check=${now()}`,{cache:'no-store'});if(lr?.ok){const {effectiveV2Map}=await import('./moistureV2.js');v2map=effectiveV2Map(await lr.json(),new Set(base.races.map(r=>r.race_id)))}}catch{v2map={}}
+   const {v2Fingerprint}=await import('./moistureV2.js')
+   const v2Changed=v2Fingerprint(v2map)!==v2Fingerprint(Object.fromEntries(base.races.filter(r=>r.moisture?.v2).map(r=>[r.race_id,r.moisture.v2])))
    const checked=stamp()
-   if(forecastFingerprint(base,raw)===forecastFingerprint(base,base.meta.weather.raw)&&base.meta.confidence_method===CONFIDENCE_METHOD.version&&base.meta.confidence_table?.table_sha256===CONFIDENCE_METHOD.table_sha256&&checkedConfidenceTable){
+   if(!v2Changed&&forecastFingerprint(base,raw)===forecastFingerprint(base,base.meta.weather.raw)&&base.meta.confidence_method===CONFIDENCE_METHOD.version&&base.meta.confidence_table?.table_sha256===CONFIDENCE_METHOD.table_sha256&&checkedConfidenceTable){
     publish({snapshot:base,status:'current',lastCheckedAt:checked,error:null,persistence:base.meta.generated_in==='browser_shared_store'?base.meta.persistence_status:'server_archive'});return state
    }
    if((JSON.stringify(base.meta.models)!==JSON.stringify(compiled.models)||base.meta.engine!==compiled.engine))throw new Error('モデル版が更新されています。古い計算器での再計算を停止しました。ページを開き直してください。')
    const races=(await import('./data/races_from_pdf.json')).default
    const weatherChanged=forecastFingerprint(base,raw)!==forecastFingerprint(base,base.meta.weather.raw)
    let rows
-   if(weatherChanged){const engine=calculate||((await import('./calculateSnapshot.js')).calculateRows);rows=await engine(races,raw,checked)}
+   if(weatherChanged||v2Changed){const engine=calculate||((await import('./calculateSnapshot.js')).calculateRows);rows=Object.keys(v2map).length?await engine(races,raw,checked,{moistureV2:v2map}):await engine(races,raw,checked)}
    else{const {replaceConfidence}=await import('./confidenceTable.js');const byId=new Map(races.map(r=>[r.race_id,r]));rows=base.races.map(row=>replaceConfidence(row,byId.get(row.race_id),{at:checked,laterCards:races}))}
    checkedConfidenceTable=true
    const identity=await contentIdentity(base,raw,CONFIDENCE_METHOD,rows),version=identity.version

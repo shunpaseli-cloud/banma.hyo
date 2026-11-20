@@ -39,7 +39,7 @@ function jockeyWinsBefore(jk, rid) {
   return out
 }
 export function learnedPredict(race) {
-  const date = race.race_date || dateOf(race.race_id), mm = modelFor(date, race.track_moisture != null ? +race.track_moisture : undefined); if (!mm) return null
+  const date = race.race_date || dateOf(race.race_id), mm = modelFor(date, race.track_moisture != null ? +race.track_moisture : race.track_moisture_v2 != null ? +race.track_moisture_v2 : undefined); if (!mm) return null
   const n = race.entries.length, out = {}
   const g = isGradeRace(race.race_id, race.name || nameOf[race.race_id], GRADE)
   for (const e of race.entries) {

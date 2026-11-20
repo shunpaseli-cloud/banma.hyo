@@ -43,3 +43,7 @@ python3 /workspace/banma-confidence-dates/frontend/scripts/moisture_log.py \
 公開時は既存gh-pages作業ツリーの最新状態を確認し、このJSONだけをコピー・コミット・通常pushする。既存HTML/JS/モデル/結果データを上書きしない。後続のアプリ再ビルド前にも正本から配布コピーを再同期する。
 
 `metrics`は発走前保存済みかつ実測確定のペアだけでn/MAE/RMSE/biasを計算。過去値の捏造・回顧予測、学習やOLSの再開は行わない。
+
+## v2（2段階・M7）
+
+2026-11-20 から、v1 欄を変えずに各レースへ `v2` 欄を追記する2段階予測を併走します。設計・スキーマ・検証は `docs/moisture-v2-design.md`、実装は `frontend/scripts/moisture_v2.py`。
