@@ -1,0 +1,26 @@
+{
+  "version": "nearest-v1",
+  "k": 30,
+  "minimum_reliable_n": 10,
+  "features": [
+    "axis_past_form",
+    "field_size",
+    "moisture_pct",
+    "is_grade",
+    "axis_sled_midrank",
+    "field_sled_spread_kg",
+    "top3_past_form_mean"
+  ],
+  "distance": "euclidean",
+  "normalization": "population zscore from eligible strictly previous-date candidate features only; zero variance scale=1",
+  "same_day_policy": "exclude entire same date because official finalization times are unknown",
+  "hit_weight": 0.75,
+  "roi_weight": 0.25,
+  "roi_transform": "R/(1+R), R=payout_yen/(600*n) in multiples, not percent",
+  "shrinkage": "min(n/10,1)",
+  "formula": "min(n/10,1)*(0.75*H+0.25*R/(1+R)); H=hits/n; n=0 =>0",
+  "stake_yen_per_race": 600,
+  "missing_policy": "missing corpus/query features or n=0 =>0 with explicit status; no legacy fallback",
+  "tie_break": "distance ascending then race_id ascending",
+  "disclaimer": "Uncalibrated composite index, NOT a hit probability. Frozen-model retrospective corpus uses official measured moisture and includes1049 training-source races; not pure unseen/prestart performance."
+}
