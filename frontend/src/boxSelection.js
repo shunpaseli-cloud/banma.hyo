@@ -51,11 +51,11 @@ export function buildSelection(race, preds, { laterCards = [] } = {}) {
     if (g.eligible) {
       return applyBox(rec, race, preds, g.box, 'graded5_card_combined', {
         is_graded_race: true,
-        card_history_through: CARD?.history_file?.history_through,
+        card_history_through: g.card_history_through,
         graded_history_through: g.history_through,
         meta: {
           box_method_reason: g.memrobo_forced ? 'graded_pure_O_memrobo_forced' : 'graded_pure_O',
-          graded_box: { scores: g.scores, memrobo_forced: g.memrobo_forced },
+          graded_box: { scores: g.scores, memrobo_forced: g.memrobo_forced, history_gap_horses: g.history_gap_horses },
         },
       })
     }

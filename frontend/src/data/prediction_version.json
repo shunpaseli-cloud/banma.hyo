@@ -1,6 +1,6 @@
 {
- "version": "pred-20261115T095331JST-52d7d4cd93c4",
- "generated_at_asia_tokyo": "2026-11-15T09:53:31+09:00",
+ "version": "pred-20261120T212225JST-bac0f5278db6",
+ "generated_at_asia_tokyo": "2026-11-20T21:22:25+09:00",
  "models": {
   "learned_model.json": "e657cd397eccf5ca5b256d5ece69422b7fe0cffd8cb595663e4bf475ee403893",
   "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
@@ -9,7 +9,7 @@
  },
  "engine": "4922425be20d85e9460b78007ab05f389c5190d9d7fb0d310e00ad62c75b955b",
  "weather_status": "retrieved",
- "weather_retrieved_at": "2026-11-15T09:50:10+09:00",
+ "weather_retrieved_at": "2026-11-20T21:08:15+09:00",
  "legacy": {
   "path": "prediction-history/legacy-20261106T190648/",
   "prestart_summary": {
@@ -39,6 +39,19 @@
   "scope": "4歳以上だけのレースの3頭BOX候補のみ。3歳以下・混合・発効日前は29特徴BOXのまま。点数・見送り・自信度は不変。",
   "saved_rows": "既存保存行は再生成せず不変（snapshot_versionのみ更新）。"
  },
- "previous_snapshot_version": "card4-20261109T195011JST-f488b7eea55e",
- "snapshot_sha256": "3fda6d5963466cd9ca6cc0a54102696e997de3d2389076ed34522134b08509dd"
+ "previous_snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
+ "snapshot_sha256": "81673a3895df3ad95dda5bf3c0d841586f42c51fa7eadb49df352679db5be90b",
+ "graded5_age4": {
+  "version": "graded5-age4-v1",
+  "scope": "重賞(BG1-3)×4歳以上だけのレース: 出走表スコアと重賞5走モデルの等重み合成で3頭BOX、1位を軸。history_gapで29特徴へ戻さない。自信度・推奨/見送りは29特徴の軸で従来どおり。",
+  "history_files": {
+   "graded_form_history_age4_r20261116.json": "1560fe0ba715ce64492ead3bfedf2cf00894870f9aa6492e4409d971b679d333",
+   "card_history_age4_graded_r20261116.json": "ccc14792d1aeff6667975d8118fdf41eb42b0f1c22e3f059f2cd5973fb82c7a1"
+  },
+  "history_through": "2026-11-16",
+  "applied_rows": [
+   "20261122-R11"
+  ],
+  "applied_at": "2026-11-20T21:22:25+09:00"
+ }
 }

@@ -1,7 +1,18 @@
 // 重賞×4歳以上: 直近フォームのロジスティック(top3)と出走表スコアを等重み合成してBOX選定（graded5-age4-v1, t279u）。
 // 点数・購入/見送り・自信度には使わない。非重賞の pure_O は card_score_age4 のみ（本モジュールは重賞判定時のみ呼ばれる）。
 import MODEL from './data/learned_model.json' with { type: 'json' }
-import HISTORY from './data/graded_form_history_age4.json' with { type: 'json' }
+// 重賞パス専用の履歴（t314u）: 同梱履歴(〜2026-11-08, learned_model.json の sha 記録対象)は不変のまま、
+// 公式確定結果 11/14〜11/16 を追記した写しを重賞×4歳以上の合成だけで使う。非重賞 card_score_age4 は従来の同梱履歴。
+// レース日が更新版の締め日より後なら更新版、それ以前は同梱版（従来どおり）を使う。
+import HISTORY_BUNDLED from './data/graded_form_history_age4.json' with { type: 'json' }
+import HISTORY_R from './data/graded_form_history_age4_r20261116.json' with { type: 'json' }
+import CARD_HISTORY_R from './data/card_history_age4_graded_r20261116.json' with { type: 'json' }
+import CARD_HISTORY_BUNDLED from './data/card_history_age4.json' with { type: 'json' }
+const HISTORY = HISTORY_BUNDLED
+export const GRADED_HISTORY_REFRESH = { graded: HISTORY_R, card: CARD_HISTORY_R }
+export const historiesFor = date => date && date > HISTORY_R.history_through
+  ? { hist: HISTORY_R, cardHist: CARD_HISTORY_R }
+  : { hist: HISTORY_BUNDLED, cardHist: CARD_HISTORY_BUNDLED }
 import GRADE from './data/grade_races.json' with { type: 'json' }
 import { ageType, isScratched, cardFeatures, utilities, parseClass, CARD } from './cardScoreAge4.js'
 import { isMemrobo } from './memrobo.js'
@@ -88,7 +99,10 @@ function zscore(vals) {
  * 重賞かつ pure_O かつ card 適用可のとき、card効用と graded logit をレース内zで等重み合成し top3。
  * card が非eligibleなら本モジュールも非eligible（呼び出し側が card / model29 に落とす）。
  */
-export function gradedCombineBox(race, { model = GRADED, hist = HISTORY, cardModel = CARD, laterCards = [] } = {}) {
+export function gradedCombineBox(race, { model = GRADED, hist, cardHist, cardModel = CARD, laterCards = [] } = {}) {
+  const auto = historiesFor(race?.race_date)
+  hist = hist || auto.hist
+  cardHist = cardHist || auto.cardHist
   if (!model) return { eligible: false, reason: 'graded_model_missing' }
   if (!isGradedRace(race)) return { eligible: false, reason: 'not_graded' }
   const date = race.race_date
@@ -100,11 +114,13 @@ export function gradedCombineBox(race, { model = GRADED, hist = HISTORY, cardMod
   let cls = parseClass(race.name)
   if (!cls.ctype && race.race_class_raw) cls = parseClass(race.race_class_raw)
   if (!cls.ctype) return { eligible: false, reason: 'class_missing' }
-  const cardRows = cardFeatures(race, cls)
+  if (date <= cardHist.history_through) return { eligible: false, reason: 'history_not_prior' }
+  const cardRows = cardFeatures(race, cls, cardHist)
   if (cardRows.length < 3) return { eligible: false, reason: 'fewer_than_3_candidates' }
-  const gap = laterCards.filter(r => r.race_date > (CARD?.history_file?.history_through || hist.history_through) && r.race_date < date)
+  // 重賞は history_gap で29特徴へ戻さない（t314u）。履歴締め日より後に走った馬は記録だけ残す。
+  const gap = laterCards.filter(r => r.race_date > cardHist.history_through && r.race_date < date)
   const gapHorses = new Set(gap.flatMap(r => (r.entries || []).filter(e => !isScratched(e)).map(e => nk(e.name))))
-  if (cardRows.some(r => gapHorses.has(nk(r.name)))) return { eligible: false, reason: 'history_gap' }
+  const historyGapHorses = cardRows.filter(r => gapHorses.has(nk(r.name))).map(r => r.umaban)
 
   const cardU = utilities(cardRows, cardModel)
   const gRows = gradedFeatures(race, hist, model)
@@ -133,6 +149,8 @@ export function gradedCombineBox(race, { model = GRADED, hist = HISTORY, cardMod
     eligible: true,
     model_version: model.version,
     history_through: hist.history_through,
+    card_history_through: cardHist.history_through,
+    history_gap_horses: historyGapHorses,
     memrobo_forced: mi >= 0,
     box_method: 'graded5_card_combined',
     box: top.map(i => ({
