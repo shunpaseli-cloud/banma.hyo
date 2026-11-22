@@ -4864,9 +4864,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=1",
+          "source_retrieved_at": "2026-11-22T22:00:33+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "c64b6b8940e7274cf8404011dee8109b98b96f5b05f45d8ab34feda70a997bb3",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -4929,7 +4940,9 @@
           "fallback": false,
           "fallback_reason": null
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=1",
+      "actual_source_retrieved_at": "2026-11-22T22:00:33+09:00"
     },
     "20261122-R02": {
       "race_id": "20261122-R02",
@@ -4941,9 +4954,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=2",
+          "source_retrieved_at": "2026-11-22T22:00:34+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "ec5d35120a69be8090a0bc87346d58d33b8ae50bcea3f8997c89c91b576c64ba",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5036,7 +5060,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=2",
+      "actual_source_retrieved_at": "2026-11-22T22:00:34+09:00"
     },
     "20261122-R03": {
       "race_id": "20261122-R03",
@@ -5048,9 +5074,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=3",
+          "source_retrieved_at": "2026-11-22T22:00:34+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "8b4d57bf4fc621163ed955bb61d6777900daa4837c0950c023076936e2223683",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5143,7 +5180,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=3",
+      "actual_source_retrieved_at": "2026-11-22T22:00:34+09:00"
     },
     "20261122-R04": {
       "race_id": "20261122-R04",
@@ -5155,9 +5194,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=4",
+          "source_retrieved_at": "2026-11-22T22:00:34+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "a83f737008c675b5a7c55c8e44ea575c746fbe8d66b7d68e97f6cd21185f46ce",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5250,7 +5300,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=4",
+      "actual_source_retrieved_at": "2026-11-22T22:00:34+09:00"
     },
     "20261122-R05": {
       "race_id": "20261122-R05",
@@ -5262,9 +5314,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=5",
+          "source_retrieved_at": "2026-11-22T22:00:34+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "fb35ef6c82be82791d7b9c0ba8a31929f9c5947b2cb2380bc5cf8e5dc64ba1b3",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5357,7 +5420,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=5",
+      "actual_source_retrieved_at": "2026-11-22T22:00:34+09:00"
     },
     "20261122-R06": {
       "race_id": "20261122-R06",
@@ -5369,9 +5434,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=6",
+          "source_retrieved_at": "2026-11-22T22:00:35+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "ef3c5e63d47f28718ada7b2806835949a319acb92d97a91b1a6cd18486053215",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5464,7 +5540,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=6",
+      "actual_source_retrieved_at": "2026-11-22T22:00:35+09:00"
     },
     "20261122-R07": {
       "race_id": "20261122-R07",
@@ -5476,9 +5554,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=7",
+          "source_retrieved_at": "2026-11-22T22:00:35+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "efccf88a3f41b8b90180839d8f9a7ded5d946dafceec2293fffa69f11b4c74c2",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5571,7 +5660,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=7",
+      "actual_source_retrieved_at": "2026-11-22T22:00:35+09:00"
     },
     "20261122-R08": {
       "race_id": "20261122-R08",
@@ -5583,9 +5674,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=8",
+          "source_retrieved_at": "2026-11-22T22:00:36+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "1f96e73101afd91f49c77815d96ec3e9024df0c770a004b4f29d6243ec542129",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5678,7 +5780,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=8",
+      "actual_source_retrieved_at": "2026-11-22T22:00:36+09:00"
     },
     "20261122-R09": {
       "race_id": "20261122-R09",
@@ -5690,9 +5794,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=9",
+          "source_retrieved_at": "2026-11-22T22:00:36+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "56b664d69135d229499719ee33920601c626ae02b5884b9dfa6e72ba13db02d0",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5785,7 +5900,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=9",
+      "actual_source_retrieved_at": "2026-11-22T22:00:36+09:00"
     },
     "20261122-R10": {
       "race_id": "20261122-R10",
@@ -5797,9 +5914,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=10",
+          "source_retrieved_at": "2026-11-22T22:00:36+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "d1552a560e287df90c39c271de3b41ee09bcc25181a00774acc02037a9e1c70c",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5892,7 +6020,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=10",
+      "actual_source_retrieved_at": "2026-11-22T22:00:36+09:00"
     },
     "20261122-R11": {
       "race_id": "20261122-R11",
@@ -5904,9 +6034,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=11",
+          "source_retrieved_at": "2026-11-22T22:00:37+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "a66643844f963c7396950aeb0589e7b7d3b513e2f6e79cd406cfd0abacb3f501",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -5999,7 +6140,9 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=11",
+      "actual_source_retrieved_at": "2026-11-22T22:00:37+09:00"
     },
     "20261122-R12": {
       "race_id": "20261122-R12",
@@ -6011,9 +6154,20 @@
       "prediction_saved_at": "2026-11-22T08:59:24.675762+09:00",
       "prediction_status": "saved",
       "attempts": [],
-      "actual_moisture": null,
+      "actual_moisture": 2.6,
       "actual_observed_at": null,
-      "actual_history": [],
+      "actual_history": [
+        {
+          "actual_moisture": 2.6,
+          "actual_observed_at": null,
+          "observed_at_status": "Not provided by official result; race start is NOT observation time",
+          "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=12",
+          "source_retrieved_at": "2026-11-22T22:00:37+09:00",
+          "appended_at": "2026-11-22T22:00:45.056713+09:00",
+          "source_record_sha256": "4493eb8e811a184b75e86f2c511365ab60185c8762aab466f50fb183e92b0a82",
+          "revision": 1
+        }
+      ],
       "forecast_key": "4bc7d238a8fc3dfa23d822a86ded0aae45509b49e837dafb8731e6386a6ff8ea",
       "forecast_retrieved_at": "2026-11-22T08:59:24.675682+09:00",
       "forecast_run_issued_at": null,
@@ -6106,15 +6260,17 @@
           "stage": "stage2",
           "fallback": false
         }
-      }
+      },
+      "actual_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f22&k_babaCode=3&k_raceNo=12",
+      "actual_source_retrieved_at": "2026-11-22T22:00:37+09:00"
     }
   },
   "metrics": {
-    "n": 65,
+    "n": 77,
     "unit": "percentage point",
-    "mae": 0.5446153846153846,
-    "rmse": 0.6305065118921942,
-    "bias_prediction_minus_actual": 0.13230769230769224
+    "mae": 0.5532467532467533,
+    "rmse": 0.6258500712537403,
+    "bias_prediction_minus_actual": 0.01818181818181811
   },
   "v2_models": {
     "moisture-v2-m7-20261117": {
