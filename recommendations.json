@@ -1,11 +1,11 @@
 {
  "meta": {
-  "version": "pred-20261120T212225JST-bac0f5278db6",
-  "generated_at_asia_tokyo": "2026-11-20T21:22:25+09:00",
-  "snapshot_saved_at": "2026-11-20T21:22:25+09:00",
+  "version": "pred-20261122T102402JST-236d05d42703",
+  "generated_at_asia_tokyo": "2026-11-22T10:24:02+09:00",
+  "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
   "config": "plus_hjz BOX123 pf≥0.65 k=0.05",
   "timezone": "Asia/Tokyo",
-  "source_races_sha256": "eaa666ada4b65cf879a6ee174c9380e0d829311c90973007ec85dde870337fd3",
+  "source_races_sha256": "c974eb0304e21f2317c240865025ce3dfd6980ce888a98a2641bbe23c80f3ee8",
   "models": {
    "learned_model.json": "e657cd397eccf5ca5b256d5ece69422b7fe0cffd8cb595663e4bf475ee403893",
    "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
@@ -15,7 +15,7 @@
   "engine": "4922425be20d85e9460b78007ab05f389c5190d9d7fb0d310e00ad62c75b955b",
   "weather": {
    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=2&forecast_days=4&timezone=Asia%2FTokyo",
-   "retrieved_at": "2026-11-20T21:08:15+09:00",
+   "retrieved_at": "2026-11-22T10:21:05+09:00",
    "provider_run_issued_at": null,
    "run_time_status": "provider does not publish a run issue time in this response",
    "status": "retrieved",
@@ -23,7 +23,7 @@
    "raw": {
     "latitude": 42.917397,
     "longitude": 143.1454,
-    "generationtime_ms": 0.26357173919677734,
+    "generationtime_ms": 0.26988983154296875,
     "utc_offset_seconds": 32400,
     "timezone": "Asia/Tokyo",
     "timezone_abbreviation": "GMT+9",
@@ -53,7 +53,9 @@
       "2026-11-20",
       "2026-11-21",
       "2026-11-22",
-      "2026-11-23"
+      "2026-11-23",
+      "2026-11-24",
+      "2026-11-25"
      ],
      "precipitation_sum": [
       1.1,
@@ -73,7 +75,9 @@
       0,
       0,
       0,
-      0.3
+      0.6,
+      20.9,
+      0
      ],
      "relative_humidity_2m_mean": [
       65,
@@ -93,7 +97,9 @@
       55,
       61,
       72,
-      68
+      67,
+      92,
+      59
      ],
      "et0_fao_evapotranspiration": [
       1.53,
@@ -113,12 +119,14 @@
       1.21,
       1.29,
       1.01,
-      0.97
+      1.04,
+      0.43,
+      1.06
      ]
     }
    },
-   "raw_sha256": "3e3065616fe8f6d77a816124f2838a68ced956b5dd529df0d91de648d42c4730",
-   "note": "11/21・11/22追加分は 2026-11-20T21:08:15+09:00 の Open-Meteo（11/18-23）。既存行の再計算を防ぐため、前保存版の11/4-10・11/13-17気象を同一レスポンスに結合している。11/21・11/22水分は本番式で2.0%（雨モデル閾値1.8%以上）。"
+   "raw_sha256": "3389a190e56077edf65f9cb9ed4d54822987c250964eb53c9aeef59ac7df10e7",
+   "note": "11/23追加分の水分は 2026-11-22T10:21:05+09:00 の Open-Meteo v1（公式実測なし、v2ログに11/23行なし）。11/23: 降水0.6mm・湿度67%・et0 1.04、前日降水0・11/21-23 et0合計3.39mm → 本番式 2.0%（雨モデル閾値1.8%以上）。既存日（〜11/22）の気象アーカイブは再計算防止のため据え置き。"
   },
   "legacy": {
    "path": "prediction-history/legacy-20261106T190648/",
@@ -155,8 +163,8 @@
    "scope": "4歳以上だけのレースの3頭BOX候補のみ。3歳以下・混合・発効日前は29特徴BOXのまま。点数・見送り・自信度は不変。",
    "saved_rows": "既存保存行は再生成せず不変（snapshot_versionのみ更新）。"
   },
-  "previous_snapshot_version": "pred-20261120T211110JST-a5b8cb0efaaa",
-  "append_note": "2026-11-21・2026-11-22の予想を現行本番方式で追加。2026-11-06〜08・11-15〜16の既存行は再生成せず不変（snapshot_versionのみ更新）。learned_model.json 不変。11/21 1R 9番ストロングモモは出走取消のため計算から除外。history_gap判定には11/14〜16の公式出走表を使用。 2026-11-20T21:22:25+09:00 重賞方式(graded5_age4)を 2026-11-22 11R ドリームエイジカップに適用（履歴は重賞パス専用に11/16まで更新）。他の行は不変。",
+  "previous_snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+  "append_note": "2026-11-21・2026-11-22の予想を現行本番方式で追加。2026-11-06〜08・11-15〜16の既存行は再生成せず不変（snapshot_versionのみ更新）。learned_model.json 不変。11/21 1R 9番ストロングモモは出走取消のため計算から除外。history_gap判定には11/14〜16の公式出走表を使用。 2026-11-20T21:22:25+09:00 重賞方式(graded5_age4)を 2026-11-22 11R ドリームエイジカップに適用（履歴は重賞パス専用に11/16まで更新）。他の行は不変。 2026-11-22T10:24:02+09:00 2026-11-23帯広12Rの予想を現行本番方式で追加。2026-11-06〜08・11-15〜16・11-21〜22の既存行は再生成せず不変（snapshot_versionのみ更新）。learned_model.json 不変。11/23 11R知床賞はオープン（非BG）のため graded5 不適用。取消なし。",
   "graded5_age4": {
    "version": "graded5-age4-v1",
    "scope": "重賞(BG1-3)×4歳以上だけのレース: 出走表スコアと重賞5走モデルの等重み合成で3頭BOX、1位を軸。history_gapで29特徴へ戻さない。自信度・推奨/見送りは29特徴の軸で従来どおり。",
@@ -372,7 +380,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -576,7 +584,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -780,7 +788,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -984,7 +992,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1188,7 +1196,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1392,7 +1400,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1596,7 +1604,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -1800,7 +1808,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2004,7 +2012,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2208,7 +2216,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2412,7 +2420,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2616,7 +2624,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -2820,7 +2828,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3024,7 +3032,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3228,7 +3236,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3432,7 +3440,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3636,7 +3644,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -3840,7 +3848,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4044,7 +4052,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4248,7 +4256,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4452,7 +4460,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4656,7 +4664,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -4860,7 +4868,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -5064,7 +5072,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -5268,7 +5276,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "postrace"
   },
@@ -5472,7 +5480,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -5676,7 +5684,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -5880,7 +5888,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6084,7 +6092,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6288,7 +6296,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6492,7 +6500,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6696,7 +6704,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -6900,7 +6908,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7104,7 +7112,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7308,7 +7316,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7512,7 +7520,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6",
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703",
    "confidence_saved_at": "2026-11-08T14:50:54+09:00",
    "confidence_timing": "prestart"
   },
@@ -7723,7 +7731,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R02",
@@ -7932,7 +7940,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R03",
@@ -8141,7 +8149,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R04",
@@ -8350,7 +8358,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R05",
@@ -8612,7 +8620,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R06",
@@ -8821,7 +8829,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R07",
@@ -9030,7 +9038,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R08",
@@ -9292,7 +9300,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R09",
@@ -9554,7 +9562,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R10",
@@ -9816,7 +9824,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R11",
@@ -10078,7 +10086,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261115-R12",
@@ -10287,7 +10295,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R01",
@@ -10496,7 +10504,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R02",
@@ -10705,7 +10713,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R03",
@@ -10914,7 +10922,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R04",
@@ -11123,7 +11131,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R05",
@@ -11332,7 +11340,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R06",
@@ -11541,7 +11549,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R07",
@@ -11750,7 +11758,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R08",
@@ -11959,7 +11967,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R09",
@@ -12168,7 +12176,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R10",
@@ -12430,7 +12438,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R11",
@@ -12639,7 +12647,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261116-R12",
@@ -12901,7 +12909,7 @@
    },
    "confidence_saved_at": "2026-11-15T09:53:31+09:00",
    "confidence_timing": "prestart",
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R01",
@@ -13108,7 +13116,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R02",
@@ -13315,7 +13323,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R03",
@@ -13522,7 +13530,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R04",
@@ -13729,7 +13737,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R05",
@@ -13936,7 +13944,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R06",
@@ -14143,7 +14151,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R07",
@@ -14350,7 +14358,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R08",
@@ -14557,7 +14565,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R09",
@@ -14764,7 +14772,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R10",
@@ -14971,7 +14979,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R11",
@@ -15178,7 +15186,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261121-R12",
@@ -15385,7 +15393,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R01",
@@ -15592,7 +15600,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R02",
@@ -15799,7 +15807,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R03",
@@ -16006,7 +16014,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R04",
@@ -16213,7 +16221,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R05",
@@ -16420,7 +16428,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R06",
@@ -16627,7 +16635,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R07",
@@ -16834,7 +16842,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R08",
@@ -17041,7 +17049,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R09",
@@ -17301,7 +17309,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R10",
@@ -17508,7 +17516,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R11",
@@ -17843,7 +17851,7 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   },
   {
    "race_id": "20261122-R12",
@@ -18050,7 +18058,2544 @@
     "hum": 0.002,
     "et0_3day": -0.132
    },
-   "snapshot_version": "pred-20261120T212225JST-bac0f5278db6"
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R01",
+   "race_date": "2026-11-23",
+   "race_no": 1,
+   "race_name": "帯広1R 社築勤労感謝生誕記念杯２Ｃ２−６（220万円未満）",
+   "scheduled_start_at": "2026-11-23T13:45:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": true,
+   "confidence": 0.767,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 3番ミカリン（モデル1位・スコア 0.894・past_form 0.857≥0.65）。 出走 10 頭・一般。レース名「帯広1R 社築勤労感謝生誕記念杯２Ｃ２−６（220万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 3番ミカリン（スコア0.894・past_form 0.857）、2位 1番エンドワン（スコア0.571・past_form 0.496）、3位 9番ツカサコタロウ（スコア0.528・past_form 0.370）。 主買い目は三連単三頭ボックス6点（3番ミカリン−1番エンドワン−9番ツカサコタロウの全順列）。 軸スコアへの主な正寄与: 過去着順平均+0.219、枠番+0.111、馬出走数+0.044。 自信度 0.77（高）。類似条件（pf帯=080_plus・頭数帯=ge10・水分帯=wet・normal／照合=080_plus|ge10|wet|normal）の過去実績はN=27・的中率11.111%・回収率317.47%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": true,
+    "confidence": 0.767,
+    "confidence_label": "高",
+    "confidence_source": "080_plus|ge10|wet|normal",
+    "confidence_stats": {
+     "N": 27,
+     "hit_pct": 11.111,
+     "ROI_pct": 317.47
+    },
+    "confidence_bands": {
+     "pf": "080_plus",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R01",
+    "race_date": "2026-11-23",
+    "race_no": 1,
+    "race_name": "帯広1R 社築勤労感謝生誕記念杯２Ｃ２−６（220万円未満）",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": false,
+    "gate_reason": null,
+    "axis": {
+     "horse_id": "20261123-R01-03",
+     "umaban": 3,
+     "name": "ミカリン",
+     "score": 0.8945,
+     "finish_score": 0.8945,
+     "past_form": 0.8571,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.2189,
+       "value": 0.8571
+      },
+      {
+       "name": "gate",
+       "contrib": 0.1106,
+       "value": 3
+      },
+      {
+       "name": "horse_starts",
+       "contrib": 0.0436,
+       "value": 1
+      },
+      {
+       "name": "race_no",
+       "contrib": 0.0408,
+       "value": 1
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 3,
+      "name": "ミカリン",
+      "score": 0.8945,
+      "past_form": 0.8571
+     },
+     {
+      "umaban": 1,
+      "name": "エンドワン",
+      "score": 0.5705,
+      "past_form": 0.496
+     },
+     {
+      "umaban": 9,
+      "name": "ツカサコタロウ",
+      "score": 0.5278,
+      "past_form": 0.37
+     }
+    ],
+    "box_horses": [
+     "3番ミカリン",
+     "1番エンドワン",
+     "9番ツカサコタロウ"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "pure_Y",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     9,
+     1
+    ],
+    [
+     1,
+     3,
+     9
+    ],
+    [
+     1,
+     9,
+     3
+    ],
+    [
+     9,
+     3,
+     1
+    ],
+    [
+     9,
+     1,
+     3
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R02",
+   "race_date": "2026-11-23",
+   "race_no": 2,
+   "race_name": "帯広2R いい兄さんの日だぜタツヤ２ ２歳Ｄ−８",
+   "scheduled_start_at": "2026-11-23T14:25:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.215 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番ワイルドユリア（モデル1位・スコア 0.483・past_form 0.215<0.65）。 出走 9 頭・一般。レース名「帯広2R いい兄さんの日だぜタツヤ２ ２歳Ｄ−８」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 9番ワイルドユリア（スコア0.483・past_form 0.215）、2位 6番プリンセスステラ（スコア0.448・past_form 0.331）、3位 8番トウヤカムニャック（スコア0.423・past_form 0.238）。 主買い目は三連単三頭ボックス6点（9番ワイルドユリア−6番プリンセスステラ−8番トウヤカムニャックの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、馬体重+0.045、馬勝率(直近10)+0.036。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=eq9・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
+    "confidence_stats": {
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
+    },
+    "confidence_bands": {
+     "pf": "lt065",
+     "field": "eq9",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R02",
+    "race_date": "2026-11-23",
+    "race_no": 2,
+    "race_name": "帯広2R いい兄さんの日だぜタツヤ２ ２歳Ｄ−８",
+    "field_size": 9,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.215 < 0.65（参考：買い目は表示）",
+    "axis": {
+     "horse_id": "20261123-R02-09",
+     "umaban": 9,
+     "name": "ワイルドユリア",
+     "score": 0.4832,
+     "finish_score": 0.4832,
+     "past_form": 0.2153,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.2117,
+       "value": 9
+      },
+      {
+       "name": "body_weight",
+       "contrib": 0.0448,
+       "value": 811
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "race_no",
+       "contrib": 0.0334,
+       "value": 2
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 9,
+      "name": "ワイルドユリア",
+      "score": 0.4832,
+      "past_form": 0.2153
+     },
+     {
+      "umaban": 6,
+      "name": "プリンセスステラ",
+      "score": 0.4483,
+      "past_form": 0.3306
+     },
+     {
+      "umaban": 8,
+      "name": "トウヤカムニャック",
+      "score": 0.4235,
+      "past_form": 0.2381
+     }
+    ],
+    "box_horses": [
+     "9番ワイルドユリア",
+     "6番プリンセスステラ",
+     "8番トウヤカムニャック"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "pure_Y",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     6,
+     8
+    ],
+    [
+     9,
+     8,
+     6
+    ],
+    [
+     6,
+     9,
+     8
+    ],
+    [
+     6,
+     8,
+     9
+    ],
+    [
+     8,
+     9,
+     6
+    ],
+    [
+     8,
+     6,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R03",
+   "race_date": "2026-11-23",
+   "race_no": 3,
+   "race_name": "帯広3R きよし９５歳おめでとう記念２歳Ｄ−５",
+   "scheduled_start_at": "2026-11-23T15:00:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.446 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番コトブキエルダー（モデル1位・スコア 0.569・past_form 0.446<0.65）。 出走 10 頭・一般。レース名「帯広3R きよし９５歳おめでとう記念２歳Ｄ−５」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 10番コトブキエルダー（スコア0.569・past_form 0.446）、2位 6番カワノネネチャン（スコア0.565・past_form 0.486）、3位 9番アサヒレディ（スコア0.545・past_form 0.468）。 主買い目は三連単三頭ボックス6点（10番コトブキエルダー−6番カワノネネチャン−9番アサヒレディの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、馬勝率(直近10)+0.036、年齢+0.032。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
+    "confidence_stats": {
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
+    },
+    "confidence_bands": {
+     "pf": "lt065",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R03",
+    "race_date": "2026-11-23",
+    "race_no": 3,
+    "race_name": "帯広3R きよし９５歳おめでとう記念２歳Ｄ−５",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.446 < 0.65（参考：買い目は表示）",
+    "axis": {
+     "horse_id": "20261123-R03-10",
+     "umaban": 10,
+     "name": "コトブキエルダー",
+     "score": 0.5686,
+     "finish_score": 0.5686,
+     "past_form": 0.4462,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
+      },
+      {
+       "name": "body_weight",
+       "contrib": 0.0285,
+       "value": 872
+      },
+      {
+       "name": "race_no",
+       "contrib": 0.0261,
+       "value": 3
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 10,
+      "name": "コトブキエルダー",
+      "score": 0.5686,
+      "past_form": 0.4462
+     },
+     {
+      "umaban": 6,
+      "name": "カワノネネチャン",
+      "score": 0.5645,
+      "past_form": 0.4861
+     },
+     {
+      "umaban": 9,
+      "name": "アサヒレディ",
+      "score": 0.5451,
+      "past_form": 0.4681
+     }
+    ],
+    "box_horses": [
+     "10番コトブキエルダー",
+     "6番カワノネネチャン",
+     "9番アサヒレディ"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "pure_Y",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     6,
+     9
+    ],
+    [
+     10,
+     9,
+     6
+    ],
+    [
+     6,
+     10,
+     9
+    ],
+    [
+     6,
+     9,
+     10
+    ],
+    [
+     9,
+     10,
+     6
+    ],
+    [
+     9,
+     6,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R04",
+   "race_date": "2026-11-23",
+   "race_no": 4,
+   "race_name": "帯広4R 梅永さん２８年間お疲れ様！２歳Ｃ−１",
+   "scheduled_start_at": "2026-11-23T15:40:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": true,
+   "confidence": 0.744,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 8番エスペランサ（モデル1位・スコア 0.734・past_form 0.657≥0.65）。 出走 10 頭・一般。レース名「帯広4R 梅永さん２８年間お疲れ様！２歳Ｃ−１」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 8番エスペランサ（スコア0.734・past_form 0.657）、2位 10番ジェットクイーン（スコア0.621・past_form 0.523）、3位 9番イワキファンファン（スコア0.500・past_form 0.506）。 主買い目は三連単三頭ボックス6点（8番エスペランサ−10番ジェットクイーン−9番イワキファンファンの全順列）。 軸スコアへの主な正寄与: 馬番+0.154、過去着順平均+0.097、馬勝率(直近10)+0.036。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": true,
+    "confidence": 0.744,
+    "confidence_label": "中",
+    "confidence_source": "065_070|ge10|wet|normal",
+    "confidence_stats": {
+     "N": 62,
+     "hit_pct": 4.839,
+     "ROI_pct": 304.73
+    },
+    "confidence_bands": {
+     "pf": "065_070",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R04",
+    "race_date": "2026-11-23",
+    "race_no": 4,
+    "race_name": "帯広4R 梅永さん２８年間お疲れ様！２歳Ｃ−１",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": false,
+    "gate_reason": null,
+    "axis": {
+     "horse_id": "20261123-R04-08",
+     "umaban": 8,
+     "name": "エスペランサ",
+     "score": 0.7338,
+     "finish_score": 0.7338,
+     "past_form": 0.6565,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.1545,
+       "value": 8
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0972,
+       "value": 0.6565
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 8,
+      "name": "エスペランサ",
+      "score": 0.7338,
+      "past_form": 0.6565
+     },
+     {
+      "umaban": 10,
+      "name": "ジェットクイーン",
+      "score": 0.6209,
+      "past_form": 0.523
+     },
+     {
+      "umaban": 9,
+      "name": "イワキファンファン",
+      "score": 0.4997,
+      "past_form": 0.506
+     }
+    ],
+    "box_horses": [
+     "8番エスペランサ",
+     "10番ジェットクイーン",
+     "9番イワキファンファン"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "pure_Y",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     8,
+     10,
+     9
+    ],
+    [
+     8,
+     9,
+     10
+    ],
+    [
+     10,
+     8,
+     9
+    ],
+    [
+     10,
+     9,
+     8
+    ],
+    [
+     9,
+     8,
+     10
+    ],
+    [
+     9,
+     10,
+     8
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R05",
+   "race_date": "2026-11-23",
+   "race_no": 5,
+   "race_name": "帯広5R 椎名未緒生誕記念２０２６Ｃ１−９（340万円未満）",
+   "scheduled_start_at": "2026-11-23T16:15:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.621 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 3番ハゴロモライルズ（モデル1位・スコア 0.680・past_form 0.621<0.65）。 出走 8 頭・一般。レース名「帯広5R 椎名未緒生誕記念２０２６Ｃ１−９（340万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 3番ハゴロモライルズ（スコア0.680・past_form 0.621）、2位 8番カナデ（スコア0.581・past_form 0.481）、3位 5番ホクセイゴールド（スコア0.550・past_form 0.511）。 主買い目は三連単三頭ボックス6点（3番ハゴロモライルズ−8番カナデ−5番ホクセイゴールドの全順列）。 軸スコアへの主な正寄与: 枠番+0.111、馬体重×ソリ+0.081、過去着順平均+0.076。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=le8・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
+    "confidence_stats": {
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
+    },
+    "confidence_bands": {
+     "pf": "lt065",
+     "field": "le8",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R05",
+    "race_date": "2026-11-23",
+    "race_no": 5,
+    "race_name": "帯広5R 椎名未緒生誕記念２０２６Ｃ１−９（340万円未満）",
+    "field_size": 8,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.621 < 0.65（参考：買い目は表示）",
+    "axis": {
+     "horse_id": "20261123-R05-03",
+     "umaban": 3,
+     "name": "ハゴロモライルズ",
+     "score": 0.6796,
+     "finish_score": 0.6796,
+     "past_form": 0.6212,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "gate",
+       "contrib": 0.1106,
+       "value": 3
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.0811,
+       "value": 677300
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0758,
+       "value": 0.6212
+      },
+      {
+       "name": "horse_win_rate_10",
+       "contrib": 0.0364,
+       "value": 0
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0339,
+       "value": 0.0988
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 3,
+      "name": "ハゴロモライルズ",
+      "score": 0.6796,
+      "past_form": 0.6212
+     },
+     {
+      "umaban": 8,
+      "name": "カナデ",
+      "score": 0.5813,
+      "past_form": 0.4815
+     },
+     {
+      "umaban": 5,
+      "name": "ホクセイゴールド",
+      "score": 0.5498,
+      "past_form": 0.511
+     }
+    ],
+    "box_horses": [
+     "3番ハゴロモライルズ",
+     "8番カナデ",
+     "5番ホクセイゴールド"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "mixed",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     3,
+     8,
+     5
+    ],
+    [
+     3,
+     5,
+     8
+    ],
+    [
+     8,
+     3,
+     5
+    ],
+    [
+     8,
+     5,
+     3
+    ],
+    [
+     5,
+     3,
+     8
+    ],
+    [
+     5,
+     8,
+     3
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R06",
+   "race_date": "2026-11-23",
+   "race_no": 6,
+   "race_name": "帯広6R 六周年エモエモ９０競馬部盃Ｃ１−１（340万円未満）",
+   "scheduled_start_at": "2026-11-23T16:50:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": true,
+   "confidence": 0.65,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 9番ツガルミサキ（モデル1位・スコア 0.709・past_form 0.727≥0.65）。 出走 10 頭・一般。レース名「帯広6R 六周年エモエモ９０競馬部盃Ｃ１−１（340万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 9番ツガルミサキ（スコア0.709・past_form 0.727）、2位 4番ガッツワン（スコア0.634・past_form 0.743）、3位 10番クリスタルティアラ（スコア0.613・past_form 0.503）。 主買い目は三連単三頭ボックス6点（9番ツガルミサキ−4番ガッツワン−10番クリスタルティアラの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、過去着順平均+0.140、馬体重×ソリ+0.072。 自信度 0.65（中）。類似条件（pf帯=070_080・頭数帯=ge10・水分帯=wet・normal／照合=070_080|ge10|wet|normal）の過去実績はN=33・的中率9.091%・回収率138.99%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": true,
+    "confidence": 0.65,
+    "confidence_label": "中",
+    "confidence_source": "070_080|ge10|wet|normal",
+    "confidence_stats": {
+     "N": 33,
+     "hit_pct": 9.091,
+     "ROI_pct": 138.99
+    },
+    "confidence_bands": {
+     "pf": "070_080",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R06",
+    "race_date": "2026-11-23",
+    "race_no": 6,
+    "race_name": "帯広6R 六周年エモエモ９０競馬部盃Ｃ１−１（340万円未満）",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": false,
+    "gate_reason": null,
+    "axis": {
+     "horse_id": "20261123-R06-09",
+     "umaban": 9,
+     "name": "ツガルミサキ",
+     "score": 0.7092,
+     "finish_score": 0.7092,
+     "past_form": 0.7266,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.2117,
+       "value": 9
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.1398,
+       "value": 0.7266
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.072,
+       "value": 665600
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0385,
+       "value": 0.0803
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0239,
+       "value": 0.7782
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 9,
+      "name": "ツガルミサキ",
+      "score": 0.7092,
+      "past_form": 0.7266
+     },
+     {
+      "umaban": 4,
+      "name": "ガッツワン",
+      "score": 0.6343,
+      "past_form": 0.7434
+     },
+     {
+      "umaban": 10,
+      "name": "クリスタルティアラ",
+      "score": 0.613,
+      "past_form": 0.5034
+     }
+    ],
+    "box_horses": [
+     "9番ツガルミサキ",
+     "4番ガッツワン",
+     "10番クリスタルティアラ"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "mixed",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     4,
+     10
+    ],
+    [
+     9,
+     10,
+     4
+    ],
+    [
+     4,
+     9,
+     10
+    ],
+    [
+     4,
+     10,
+     9
+    ],
+    [
+     10,
+     9,
+     4
+    ],
+    [
+     10,
+     4,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R07",
+   "race_date": "2026-11-23",
+   "race_no": 7,
+   "race_name": "帯広7R いすみさんお誕生日記念杯Ｂ４−１（430万円未満）",
+   "scheduled_start_at": "2026-11-23T17:25:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.573 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 9番カツブライト（モデル1位・スコア 0.623・past_form 0.573<0.65）。 出走 10 頭・一般。レース名「帯広7R いすみさんお誕生日記念杯Ｂ４−１（430万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 9番カツブライト（スコア0.623・past_form 0.573）、2位 8番スズカゼ（スコア0.577・past_form 0.682）、3位 10番ミオリブロッサム（スコア0.537・past_form 0.559）。 主買い目は三連単三頭ボックス6点（9番カツブライト−8番スズカゼ−10番ミオリブロッサムの全順列）。 軸スコアへの主な正寄与: 馬番+0.212、馬体重×ソリ+0.065、過去着順平均+0.046。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
+    "confidence_stats": {
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
+    },
+    "confidence_bands": {
+     "pf": "lt065",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R07",
+    "race_date": "2026-11-23",
+    "race_no": 7,
+    "race_name": "帯広7R いすみさんお誕生日記念杯Ｂ４−１（430万円未満）",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.573 < 0.65（参考：買い目は表示）",
+    "axis": {
+     "horse_id": "20261123-R07-09",
+     "umaban": 9,
+     "name": "カツブライト",
+     "score": 0.6227,
+     "finish_score": 0.6227,
+     "past_form": 0.5729,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.2117,
+       "value": 9
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.0649,
+       "value": 656500
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0465,
+       "value": 0.5729
+      },
+      {
+       "name": "age",
+       "contrib": 0.0165,
+       "value": 3
+      },
+      {
+       "name": "est_moist",
+       "contrib": 0.0107,
+       "value": 2
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 9,
+      "name": "カツブライト",
+      "score": 0.6227,
+      "past_form": 0.5729
+     },
+     {
+      "umaban": 8,
+      "name": "スズカゼ",
+      "score": 0.5766,
+      "past_form": 0.6815
+     },
+     {
+      "umaban": 10,
+      "name": "ミオリブロッサム",
+      "score": 0.5368,
+      "past_form": 0.5593
+     }
+    ],
+    "box_horses": [
+     "9番カツブライト",
+     "8番スズカゼ",
+     "10番ミオリブロッサム"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "mixed",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     9,
+     8,
+     10
+    ],
+    [
+     9,
+     10,
+     8
+    ],
+    [
+     8,
+     9,
+     10
+    ],
+    [
+     8,
+     10,
+     9
+    ],
+    [
+     10,
+     9,
+     8
+    ],
+    [
+     10,
+     8,
+     9
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R08",
+   "race_date": "2026-11-23",
+   "race_no": 8,
+   "race_name": "帯広8R 大輔さん２３歳生誕前夜祭２歳Ａ−１",
+   "scheduled_start_at": "2026-11-23T17:55:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.647 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 10番ドウナンリュウホオ（モデル1位・スコア 0.700・past_form 0.647<0.65）。 出走 10 頭・一般。レース名「帯広8R 大輔さん２３歳生誕前夜祭２歳Ａ−１」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 10番ドウナンリュウホオ（スコア0.700・past_form 0.647）、2位 5番キタサカエヒトミ（スコア0.649・past_form 0.853）、3位 3番ビエイキャノン（スコア0.599・past_form 0.742）。 主買い目は三連単三頭ボックス6点（10番ドウナンリュウホオ−5番キタサカエヒトミ−3番ビエイキャノンの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、過去着順平均+0.091、牡馬+0.033。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
+    "confidence_stats": {
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
+    },
+    "confidence_bands": {
+     "pf": "lt065",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R08",
+    "race_date": "2026-11-23",
+    "race_no": 8,
+    "race_name": "帯広8R 大輔さん２３歳生誕前夜祭２歳Ａ−１",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.647 < 0.65（参考：買い目は表示）",
+    "axis": {
+     "horse_id": "20261123-R08-10",
+     "umaban": 10,
+     "name": "ドウナンリュウホオ",
+     "score": 0.7,
+     "finish_score": 0.7,
+     "past_form": 0.6468,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0913,
+       "value": 0.6468
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
+       "name": "age",
+       "contrib": 0.0315,
+       "value": 2
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0262,
+       "value": 0.8056
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 10,
+      "name": "ドウナンリュウホオ",
+      "score": 0.7,
+      "past_form": 0.6468
+     },
+     {
+      "umaban": 5,
+      "name": "キタサカエヒトミ",
+      "score": 0.6489,
+      "past_form": 0.8532
+     },
+     {
+      "umaban": 3,
+      "name": "ビエイキャノン",
+      "score": 0.5992,
+      "past_form": 0.7424
+     }
+    ],
+    "box_horses": [
+     "10番ドウナンリュウホオ",
+     "5番キタサカエヒトミ",
+     "3番ビエイキャノン"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "pure_Y",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     5,
+     3
+    ],
+    [
+     10,
+     3,
+     5
+    ],
+    [
+     5,
+     10,
+     3
+    ],
+    [
+     5,
+     3,
+     10
+    ],
+    [
+     3,
+     10,
+     5
+    ],
+    [
+     3,
+     5,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R09",
+   "race_date": "2026-11-23",
+   "race_no": 9,
+   "race_name": "帯広9R 財務委員会１年間ありがとうＢ３−３（550万円未満）",
+   "scheduled_start_at": "2026-11-23T18:30:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": true,
+   "confidence": 0.744,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 1番トマランサーヨウコ（モデル1位・スコア 0.637・past_form 0.668≥0.65）。 出走 10 頭・一般。レース名「帯広9R 財務委員会１年間ありがとうＢ３−３（550万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 1番トマランサーヨウコ（スコア0.637・past_form 0.668）、2位 2番トマランサカミカゼ（スコア0.516・past_form 0.580）、3位 8番キョウエイハンター（スコア0.514・past_form 0.608）。 主買い目は三連単三頭ボックス6点（1番トマランサーヨウコ−2番トマランサカミカゼ−8番キョウエイハンターの全順列）。 軸スコアへの主な正寄与: 枠番+0.221、過去着順平均+0.104、馬体重×ソリ+0.084。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": true,
+    "confidence": 0.744,
+    "confidence_label": "中",
+    "confidence_source": "065_070|ge10|wet|normal",
+    "confidence_stats": {
+     "N": 62,
+     "hit_pct": 4.839,
+     "ROI_pct": 304.73
+    },
+    "confidence_bands": {
+     "pf": "065_070",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R09",
+    "race_date": "2026-11-23",
+    "race_no": 9,
+    "race_name": "帯広9R 財務委員会１年間ありがとうＢ３−３（550万円未満）",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": false,
+    "gate_reason": null,
+    "axis": {
+     "horse_id": "20261123-R09-01",
+     "umaban": 1,
+     "name": "トマランサーヨウコ",
+     "score": 0.6374,
+     "finish_score": 0.6374,
+     "past_form": 0.6678,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "gate",
+       "contrib": 0.2211,
+       "value": 1
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.1041,
+       "value": 0.6678
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.0839,
+       "value": 680960
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0214,
+       "value": 0.1487
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 1,
+      "name": "トマランサーヨウコ",
+      "score": 0.6374,
+      "past_form": 0.6678
+     },
+     {
+      "umaban": 2,
+      "name": "トマランサカミカゼ",
+      "score": 0.5159,
+      "past_form": 0.5796
+     },
+     {
+      "umaban": 8,
+      "name": "キョウエイハンター",
+      "score": 0.5136,
+      "past_form": 0.608
+     }
+    ],
+    "box_horses": [
+     "1番トマランサーヨウコ",
+     "2番トマランサカミカゼ",
+     "8番キョウエイハンター"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "history_gap",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     8,
+     2
+    ],
+    [
+     2,
+     1,
+     8
+    ],
+    [
+     2,
+     8,
+     1
+    ],
+    [
+     8,
+     1,
+     2
+    ],
+    [
+     8,
+     2,
+     1
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R10",
+   "race_date": "2026-11-23",
+   "race_no": 10,
+   "race_name": "帯広10R 高田記念Ｂ２−２（670万円未満）",
+   "scheduled_start_at": "2026-11-23T19:05:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": true,
+   "confidence": 0.763,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 1番サカノテッペン（モデル1位・スコア 0.635・past_form 0.653≥0.65）。 出走 9 頭・一般。レース名「帯広10R 高田記念Ｂ２−２（670万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 1番サカノテッペン（スコア0.635・past_form 0.653）、2位 2番キタサカエカイザー（スコア0.574・past_form 0.635）、3位 9番タカシオ（スコア0.553・past_form 0.566）。 主買い目は三連単三頭ボックス6点（1番サカノテッペン−2番キタサカエカイザー−9番タカシオの全順列）。 軸スコアへの主な正寄与: 枠番+0.221、馬体重×ソリ+0.123、過去着順平均+0.095。 自信度 0.76（高）。類似条件（pf帯=065_070・頭数帯=eq9・水分帯=wet・normal／照合=065_070|eq9|wet|normal）の過去実績はN=37・的中率8.108%・回収率201.67%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": true,
+    "confidence": 0.763,
+    "confidence_label": "高",
+    "confidence_source": "065_070|eq9|wet|normal",
+    "confidence_stats": {
+     "N": 37,
+     "hit_pct": 8.108,
+     "ROI_pct": 201.67
+    },
+    "confidence_bands": {
+     "pf": "065_070",
+     "field": "eq9",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R10",
+    "race_date": "2026-11-23",
+    "race_no": 10,
+    "race_name": "帯広10R 高田記念Ｂ２−２（670万円未満）",
+    "field_size": 9,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": false,
+    "gate_reason": null,
+    "axis": {
+     "horse_id": "20261123-R10-01",
+     "umaban": 1,
+     "name": "サカノテッペン",
+     "score": 0.6346,
+     "finish_score": 0.6346,
+     "past_form": 0.6534,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "gate",
+       "contrib": 0.2211,
+       "value": 1
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.1233,
+       "value": 731680
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0953,
+       "value": 0.6534
+      },
+      {
+       "name": "sex_gelding",
+       "contrib": 0.0789,
+       "value": 1
+      },
+      {
+       "name": "sex_male",
+       "contrib": 0.0325,
+       "value": 0
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 1,
+      "name": "サカノテッペン",
+      "score": 0.6346,
+      "past_form": 0.6534
+     },
+     {
+      "umaban": 2,
+      "name": "キタサカエカイザー",
+      "score": 0.574,
+      "past_form": 0.6346
+     },
+     {
+      "umaban": 9,
+      "name": "タカシオ",
+      "score": 0.5533,
+      "past_form": 0.5661
+     }
+    ],
+    "box_horses": [
+     "1番サカノテッペン",
+     "2番キタサカエカイザー",
+     "9番タカシオ"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "history_gap",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     1,
+     2,
+     9
+    ],
+    [
+     1,
+     9,
+     2
+    ],
+    [
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     9,
+     1
+    ],
+    [
+     9,
+     1,
+     2
+    ],
+    [
+     9,
+     2,
+     1
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R11",
+   "race_date": "2026-11-23",
+   "race_no": 11,
+   "race_name": "帯広11R 知床賞オープン",
+   "scheduled_start_at": "2026-11-23T19:35:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": true,
+   "confidence": 0.744,
+   "selection_comment": "【推奨】軸の past_form が閾値 0.65 以上（またはメムロ特例）のため、本番構成（三連単三頭ボックス6点・BOX123・pf≥0.65・k=0.05・plus_hjz）で購入対象。 軸は 10番ツガルノヒロイモノ（モデル1位・スコア 0.736・past_form 0.659≥0.65）。 出走 10 頭・一般。レース名「帯広11R 知床賞オープン」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 10番ツガルノヒロイモノ（スコア0.736・past_form 0.659）、2位 3番ウンカイダイマオー（スコア0.657・past_form 0.655）、3位 8番トワイチロ（スコア0.632・past_form 0.516）。 主買い目は三連単三頭ボックス6点（10番ツガルノヒロイモノ−3番ウンカイダイマオー−8番トワイチロの全順列）。 軸スコアへの主な正寄与: 馬番+0.269、馬体重×ソリ+0.217、過去着順平均+0.099。 自信度 0.74（中）。類似条件（pf帯=065_070・頭数帯=ge10・水分帯=wet・normal／照合=065_070|ge10|wet|normal）の過去実績はN=62・的中率4.839%・回収率304.73%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。",
+   "selection_meta": {
+    "recommended": true,
+    "confidence": 0.744,
+    "confidence_label": "中",
+    "confidence_source": "065_070|ge10|wet|normal",
+    "confidence_stats": {
+     "N": 62,
+     "hit_pct": 4.839,
+     "ROI_pct": 304.73
+    },
+    "confidence_bands": {
+     "pf": "065_070",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R11",
+    "race_date": "2026-11-23",
+    "race_no": 11,
+    "race_name": "帯広11R 知床賞オープン",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": false,
+    "gate_reason": null,
+    "axis": {
+     "horse_id": "20261123-R11-10",
+     "umaban": 10,
+     "name": "ツガルノヒロイモノ",
+     "score": 0.7355,
+     "finish_score": 0.7355,
+     "past_form": 0.6586,
+     "past_form_ok": true,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "umaban",
+       "contrib": 0.269,
+       "value": 10
+      },
+      {
+       "name": "body_x_sled",
+       "contrib": 0.2173,
+       "value": 852720
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0985,
+       "value": 0.6586
+      },
+      {
+       "name": "sled_change_vs_last3mean",
+       "contrib": 0.0267,
+       "value": -10
+      },
+      {
+       "name": "same_moist_bucket_fin_mean",
+       "contrib": 0.0167,
+       "value": 0.6944
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 10,
+      "name": "ツガルノヒロイモノ",
+      "score": 0.7355,
+      "past_form": 0.6586
+     },
+     {
+      "umaban": 3,
+      "name": "ウンカイダイマオー",
+      "score": 0.6569,
+      "past_form": 0.655
+     },
+     {
+      "umaban": 8,
+      "name": "トワイチロ",
+      "score": 0.6316,
+      "past_form": 0.5164
+     }
+    ],
+    "box_horses": [
+     "10番ツガルノヒロイモノ",
+     "3番ウンカイダイマオー",
+     "8番トワイチロ"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method": "model29",
+    "box_method_reason": "history_gap",
+    "card_score_version": "card-score-age4-v1",
+    "graded5_version": "graded5-age4-v1",
+    "is_graded_race": false
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     10,
+     3,
+     8
+    ],
+    [
+     10,
+     8,
+     3
+    ],
+    [
+     3,
+     10,
+     8
+    ],
+    [
+     3,
+     8,
+     10
+    ],
+    [
+     8,
+     10,
+     3
+    ],
+    [
+     8,
+     3,
+     10
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
+  },
+  {
+   "race_id": "20261123-R12",
+   "race_date": "2026-11-23",
+   "race_no": 12,
+   "race_name": "帯広12R Ｂ１−４（850万円未満）",
+   "scheduled_start_at": "2026-11-23T20:05:00+09:00",
+   "snapshot_saved_at": "2026-11-22T10:24:02+09:00",
+   "snapshot_timing": "prestart",
+   "ticket_yen": 100,
+   "stake_yen": 600,
+   "recommended": false,
+   "confidence": 0.25,
+   "selection_comment": "【見送り】軸の過去着順平均 0.583 < 0.65（参考：買い目は表示）。買い目は参考表示のみ。 軸は 6番ホクショウムサシ（モデル1位・スコア 0.464・past_form 0.583<0.65）。 出走 10 頭・一般。レース名「帯広12R Ｂ１−４（850万円未満）」。 馬場水分 2.0%（帯=wet）。 上位3頭: 1位 6番ホクショウムサシ（スコア0.464・past_form 0.583）、2位 4番タンジロウ（スコア0.430・past_form 0.450）、3位 1番サカノテンリュウ（スコア0.416・past_form 0.411）。 主買い目は三連単三頭ボックス6点（7番ココロノニダイメ−5番レジェンドボス−8番ツカサセンターの全順列）。 軸スコアへの主な正寄与: 馬体重×ソリ+0.187、過去着順平均+0.053、馬番+0.040。 自信度 0.25（低）。類似条件（pf帯=lt065・頭数帯=ge10・水分帯=wet・normal／照合=baseline）の過去実績はN=473・的中率8.457%・回収率187.63%。選定はオッズ・人気を使わず、学習着順スコアと past_form ゲートのみ。 買い目の3頭は4歳以上限定の出走表評価（card-score-age4-v1）で選定。自信度と推奨/見送りは29特徴の軸 6番ホクショウムサシで従来どおり判定。",
+   "selection_meta": {
+    "recommended": false,
+    "confidence": 0.25,
+    "confidence_label": "低",
+    "confidence_source": "baseline",
+    "confidence_stats": {
+     "N": 473,
+     "hit_pct": 8.457,
+     "ROI_pct": 187.63
+    },
+    "confidence_bands": {
+     "pf": "lt065",
+     "field": "ge10",
+     "moist": "wet",
+     "grade": "normal"
+    },
+    "race_id": "20261123-R12",
+    "race_date": "2026-11-23",
+    "race_no": 12,
+    "race_name": "帯広12R Ｂ１−４（850万円未満）",
+    "field_size": 10,
+    "track_moisture": 2,
+    "is_grade": false,
+    "memrobo_axis": false,
+    "past_form_threshold": 0.65,
+    "streak_penalty_k": 0.05,
+    "box_idx": [
+     0,
+     1,
+     2
+    ],
+    "ticket_label": "三連単三頭ボックス6点",
+    "plus_hjz": true,
+    "gate_skip": true,
+    "gate_reason": "軸の過去着順平均 0.583 < 0.65（参考：買い目は表示）",
+    "axis": {
+     "horse_id": "20261123-R12-07",
+     "umaban": 7,
+     "name": "ココロノニダイメ",
+     "score": 0.3912,
+     "finish_score": 0.3912,
+     "past_form": 0.3828,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "body_x_sled",
+       "contrib": 0.1069,
+       "value": 710600
+      },
+      {
+       "name": "umaban",
+       "contrib": 0.0973,
+       "value": 7
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0133,
+       "value": 0.1812
+      },
+      {
+       "name": "sled_change_vs_last3mean",
+       "contrib": 0.0115,
+       "value": 0
+      },
+      {
+       "name": "est_moist",
+       "contrib": 0.0107,
+       "value": 2
+      }
+     ]
+    },
+    "top3": [
+     {
+      "umaban": 7,
+      "name": "ココロノニダイメ",
+      "score": 0.3912,
+      "past_form": 0.3828
+     },
+     {
+      "umaban": 5,
+      "name": "レジェンドボス",
+      "score": 0.3248,
+      "past_form": 0.4945
+     },
+     {
+      "umaban": 8,
+      "name": "ツカサセンター",
+      "score": 0.3894,
+      "past_form": 0.5071
+     }
+    ],
+    "box_horses": [
+     "7番ココロノニダイメ",
+     "5番レジェンドボス",
+     "8番ツカサセンター"
+    ],
+    "feature_names": [
+     "est_moist",
+     "sled_weight",
+     "body_weight",
+     "age",
+     "sex_male",
+     "sex_gelding",
+     "field",
+     "race_no",
+     "gate",
+     "umaban",
+     "jockey_count",
+     "horse_starts",
+     "horse_prev_fin_mean",
+     "moist_x_body",
+     "moist_x_sled",
+     "body_x_sled",
+     "last5_fin_std",
+     "last5_fin_mean",
+     "same_jockey_n",
+     "same_jockey_fin_mean",
+     "same_moist_bucket_n",
+     "same_moist_bucket_fin_mean",
+     "sled_change_prev",
+     "sled_change_vs_last3mean",
+     "horse_win_streak",
+     "horse_win_rate_10",
+     "jockey_win_streak",
+     "jockey_win_rate_100",
+     "is_grade"
+    ],
+    "box_method_reason": "pure_O",
+    "card_box": {
+     "mass": 0.049713,
+     "ranks": [
+      1,
+      2,
+      3
+     ],
+     "model29_top3": [
+      6,
+      4,
+      1
+     ]
+    },
+    "card_score_version": "card-score-age4-v1",
+    "card_history_through": "2026-11-08",
+    "graded5_version": "graded5-age4-v1",
+    "graded_history_through": null,
+    "is_graded_race": false,
+    "confidence_axis": {
+     "horse_id": "20261123-R12-06",
+     "umaban": 6,
+     "name": "ホクショウムサシ",
+     "score": 0.4644,
+     "finish_score": 0.4644,
+     "past_form": 0.583,
+     "past_form_ok": false,
+     "horse_streak": 0,
+     "jockey_streak": 0,
+     "top_contribs": [
+      {
+       "name": "body_x_sled",
+       "contrib": 0.1874,
+       "value": 814200
+      },
+      {
+       "name": "horse_prev_fin_mean",
+       "contrib": 0.0526,
+       "value": 0.583
+      },
+      {
+       "name": "umaban",
+       "contrib": 0.04,
+       "value": 6
+      },
+      {
+       "name": "last5_fin_std",
+       "contrib": 0.0138,
+       "value": 0.1791
+      },
+      {
+       "name": "est_moist",
+       "contrib": 0.0107,
+       "value": 2
+      }
+     ]
+    },
+    "box_method": "card_score_age4"
+   },
+   "prediction_status": "available",
+   "tickets": [
+    [
+     7,
+     5,
+     8
+    ],
+    [
+     7,
+     8,
+     5
+    ],
+    [
+     5,
+     7,
+     8
+    ],
+    [
+     5,
+     8,
+     7
+    ],
+    [
+     8,
+     7,
+     5
+    ],
+    [
+     8,
+     5,
+     7
+    ]
+   ],
+   "model": {
+    "asOf": "2026-11-01",
+    "kind": "final",
+    "which": "rain",
+    "moist": 2,
+    "plus_hjz": true,
+    "k": 0.05,
+    "w": 0
+   },
+   "moisture": {
+    "model_selection_pct": 2,
+    "feature_estimate_pct": 2,
+    "measured_pct": null,
+    "source": "captured_weather",
+    "unit": "percentage point",
+    "weather_timing": "forecast"
+   },
+   "formula": {
+    "intercept": 2.33,
+    "rain0": 0.036,
+    "rain1": 0.038,
+    "hum": 0.002,
+    "et0_3day": -0.132
+   },
+   "snapshot_version": "pred-20261122T102402JST-236d05d42703"
   }
  ]
 }
