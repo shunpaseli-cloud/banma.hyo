@@ -6534,14 +6534,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.5,
+          "raw": 2.485428,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.4,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.5,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -6611,14 +6641,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.5,
+          "raw": 2.470856,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.4,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.5,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -6688,14 +6748,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.5,
+          "raw": 2.456283,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.4,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.5,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -6765,14 +6855,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.441711,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
           "value": 2.4,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -6842,14 +6962,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.427139,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
           "value": 2.4,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -6919,14 +7069,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.412567,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
           "value": 2.4,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -6996,14 +7176,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.397994,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.3,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.4,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -7073,14 +7283,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.383422,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.3,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.4,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -7150,14 +7390,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.36885,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.3,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.4,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -7227,14 +7497,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.4,
+          "raw": 2.354278,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
-          "value": 2.3,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "value": 2.4,
+          "stage": "stage2",
+          "fallback": false
         }
       }
     },
@@ -7304,14 +7604,44 @@
           "config_sha256": "5d5961d9a14c69d231f1c192d6a72bd73cbe03729ba13c8198c05903b0217b3b",
           "fallback": null
         },
-        "stage2": null,
+        "stage2": {
+          "status": "saved",
+          "value": 2.3,
+          "raw": 2.339705,
+          "shift": 0.057383,
+          "saved_at": "2026-11-23T14:11:13.961931+09:00",
+          "anchor": {
+            "race_id": "20261123-R01",
+            "actual": 2.5,
+            "source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceList?k_raceDate=2026%2f11%2f23&k_babaCode=3",
+            "retrieved_at": "2026-11-23T14:11:13.961199+09:00",
+            "http_date": "Mon, 23 Nov 2026 05:11:13 GMT",
+            "response_sha256": "1b4d6b0c693baba687b68fa436406634a54d38bc18eed73dd9c5a9a69514f15c",
+            "stage1_raw_R1": 2.442617,
+            "visible_moisture_by_race": {
+              "1": 2.5,
+              "2": 2.5,
+              "3": 2.5,
+              "4": 2.5,
+              "5": 2.5,
+              "6": 2.5,
+              "7": 2.5,
+              "8": 2.5,
+              "9": 2.5,
+              "10": 2.5,
+              "11": 2.5,
+              "12": 2.5
+            }
+          },
+          "model_version": "moisture-v2-m7-20261117",
+          "switch_changed_vs_stage1": false
+        },
         "attempts": [],
         "stage1_status": "saved",
         "effective": {
           "value": 2.3,
-          "stage": "stage1",
-          "fallback": false,
-          "fallback_reason": null
+          "stage": "stage2",
+          "fallback": false
         }
       }
     }
