@@ -1,0 +1,28 @@
+{
+ "version": "nearest-20261108T120807JST-bcf443b07628",
+ "generated_at_asia_tokyo": "2026-11-08T12:08:07+09:00",
+ "models": {
+  "learned_model.json": "c86bafb1d79947e369a1651b73f4d6cac1ddec33d28c79aefaea8c407c38fc5a",
+  "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
+  "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7"
+ },
+ "engine": "b29cf580045c37e17cb05ef4bf666a266773a9324cca7a0ca7f26df3391778bf",
+ "weather_status": "retrieved",
+ "weather_retrieved_at": "2026-11-08T06:42:08+09:00",
+ "legacy": {
+  "path": "prediction-history/legacy-20261106T190648/",
+  "prestart_summary": {
+   "races": 7,
+   "hits": 0,
+   "stake_yen": 4200,
+   "return_yen": 0
+  }
+ },
+ "confidence_method": "nearest-v1",
+ "confidence_history": {
+  "version": "nearest-history-20261107-8f38d3b9a583",
+  "latest_result_date": "2026-11-07",
+  "races": 6751
+ },
+ "snapshot_sha256": "87adcf04a9ad34e38bddbabe11a80e4fe4dec52b38873bab62fec1f1c6d0d38a"
+}
