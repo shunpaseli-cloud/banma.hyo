@@ -1,0 +1,79 @@
+import assert from 'node:assert/strict'
+import {readFile} from 'node:fs/promises'
+import {createHash} from 'node:crypto'
+import {createElement} from 'react'
+import {renderToStaticMarkup} from 'react-dom/server'
+import {createServer} from 'vite'
+const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v)),removeItem:k=>memory.delete(k)}
+const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true}})
+const render=(C,p)=>renderToStaticMarkup(createElement(C,p))
+const articles=html=>[...html.matchAll(/<(?:article|tr)[^>]*data-confidence="([^"]+)"[^>]*data-snapshot-version="([^"]+)"[^>]*data-top3="([^"]+)"[^>]*>/g)]
+try{
+ const store=await server.ssrLoadModule('/src/predictionSnapshot.js'),policy=await server.ssrLoadModule('/src/snapshotPolicy.js'),{calculateRows}=await server.ssrLoadModule('/src/calculateSnapshot.js')
+ const {default:Normal}=await server.ssrLoadModule('/src/components/RaceCard.jsx'),{default:Rank}=await server.ssrLoadModule('/src/components/ConfidenceRank.jsx'),{default:Results}=await server.ssrLoadModule('/src/components/ConfidenceResults.jsx'),{default:Detail}=await server.ssrLoadModule('/src/components/RaceDetail.jsx'),{default:Info}=await server.ssrLoadModule('/src/components/SnapshotInfo.jsx')
+ const original=store.getSnapshotState().snapshot,rawRaces=JSON.parse(await readFile('src/data/races_from_pdf.json')),rawSnapshot=await readFile('public/prediction-snapshot.json','utf8')
+ const {lookupConfidence}=await server.ssrLoadModule('/src/selectionReason.js')
+ const preserved=original.races.filter(r=>r.race_date<='2026-11-08'),mid=original.races.filter(r=>r.race_date>='2026-11-15'&&r.race_date<='2026-11-16'),added=original.races.filter(r=>r.race_date>='2026-11-21'&&r.race_date<='2026-11-22'),nov23=original.races.filter(r=>r.race_date==='2026-11-23')
+ assert.equal(original.races.length,96);assert.equal(preserved.length,36);assert.equal(mid.length,24);assert.equal(added.length,24);assert.equal(nov23.length,12)
+ assert.equal(preserved.filter(r=>r.snapshot_timing==='postrace').length,24);assert.equal(preserved.filter(r=>r.snapshot_timing==='prestart').length,12)
+ assert.equal(mid.filter(r=>r.snapshot_timing==='prestart').length,24);assert.equal(added.filter(r=>r.snapshot_timing==='prestart').length,24);assert.equal(nov23.filter(r=>r.snapshot_timing==='prestart').length,12)
+ const archived=JSON.parse(await readFile('public/prediction-history/card4-20261109T195011JST-f488b7eea55e/prediction-snapshot.json'))
+ const replayOld=calculateRows(rawRaces.filter(r=>r.race_date<='2026-11-08'),archived.meta.weather.raw,archived.meta.snapshot_saved_at)
+ for(const row of preserved){const r=replayOld.find(r=>r.race_id===row.race_id);for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(r[key],row[key],'preserved calculator replay '+row.race_id+' '+key)}
+ const archivedMid=JSON.parse(await readFile('public/prediction-history/pred-20261115T095331JST-52d7d4cd93c4/prediction-snapshot.json'))
+ const replayMid=calculateRows(rawRaces.filter(r=>r.race_date>='2026-11-15'&&r.race_date<='2026-11-16'),archivedMid.meta.weather.raw,archivedMid.meta.snapshot_saved_at)
+ for(const row of mid){const r=replayMid.find(r=>r.race_id===row.race_id);for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(r[key],row[key],'nov15-16 calculator replay '+row.race_id+' '+key)}
+ // history_gap 判定用に 11/14 公式出走表も後続カードとして渡す（11/21・22 予想時と同じ入力）
+ const card14=JSON.parse(await readFile('src/data/racecards/racecard_2026-11-14.json')).races.map(r=>({race_id:r.race_id,race_date:r.race_date,race_no:r.race_no,name:r.race_name||'',post_time:r.post_time,track_moisture:null,entries:r.entries.map(e=>({...e,race_id:r.race_id,horse_id:r.race_id+'-'+String(e.umaban).padStart(2,'0'),recent_form:0.3}))}))
+ const replayNew=calculateRows([...card14,...rawRaces.filter(r=>r.race_date>='2026-11-15'&&r.race_date<='2026-11-22')],original.meta.weather.raw,added[0].snapshot_saved_at)
+ for(const row of added){const r=replayNew.find(r=>r.race_id===row.race_id);for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(r[key],row[key],'new calculator replay '+row.race_id+' '+key)}
+ const replay23=calculateRows(rawRaces,original.meta.weather.raw,nov23[0].snapshot_saved_at)
+ for(const row of nov23){const r=replay23.find(r=>r.race_id===row.race_id);for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(r[key],row[key],'nov23 calculator replay '+row.race_id+' '+key)}
+ // 重賞×4歳以上（11/22 11R ドリームエイジカップ BG3）はブラウザ再計算（races_from_pdf のみ）でも重賞方式の同じBOX
+ const dream=added.find(r=>r.race_id==='20261122-R11');assert.equal(dream.selection_meta.box_method,'graded5_card_combined');assert.deepEqual(dream.selection_meta.top3.map(h=>h.umaban),[6,5,8]);assert.equal(dream.selection_meta.graded_history_through,'2026-11-16')
+ const browserLike=calculateRows(rawRaces,original.meta.weather.raw,dream.snapshot_saved_at).find(r=>r.race_id===dream.race_id)
+ for(const key of ['selection_meta','predictions','confidence','tickets','recommended'])assert.deepEqual(browserLike[key],dream[key],'graded browser replay '+key)
+ assert.equal(added.filter(r=>r.selection_meta.box_method==='graded5_card_combined').length,1)
+ function allViews(snapshot){
+  for(const date of ['2026-11-06','2026-11-07','2026-11-08','2026-11-15','2026-11-16','2026-11-21','2026-11-22','2026-11-23']){
+   const rows=snapshot.races.filter(r=>r.race_date===date)
+   for(const View of [Rank,Results]){
+    const html=render(View,{date});for(const a of articles(html)){const row=rows.find(r=>r.selection_meta.top3.map(h=>h.umaban).join('-')===a[3]&&r.confidence===+a[1]);assert.ok(row);assert.equal(a[2],snapshot.meta.version)}
+   }
+   for(const row of rows){const race=rawRaces.find(r=>r.race_id===row.race_id),html=render(Normal,{race}),found=articles(html);assert.equal(found.length,1);assert.equal(found[0][2],snapshot.meta.version);assert.equal(found[0][3],row.selection_meta.top3.map(h=>h.umaban).join('-'));assert.equal(+found[0][1],row.confidence)
+    assert.ok(render(Detail,{rec:row}).includes(snapshot.meta.version));assert.equal(new Set(row.tickets.map(t=>t.join('-'))).size,6)
+   }
+  }
+ }
+ allViews(original)
+ const race4=original.races.find(r=>r.race_id==='20261108-R04');assert.deepEqual(race4.selection_meta.top3.map(h=>h.umaban),[4,10,8]);assert.equal(race4.confidence,.744);assert.equal(race4.selection_meta.confidence_source,'065_070|ge10|wet|normal');assert.equal(race4.selection_meta.confidence_stats.N,62)
+ for(const View of [Normal,Rank,Results]){const html=render(View,View===Normal?{race:rawRaces.find(r=>r.race_id===race4.race_id)}:{date:'2026-11-08'});assert.ok(html.includes('data-top3="4-10-8"')&&html.includes(`data-confidence="${race4.confidence}"`))}
+ const weather=structuredClone(original.meta.weather.raw);weather.daily.precipitation_sum[weather.daily.time.indexOf('2026-11-15')]+=10
+ let calculations=0,weatherCalls=0
+ const pointer={version:original.meta.version,snapshot_sha256:createHash('sha256').update(rawSnapshot).digest('hex')}
+ const fetcher=async url=>{if(url.includes('moisture_prediction_log.json'))return {ok:false,status:404};if(url.includes('prediction-version.json'))return {ok:true,json:async()=>pointer};if(url.includes('prediction-snapshot.json'))return {ok:true,text:async()=>rawSnapshot};weatherCalls++;return {ok:true,json:async()=>weather}}
+ const calculate=async(...args)=>{calculations++;return calculateRows(...args)}
+ await Promise.all([store.refreshSnapshot({force:true,fetcher,calculate}),store.refreshSnapshot({force:true,fetcher,calculate})]);assert.equal(calculations,1);assert.equal(weatherCalls,1)
+ const updated=store.getSnapshotState().snapshot;assert.notEqual(updated.meta.version,original.meta.version);allViews(updated)
+ const immutableHistory=[...memory].filter(([key])=>key.startsWith('banma.snapshot.history.'))
+ assert.equal(immutableHistory.length,1)
+ store.acceptSnapshot(original);assert.equal(store.adoptLocalSnapshot(),false,'compact proof is not misused as a complete runtime snapshot');assert.equal(store.getSnapshotState().snapshot.meta.version,original.meta.version)
+ await store.refreshSnapshot({force:true,fetcher,calculate});assert.equal(calculations,2,'cold reconstruction uses one shared calculator, not a per-view calculation');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),immutableHistory)
+ await store.refreshSnapshot({force:true,fetcher:async()=>{throw new Error('offline')}});assert.equal(store.getSnapshotState().status,'stale');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version);assert.ok(render(Info,{date:'2026-11-08',view:'confidence'}).includes('最新確認できず'))
+ const mismatchFetcher=async url=>url.includes('prediction-version.json')?{ok:true,json:async()=>({...pointer,version:'wrong'})}:{ok:true,text:async()=>rawSnapshot}
+ await store.refreshSnapshot({force:true,fetcher:mismatchFetcher});assert.equal(store.getSnapshotState().status,'stale');assert.equal(store.getSnapshotState().snapshot.meta.version,updated.meta.version,'reject cross-version response')
+ const missing=calculateRows([rawRaces[0]],null,original.meta.snapshot_saved_at)[0];assert.equal(missing.prediction_status,'weather_missing');assert.equal(missing.confidence,null);assert.equal(missing.tickets.length,0)
+ assert.equal(policy.timingOf('2026-11-08T13:00:00+09:00','2026-11-08T14:00:00+09:00'),'prestart');assert.equal(policy.timingOf('2026-11-08T05:00:00Z','2026-11-08T14:00:00+09:00'),'postrace')
+ const bad=structuredClone(original);bad.races[0].snapshot_version='wrong';assert.throws(()=>policy.validateSnapshot(bad));const dup=structuredClone(original);dup.races[0].tickets.fill(dup.races[0].tickets[0]);assert.throws(()=>policy.validateSnapshot(dup))
+ assert.ok(render(Rank,{date:'2099-01-01'}).includes('ライブ再計算は行いません'));assert.ok(render(Results,{date:'2099-01-01'}).includes('ライブ再計算は行いません'))
+ const priorHistory=[...memory].filter(([key])=>key.startsWith('banma.snapshot.history.'))
+ const moreWeather=structuredClone(weather);moreWeather.daily.precipitation_sum[moreWeather.daily.time.indexOf('2026-11-15')]+=10
+ const quotaFetcher=async url=>url.includes('moisture_prediction_log.json')?{ok:false,status:404}:url.includes('prediction-version.json')?{ok:true,json:async()=>pointer}:{ok:true,json:async()=>moreWeather}
+ const savedSet=localStorage.setItem;localStorage.setItem=()=>{throw new Error('quota')}
+ await store.refreshSnapshot({force:true,fetcher:quotaFetcher,calculate});localStorage.setItem=savedSet
+ assert.equal(store.getSnapshotState().persistence,'unavailable');assert.deepEqual([...memory].filter(([key])=>key.startsWith('banma.snapshot.history.')),priorHistory,'never overwrite/delete prior histories on quota failure')
+ assert.ok(render(Info,{date:'2026-11-08',view:'races'}).includes('精度検証用記録としては扱えません'))
+ assert.equal(memory.has('banma.feedback'),false,'no automatic learning')
+ store.acceptSnapshot(original,{status:'current'})
+ console.log('PASS shared snapshot: 96R (36 preserved + 24 Nov15-16 + 24 Nov21-22 + 12 Nov23) exact CLI replay; normal/confidence/results/detail same version/top3/score/confidence/6 tickets; Nov8 R4 4-10-8/.744 original table; one concurrent calculation; stable load order; latest-input refresh; immutable history; stale/version mismatch/missing weather; strict prestart boundary; no auto learning.')
+}finally{await server.close()}

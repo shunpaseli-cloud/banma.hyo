@@ -1,14 +1,39 @@
-import { useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import SnapshotInfo from './components/SnapshotInfo.jsx'
 import DataBanner from './components/DataBanner.jsx'
 import DatePicker from './components/DatePicker.jsx'
 import { DEFAULT_DATE, dayInfo } from './lib/paginate.js'
 import { DATA } from './dataSource.js'
-import Summary from './components/Summary.jsx'
-import RaceList from './components/RaceList.jsx'
+const RaceList=lazy(()=>import('./components/RaceList.jsx'))
+const ConfidenceRank=lazy(()=>import('./components/ConfidenceRank.jsx'))
+const ConfidenceResults=lazy(()=>import('./components/ConfidenceResults.jsx'))
+const RaceCardsView=lazy(()=>import('./components/RaceCardsView.jsx'))
+import { RACECARD_DEFAULT_DATE } from './racecards.js'
+import { POSTHOC_DATES } from './resultDates.js'
+
+export const VIEWS = new Set(['races', 'confidence', 'results', 'racecard'])
+
+export function canonicalResultsUrl(href){
+ const url=new URL(href);if(url.searchParams.get('view')!=='confidence-results')return null
+ url.searchParams.set('view','results');return url.href
+}
+
+export function viewSearch(date,view) {
+  const query=new URLSearchParams({date})
+  if(view&&view!=='races')query.set('view',view)
+  return `?${query.toString()}`
+}
+
 export default function App() {
-  const [date, setDate] = useState(() => new URLSearchParams(location.search).get('date') || DEFAULT_DATE)
-  const [view, setView] = useState(() => new URLSearchParams(location.search).get('view') || 'races')
-  const url = (d, v) => history.replaceState(null, '', `?date=${d}${v === 'summary' ? '&view=summary' : ''}`)
+  const [view, setView] = useState(() => {
+    const v = new URLSearchParams(location.search).get('view') || 'races'
+    return v==='confidence-results'?'results':VIEWS.has(v) ? v : 'races'
+  })
+  const [date, setDate] = useState(() => new URLSearchParams(location.search).get('date') || (view==='racecard'&&RACECARD_DEFAULT_DATE) || DEFAULT_DATE)
+  useEffect(()=>{const next=canonicalResultsUrl(location.href);if(next)history.replaceState(null,'',next)},[])
+  const url = (d, v) => {
+    history.replaceState(null, '', viewSearch(d,v))
+  }
   const pick = d => { setDate(d); url(d, view) }
   const go = v => { setView(v); url(date, v) }
   const day = dayInfo(date)
@@ -16,21 +41,40 @@ export default function App() {
     ? { ...DATA, warning: false, meta: { ...DATA.meta, race_date: date } }
     : { ...DATA, warning: true, source: DATA.source === 'pdf' ? 'seed' : DATA.source }
   return (
-    <div className="app">
+    <div className={`app${view==='results'?' app-results':''}`}>
       <header className="masthead">
         <h1>ばん馬表</h1>
-        <p>ばんえい競馬 出走表と予想スコア</p>
-        <DatePicker date={date} onChange={pick} />
-        <nav className="nav"><button className={view === 'races' ? 'on' : ''} onClick={() => go('races')}>出走表・予想</button><button className={view === 'summary' ? 'on' : ''} onClick={() => go('summary')}>日別まとめ</button></nav>
-        <p className="auto-note">3連複予想は自動生成</p>
+        <p>ばんえい競馬 出走表・推奨・公式結果</p>
+        {view !== 'racecard' && <DatePicker date={date} onChange={pick} extra={view==='results'?POSTHOC_DATES:[]} />}
+        <nav className="nav">
+          <button className={view === 'races' ? 'on' : ''} onClick={() => go('races')}>出走表・予想</button>
+          <button className={view === 'confidence' ? 'on' : ''} onClick={() => go('confidence')}>自信度順</button>
+          <button className={view === 'results' ? 'on' : ''} onClick={() => go('results')}>結果</button>
+          <button className={view === 'racecard' ? 'on' : ''} onClick={() => go('racecard')}>出走表</button>
+        </nav>
+        <p className="auto-note">推奨馬・買い目・公式結果を、日付ごとに確認できます。</p>
       </header>
+      {view !== 'racecard' && <SnapshotInfo date={date} view={view}/>}
       <main>
-        {banner && <DataBanner data={banner} />}
-        {day.races.length === 0
-          ? <p className="end">{date} の出走表データはありません（開催なし、または未取得）。上の「データあり」から日付を選んでください。</p>
-          : view === 'summary' ? <Summary date={date} /> : <RaceList key={date} date={date} />}
+
+        <Suspense fallback={<p className="loading" role="status">表示を読み込んでいます…</p>}>
+        {view === 'racecard' ? (
+          <RaceCardsView date={date} onDate={pick} />
+        ) : view === 'results' ? (
+          <ConfidenceResults date={date} />
+        ) : view === 'confidence' ? (
+          <ConfidenceRank date={date} />
+        ) : day.races.length === 0 ? (
+          <p className="end">{date} の出走表データはありません（開催なし、または未取得）。上の「データのある開催日を選ぶ」から日付を選んでください。</p>
+        ) : (
+          <>
+            {banner && <DataBanner data={banner} />}
+            <RaceList key={date} date={date} />
+          </>
+        )}
+        </Suspense>
       </main>
-      <footer className="foot">予想スコアは結果のフィードバックで学習し更新されます</footer>
+      <footer className="foot">予想は参考情報です。未確定の結果は、確定後に照合します。</footer>
     </div>
   )
 }
