@@ -1,0 +1,57 @@
+{
+ "version": "pred-20261127T072729JST-985e1a418bd8",
+ "generated_at_asia_tokyo": "2026-11-27T07:27:29+09:00",
+ "models": {
+  "learned_model.json": "e657cd397eccf5ca5b256d5ece69422b7fe0cffd8cb595663e4bf475ee403893",
+  "learned_model_rain.json": "470165d1cbf0e1b46c691ca1c75221e31ec5918b523de7555401effc8844255b",
+  "learned_weights.json": "8a2a3030cf474bd9f48ec62fd4492a611547fca72e2b9a3ca60e5f1d94b59de7",
+  "card_history_age4.json": "76f8c4ffd10074e040edd1d079607879fef633d2cc159cd4d07d5a4e5f030ef9"
+ },
+ "engine": "4922425be20d85e9460b78007ab05f389c5190d9d7fb0d310e00ad62c75b955b",
+ "weather_status": "retrieved",
+ "weather_retrieved_at": "2026-11-27T07:21:25+09:00",
+ "legacy": {
+  "path": "prediction-history/legacy-20261106T190648/",
+  "prestart_summary": {
+   "races": 7,
+   "hits": 0,
+   "stake_yen": 4200,
+   "return_yen": 0
+  }
+ },
+ "confidence_method": "condition-table-v1",
+ "confidence_table": {
+  "version": "condition-table-v1",
+  "source_commit": "6d887900e859109b415d04ecb585fa4bc160ee2f",
+  "table_sha256": "1406e81faaf37601bca1fc93734c1d9b9d796165ea7753a21bf3924f7dfab254",
+  "fallback": [
+   "joint",
+   "coarse",
+   "pf_only",
+   "baseline"
+  ],
+  "note": "元の保存条件別テーブルと元の見送り・メムロ補正。29特徴の馬スコア・順位・BOX・推奨ゲートは不変。"
+ },
+ "card_score_age4": {
+  "version": "card-score-age4-v1",
+  "effective_from_race_date": "2026-11-09",
+  "history_through": "2026-11-08",
+  "scope": "4歳以上だけのレースの3頭BOX候補のみ。3歳以下・混合・発効日前は29特徴BOXのまま。点数・見送り・自信度は不変。",
+  "saved_rows": "既存保存行は再生成せず不変（snapshot_versionのみ更新）。"
+ },
+ "previous_snapshot_version": "pred-20261122T102402JST-236d05d42703",
+ "snapshot_sha256": "9f7d0291dd58e313eb345c11b44e43856aaa0f26285b42773966498240b1b66e",
+ "graded5_age4": {
+  "version": "graded5-age4-v1",
+  "scope": "重賞(BG1-3)×4歳以上だけのレース: 出走表スコアと重賞5走モデルの等重み合成で3頭BOX、1位を軸。history_gapで29特徴へ戻さない。自信度・推奨/見送りは29特徴の軸で従来どおり。",
+  "history_files": {
+   "graded_form_history_age4_r20261116.json": "1560fe0ba715ce64492ead3bfedf2cf00894870f9aa6492e4409d971b679d333",
+   "card_history_age4_graded_r20261116.json": "ccc14792d1aeff6667975d8118fdf41eb42b0f1c22e3f059f2cd5973fb82c7a1"
+  },
+  "history_through": "2026-11-16",
+  "applied_rows": [
+   "20261122-R11"
+  ],
+  "applied_at": "2026-11-20T21:22:25+09:00"
+ }
+}

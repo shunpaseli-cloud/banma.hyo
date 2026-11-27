@@ -1,0 +1,21 @@
+{
+ "version": "pred-20261108T064040JST-7b54ee8ddc00",
+ "archived_at": "2026-11-08T06:42:09+09:00",
+ "snapshot_saved_at": "2026-11-08T06:40:40+09:00",
+ "files": {
+  "recommendations.json": "a12cd76cf189753d16e0859ad3cc78cf9a6145f97f16e3440c340a34bcbf0eea",
+  "confidence-results.json": "1f7a9f41cdfca870415384aa282bc747d658119e80f22eec10888a3e10cc7e3f",
+  "verified-results.json": "3ba05c4f40b0de1bcb0f1944743c47de9bf181e607bda221ceaddf52ddd35f85",
+  "feedback-inputs.json": "fd0673fff3090c02a42f92a382d379161456380d7a508110788b8ef1ab1417cc",
+  "results.json": "3b816ce511823fa9ffeaf2405fbec9603e3c984f7706676c53c674e15842d339",
+  "prediction-snapshot.json": "300eb0c97c1237bc19fdd420ee3d182b40b9e385d0f482cbf902b4c6fb36472c",
+  "prediction-version.json": "ecb9195f7f8b89fc9bbfbf5c5fd8fc7b082b9c3f88d84caa13ff6e793fddb07b"
+ },
+ "prestart_summary": {
+  "races": 0,
+  "hits": 0,
+  "stake_yen": 0,
+  "return_yen": 0
+ },
+ "note": "旧版の事前成績。新版の事後再計算と合算しない。保存CLI値であり当時のブラウザ表示履歴の証明ではない。"
+}

@@ -3,7 +3,8 @@
 // 結果ページは帯広競馬場の公式レース情報と同じ地方競馬全国協会(keiba.go.jp)の
 // 「レース成績表」(RaceMarkTable, 帯広 babaCode=3) を使う。
 import races from './data/races.json'
-import { predict, updateWithResult } from './feedback.js'
+import {savePrediction,updateWithResult} from './feedback.js'
+import {snapshotForRace} from './predictionSnapshot.js'
 import { analyzeMisses } from './missAnalysis.js'
 import BUNDLED_PDF_RESULTS from './data/results_from_pdf.json'
 
@@ -136,8 +137,11 @@ function applyResult(race, got) {
     const { source, rows } = got
     const results = matchToEntries(race, rows)
     if (!Object.keys(results).length) throw new Error('出走馬と一致する馬名なし')
-    predict(race, true) // 予想を保存してから結果で学習
-    const _pr = predict(race); const _u = updateWithResult(race, results)
+    const snapshot=snapshotForRace(race.race_id)
+    if(snapshot?.prediction_status!=='available')throw new Error('保存予想なし。ライブ再計算での代替は行いません。')
+    const _pr=snapshot.predictions
+    for(const p of _pr)savePrediction(race.race_id,p.horse_id,p.score,p.pred_rank,p.features)
+    const _u=updateWithResult(race,results)
     return { ok: true, source, ..._u, misses: analyzeMisses(race, _pr, results) }
   } catch (e) {
     console.error(`[scraper] ${race.race_id} 取得失敗:`, e)
