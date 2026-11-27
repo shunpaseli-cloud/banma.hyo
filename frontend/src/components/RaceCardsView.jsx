@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { RACECARD_DATES } from '../racecards.js'
 import { racecardDay } from '../racecardData.js'
+import RecentForm from './RecentForm.jsx'
 const WD = '日月火水木金土'
 const label = d => `${Number(d.slice(5, 7))}/${Number(d.slice(8))}(${WD[new Date(d + 'T00:00:00Z').getUTCDay()]})`
 const sexAge = e => e.sex && e.age != null ? `${e.sex}${e.age}` : '—'
@@ -23,6 +24,7 @@ function Race({ race, open }) {
         <td><span>{e.jockey || '—'}</span><small>{e.trainer || '—'}</small></td>
       </tr>)}</tbody>
     </table>
+    <RecentForm raceId={race.race_id} raceDate={race.race_date} entries={race.entries} />
     <details className="rc-more"><summary>条件・出典</summary>
       {race.subtitle && <p>副題 {race.subtitle}</p>}
       {race.pdf_heading && race.pdf_heading !== race.race_name && <p>公式PDF見出し {race.pdf_heading}</p>}

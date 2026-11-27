@@ -190,3 +190,36 @@ a { overflow-wrap:anywhere; }
 .posthoc-note { border:1px solid #c98a1b; background:#fff7e6; border-radius:8px; padding:8px 12px; margin:8px 0; font-size:.875rem; overflow-wrap:anywhere; }
 .posthoc-note p { margin:4px 0; }
 .posthoc-badge { display:inline-block; padding:1px 8px; border-radius:4px; background:#c98a1b; color:#fff; font-size:.8125rem; }
+
+/* Display-only official recent form (近走). Night-dirt theme. Does not change predictions. */
+.kinso-disclosure { min-width:0; max-width:100%; }
+.kinso-disclosure>summary { color:#D85A2A; }
+.kinso-panel {
+  min-width:0; max-width:100%; margin:4px 0 8px; padding:10px;
+  background:#16130F; color:#F3EEE4; border:1px solid #221E18; border-radius:8px;
+  overflow-wrap:anywhere;
+}
+.kinso-list { list-style:none; margin:0; padding:0; }
+.kinso-horse { min-width:0; max-width:100%; margin:0; padding:8px 0; border-bottom:1px solid #221E18; }
+.kinso-horse:last-of-type { border-bottom:0; }
+.kinso-horse-head { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:baseline; min-width:0; }
+.kinso-horse-head b { min-width:0; overflow-wrap:anywhere; color:#F3EEE4; font-size:.9375rem; }
+.kinso-horse.is-box .kinso-horse-head b { color:#D85A2A; }
+.kinso-mark { font-size:.75rem; font-weight:700; color:#D85A2A; letter-spacing:.04em; }
+.kinso-runs { display:flex; flex-wrap:wrap; gap:6px; list-style:none; margin:6px 0 0; padding:0; min-width:0; }
+.kinso-run {
+  flex:1 1 9.5em; min-width:0; max-width:100%;
+  padding:6px 8px; background:#221E18; border-radius:4px;
+  font-variant-numeric:tabular-nums; font-size:.8125rem; line-height:1.4;
+  overflow-wrap:anywhere;
+}
+.kinso-run-date, .kinso-run-class { margin-right:.4em; color:#F3EEE4; }
+.kinso-run-pos { font-weight:700; color:#F3EEE4; }
+.kinso-run.is-win .kinso-run-pos { color:#D85A2A; }
+.kinso-empty, .kinso-note { margin:8px 0 0; font-size:.75rem; line-height:1.5; color:#F3EEE4; }
+.kinso-note { opacity:.8; }
+.racecards-page .kinso-disclosure { margin:0 12px 8px; }
+@media(max-width:480px) {
+  .kinso-panel { padding:8px; }
+  .kinso-run { flex-basis:100%; }
+}
