@@ -43,7 +43,8 @@ try{
   }
  }
  assert.ok(renderToStaticMarkup(createElement(Results,{date:'2026-11-15'})).includes('三連複 1-7-9 720円 / 三連単 9-1-7 5,870円'))
- assert.ok(renderToStaticMarkup(createElement(Results,{date:'2026-11-08'})).includes('配当 未確定'))
+ assert.ok(renderToStaticMarkup(createElement(Results,{date:'2026-11-08'})).includes('三連複 3-4-7 4,290円 / 三連単 7-3-4 17,990円'))
+ assert.ok(renderToStaticMarkup(createElement(Results,{date:'2026-11-28'})).includes('配当 未確定'))
  assert.ok(resultsCss.includes('.results-payout-row>td')&&resultsCss.includes('overflow-wrap:anywhere'))
  assert.ok(!/overflow(?:-x)?\s*:\s*(?:auto|scroll|hidden)|position\s*:\s*sticky|min-width\s*:\s*(?:900|960)px/.test(resultsCss),'no scroll/clip/sticky workaround')
  assert.ok(resultsCss.includes('table-layout:fixed')&&resultsCss.includes('min-width:0')&&resultsCss.includes('grid-template-columns:repeat(3,minmax(0,1fr))'))

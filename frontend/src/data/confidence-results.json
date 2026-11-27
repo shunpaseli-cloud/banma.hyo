@@ -37619,37 +37619,143 @@
    "result": {
     "race_date": "2026-11-08",
     "race_no": 12,
-    "status": "provisional",
-    "finishes": [],
-    "payouts": {
-     "trio": null,
-     "trifecta": null
-    },
-    "refunds": [],
+    "status": "final",
+    "race_name": "Ｂ３－６",
+    "start_time_jst": "20:45",
     "source_urls": [
      "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=12",
-     "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312"
+     "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001778/res1.pdf",
+     "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001778/res2.pdf",
+     "https://sports.yahoo.co.jp/keiba_local/race/result/20261108030312"
     ],
+    "finishes": [
+     {
+      "finish": 1,
+      "umaban": 7,
+      "name": "パワーハンター",
+      "status": "finished"
+     },
+     {
+      "finish": 2,
+      "umaban": 3,
+      "name": "ヤマノドラゴン",
+      "status": "finished"
+     },
+     {
+      "finish": 3,
+      "umaban": 4,
+      "name": "ショコラペガサス",
+      "status": "finished"
+     },
+     {
+      "finish": 4,
+      "umaban": 5,
+      "name": "ハゴロモファルコン",
+      "status": "finished"
+     },
+     {
+      "finish": 5,
+      "umaban": 2,
+      "name": "サクラダイヤモンド",
+      "status": "finished"
+     },
+     {
+      "finish": 6,
+      "umaban": 8,
+      "name": "サカノカイリキ",
+      "status": "finished"
+     },
+     {
+      "finish": 7,
+      "umaban": 9,
+      "name": "ヒカリファイヤー",
+      "status": "finished"
+     },
+     {
+      "finish": 8,
+      "umaban": 6,
+      "name": "マルホンジュセ",
+      "status": "finished"
+     },
+     {
+      "finish": 9,
+      "umaban": 1,
+      "name": "クニキヨタイショウ",
+      "status": "finished"
+     }
+    ],
+    "source_html_sha256": "e8f29cc02a3c4fbabeb6514bd0526f8e8c84f5a1a91ec73f3f5370985ca120b0",
+    "payouts": {
+     "trio": [
+      {
+       "combo": [
+        3,
+        4,
+        7
+       ],
+       "yen": 4290
+      }
+     ],
+     "trifecta": [
+      {
+       "combo": [
+        7,
+        3,
+        4
+       ],
+       "yen": 17990
+      }
+     ]
+    },
+    "refunds": [],
+    "result_retrieved_at": "2026-11-27T14:48:36+09:00",
     "official_finalized_at": null,
-    "note": "公式結果未確定・未公表",
+    "retrieval_time_scope": "race",
+    "note": "公式確定結果。数値着順なしは中止・取消等と区別。公式の確定発表時刻は不明、取得時刻と区別。公式実測水分は 1.8%（NAR RaceMarkTable・RaceList・公式成績表PDF一致）。umanityはAWS WAFチャレンジで本文を取得できず未照合。",
     "umanity_race_id": "2026110803160312",
-    "result_source": "NAR公式 / umanity",
-    "result_source_url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312",
-    "result_source_retrieved_at": "2026-11-08T20:20:51+09:00",
+    "result_source": "NAR公式 / ばんえい公式成績表PDF / スポーツナビ",
+    "result_source_url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=12",
+    "result_source_retrieved_at": "2026-11-27T14:48:36+09:00",
+    "official_measured_moisture_pct": 1.8,
+    "official_moisture_source": "NAR RaceMarkTable / RaceList / ばんえい公式成績表PDF（開催ID 0000001778）",
     "official_crosscheck": {
      "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_raceDate=2026%2f11%2f08&k_babaCode=3&k_raceNo=12",
-     "retrieved_at_jst": "2026-11-08T20:20:45+09:00",
-     "match": null,
-     "status": "both_unpublished"
-    },
-    "official_measured_moisture_pct": null,
-    "official_moisture_source": null,
-    "start_time_jst": "20:45",
-    "result_retrieved_at": "2026-11-08T20:20:45+09:00",
-    "retrieval_time_scope": "race"
+     "retrieved_at_jst": "2026-11-27T14:48:36+09:00",
+     "match": true,
+     "status": "top3_and_trio_trifecta_match",
+     "sources": [
+      {
+       "name": "ばんえい公式成績表PDF",
+       "urls": [
+        "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001778/res1.pdf",
+        "https://banei-keiba.or.jp/data/shpdf/000000/17/0000001778/res2.pdf"
+       ],
+       "retrieved_at_jst": "2026-11-27T14:49:13+09:00",
+       "match": true,
+       "status": "top3_and_trio_trifecta_match"
+      },
+      {
+       "name": "スポーツナビ",
+       "url": "https://sports.yahoo.co.jp/keiba_local/race/result/20261108030312",
+       "retrieved_at_jst": "2026-11-27T14:48:38+09:00",
+       "match": true,
+       "status": "top3_and_trio_trifecta_match"
+      }
+     ],
+     "umanity": {
+      "list_url": "https://nar.umanity.jp/racedata_top.php?date=20261108&place=3",
+      "attempted": true,
+      "http": 202,
+      "header": "x-amzn-waf-action: challenge",
+      "body_bytes": 0,
+      "note": "2026-11-27T14:48:46+09:00 に結果ページへアクセスし、AWS WAFチャレンジ（HTTP 202、x-amzn-waf-action: challenge、本文0）。取得できず未照合。race_idは開催形式から導出（第16回 3日目のため 2026110803160312）。",
+      "race_id": "2026110803160312",
+      "url": "https://nar.umanity.jp/racecard_result.php?race_id=2026110803160312"
+     }
+    }
    },
    "hit": null,
-   "reference_box_hit": null,
+   "reference_box_hit": false,
    "evaluation_status": "nonrecommended_reference"
   },
   {
