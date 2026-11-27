@@ -1,0 +1,2166 @@
+{
+ "source_commit": "6d887900e859109b415d04ecb585fa4bc160ee2f",
+ "note": "Independent before-change golden; only confidence/explanation may change.",
+ "rows": [
+  {
+   "race_id": "20261106-R01",
+   "predictions_sha256": "7dc8c93d701bbfce458a3ad7713708ce4e86fcad62599de591579cff9a97aa40",
+   "selection_sha256": "bc09a9b3b2799b9c73098c72a3766bce28c86b492ad5b6e8733f031d7494941f",
+   "tickets": [
+    [
+     8,
+     2,
+     10
+    ],
+    [
+     8,
+     10,
+     2
+    ],
+    [
+     2,
+     8,
+     10
+    ],
+    [
+     2,
+     10,
+     8
+    ],
+    [
+     10,
+     8,
+     2
+    ],
+    [
+     10,
+     2,
+     8
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 8,
+     "name": "ヒメトラダイア",
+     "score": 0.6297,
+     "past_form": 0.5101
+    },
+    {
+     "umaban": 2,
+     "name": "レディームキムキ",
+     "score": 0.6116,
+     "past_form": 0.5756
+    },
+    {
+     "umaban": 10,
+     "name": "アルバノチエチャン",
+     "score": 0.5818,
+     "past_form": 0.4483
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R02",
+   "predictions_sha256": "c5a8f505513fd1e3deb47c81f2014f89763d3c18d7e2fbe59a304a194849b32e",
+   "selection_sha256": "7ba1c0aad84152274a34af35086901c38f0ffe67df50e5cdcb8526c522abae61",
+   "tickets": [
+    [
+     8,
+     5,
+     10
+    ],
+    [
+     8,
+     10,
+     5
+    ],
+    [
+     5,
+     8,
+     10
+    ],
+    [
+     5,
+     10,
+     8
+    ],
+    [
+     10,
+     8,
+     5
+    ],
+    [
+     10,
+     5,
+     8
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 8,
+     "name": "ライデンファンタジ",
+     "score": 0.6649,
+     "past_form": 0.6265
+    },
+    {
+     "umaban": 5,
+     "name": "ニューシノツワン",
+     "score": 0.6192,
+     "past_form": 1
+    },
+    {
+     "umaban": 10,
+     "name": "ユメニシキ",
+     "score": 0.5616,
+     "past_form": 0.4201
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R03",
+   "predictions_sha256": "4ae81c73358eaaca6e25ed2fcd129f1c0426230e7870a82572d21b4a483d3900",
+   "selection_sha256": "687a544ae2387b250561572197c1e8f10f4e32490a15b59e082fe5da4b782be4",
+   "tickets": [
+    [
+     2,
+     10,
+     7
+    ],
+    [
+     2,
+     7,
+     10
+    ],
+    [
+     10,
+     2,
+     7
+    ],
+    [
+     10,
+     7,
+     2
+    ],
+    [
+     7,
+     2,
+     10
+    ],
+    [
+     7,
+     10,
+     2
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 2,
+     "name": "キョウドノホシ",
+     "score": 0.5321,
+     "past_form": 0.5671
+    },
+    {
+     "umaban": 10,
+     "name": "ヒノクニゴールド",
+     "score": 0.5127,
+     "past_form": 0.4861
+    },
+    {
+     "umaban": 7,
+     "name": "メオトテンザン",
+     "score": 0.5022,
+     "past_form": 0.6222
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R04",
+   "predictions_sha256": "04143a718e38039cca980ff480e2ca12b34ee9bea5e5b705b354da871a397163",
+   "selection_sha256": "cac5d044b86d2818301ce9eafe69795d97cb03646d612e99531e60a321bcff0b",
+   "tickets": [
+    [
+     3,
+     4,
+     6
+    ],
+    [
+     3,
+     6,
+     4
+    ],
+    [
+     4,
+     3,
+     6
+    ],
+    [
+     4,
+     6,
+     3
+    ],
+    [
+     6,
+     3,
+     4
+    ],
+    [
+     6,
+     4,
+     3
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 3,
+     "name": "ジェイマット",
+     "score": 0.5861,
+     "past_form": 0.688
+    },
+    {
+     "umaban": 4,
+     "name": "モンスター",
+     "score": 0.5653,
+     "past_form": 0.502
+    },
+    {
+     "umaban": 6,
+     "name": "マルホンエルフ",
+     "score": 0.5488,
+     "past_form": 0.6417
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R05",
+   "predictions_sha256": "49dbb9cd6a4f340ccff31ac78c185ba640452e178553a413d099d4812a1a5a45",
+   "selection_sha256": "59e3bd229af67a4f3aa2db129d51b4f460c844702a61b69b15b60bc43a745c56",
+   "tickets": [
+    [
+     9,
+     5,
+     8
+    ],
+    [
+     9,
+     8,
+     5
+    ],
+    [
+     5,
+     9,
+     8
+    ],
+    [
+     5,
+     8,
+     9
+    ],
+    [
+     8,
+     9,
+     5
+    ],
+    [
+     8,
+     5,
+     9
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 9,
+     "name": "ヤマノシテンノウ",
+     "score": 0.6277,
+     "past_form": 0.6307
+    },
+    {
+     "umaban": 5,
+     "name": "レオナウイン",
+     "score": 0.5601,
+     "past_form": 0.5487
+    },
+    {
+     "umaban": 8,
+     "name": "スーパーサンセイ",
+     "score": 0.5546,
+     "past_form": 0.5099
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R06",
+   "predictions_sha256": "1c8d4a4d7b468fce1c53132dd3eaa2a0fdab90ebcd4907a57f168035095c361e",
+   "selection_sha256": "6f2798e3e36bd2b50eb0da676aaa188905fdbc87ca5aca72a9f96f2c02a21b00",
+   "tickets": [
+    [
+     10,
+     1,
+     3
+    ],
+    [
+     10,
+     3,
+     1
+    ],
+    [
+     1,
+     10,
+     3
+    ],
+    [
+     1,
+     3,
+     10
+    ],
+    [
+     3,
+     10,
+     1
+    ],
+    [
+     3,
+     1,
+     10
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "ハゴロモミニョン",
+     "score": 0.6558,
+     "past_form": 0.5743
+    },
+    {
+     "umaban": 1,
+     "name": "サカノヒカルアオ",
+     "score": 0.5999,
+     "past_form": 0.6187
+    },
+    {
+     "umaban": 3,
+     "name": "ラストユウセン",
+     "score": 0.5726,
+     "past_form": 0.6775
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R07",
+   "predictions_sha256": "28b66e525a6864736be71d336df9e5e87f7bf095d915a757e8841c47ec926e2a",
+   "selection_sha256": "c4685a670b1a47356c532517412796b5087d344f1ede6e44a4be1a2db8a36878",
+   "tickets": [
+    [
+     10,
+     2,
+     7
+    ],
+    [
+     10,
+     7,
+     2
+    ],
+    [
+     2,
+     10,
+     7
+    ],
+    [
+     2,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     2
+    ],
+    [
+     7,
+     2,
+     10
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "キタノレンザン",
+     "score": 0.6675,
+     "past_form": 0.6107
+    },
+    {
+     "umaban": 2,
+     "name": "イワキマッシグラ",
+     "score": 0.6386,
+     "past_form": 0.7067
+    },
+    {
+     "umaban": 7,
+     "name": "ヨシノフクヒメ",
+     "score": 0.6347,
+     "past_form": 0.7927
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R08",
+   "predictions_sha256": "a719d009564e8fa8bafd595ac0070f9b99502974dc24ff81978f822866d7a5ff",
+   "selection_sha256": "42eb29567a89f7b2b5c0a0097197eaaa21efdcb7989bb43d9c30b930558f7501",
+   "tickets": [
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     9,
+     10,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "イワキオーカン",
+     "score": 0.5828,
+     "past_form": 0.5411
+    },
+    {
+     "umaban": 9,
+     "name": "テンボシヴィーナス",
+     "score": 0.4854,
+     "past_form": 0.4659
+    },
+    {
+     "umaban": 7,
+     "name": "フクフクライデン",
+     "score": 0.4786,
+     "past_form": 0.4106
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R09",
+   "predictions_sha256": "d4b51d1dc58aecb4565d736f933fc6b3577c1f3b5514bbdfef9be2fd48c46395",
+   "selection_sha256": "776ea4c3146dd7a36cdc80278c4f8cd4349138c523ef6d95eb081ea31ec8505a",
+   "tickets": [
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     9,
+     10,
+     7
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 7,
+     "name": "オーディン",
+     "score": 0.6407,
+     "past_form": 0.6
+    },
+    {
+     "umaban": 10,
+     "name": "マサノスパークル",
+     "score": 0.5468,
+     "past_form": 0.4276
+    },
+    {
+     "umaban": 9,
+     "name": "ビール",
+     "score": 0.5422,
+     "past_form": 0.5685
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R10",
+   "predictions_sha256": "f1e9aac7a731f845e1a791682c371f1588541eaa1ab3b1d321b1eb661c363b36",
+   "selection_sha256": "5f20a8e306e011761fdeaff642d5e9f5abed700f1c40b6259fb5f19470709135",
+   "tickets": [
+    [
+     9,
+     8,
+     1
+    ],
+    [
+     9,
+     1,
+     8
+    ],
+    [
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     1,
+     9
+    ],
+    [
+     1,
+     9,
+     8
+    ],
+    [
+     1,
+     8,
+     9
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 9,
+     "name": "ハゴロモビクトリー",
+     "score": 0.5505,
+     "past_form": 0.6194
+    },
+    {
+     "umaban": 8,
+     "name": "ダイヤセンプー",
+     "score": 0.4945,
+     "past_form": 0.506
+    },
+    {
+     "umaban": 1,
+     "name": "ジェイスカイ",
+     "score": 0.4923,
+     "past_form": 0.6189
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R11",
+   "predictions_sha256": "faeacc78d5887b50f1b16ec1d6a8d2189683fd1059d983196e870e2a196976ae",
+   "selection_sha256": "ad6480f8770bf33d27cacce228f764b377a3667f304fbcb921dbe39de7980f4d",
+   "tickets": [
+    [
+     8,
+     3,
+     4
+    ],
+    [
+     8,
+     4,
+     3
+    ],
+    [
+     3,
+     8,
+     4
+    ],
+    [
+     3,
+     4,
+     8
+    ],
+    [
+     4,
+     8,
+     3
+    ],
+    [
+     4,
+     3,
+     8
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 8,
+     "name": "ジェイホース",
+     "score": 0.5587,
+     "past_form": 0.5061
+    },
+    {
+     "umaban": 3,
+     "name": "クリスタルゴースト",
+     "score": 0.5498,
+     "past_form": 0.5982
+    },
+    {
+     "umaban": 4,
+     "name": "ジェイヒーロー",
+     "score": 0.5272,
+     "past_form": 0.5506
+    }
+   ]
+  },
+  {
+   "race_id": "20261106-R12",
+   "predictions_sha256": "63bd9d0435e3448676706df9ff2a054147dfda38e9efafa1eaf68efa891032e6",
+   "selection_sha256": "43088590568206a3dce6cca0f805a4466ce95fc2f3a7fb8fbfd1f9d2c82b9093",
+   "tickets": [
+    [
+     9,
+     8,
+     4
+    ],
+    [
+     9,
+     4,
+     8
+    ],
+    [
+     8,
+     9,
+     4
+    ],
+    [
+     8,
+     4,
+     9
+    ],
+    [
+     4,
+     9,
+     8
+    ],
+    [
+     4,
+     8,
+     9
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 9,
+     "name": "キタノミネ",
+     "score": 0.5866,
+     "past_form": 0.6664
+    },
+    {
+     "umaban": 8,
+     "name": "ツガルフジ",
+     "score": 0.5098,
+     "past_form": 0.5894
+    },
+    {
+     "umaban": 4,
+     "name": "マサタカラ",
+     "score": 0.4912,
+     "past_form": 0.5584
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R01",
+   "predictions_sha256": "568fdf05e526ace72328c8081be3b022a9e5c27934f473178c64ada78b8da3a4",
+   "selection_sha256": "9ea2b2b1e2395829efa8e4bcabccbd4d6dc1a89ba33f30963d1bda9797fe005a",
+   "tickets": [
+    [
+     10,
+     7,
+     4
+    ],
+    [
+     10,
+     4,
+     7
+    ],
+    [
+     7,
+     10,
+     4
+    ],
+    [
+     7,
+     4,
+     10
+    ],
+    [
+     4,
+     10,
+     7
+    ],
+    [
+     4,
+     7,
+     10
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "クリスタルクロリス",
+     "score": 0.7301,
+     "past_form": 0.6395
+    },
+    {
+     "umaban": 7,
+     "name": "サカノオオオク",
+     "score": 0.6635,
+     "past_form": 0.5983
+    },
+    {
+     "umaban": 4,
+     "name": "ディースピード",
+     "score": 0.6031,
+     "past_form": 0.6404
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R02",
+   "predictions_sha256": "7ec563196647ddf148c04f066f9ab38b13b931900eb136292437888aebe1d6f5",
+   "selection_sha256": "082ec4f4fdb0ae44879dd6ddbb8c23e43eeb99ce711d97703e5ca4205af6a902",
+   "tickets": [
+    [
+     5,
+     7,
+     1
+    ],
+    [
+     5,
+     1,
+     7
+    ],
+    [
+     7,
+     5,
+     1
+    ],
+    [
+     7,
+     1,
+     5
+    ],
+    [
+     1,
+     5,
+     7
+    ],
+    [
+     1,
+     7,
+     5
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 5,
+     "name": "ファンタジスタ",
+     "score": 0.6395,
+     "past_form": 0.6437
+    },
+    {
+     "umaban": 7,
+     "name": "ヨシノグレンザ",
+     "score": 0.6073,
+     "past_form": 0.5255
+    },
+    {
+     "umaban": 1,
+     "name": "デンテツ",
+     "score": 0.5061,
+     "past_form": 0.498
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R03",
+   "predictions_sha256": "63947c91c9466b8615572188075afc20c652cd027a94965e919979ee111a27a1",
+   "selection_sha256": "32498da85c88a29155a258b3d049edbe8fdcd2630de7c925246a85b6dab2d5a7",
+   "tickets": [
+    [
+     9,
+     2,
+     7
+    ],
+    [
+     9,
+     7,
+     2
+    ],
+    [
+     2,
+     9,
+     7
+    ],
+    [
+     2,
+     7,
+     9
+    ],
+    [
+     7,
+     9,
+     2
+    ],
+    [
+     7,
+     2,
+     9
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 9,
+     "name": "アーススノーパール",
+     "score": 0.6974,
+     "past_form": 0.6551
+    },
+    {
+     "umaban": 2,
+     "name": "ジェイカイン",
+     "score": 0.5265,
+     "past_form": 0.5679
+    },
+    {
+     "umaban": 7,
+     "name": "オレノゴウリキ",
+     "score": 0.5023,
+     "past_form": 0.5139
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R04",
+   "predictions_sha256": "a6c05cf71c49b832606ad039f8da037c720dca31092bed31359a61664c125d17",
+   "selection_sha256": "88633f6bc937ee760bcdf7533dd73b2526bdf77ffcf1b4c00443eb97848b9de0",
+   "tickets": [
+    [
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     1,
+     9
+    ],
+    [
+     9,
+     10,
+     1
+    ],
+    [
+     9,
+     1,
+     10
+    ],
+    [
+     1,
+     10,
+     9
+    ],
+    [
+     1,
+     9,
+     10
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "ストロングポイント",
+     "score": 0.7149,
+     "past_form": 0.4886
+    },
+    {
+     "umaban": 9,
+     "name": "トップラン",
+     "score": 0.5946,
+     "past_form": 0.5741
+    },
+    {
+     "umaban": 1,
+     "name": "サカノブラック",
+     "score": 0.5392,
+     "past_form": 0.5931
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R05",
+   "predictions_sha256": "afd448527d441d284a48837d2c010f0425e6b2262095537e94e8ffc713b4c5a1",
+   "selection_sha256": "81756d76c42925b5f07f87098bda7360c31b23786e79fdd16f36cc7a554a0755",
+   "tickets": [
+    [
+     1,
+     4,
+     3
+    ],
+    [
+     1,
+     3,
+     4
+    ],
+    [
+     4,
+     1,
+     3
+    ],
+    [
+     4,
+     3,
+     1
+    ],
+    [
+     3,
+     1,
+     4
+    ],
+    [
+     3,
+     4,
+     1
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 1,
+     "name": "スズノチカラ",
+     "score": 0.531,
+     "past_form": 0.4907
+    },
+    {
+     "umaban": 4,
+     "name": "リキ",
+     "score": 0.5142,
+     "past_form": 0.5089
+    },
+    {
+     "umaban": 3,
+     "name": "ハートキング",
+     "score": 0.484,
+     "past_form": 0.5976
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R06",
+   "predictions_sha256": "263cde984feefe840706f950018eef1e0174ab0dc2c71dbf607870771dd1d0ce",
+   "selection_sha256": "4c6e831b568b1dd4d518aa7380fb8221f67fb8febb6c4c7c608fb0cb8c37d582",
+   "tickets": [
+    [
+     2,
+     6,
+     9
+    ],
+    [
+     2,
+     9,
+     6
+    ],
+    [
+     6,
+     2,
+     9
+    ],
+    [
+     6,
+     9,
+     2
+    ],
+    [
+     9,
+     2,
+     6
+    ],
+    [
+     9,
+     6,
+     2
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 2,
+     "name": "ツガルイチバン",
+     "score": 0.4957,
+     "past_form": 0.5518
+    },
+    {
+     "umaban": 6,
+     "name": "シンザンミハル",
+     "score": 0.4875,
+     "past_form": 0.5215
+    },
+    {
+     "umaban": 9,
+     "name": "コハクヒメ",
+     "score": 0.4776,
+     "past_form": 0.3375
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R07",
+   "predictions_sha256": "3d4ffc9be8efb2335bd20c48d672a80f32668e97f27b98b5747bad395f1e08df",
+   "selection_sha256": "c93c95a703a9c32bf99ead5e77eefdf962a1ba3fdd21786e8b20de92b7f54c2a",
+   "tickets": [
+    [
+     2,
+     10,
+     4
+    ],
+    [
+     2,
+     4,
+     10
+    ],
+    [
+     10,
+     2,
+     4
+    ],
+    [
+     10,
+     4,
+     2
+    ],
+    [
+     4,
+     2,
+     10
+    ],
+    [
+     4,
+     10,
+     2
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 2,
+     "name": "ヤマノリュウ",
+     "score": 0.7191,
+     "past_form": 0.8299
+    },
+    {
+     "umaban": 10,
+     "name": "ツガルタカラフジ",
+     "score": 0.604,
+     "past_form": 0.5714
+    },
+    {
+     "umaban": 4,
+     "name": "サトノブレイカー",
+     "score": 0.5717,
+     "past_form": 0.5864
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R08",
+   "predictions_sha256": "f06c93675cff30eb39ce747f5e59785ceb5071e72bb08206818765e4210560e5",
+   "selection_sha256": "04b9c834a5b7a91b34d9387455b531924a3ee993706f85306ec6b02e0246e4ca",
+   "tickets": [
+    [
+     10,
+     4,
+     7
+    ],
+    [
+     10,
+     7,
+     4
+    ],
+    [
+     4,
+     10,
+     7
+    ],
+    [
+     4,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     4
+    ],
+    [
+     7,
+     4,
+     10
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "アクセルアララ",
+     "score": 0.6638,
+     "past_form": 0.7053
+    },
+    {
+     "umaban": 4,
+     "name": "フジノモンスター",
+     "score": 0.6328,
+     "past_form": 0.8232
+    },
+    {
+     "umaban": 7,
+     "name": "キンカザン",
+     "score": 0.5932,
+     "past_form": 0.821
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R09",
+   "predictions_sha256": "86f06c355c6f7ee2e92d2a1d4a90c489ba311b9da7a60701f5830dc1843a90b3",
+   "selection_sha256": "4830e660a47098826eeb4917290b180b2020d3952c265e75466d9f0b3c62fe6e",
+   "tickets": [
+    [
+     6,
+     3,
+     4
+    ],
+    [
+     6,
+     4,
+     3
+    ],
+    [
+     3,
+     6,
+     4
+    ],
+    [
+     3,
+     4,
+     6
+    ],
+    [
+     4,
+     6,
+     3
+    ],
+    [
+     4,
+     3,
+     6
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 6,
+     "name": "トマランサカミカゼ",
+     "score": 0.5152,
+     "past_form": 0.5796
+    },
+    {
+     "umaban": 3,
+     "name": "ヤマツネライン",
+     "score": 0.5107,
+     "past_form": 0.709
+    },
+    {
+     "umaban": 4,
+     "name": "ジェイドラゴン",
+     "score": 0.5053,
+     "past_form": 0.6285
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R10",
+   "predictions_sha256": "363d2a36255d1ab495bcf6360d50ec871abe62560c8055e7fdf3bba312e1526b",
+   "selection_sha256": "58e0f213cbeb82edddf7fcbf329a71087252de5ddad723c4d4cab56c7d13464f",
+   "tickets": [
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     9,
+     10,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "コウイッテン",
+     "score": 0.732,
+     "past_form": 0.6834
+    },
+    {
+     "umaban": 9,
+     "name": "サクラジェームス",
+     "score": 0.676,
+     "past_form": 0.7332
+    },
+    {
+     "umaban": 7,
+     "name": "アカオビ",
+     "score": 0.6071,
+     "past_form": 0.7113
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R11",
+   "predictions_sha256": "5b4f41194236d9426d9ba2075430295b4ceb9d3af326f839ccad777583813ca6",
+   "selection_sha256": "3bf15fd488f8ce711cd266c51b99dc35891b6a314f2693e2b3d275b16c4b35d2",
+   "tickets": [
+    [
+     7,
+     9,
+     6
+    ],
+    [
+     7,
+     6,
+     9
+    ],
+    [
+     9,
+     7,
+     6
+    ],
+    [
+     9,
+     6,
+     7
+    ],
+    [
+     6,
+     7,
+     9
+    ],
+    [
+     6,
+     9,
+     7
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 7,
+     "name": "スターイチバン",
+     "score": 0.803,
+     "past_form": 0.8833
+    },
+    {
+     "umaban": 9,
+     "name": "シンエイアロイ",
+     "score": 0.6508,
+     "past_form": 0.6887
+    },
+    {
+     "umaban": 6,
+     "name": "ツガルノヒロイモノ",
+     "score": 0.6061,
+     "past_form": 0.6586
+    }
+   ]
+  },
+  {
+   "race_id": "20261107-R12",
+   "predictions_sha256": "423348bf9dd4ac837027d408893c4ddcca78c6622376ad265fad9126495caec5",
+   "selection_sha256": "d6fdc64fbd03164286346f05dbbb3b29230e08c2cf2217a12c7540ddf8acc405",
+   "tickets": [
+    [
+     8,
+     3,
+     10
+    ],
+    [
+     8,
+     10,
+     3
+    ],
+    [
+     3,
+     8,
+     10
+    ],
+    [
+     3,
+     10,
+     8
+    ],
+    [
+     10,
+     8,
+     3
+    ],
+    [
+     10,
+     3,
+     8
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "postrace",
+   "top3": [
+    {
+     "umaban": 8,
+     "name": "サクラタユウ",
+     "score": 0.7581,
+     "past_form": 0.7866
+    },
+    {
+     "umaban": 3,
+     "name": "ホクショウラナ",
+     "score": 0.6442,
+     "past_form": 0.7011
+    },
+    {
+     "umaban": 10,
+     "name": "サクセスオーショウ",
+     "score": 0.5793,
+     "past_form": 0.5979
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R01",
+   "predictions_sha256": "cbeb5e2bd81448b1845a8397623a7712f93e65c8dd797516a81a97cdd075e863",
+   "selection_sha256": "b7f575ee54bd4d656b4684d67587b5ce0189bb9166c2a10651086f9a853031a6",
+   "tickets": [
+    [
+     9,
+     8,
+     10
+    ],
+    [
+     9,
+     10,
+     8
+    ],
+    [
+     8,
+     9,
+     10
+    ],
+    [
+     8,
+     10,
+     9
+    ],
+    [
+     10,
+     9,
+     8
+    ],
+    [
+     10,
+     8,
+     9
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 9,
+     "name": "マキシゴールド",
+     "score": 0.6838,
+     "past_form": 0.6257
+    },
+    {
+     "umaban": 8,
+     "name": "モトイチヒメ",
+     "score": 0.6716,
+     "past_form": 0.5625
+    },
+    {
+     "umaban": 10,
+     "name": "カネノキセキ",
+     "score": 0.5823,
+     "past_form": 0.4558
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R02",
+   "predictions_sha256": "3ad7349718b1f9d30e18e96048b7a84427c8608dc2a2a46a2b470392993f5f92",
+   "selection_sha256": "079f9ebb9a054ad054fb266e170060766474fa4ded3436c91cf831530e44e167",
+   "tickets": [
+    [
+     5,
+     10,
+     1
+    ],
+    [
+     5,
+     1,
+     10
+    ],
+    [
+     10,
+     5,
+     1
+    ],
+    [
+     10,
+     1,
+     5
+    ],
+    [
+     1,
+     5,
+     10
+    ],
+    [
+     1,
+     10,
+     5
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 5,
+     "name": "ビックドラゴン",
+     "score": 0.6305,
+     "past_form": 0.8148
+    },
+    {
+     "umaban": 10,
+     "name": "キュータロウ",
+     "score": 0.5961,
+     "past_form": 0.4875
+    },
+    {
+     "umaban": 1,
+     "name": "フカガワハナビ",
+     "score": 0.5361,
+     "past_form": 0.537
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R03",
+   "predictions_sha256": "5e88c6d42f02d2b9d1ff62df559d4a294cae81a123536fb4de44ae5850d5ade4",
+   "selection_sha256": "08a231d7548a67843d0f73fa810e734f44db3deecce524907a6d4adfb00295d2",
+   "tickets": [
+    [
+     6,
+     10,
+     4
+    ],
+    [
+     6,
+     4,
+     10
+    ],
+    [
+     10,
+     6,
+     4
+    ],
+    [
+     10,
+     4,
+     6
+    ],
+    [
+     4,
+     6,
+     10
+    ],
+    [
+     4,
+     10,
+     6
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 6,
+     "name": "パワーシンデレラ",
+     "score": 0.6458,
+     "past_form": 0.5702
+    },
+    {
+     "umaban": 10,
+     "name": "ホクセイハスゴイ",
+     "score": 0.6419,
+     "past_form": 0.4355
+    },
+    {
+     "umaban": 4,
+     "name": "キタサカエクオン",
+     "score": 0.5995,
+     "past_form": 0.5729
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R04",
+   "predictions_sha256": "88de458a0c6ae9334d01a9e2fe17faae51f71a043cc519a7d26b10ee3a2dc1dc",
+   "selection_sha256": "59eb0b74dd7a1c7334b7b154f3cd71c883620ee609e4db0698675ab7d31ee2d3",
+   "tickets": [
+    [
+     4,
+     10,
+     8
+    ],
+    [
+     4,
+     8,
+     10
+    ],
+    [
+     10,
+     4,
+     8
+    ],
+    [
+     10,
+     8,
+     4
+    ],
+    [
+     8,
+     4,
+     10
+    ],
+    [
+     8,
+     10,
+     4
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 4,
+     "name": "フジノメグミ",
+     "score": 0.5817,
+     "past_form": 0.6677
+    },
+    {
+     "umaban": 10,
+     "name": "イワキエスポワール",
+     "score": 0.5639,
+     "past_form": 0.3518
+    },
+    {
+     "umaban": 8,
+     "name": "キングジョー",
+     "score": 0.5081,
+     "past_form": 0.4672
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R05",
+   "predictions_sha256": "12b4819ed57a74c8f0cad65ebfec9f756928505e7a643ac6c0637e1d57318964",
+   "selection_sha256": "d191fc28f685aa61e7d2e7dc43975d8add7e6a67987ceabbe77fda8a473899bc",
+   "tickets": [
+    [
+     7,
+     10,
+     3
+    ],
+    [
+     7,
+     3,
+     10
+    ],
+    [
+     10,
+     7,
+     3
+    ],
+    [
+     10,
+     3,
+     7
+    ],
+    [
+     3,
+     7,
+     10
+    ],
+    [
+     3,
+     10,
+     7
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 7,
+     "name": "ツガルミサキ",
+     "score": 0.6626,
+     "past_form": 0.7266
+    },
+    {
+     "umaban": 10,
+     "name": "ホクセイモモコ",
+     "score": 0.6605,
+     "past_form": 0.6621
+    },
+    {
+     "umaban": 3,
+     "name": "ガッツワン",
+     "score": 0.6461,
+     "past_form": 0.7434
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R06",
+   "predictions_sha256": "f702d5ea820aaefff29621e550b35602fccbf1d52eec52a9e5cc35c2c9194667",
+   "selection_sha256": "c975c27c201361b261eb047e4f682c559db526a799bbe033c176495505c8c475",
+   "tickets": [
+    [
+     9,
+     8,
+     6
+    ],
+    [
+     9,
+     6,
+     8
+    ],
+    [
+     8,
+     9,
+     6
+    ],
+    [
+     8,
+     6,
+     9
+    ],
+    [
+     6,
+     9,
+     8
+    ],
+    [
+     6,
+     8,
+     9
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 9,
+     "name": "クリボー",
+     "score": 0.7074,
+     "past_form": 0.6759
+    },
+    {
+     "umaban": 8,
+     "name": "ロキノクラン",
+     "score": 0.6679,
+     "past_form": 0.6578
+    },
+    {
+     "umaban": 6,
+     "name": "エスペランサ",
+     "score": 0.659,
+     "past_form": 0.6565
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R07",
+   "predictions_sha256": "bdfcd7b2179c911eb594e34dd8fcc2b51d08513f130663fa138e61b7e627fb7e",
+   "selection_sha256": "46f9edaf5bc8595f585b19a0f2f590849c84b14e7579e2b4602884dbd8af316b",
+   "tickets": [
+    [
+     10,
+     1,
+     4
+    ],
+    [
+     10,
+     4,
+     1
+    ],
+    [
+     1,
+     10,
+     4
+    ],
+    [
+     1,
+     4,
+     10
+    ],
+    [
+     4,
+     10,
+     1
+    ],
+    [
+     4,
+     1,
+     10
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "アオニシキ",
+     "score": 0.6557,
+     "past_form": 0.7006
+    },
+    {
+     "umaban": 1,
+     "name": "キタサカエヒトミ",
+     "score": 0.6447,
+     "past_form": 0.8532
+    },
+    {
+     "umaban": 4,
+     "name": "ビエイキャノン",
+     "score": 0.6083,
+     "past_form": 0.7424
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R08",
+   "predictions_sha256": "de949471938ed20e4d4a59ebb72f95e8fefccb853a5f631debf32e4cf700563a",
+   "selection_sha256": "f9d68546a1f9c3f7c45d10399ad721e0549a787049fa213db38bd6d67b1fade4",
+   "tickets": [
+    [
+     10,
+     3,
+     8
+    ],
+    [
+     10,
+     8,
+     3
+    ],
+    [
+     3,
+     10,
+     8
+    ],
+    [
+     3,
+     8,
+     10
+    ],
+    [
+     8,
+     10,
+     3
+    ],
+    [
+     8,
+     3,
+     10
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "イチマツ",
+     "score": 0.6524,
+     "past_form": 0.5809
+    },
+    {
+     "umaban": 3,
+     "name": "ブラックバカラ",
+     "score": 0.6049,
+     "past_form": 0.676
+    },
+    {
+     "umaban": 8,
+     "name": "ミスベンティ",
+     "score": 0.5822,
+     "past_form": 0.6397
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R09",
+   "predictions_sha256": "b26b691841558ced77618a0d0a4b1bf1cffc6a1f23d142878f0f3e6f249c3e72",
+   "selection_sha256": "5839a47f3c5aa36d47c37aeacf2dd5591cc8df743badba1b642aafde1bb13172",
+   "tickets": [
+    [
+     7,
+     6,
+     3
+    ],
+    [
+     7,
+     3,
+     6
+    ],
+    [
+     6,
+     7,
+     3
+    ],
+    [
+     6,
+     3,
+     7
+    ],
+    [
+     3,
+     7,
+     6
+    ],
+    [
+     3,
+     6,
+     7
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 7,
+     "name": "フジノボーイ",
+     "score": 0.5106,
+     "past_form": 0.5143
+    },
+    {
+     "umaban": 6,
+     "name": "ホクセイマジェスタ",
+     "score": 0.4939,
+     "past_form": 0.3683
+    },
+    {
+     "umaban": 3,
+     "name": "クロカゲパワー",
+     "score": 0.4684,
+     "past_form": 0.493
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R10",
+   "predictions_sha256": "07594f7a666637e6464d20add728954fcff6ec3480ab8333b58ffc9c9bc9820c",
+   "selection_sha256": "cbcd5d87dce2a0d7610c5e25034111b95bf7c8e91b2a743b0d1cd6c9204a63fb",
+   "tickets": [
+    [
+     7,
+     3,
+     9
+    ],
+    [
+     7,
+     9,
+     3
+    ],
+    [
+     3,
+     7,
+     9
+    ],
+    [
+     3,
+     9,
+     7
+    ],
+    [
+     9,
+     7,
+     3
+    ],
+    [
+     9,
+     3,
+     7
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 7,
+     "name": "ホクショウレディー",
+     "score": 0.5695,
+     "past_form": 0.5886
+    },
+    {
+     "umaban": 3,
+     "name": "コーワレックス",
+     "score": 0.5089,
+     "past_form": 0.5825
+    },
+    {
+     "umaban": 9,
+     "name": "コマサンリキ",
+     "score": 0.4974,
+     "past_form": 0.5427
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R11",
+   "predictions_sha256": "2578fba2c54f7edcd66dbdf4850467a844cbc07f9ff9f1d694a38116aa4f393d",
+   "selection_sha256": "1368f069e3a8d082c91e8c26df072343cfa9756345641ab507ee5872d67ed2ad",
+   "tickets": [
+    [
+     10,
+     9,
+     7
+    ],
+    [
+     10,
+     7,
+     9
+    ],
+    [
+     9,
+     10,
+     7
+    ],
+    [
+     9,
+     7,
+     10
+    ],
+    [
+     7,
+     10,
+     9
+    ],
+    [
+     7,
+     9,
+     10
+    ]
+   ],
+   "recommended": true,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 10,
+     "name": "ジェイセリーヌ",
+     "score": 0.689,
+     "past_form": 0.7761
+    },
+    {
+     "umaban": 9,
+     "name": "プロサングエ",
+     "score": 0.6442,
+     "past_form": 0.7202
+    },
+    {
+     "umaban": 7,
+     "name": "ホクショウサクラ",
+     "score": 0.6127,
+     "past_form": 0.704
+    }
+   ]
+  },
+  {
+   "race_id": "20261108-R12",
+   "predictions_sha256": "8bbdd0b076f8a150e48d4676085f2bf9f6f463259238c3827d2695bd3e7d3787",
+   "selection_sha256": "3a20eb95ffaa07670c57803539d08af1194e207c3cb894e3027bc194a17c2fb8",
+   "tickets": [
+    [
+     3,
+     1,
+     4
+    ],
+    [
+     3,
+     4,
+     1
+    ],
+    [
+     1,
+     3,
+     4
+    ],
+    [
+     1,
+     4,
+     3
+    ],
+    [
+     4,
+     3,
+     1
+    ],
+    [
+     4,
+     1,
+     3
+    ]
+   ],
+   "recommended": false,
+   "snapshot_saved_at": "2026-11-08T06:42:09+09:00",
+   "snapshot_timing": "prestart",
+   "top3": [
+    {
+     "umaban": 3,
+     "name": "ヤマノドラゴン",
+     "score": 0.5825,
+     "past_form": 0.5799
+    },
+    {
+     "umaban": 1,
+     "name": "クニキヨタイショウ",
+     "score": 0.4968,
+     "past_form": 0.4245
+    },
+    {
+     "umaban": 4,
+     "name": "ショコラペガサス",
+     "score": 0.4925,
+     "past_form": 0.5306
+    }
+   ]
+  }
+ ]
+}

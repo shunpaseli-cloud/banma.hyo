@@ -22,6 +22,8 @@ export const dateOfRid = rid => `${rid.slice(0, 4)}-${rid.slice(4, 6)}-${rid.sli
 export function resolveMoisture(race) {
   const date = race.race_date || dateOfRid(race.race_id)
   if (race.track_moisture != null) { race.track_moisture_source = 'measured'; return { pct: +race.track_moisture, source: 'measured' } }
+  // v2(保存済みの予測値, moistureV2.js)。無ければ従来の v1 気象推定。
+  if (race.track_moisture_v2 != null) { race.track_moisture_est = +race.track_moisture_v2; race.track_moisture_source = 'moisture_v2'; return { pct: +race.track_moisture_v2, source: 'moisture_v2' } }
   const est = estimateMoisture(date)
   race.track_moisture_est = est; race.track_moisture_source = est != null ? 'weather' : 'default'
   return { pct: est, source: race.track_moisture_source }
@@ -31,7 +33,13 @@ export async function loadForecast() {
   try {
     const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=42.92&longitude=143.20&daily=precipitation_sum,relative_humidity_2m_mean,et0_fao_evapotranspiration&past_days=2&forecast_days=3&timezone=Asia%2FTokyo')
     const d = (await r.json()).daily
-    d.time.forEach((t, i) => { live[t] = { precip: d.precipitation_sum[i], rh: d.relative_humidity_2m_mean[i], et0: d.et0_fao_evapotranspiration[i] } })
+    setForecastDaily(d)
     return true
   } catch { return false }
+}
+
+// Explicit ingestion of one captured forecast response; the formula is unchanged.
+export function setForecastDaily(d) {
+  if(!Array.isArray(d?.time))throw new Error('Forecast daily.time required')
+  d.time.forEach((t,i)=>{live[t]={precip:d.precipitation_sum?.[i],rh:d.relative_humidity_2m_mean?.[i],et0:d.et0_fao_evapotranspiration?.[i]}})
 }
